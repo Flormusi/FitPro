@@ -1,0 +1,19 @@
+.chart-card {
+  background: linear-gradient(90deg, rgba(214,40,40,0.14), rgba(240,78,62,0.12)), #141414;
+  border-top: 2px solid rgba(214,40,40,0.45);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(214,40,40,0.10);
+  transition: all 0.3s ease;
+}
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(214,40,40,0.22);
+}
+
+.chart-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.85);
+}

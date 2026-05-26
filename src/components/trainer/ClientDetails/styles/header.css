@@ -1,0 +1,69 @@
+/* Estilos para el encabezado del cliente */
+
+.client-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.app-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.back-icon {
+  margin-right: 5px;
+}
+
+/* Logo Trainfit con glow sutil (solo texto) */
+.trainfit-logo h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #D62828 !important;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 8px rgba(214, 40, 40, 0.6), 0 0 24px rgba(214, 40, 40, 0.35);
+  filter: drop-shadow(0 0 6px rgba(214, 40, 40, 0.5)) drop-shadow(0 0 12px rgba(214, 40, 40, 0.25));
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .client-header {
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    height: 28px;
+  }
+  
+  .app-name {
+    font-size: 1rem;
+  }
+}
