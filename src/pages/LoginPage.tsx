@@ -43,7 +43,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div> {/* Reemplaza con tus componentes de UI */}
-      {/* <img src={logo} alt="TrainFit Logo" style={{ width: '150px', marginBottom: '20px' }} /> */}
+      {/* <img src={logo} alt="FitPro Logo" style={{ width: '150px', marginBottom: '20px' }} /> */}
       <h1>Iniciar Sesión</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>

@@ -102,7 +102,7 @@ function verifyBackup(backupFile) {
 }
 
 if (require.main === module) {
-  const backupFile = process.argv[2] || '/Users/mariaflorenciamusitani/Desktop/Trainfit/backend/backups/trainfit_backup_2025-08-30T14-04-33.json';
+  const backupFile = process.argv[2] || '/Users/mariaflorenciamusitani/Desktop/FitPro/backend/backups/fitpro_backup_2025-08-30T14-04-33.json';
   
   const result = verifyBackup(backupFile);
   

@@ -150,7 +150,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
           creator: {
             id: 'trainer',
             name: 'Entrenador',
-            email: 'trainer@trainfit.com'
+            email: 'trainer@fitpro.com'
           },
           createdAt: routine.startDate || new Date().toISOString()
         }));
@@ -255,7 +255,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
           creator: {
             id: 'system',
             name: 'Biblioteca Prediseñada',
-            email: 'system@trainfit.com'
+            email: 'system@fitpro.com'
           },
           createdAt: new Date().toISOString(),
           gender: presetTemplate.gender,
@@ -288,7 +288,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
           creator: {
             id: 'system',
             name: 'Sistema',
-            email: 'system@trainfit.com'
+            email: 'system@fitpro.com'
           },
           createdAt: new Date().toISOString(),
           gender: generateParams.genero,

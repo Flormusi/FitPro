@@ -7,7 +7,7 @@ const ROUTINE_ID = 'cmesmaeoe0001f54eu0bhoxv6'; // ID de "Rutina de Prueba - Ree
 async function login() {
   try {
     const response = await axios.post(`${BASE_URL}/auth/login`, {
-      email: 'trainer.test@trainfit.com',
+      email: 'trainer.test@fitpro.com',
       password: 'test123'
     });
     

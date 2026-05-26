@@ -1,4 +1,4 @@
-/* TrainFit - Biblioteca de Rutinas (carpetas + filtros) */
+/* FitPro - Biblioteca de Rutinas (carpetas + filtros) */
 
 .routine-library-page {
   min-height: 100vh;
@@ -31,7 +31,7 @@
   display: flex; align-items: center; /* centrado vertical */
   gap: 6px;
   background: transparent; /* fondo transparente */
-  color: #E53935; /* texto rojo TrainFit */
+  color: #E53935; /* texto rojo FitPro */
   border: 1px solid rgba(255,255,255,0.15); /* borde fino y sutil */
   padding: 6px 14px; /* más compacto */
   border-radius: 12px; /* especificación */
@@ -80,7 +80,7 @@
   padding: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* Fondo degradado oscuro con acentos TrainFit */
+  /* Fondo degradado oscuro con acentos FitPro */
   background: linear-gradient(135deg, rgba(229,57,53,0.12), rgba(245,124,0,0.10)), rgba(15,15,15,0.90);
 }
 .folder-card:hover { 
@@ -92,7 +92,7 @@
 .folder-icon { font-size: 24px; }
 .folder-info { display: flex; flex-direction: column; justify-content: center; }
 .gradient-text {
-  background: linear-gradient(90deg, #E53935, #F57C00); /* paleta TrainFit */
+  background: linear-gradient(90deg, #E53935, #F57C00); /* paleta FitPro */
   -webkit-background-clip: text; background-clip: text; color: transparent;
   -webkit-text-fill-color: transparent; /* evita bloque de color en hover en WebKit */
   display: inline-block; /* acota el fondo al ancho del texto */
@@ -155,7 +155,7 @@
 .routine-desc { color: #b0b0b0; font-size: 13px; }
 .routine-actions { margin-top: 12px; display: flex; gap: 8px; }
 
-/* Botones TrainFit básicos (fallback) */
+/* Botones FitPro básicos (fallback) */
 .tf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; font-weight: 600; }
 .tf-btn-primary { background: linear-gradient(90deg, #C71C1C, #ff7a18); color: #fff; }
 .tf-btn-secondary { background: #262626; color: #E5E7EB; border-color: #2C2C2C; }

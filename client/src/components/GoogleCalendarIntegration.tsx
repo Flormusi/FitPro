@@ -31,7 +31,7 @@ const GoogleCalendarIntegration: React.FC<GoogleCalendarIntegrationProps> = ({ o
     autoSync: true,
     syncInterval: 15, // minutos
     syncDirection: 'bidirectional', // 'import', 'export', 'bidirectional'
-    calendarName: 'TrainFit - Rutinas'
+    calendarName: 'FitPro - Rutinas'
   });
 
   const handleConnect = async () => {

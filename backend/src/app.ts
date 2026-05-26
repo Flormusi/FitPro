@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 
 // Ruta raíz
 app.get('/', (req, res) => {
-  res.json({ message: 'Bienvenido a la API de Trainfit' });
+  res.json({ message: 'Bienvenido a la API de FitPro' });
 });
 
 // Rutas

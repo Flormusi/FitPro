@@ -1,4 +1,4 @@
-# Política de Privacidad - Trainfit WhatsApp Bot
+# Política de Privacidad - FitPro WhatsApp Bot
 
 **Fecha de vigencia:** Enero 2025
 
@@ -64,7 +64,7 @@
 
 ### 5.2 Cómo Ejercer sus Derechos
 - Envíe un mensaje al bot solicitando información
-- Contacte a: privacy@trainfit.com
+- Contacte a: privacy@fitpro.com
 - Responderemos en un plazo de 30 días
 
 ## 6. Cookies y Tecnologías Similares
@@ -98,12 +98,12 @@
 ## 10. Contacto
 
 ### 10.1 Información de Contacto
-- **Email:** privacy@trainfit.com
+- **Email:** privacy@fitpro.com
 - **WhatsApp:** Envíe un mensaje al bot
 - **Dirección:** [Dirección de la empresa]
 
 ### 10.2 Oficial de Protección de Datos
-- **Email:** dpo@trainfit.com
+- **Email:** dpo@fitpro.com
 - **Teléfono:** [Número de contacto]
 
 ## 11. Base Legal (GDPR)
@@ -128,6 +128,6 @@
 
 **Última actualización:** Enero 2025
 
-**Trainfit** se compromete a proteger su privacidad y manejar sus datos de manera responsable y transparente.
+**FitPro** se compromete a proteger su privacidad y manejar sus datos de manera responsable y transparente.
 
 Para cualquier consulta sobre esta política, no dude en contactarnos.

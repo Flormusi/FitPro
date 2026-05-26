@@ -59,8 +59,8 @@ export const getRoutineTemplates = async (req: Request, res: Response) => {
         exercises: template.days, // Mapear days a exercises para compatibilidad
         creator: {
           id: 'system',
-          name: 'Sistema TrainFit',
-          email: 'system@trainfit.com'
+          name: 'Sistema FitPro',
+          email: 'system@fitpro.com'
         },
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -638,8 +638,8 @@ export const getPresetRoutine = async (req: Request, res: Response) => {
       exercises: matchingTemplate.days,
       creator: {
         id: 'system',
-        name: 'Sistema TrainFit',
-        email: 'system@trainfit.com'
+        name: 'Sistema FitPro',
+        email: 'system@fitpro.com'
       },
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),

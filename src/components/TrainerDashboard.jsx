@@ -11,7 +11,7 @@ const TrainerDashboard = () => {
     <div className="dashboard-container">
       {/* Header */}
       <header className="dashboard-header">
-        <h1 className="logo">TRAINFIT</h1>
+        <h1 className="logo">FITPRO</h1>
         <div className="header-info">
           <h2 className="greeting">¡Hola, Maga!</h2>
           <p className="subtitle">Aquí tienes un resumen de tu actividad</p>

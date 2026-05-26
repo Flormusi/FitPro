@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand colors — change these to white-label for each client */
+  --color-primary: #D62828;
+  --color-primary-hover: #b91c1c;
+  --color-accent: #667eea;
+
+  /* Background scale */
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-surface-2: #2a2a2a;
+  --color-surface-3: #2c2c2c;
+
+  /* Borders & text */
+  --color-border: #333333;
+  --color-text: #ffffff;
+  --color-text-muted: #888888;
+}
+
 /* Global overflow control to prevent horizontal scroll */
 html, body {
   overflow-x: hidden;

@@ -219,7 +219,7 @@ export async function seedExercises() {
       // Crear un trainer temporal si no existe
       const tempTrainer = await prisma.user.create({
         data: {
-          email: 'temp.trainer@trainfit.com',
+          email: 'temp.trainer@fitpro.com',
           password: 'temp123',
           role: 'TRAINER',
           name: 'Trainer Temporal'

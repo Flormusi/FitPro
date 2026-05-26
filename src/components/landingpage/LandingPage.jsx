@@ -8,7 +8,7 @@ const LandingPage = () => {
     <div className="landing-page-wrapper">
       {/* <Navbar /> */}
       <section className="landing-page-hero">
-        <h1>Trainfit: Achieve Your Fitness Goals</h1>
+        <h1>FitPro: Achieve Your Fitness Goals</h1>
         <p>Your personalized fitness journey starts here.</p>
         <button>Get Started</button>
       </section>

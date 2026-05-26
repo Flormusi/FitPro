@@ -80,7 +80,7 @@ const mockTrainingSchedule = [
     minute: 0,
     duration: 1.5,
     exercises: ['Sentadilla', 'Press de banca', 'Remo con barra'],
-    location: 'Gimnasio TrainFit'
+    location: 'Gimnasio FitPro'
   },
   {
     id: 2,
@@ -90,7 +90,7 @@ const mockTrainingSchedule = [
     minute: 30,
     duration: 1,
     exercises: ['Cinta', 'Bicicleta', 'Plancha', 'Abdominales'],
-    location: 'Gimnasio TrainFit'
+    location: 'Gimnasio FitPro'
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ const mockTrainingSchedule = [
     minute: 0,
     duration: 1.5,
     exercises: ['Peso muerto', 'Sentadilla búlgara', 'Extensiones'],
-    location: 'Gimnasio TrainFit'
+    location: 'Gimnasio FitPro'
   },
   {
     id: 4,
@@ -110,7 +110,7 @@ const mockTrainingSchedule = [
     minute: 0,
     duration: 1,
     exercises: ['Burpees', 'Mountain climbers', 'Kettlebell swings'],
-    location: 'Gimnasio TrainFit'
+    location: 'Gimnasio FitPro'
   }
 ];
 
@@ -913,7 +913,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
               animate={{ opacity: isSidebarOpen ? 1 : 0, x: isSidebarOpen ? 0 : -10 }}
               transition={{ delay: isSidebarOpen ? 0.1 : 0 }}
             >
-              {isSidebarOpen ? "TRAINFIT" : ""} 
+              {isSidebarOpen ? "FITPRO" : ""} 
             </motion.h2>
             <button onClick={toggleSidebar} className="sidebar-toggle">
               {isSidebarOpen ? '←' : '→'}

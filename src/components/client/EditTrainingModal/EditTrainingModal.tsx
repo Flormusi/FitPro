@@ -30,7 +30,7 @@ const EditTrainingModal: React.FC<EditTrainingModalProps> = ({
     minute: 0,
     duration: 1,
     exercises: [],
-    location: 'Gimnasio TrainFit',
+    location: 'Gimnasio FitPro',
     notes: ''
   });
 
@@ -46,7 +46,7 @@ const EditTrainingModal: React.FC<EditTrainingModalProps> = ({
         minute: trainingData.minute || 0,
         duration: trainingData.duration || 1,
         exercises: trainingData.exercises || [],
-        location: trainingData.location || 'Gimnasio TrainFit',
+        location: trainingData.location || 'Gimnasio FitPro',
         notes: trainingData.notes || ''
       });
     }
@@ -134,7 +134,7 @@ const EditTrainingModal: React.FC<EditTrainingModalProps> = ({
       minute: 0,
       duration: 1,
       exercises: [],
-      location: 'Gimnasio TrainFit',
+      location: 'Gimnasio FitPro',
       notes: ''
     });
     setErrors({});
@@ -243,7 +243,7 @@ const EditTrainingModal: React.FC<EditTrainingModalProps> = ({
                 id="location"
                 value={formData.location}
                 onChange={(e) => handleInputChange('location', e.target.value)}
-                placeholder="Ej: Gimnasio TrainFit"
+                placeholder="Ej: Gimnasio FitPro"
                 className={errors.location ? 'error' : ''}
               />
               {errors.location && <span className="error-message">{errors.location}</span>}

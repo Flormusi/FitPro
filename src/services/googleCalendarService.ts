@@ -169,7 +169,7 @@ class GoogleCalendarService {
     try {
       const calendarEvent = {
         summary: event.title,
-        description: event.description || 'Entrenamiento programado desde TrainFit',
+        description: event.description || 'Entrenamiento programado desde FitPro',
         start: {
           dateTime: event.startTime.toISOString(),
           timeZone: 'America/Argentina/Buenos_Aires',
@@ -213,7 +213,7 @@ class GoogleCalendarService {
     try {
       const calendarEvent = {
         summary: event.title,
-        description: event.description || 'Entrenamiento programado desde TrainFit',
+        description: event.description || 'Entrenamiento programado desde FitPro',
         start: {
           dateTime: event.startTime.toISOString(),
           timeZone: 'America/Argentina/Buenos_Aires',

@@ -8,7 +8,7 @@ const NotificationCenter = () => {
   
   // Dummy notifications if context is not set up yet
   const notifications = [
-    { id: 1, message: 'Welcome to Trainfit!', type: 'info' },
+    { id: 1, message: 'Welcome to FitPro!', type: 'info' },
     { id: 2, message: 'Your new workout plan is ready.', type: 'success' },
     { id: 3, message: 'Reminder: Leg day tomorrow!', type: 'warning' },
   ];

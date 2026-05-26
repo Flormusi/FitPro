@@ -17,7 +17,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-container">
       <header className="landing-header">
-        <img src="/images/logo-trainfit.png" alt="TrainFit Logo" className="landing-logo-image" />
+        <img src="/images/logo-fitpro.png" alt="FitPro Logo" className="landing-logo-image" />
       </header>
       <main className="landing-main-content">
         <h2 className="landing-welcome-title">¡Bienvenid@s!</h2>
@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
         </div>
       </main>
       {/* <footer className="landing-footer">
-        <p>&copy; {new Date().getFullYear()} TrainFit. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} FitPro. Todos los derechos reservados.</p>
       </footer> */}
     </div>
   );

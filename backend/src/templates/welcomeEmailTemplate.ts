@@ -15,7 +15,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
     temporaryPassword,
     trainerName,
     loginUrl,
-    supportEmail = 'soporte@trainfit.com',
+    supportEmail = 'soporte@fitpro.com',
     supportPhone = '+54 11 1234-5678'
   } = data;
 
@@ -25,7 +25,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Bienvenido a TrainFit!</title>
+  <title>¡Bienvenido a FitPro!</title>
   <style>
     @media only screen and (max-width: 600px) {
       .container { width: 100% !important; }
@@ -39,7 +39,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5;">
   <div class="container" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
     
-    <!-- Header con logo TrainFit -->
+    <!-- Header con logo FitPro -->
     <div class="header" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); color: white; padding: 40px 30px; text-align: center;">
       <div style="margin-bottom: 20px;">
         <svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
@@ -59,11 +59,11 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
             <rect x="38" y="10" width="6" height="6" fill="url(#redGradient)" rx="1"/>
           </g>
           
-          <!-- Texto TrainFit -->
-          <text x="60" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">TrainFit</text>
+          <!-- Texto FitPro -->
+          <text x="60" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">FitPro</text>
         </svg>
       </div>
-      <h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">¡Bienvenido a TrainFit!</h1>
+      <h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">¡Bienvenido a FitPro!</h1>
       <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Tu plataforma de entrenamiento personal</p>
     </div>
 
@@ -72,7 +72,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
       <div style="text-align: center; margin-bottom: 30px;">
         <h2 style="color: #333; font-size: 24px; margin: 0 0 10px 0; font-weight: 600;">¡Hola ${clientName}! 👋</h2>
         <p style="color: #666; font-size: 16px; margin: 0; line-height: 1.5;">
-          Tu entrenador <strong>${trainerName}</strong> te ha agregado a TrainFit. <br>
+          Tu entrenador <strong>${trainerName}</strong> te ha agregado a FitPro. <br>
           Aquí tienes tus credenciales de acceso:
         </p>
       </div>
@@ -102,7 +102,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
       <div style="background: #e7f3ff; border-radius: 8px; padding: 25px; margin: 30px 0;">
         <h3 style="color: #0066cc; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">📋 Instrucciones para tu Primer Acceso</h3>
         <ol style="color: #333; margin: 0; padding-left: 20px; line-height: 1.6;">
-          <li style="margin-bottom: 8px;">Haz clic en el botón "Acceder a TrainFit" de abajo</li>
+          <li style="margin-bottom: 8px;">Haz clic en el botón "Acceder a FitPro" de abajo</li>
           <li style="margin-bottom: 8px;">Ingresa tu email y la contraseña temporal proporcionada</li>
           <li style="margin-bottom: 8px;">Cambia tu contraseña por una personal y segura</li>
           <li style="margin-bottom: 8px;">Completa tu perfil con tus datos personales</li>
@@ -113,7 +113,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
       <!-- Botón de acceso -->
       <div style="text-align: center; margin: 40px 0;">
         <a href="${loginUrl}" class="button" style="display: inline-block; background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3); transition: all 0.3s ease;">
-          🚀 Acceder a TrainFit
+          🚀 Acceder a FitPro
         </a>
       </div>
 
@@ -139,7 +139,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
       <!-- Mensaje de bienvenida final -->
       <div style="text-align: center; margin: 30px 0;">
         <p style="color: #333; font-size: 16px; line-height: 1.6; margin: 0;">
-          Estamos emocionados de tenerte en TrainFit. <br>
+          Estamos emocionados de tenerte en FitPro. <br>
           ¡Prepárate para alcanzar tus objetivos de fitness! 💪
         </p>
       </div>
@@ -148,7 +148,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
     <!-- Footer -->
     <div style="background: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #dee2e6;">
       <p style="margin: 0 0 10px 0; color: #666; font-size: 14px; font-weight: 600;">
-        TrainFit - Tu plataforma de entrenamiento personal
+        FitPro - Tu plataforma de entrenamiento personal
       </p>
       <p style="margin: 0; font-size: 12px; color: #9ca3af; line-height: 1.5;">
         Este correo contiene información confidencial. Si no eres el destinatario, <br>
@@ -156,7 +156,7 @@ export const generateWelcomeEmailTemplate = (data: WelcomeEmailData): string => 
       </p>
       <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6;">
         <p style="margin: 0; font-size: 11px; color: #9ca3af;">
-          © 2025 TrainFit. Todos los derechos reservados. <br>
+          © 2025 FitPro. Todos los derechos reservados. <br>
           Este email fue enviado automáticamente, por favor no respondas a este mensaje.
         </p>
       </div>

@@ -248,8 +248,8 @@ const ClientDetails = () => {
   return (
     <div className="client-details">
       <div className="client-header">
-        <div className="trainfit-logo">
-        <h2>TRAINFIT</h2>
+        <div className="fitpro-logo">
+        <h2>FITPRO</h2>
       </div>
         <Link to="/trainer/clients" className="back-link">
           &larr; Volver a la lista de clientes

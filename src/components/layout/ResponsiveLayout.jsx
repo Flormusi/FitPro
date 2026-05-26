@@ -15,7 +15,7 @@ const ResponsiveLayout = ({ children }) => {
       </div>
       {/* Optional Footer */}
       {/* <footer style={{ textAlign: 'center', padding: '20px', borderTop: '1px solid #eee' }}>
-        <p>&copy; {new Date().getFullYear()} Trainfit</p>
+        <p>&copy; {new Date().getFullYear()} FitPro</p>
       </footer> */}
     </div>
   );

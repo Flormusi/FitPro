@@ -20,7 +20,7 @@ const DemoPage = () => {
       <nav className="bg-black py-4 border-b border-red-600">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/images/trainfit-logo.svg" alt="TrainFit Logo" className="h-10" />
+            <img src="/images/fitpro-logo.svg" alt="FitPro Logo" className="h-10" />
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#" className="text-white hover:text-red-500 transition-colors">Home</a>
@@ -198,7 +198,7 @@ const DemoPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <img src="/images/trainfit-logo.svg" alt="TrainFit Logo" className="h-8 mb-4" />
+              <img src="/images/fitpro-logo.svg" alt="FitPro Logo" className="h-8 mb-4" />
               <p className="text-gray-400">Your journey to a better you starts here.</p>
             </div>
             <div>
@@ -216,7 +216,7 @@ const DemoPage = () => {
                 <li>123 Fitness Street</li>
                 <li>Buenos Aires, Argentina</li>
                 <li>+54 11 1234-5678</li>
-                <li>info@trainfit.com</li>
+                <li>info@fitpro.com</li>
               </ul>
             </div>
             <div>

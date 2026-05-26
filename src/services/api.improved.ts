@@ -1,5 +1,5 @@
 /**
- * Servicio de API mejorado para TrainFit
+ * Servicio de API mejorado para FitPro
  * Implementa las recomendaciones para un mejor manejo de respuestas,
  * errores y estructura de datos.
  */

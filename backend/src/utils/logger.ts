@@ -1,5 +1,5 @@
 /**
- * Sistema de logging estructurado para la API de TrainFit
+ * Sistema de logging estructurado para la API de FitPro
  * Este módulo proporciona funciones para registrar eventos y errores
  * de manera estructurada y consistente.
  */
@@ -65,7 +65,7 @@ logTransports.push(
 // Crear el logger
 const logger = winston.createLogger({
   level: isDevelopment ? 'debug' : 'info',
-  defaultMeta: { service: 'trainfit-api' },
+  defaultMeta: { service: 'fitpro-api' },
   transports: logTransports,
   exitOnError: false
 });

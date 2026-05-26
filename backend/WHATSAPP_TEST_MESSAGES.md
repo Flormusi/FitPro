@@ -1,6 +1,6 @@
-# Ejemplos de Mensajes de Prueba - Bot WhatsApp Trainfit
+# Ejemplos de Mensajes de Prueba - Bot WhatsApp FitPro
 
-Esta guía contiene ejemplos de mensajes para probar todas las funcionalidades del bot de WhatsApp de Trainfit.
+Esta guía contiene ejemplos de mensajes para probar todas las funcionalidades del bot de WhatsApp de FitPro.
 
 ## 🔧 Configuración Previa
 
@@ -19,7 +19,7 @@ Hola
 ```
 **Respuesta esperada:**
 ```
-¡Hola! 👋 Soy el asistente de Trainfit.
+¡Hola! 👋 Soy el asistente de FitPro.
 
 Puedo ayudarte a generar rutinas personalizadas. Solo dime:
 • Tu objetivo (ej: perder peso, ganar músculo)

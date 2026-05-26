@@ -1,5 +1,5 @@
 /**
- * Pruebas de componentes para el frontend de TrainFit
+ * Pruebas de componentes para el frontend de FitPro
  * Este archivo contiene pruebas para verificar el correcto funcionamiento
  * de los componentes de React.
  */

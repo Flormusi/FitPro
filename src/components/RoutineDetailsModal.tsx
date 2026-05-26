@@ -141,20 +141,20 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       const pageHeight = pdf.internal.pageSize.getHeight();
       let yPosition = 15;
 
-      // Paleta de colores Trainfit
-      const trainfitRed = [220, 38, 38] as [number, number, number];
-      const trainfitBlack = [10, 10, 10] as [number, number, number];
-      const trainfitDarkGray = [26, 26, 26] as [number, number, number];
-      const trainfitLightGray = [156, 163, 175] as [number, number, number];
-      const trainfitWhite = [255, 255, 255] as [number, number, number];
+      // Paleta de colores FitPro
+      const fitproRed = [220, 38, 38] as [number, number, number];
+      const fitproBlack = [10, 10, 10] as [number, number, number];
+      const fitproDarkGray = [26, 26, 26] as [number, number, number];
+      const fitproLightGray = [156, 163, 175] as [number, number, number];
+      const fitproWhite = [255, 255, 255] as [number, number, number];
 
-      // Header con diseño Trainfit profesional (banner negro)
-      pdf.setFillColor(...trainfitBlack);
+      // Header con diseño FitPro profesional (banner negro)
+      pdf.setFillColor(...fitproBlack);
       pdf.rect(0, 0, pageWidth, 35, 'F');
       
-      // Logo TRAINFIT (carga desde /public/images)
+      // Logo FITPRO (carga desde /public/images)
       try {
-        const logoResp = await fetch('/images/logo-trainfit.png');
+        const logoResp = await fetch('/images/logo-fitpro.png');
         const logoBlob = await logoResp.blob();
         const logoBase64 = await new Promise<string>((resolve) => {
           const reader = new FileReader();
@@ -171,16 +171,16 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
         pdf.addImage(imgEl, 'PNG', 12, 9, targetW, targetH);
       } catch (error) {
         // Fallback al texto si falla la carga del logo
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFontSize(18);
         pdf.setFont('helvetica', 'bold');
-        pdf.text('TRAINFIT', 15, 15);
+        pdf.text('FITPRO', 15, 15);
       }
       
       // Subtítulo junto al logo
       pdf.setFontSize(10);
       pdf.setFont('helvetica', 'normal');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.text('FITNESS & TRAINING', 15, 25);
 
       // Título grande: Plan de Entrenamiento - Día X (centrado)
@@ -207,23 +207,23 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       pdf.line(15, 35, pageWidth - 15, 35);
       
       yPosition = 45;
-      pdf.setTextColor(...trainfitBlack);
+      pdf.setTextColor(...fitproBlack);
 
       // Información general
-      pdf.setFillColor(...trainfitDarkGray);
+      pdf.setFillColor(...fitproDarkGray);
       pdf.rect(15, yPosition, pageWidth - 30, 25, 'F');
-      pdf.setDrawColor(...trainfitLightGray);
+      pdf.setDrawColor(...fitproLightGray);
       pdf.setLineWidth(0.25);
       pdf.rect(15, yPosition, pageWidth - 30, 25);
       
       pdf.setFontSize(12);
       pdf.setFont('helvetica', 'bold');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.text('INFORMACIÓN GENERAL', 20, yPosition + 10);
       
       pdf.setFont('helvetica', 'normal');
       pdf.setFontSize(10);
-      pdf.setTextColor(...trainfitLightGray);
+      pdf.setTextColor(...fitproLightGray);
       const infoY = yPosition + 16;
       pdf.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, 20, infoY);
       pdf.text(`Ejercicios: ${routine.exercises.length}`, pageWidth / 2 - 30, infoY);
@@ -276,9 +276,9 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
 
       // Encabezados de tabla
       // Evitamos símbolos especiales en headers para asegurar tipografía consistente
-      pdf.setFillColor(...trainfitRed);
+      pdf.setFillColor(...fitproRed);
       pdf.rect(tableStartX, yPosition, tableWidth, 14, 'F');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(11);
 
@@ -288,7 +288,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       });
 
       yPosition += 14;
-      pdf.setTextColor(...trainfitBlack);
+      pdf.setTextColor(...fitproBlack);
       pdf.setFont('helvetica', 'normal');
 
       // Filas de ejercicios
@@ -303,9 +303,9 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
           yPosition = 20;
           
           // Repetir encabezados
-          pdf.setFillColor(...trainfitRed);
+          pdf.setFillColor(...fitproRed);
           pdf.rect(tableStartX, yPosition, tableWidth, 14, 'F');
-          pdf.setTextColor(...trainfitWhite);
+          pdf.setTextColor(...fitproWhite);
           pdf.setFont('helvetica', 'bold');
           pdf.setFontSize(11);
           
@@ -316,7 +316,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
           });
           
           yPosition += 14;
-          pdf.setTextColor(...trainfitBlack);
+          pdf.setTextColor(...fitproBlack);
           pdf.setFont('helvetica', 'normal');
         }
 
@@ -327,7 +327,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
         }
 
         // Bordes de celda
-        pdf.setDrawColor(...trainfitLightGray);
+        pdf.setDrawColor(...fitproLightGray);
         pdf.setLineWidth(0.25);
         xPosition = tableStartX;
         
@@ -340,18 +340,18 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
         xPosition = tableStartX;
         
         // Número de ejercicio con círculo rojo (radio ajustado para no tocar bordes)
-        pdf.setFillColor(...trainfitRed);
+        pdf.setFillColor(...fitproRed);
         const circleX = xPosition + colWidths[0]/2;
         const circleY = yPosition + rowHeight/2;
         pdf.circle(circleX, circleY, 5, 'F');
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFontSize(10);
         pdf.setFont('helvetica', 'bold');
         pdf.text((index + 1).toString(), circleX, circleY + 2, { align: 'center' });
         xPosition += colWidths[0];
 
         // Imagen del ejercicio (padding simétrico y proporción preservada)
-        pdf.setTextColor(...trainfitBlack);
+        pdf.setTextColor(...fitproBlack);
         pdf.setFont('helvetica', 'normal');
         if (exercise.imageBase64) {
           try {
@@ -382,7 +382,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
 
         // Nombre del ejercicio + notas del entrenador (si existen)
         pdf.setFontSize(10);
-        pdf.setTextColor(...trainfitBlack);
+        pdf.setTextColor(...fitproBlack);
         const nameY = yPosition + (hasNotes ? rowHeight/2 - 4 : rowHeight/2);
         pdf.text(exercise.name, xPosition + 3, nameY, { maxWidth: colWidths[2] - 6 });
 
@@ -398,7 +398,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
             pdf.text(line, xPosition + 3, notesStartY + i * 4);
           });
           pdf.setFont('helvetica', 'normal');
-          pdf.setTextColor(...trainfitBlack);
+          pdf.setTextColor(...fitproBlack);
         }
         xPosition += colWidths[2];
         
@@ -461,12 +461,12 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       const totalPages = pdf.getNumberOfPages();
       for (let p = 1; p <= totalPages; p++) {
         pdf.setPage(p);
-        pdf.setFillColor(...trainfitBlack);
+        pdf.setFillColor(...fitproBlack);
         pdf.rect(0, footerY, pageWidth, footerHeight, 'F');
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(9);
-        pdf.text('Trainfit - Tu entrenamiento a medida', pageWidth / 2, footerY + 14, { align: 'center' });
+        pdf.text('FitPro - Tu entrenamiento a medida', pageWidth / 2, footerY + 14, { align: 'center' });
         pdf.setFontSize(8);
         pdf.text(`Página ${p} de ${totalPages}`, pageWidth - 20, footerY + 14, { align: 'right' });
       }
@@ -541,7 +541,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
           <div className="routine-modal-header tf-header-gradient">
             <div className="header-content">
               <div className="header-info">
-                <div className="trainfit-logo">TRAINFIT</div>
+                <div className="fitpro-logo">FITPRO</div>
                 <h2>{routine?.name || 'Cargando...'}</h2>
                 {routine?.description && (
                   <p className="routine-subtitle">{routine.description}</p>

@@ -129,8 +129,8 @@ const TrainerDashboard: React.FC = () => {
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-left">
-          <h1 className="trainfit-logo">
-            TRAINFIT <Dumbbell className="logo-icon" />
+          <h1 className="fitpro-logo">
+            FITPRO <Dumbbell className="logo-icon" />
           </h1>
           <div className="greeting">
             <h2>¡Hola, Maga!</h2>

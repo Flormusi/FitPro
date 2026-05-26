@@ -105,7 +105,7 @@ const ClientOnboarding: React.FC = () => {
     <div className="dark-theme">
       <div className="onboarding-container">
         <div className="onboarding-header">
-          <img src="/images/logo-trainfit.png" alt="Trainfit Logo" className="logo" />
+          <img src="/images/logo-fitpro.png" alt="FitPro Logo" className="logo" />
           <h1>Completá tus datos para personalizar tu entrenamiento!</h1>
         </div>
         <form onSubmit={handleSubmit} className="onboarding-form">

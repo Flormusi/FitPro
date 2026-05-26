@@ -1,11 +1,11 @@
-# Términos de Servicio - Trainfit WhatsApp Bot
+# Términos de Servicio - FitPro WhatsApp Bot
 
 **Fecha de vigencia:** Enero 2025
 
 ## 1. Aceptación de los Términos
 
 ### 1.1 Acuerdo
-Al utilizar el bot de WhatsApp de Trainfit, usted acepta estos términos de servicio en su totalidad. Si no está de acuerdo con algún término, no utilice el servicio.
+Al utilizar el bot de WhatsApp de FitPro, usted acepta estos términos de servicio en su totalidad. Si no está de acuerdo con algún término, no utilice el servicio.
 
 ### 1.2 Capacidad Legal
 - Debe ser mayor de 18 años para usar este servicio
@@ -59,17 +59,17 @@ Al utilizar el bot de WhatsApp de Trainfit, usted acepta estos términos de serv
 - **IMPORTANTE:** Este servicio NO proporciona asesoramiento médico
 - Las rutinas son sugerencias generales, no prescripciones
 - Consulte a un médico antes de comenzar cualquier programa de ejercicios
-- Trainfit no se responsabiliza por lesiones o problemas de salud
+- FitPro no se responsabiliza por lesiones o problemas de salud
 
 ### 5.2 Limitación de Daños
-- Trainfit no será responsable por daños directos, indirectos o consecuentes
+- FitPro no será responsable por daños directos, indirectos o consecuentes
 - La responsabilidad máxima se limita al costo del servicio
 - No garantizamos resultados específicos de fitness
 
 ## 6. Propiedad Intelectual
 
-### 6.1 Derechos de Trainfit
-- El software del bot y su contenido son propiedad de Trainfit
+### 6.1 Derechos de FitPro
+- El software del bot y su contenido son propiedad de FitPro
 - Las rutinas generadas están protegidas por derechos de autor
 - No puede reproducir o distribuir el contenido sin autorización
 
@@ -121,7 +121,7 @@ Al utilizar el bot de WhatsApp de Trainfit, usted acepta estos términos de serv
 - Puede solicitar la eliminación de sus datos
 - No hay penalidades por terminación
 
-### 10.2 Terminación por Trainfit
+### 10.2 Terminación por FitPro
 - Podemos terminar el servicio por violación de términos
 - Podemos suspender cuentas por uso abusivo
 - La terminación puede ser inmediata en casos graves
@@ -167,12 +167,12 @@ Al utilizar el bot de WhatsApp de Trainfit, usted acepta estos términos de serv
 ## 14. Contacto
 
 ### 14.1 Información de Contacto
-- **Email:** legal@trainfit.com
+- **Email:** legal@fitpro.com
 - **WhatsApp:** Envíe un mensaje al bot
 - **Dirección:** [Dirección de la empresa]
 
 ### 14.2 Atención al Cliente
-- **Email:** support@trainfit.com
+- **Email:** support@fitpro.com
 - **Horario:** Lunes a Viernes, 9:00 - 18:00 ART
 - **Tiempo de respuesta:** 24-48 horas
 
@@ -197,6 +197,6 @@ Al utilizar el bot de WhatsApp de Trainfit, usted acepta estos términos de serv
 
 **Última actualización:** Enero 2025
 
-**Al usar el bot de WhatsApp de Trainfit, usted confirma que ha leído, entendido y acepta estos términos de servicio.**
+**Al usar el bot de WhatsApp de FitPro, usted confirma que ha leído, entendido y acepta estos términos de servicio.**
 
-Para cualquier consulta sobre estos términos, contacte a legal@trainfit.com
+Para cualquier consulta sobre estos términos, contacte a legal@fitpro.com

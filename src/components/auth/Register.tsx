@@ -59,8 +59,8 @@ const Register: React.FC = () => {
     <div className="register-container">
       <form onSubmit={handleSubmit} className="register-form">
         <img 
-          src="/images/logo-trainfit.png" // Asegúrate que esta ruta es correcta
-          alt="TrainFit Logo" 
+          src="/images/logo-fitpro.png" // Asegúrate que esta ruta es correcta
+          alt="FitPro Logo" 
           className="register-logo" 
         />
         <h2 className="register-title">Crear Cuenta</h2>

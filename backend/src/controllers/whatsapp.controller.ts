@@ -82,7 +82,7 @@ async function processMessage(message: any) {
       // Enviar mensaje de ayuda
       await whatsappService.sendTextMessage(
         message.from,
-        `👋 ¡Hola ${trainer.name}! Soy el bot de TrainFit.\n\n` +
+        `👋 ¡Hola ${trainer.name}! Soy el bot de FitPro.\n\n` +
         'Para generar una rutina, envía un mensaje como:\n\n' +
         '• "Necesito una rutina para perder peso, nivel principiante"\n' +
         '• "Rutina de masa muscular para intermedio"\n' +
@@ -127,7 +127,7 @@ async function processMessage(message: any) {
       message.from,
       `✅ *Rutina guardada exitosamente*\n\n` +
       `ID de rutina: ${savedRoutine.id}\n` +
-      `Puedes encontrarla en tu panel de TrainFit para asignarla a tus clientes.\n\n` +
+      `Puedes encontrarla en tu panel de FitPro para asignarla a tus clientes.\n\n` +
       '¿Necesitas otra rutina? Solo envíame otro mensaje! 🚀'
     );
 

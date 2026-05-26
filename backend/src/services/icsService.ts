@@ -15,9 +15,9 @@ export class ICSService {
   private defaultOptions: ICSGenerationOptions = {
     includeAlarms: true,
     alarmMinutes: [30, 10],
-    organizerName: 'TrainFit',
-    organizerEmail: process.env.EMAIL_USER || 'noreply@trainfit.com',
-    categories: ['TrainFit'],
+    organizerName: 'FitPro',
+    organizerEmail: process.env.EMAIL_USER || 'noreply@fitpro.com',
+    categories: ['FitPro'],
     status: 'CONFIRMED',
     busyStatus: 'BUSY'
   };
@@ -45,9 +45,9 @@ export class ICSService {
       ],
       title: event.title,
       description: this.generateEventDescription(event),
-      location: event.location || 'TrainFit - Gimnasio',
+      location: event.location || 'FitPro - Gimnasio',
       url: `${process.env.FRONTEND_URL}/events/${event.id}`,
-      uid: `trainfit-${event.id}@trainfit.com`,
+      uid: `fitpro-${event.id}@fitpro.com`,
       organizer: { 
         name: config.organizerName!, 
         email: config.organizerEmail! 
@@ -63,8 +63,8 @@ export class ICSService {
       status: config.status,
       busyStatus: config.busyStatus,
       categories: [...config.categories!, event.type],
-      productId: 'TrainFit Calendar System',
-      calName: 'TrainFit - Sesiones de Entrenamiento'
+      productId: 'FitPro Calendar System',
+      calName: 'FitPro - Sesiones de Entrenamiento'
     };
 
     // Agregar alarmas si están habilitadas
@@ -126,7 +126,7 @@ export class ICSService {
     
     description += `\n\nCliente: ${event.clientName}`;
     description += `\nTipo de sesión: ${event.type.charAt(0).toUpperCase() + event.type.slice(1)}`;
-    description += `\n\nGenerado por TrainFit - Tu compañero de entrenamiento`;
+    description += `\n\nGenerado por FitPro - Tu compañero de entrenamiento`;
     description += `\nMás información: ${process.env.FRONTEND_URL}`;
     
     return description;
@@ -167,7 +167,7 @@ export class ICSService {
   generateFileName(event: TrainingEvent): string {
     const date = event.startDate.toISOString().split('T')[0];
     const sanitizedTitle = event.title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
-    return `trainfit-${event.id}-${date}-${sanitizedTitle}.ics`;
+    return `fitpro-${event.id}-${date}-${sanitizedTitle}.ics`;
   }
 }
 

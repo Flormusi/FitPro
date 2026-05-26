@@ -1,4 +1,4 @@
-# Despliegue de TrainFit (Frontend + Backend)
+# Despliegue de FitPro (Frontend + Backend)
 
 Objetivo: habilitar un entorno accesible para el entrenador sin depender de tu `localhost`, con WebSocket y API funcionando.
 

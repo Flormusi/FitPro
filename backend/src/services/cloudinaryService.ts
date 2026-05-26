@@ -63,7 +63,7 @@ export const uploadToCloudinary = async (file: Express.Multer.File): Promise<str
     
     // Para producción, usar Cloudinary
     const result = await cloudinary.uploader.upload(file.path, {
-      folder: 'trainfit/profile-images',
+      folder: 'fitpro/profile-images',
       resource_type: 'image',
       transformation: [
         { width: 400, height: 400, crop: 'fill' },

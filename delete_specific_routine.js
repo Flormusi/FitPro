@@ -6,7 +6,7 @@ const BASE_URL = 'http://localhost:5002/api';
 async function login() {
   try {
     const response = await axios.post(`${BASE_URL}/auth/login`, {
-      email: 'trainer.test@trainfit.com',
+      email: 'trainer.test@fitpro.com',
       password: 'test123'
     });
     

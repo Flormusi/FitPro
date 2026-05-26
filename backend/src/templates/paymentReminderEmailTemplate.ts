@@ -10,7 +10,7 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
   const {
     clientName,
     trainerName,
-    supportEmail = 'soporte@trainfit.com',
+    supportEmail = 'soporte@fitpro.com',
     supportPhone = '+54 11 1234-5678'
   } = data;
 
@@ -20,7 +20,7 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recordatorio de Pago - TrainFit</title>
+  <title>Recordatorio de Pago - FitPro</title>
   <style>
     @media only screen and (max-width: 600px) {
       .container { width: 100% !important; }
@@ -34,7 +34,7 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5;">
   <div class="container" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
     
-    <!-- Header con logo TrainFit -->
+    <!-- Header con logo FitPro -->
     <div class="header" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); color: white; padding: 40px 30px; text-align: center;">
       <div style="margin-bottom: 20px;">
         <svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
@@ -54,8 +54,8 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
             <rect x="38" y="10" width="6" height="6" fill="url(#redGradient)" rx="1"/>
           </g>
           
-          <!-- Texto TrainFit -->
-          <text x="60" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">TrainFit</text>
+          <!-- Texto FitPro -->
+          <text x="60" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">FitPro</text>
         </svg>
       </div>
       <h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Recordatorio de Pago</h1>
@@ -120,7 +120,7 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
       <!-- Mensaje de cierre -->
       <div style="text-align: center; margin: 30px 0 20px 0; padding: 15px;">
         <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;">
-          Gracias por tu comprensión y por ser parte de TrainFit.<br>
+          Gracias por tu comprensión y por ser parte de FitPro.<br>
           <strong>¡Seguimos trabajando juntos hacia tus objetivos! 💪</strong>
         </p>
       </div>
@@ -129,7 +129,7 @@ export const generatePaymentReminderEmailTemplate = (data: PaymentReminderEmailD
     <!-- Footer -->
     <div style="background: #f8f9fa; padding: 20px 30px; text-align: center; border-top: 1px solid #dee2e6;">
       <p style="margin: 0; color: #666; font-size: 12px; line-height: 1.4;">
-        Este es un mensaje automático de TrainFit. Por favor, no respondas a este email.<br>
+        Este es un mensaje automático de FitPro. Por favor, no respondas a este email.<br>
         Si tienes alguna consulta, utiliza nuestros canales de soporte mencionados arriba.
       </p>
     </div>

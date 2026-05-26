@@ -28,7 +28,7 @@ async function checkAndFixExercises() {
       
       // Obtener el trainer de prueba
       const testTrainer = await prisma.user.findUnique({
-        where: { email: 'test.trainer@trainfit.com' }
+        where: { email: 'test.trainer@fitpro.com' }
       });
       
       if (testTrainer) {

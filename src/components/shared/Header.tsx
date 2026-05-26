@@ -20,8 +20,8 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <img 
-              src="/images/logo-trainfit.png" 
-              alt="TrainFit Logo" 
+              src="/images/logo-fitpro.png" 
+              alt="FitPro Logo" 
               className="h-10 md:h-12 w-auto" // Mantenemos las clases de Tailwind por si se resuelve el problema o para referencia
               style={{ height: '40px', width: 'auto' }} // Estilo en línea para asegurar el tamaño
             />

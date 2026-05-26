@@ -142,15 +142,15 @@ export class CronService {
 
       if (daysDifference > 0) {
         reminderType = 'upcoming';
-        emailSubject = `Recordatorio: Tu pago vence en ${daysDifference} días - TrainFit`;
+        emailSubject = `Recordatorio: Tu pago vence en ${daysDifference} días - FitPro`;
         notificationTitle = `Pago próximo a vencer (${daysDifference} días)`;
       } else if (daysDifference >= -7) {
         reminderType = 'overdue';
-        emailSubject = `Pago vencido hace ${Math.abs(daysDifference)} días - TrainFit`;
+        emailSubject = `Pago vencido hace ${Math.abs(daysDifference)} días - FitPro`;
         notificationTitle = `Pago vencido (${Math.abs(daysDifference)} días)`;
       } else {
         reminderType = 'urgent';
-        emailSubject = `URGENTE: Pago vencido hace ${Math.abs(daysDifference)} días - TrainFit`;
+        emailSubject = `URGENTE: Pago vencido hace ${Math.abs(daysDifference)} días - FitPro`;
         notificationTitle = `URGENTE: Pago vencido (${Math.abs(daysDifference)} días)`;
       }
 
@@ -241,7 +241,7 @@ export class CronService {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8f9fa; padding: 20px;">
           <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 30px;">
-              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">TrainFit</h1>
+              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">FitPro</h1>
               <p style="color: #666; margin: 5px 0 0 0;">Tu plataforma de entrenamiento personal</p>
             </div>
             
@@ -279,7 +279,7 @@ export class CronService {
             
             <p style="color: #666; font-size: 12px; text-align: center;">
               Saludos,<br>
-              <strong>El equipo de TrainFit</strong>
+              <strong>El equipo de FitPro</strong>
             </p>
           </div>
         </div>
@@ -289,7 +289,7 @@ export class CronService {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8f9fa; padding: 20px;">
           <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 30px;">
-              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">TrainFit</h1>
+              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">FitPro</h1>
               <p style="color: #666; margin: 5px 0 0 0;">Tu plataforma de entrenamiento personal</p>
             </div>
             
@@ -327,7 +327,7 @@ export class CronService {
             
             <p style="color: #666; font-size: 12px; text-align: center;">
               Saludos,<br>
-              <strong>El equipo de TrainFit</strong>
+              <strong>El equipo de FitPro</strong>
             </p>
           </div>
         </div>
@@ -337,7 +337,7 @@ export class CronService {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8f9fa; padding: 20px;">
           <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 2px solid #dc2626;">
             <div style="text-align: center; margin-bottom: 30px;">
-              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">TrainFit</h1>
+              <h1 style="color: #dc2626; margin: 0; font-size: 28px;">FitPro</h1>
               <p style="color: #666; margin: 5px 0 0 0;">Tu plataforma de entrenamiento personal</p>
             </div>
             
@@ -371,7 +371,7 @@ export class CronService {
             
             <p style="color: #666; font-size: 12px; text-align: center;">
               Saludos,<br>
-              <strong>El equipo de TrainFit</strong>
+              <strong>El equipo de FitPro</strong>
             </p>
           </div>
         </div>

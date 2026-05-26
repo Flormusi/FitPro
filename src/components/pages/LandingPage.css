@@ -170,7 +170,7 @@ body.dark-theme .landing-footer {
 }
 
 .btn-register-dark {
-  background-color: #ff2d20; /* Rojo TrainFit */
+  background-color: #ff2d20; /* Rojo FitPro */
   color: #ffffff;
   border-color: #ff2d20;
 }
@@ -182,8 +182,8 @@ body.dark-theme .landing-footer {
 
 .btn-login-dark {
   background-color: transparent;
-  color: #ff2d20; /* Texto rojo TrainFit */
-  border: 2px solid #ff2d20; /* Borde rojo TrainFit */
+  color: #ff2d20; /* Texto rojo FitPro */
+  border: 2px solid #ff2d20; /* Borde rojo FitPro */
 }
 
 .btn-login-dark:hover {

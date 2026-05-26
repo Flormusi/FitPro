@@ -1,6 +1,6 @@
 # Guía Completa: Obtención de Credenciales de WhatsApp Business API
 
-Esta guía detalla paso a paso cómo obtener todas las credenciales necesarias para configurar el bot de WhatsApp de TrainFit.
+Esta guía detalla paso a paso cómo obtener todas las credenciales necesarias para configurar el bot de WhatsApp de FitPro.
 
 ## 🎯 Credenciales Necesarias
 
@@ -25,7 +25,7 @@ Para que el bot funcione correctamente, necesitas obtener estas 4 credenciales p
 2. Selecciona **"Empresa"** como tipo de aplicación
 3. Completa el formulario:
    ```
-   Nombre de la aplicación: TrainFit WhatsApp Bot
+   Nombre de la aplicación: FitPro WhatsApp Bot
    Email de contacto: tu-email@ejemplo.com
    Propósito: Automatización de servicios de fitness y entrenamiento
    ```
@@ -115,7 +115,7 @@ Meta creará automáticamente:
 
 **Ejemplo**:
 ```bash
-WHATSAPP_WEBHOOK_VERIFY_TOKEN=TrainFit_Webhook_Secret_2025_xyz789
+WHATSAPP_WEBHOOK_VERIFY_TOKEN=FitPro_Webhook_Secret_2025_xyz789
 ```
 
 ## 📱 Configuración del Número de Teléfono

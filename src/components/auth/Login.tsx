@@ -8,7 +8,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const { login, user, isAuthenticated, loading: authLoading } = useAuth();
   const [credentials, setCredentials] = useState({ 
-    email: 'test.trainer@trainfit.com', 
+    email: 'test.trainer@fitpro.com', 
     password: 'test123' 
   });
   const [loading, setLoading] = useState(false);
@@ -67,7 +67,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <img src="/images/logo-trainfit.png" alt="TrainFit Logo" className="login-logo" />
+      <img src="/images/logo-fitpro.png" alt="FitPro Logo" className="login-logo" />
       <h1 className="login-title">INICIAR SESIÓN</h1>
 
       <form onSubmit={handleSubmit} className="login-form">

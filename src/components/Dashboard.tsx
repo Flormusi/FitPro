@@ -50,7 +50,7 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-xl font-semibold">TrainFit Dashboard</h1>
+              <h1 className="text-xl font-semibold">FitPro Dashboard</h1>
               <p className="text-sm text-gray-500">
                 {user?.role ? `${user.role.charAt(0).toUpperCase() + user.role.slice(1)} - ${user.membershipTier} Plan` : 'Loading...'}
               </p>

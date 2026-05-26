@@ -274,9 +274,9 @@ export const exerciseImageMap: Record<string, string> = {
   'Oblicuos en silla romana (pie adelante)': 'Oblicuos_en_silla_romana_pie_adelante_kw7sek',
 
   // Glúteos (ejercicios adicionales - estos paths necesitan verificación)
-  // 'Sentadilla': 'trainfit/gluteos/sentadilla', // Verificar si existe
-  // 'Hip thrust': 'trainfit/gluteos/hip_thrust', // Verificar si existe
-  // 'Peso muerto': 'trainfit/gluteos/peso_muerto', // Verificar si existe
+  // 'Sentadilla': 'fitpro/gluteos/sentadilla', // Verificar si existe
+  // 'Hip thrust': 'fitpro/gluteos/hip_thrust', // Verificar si existe
+  // 'Peso muerto': 'fitpro/gluteos/peso_muerto', // Verificar si existe
   
   // Hombros
   'Rotación externa con banda unilateral': 'Rotación_externa_con_banda_unilateral_sjpvlz',
@@ -289,9 +289,9 @@ export const exerciseImageMap: Record<string, string> = {
   'Face Pull': 'Face_Pull_yaymsh',
   
   // Piernas (ejercicios adicionales - estos paths necesitan verificación)
-  // 'Sentadilla búlgara': 'trainfit/piernas/sentadilla_bulgara', // Verificar si existe
-  // 'Extensión de cuádriceps': 'trainfit/piernas/extension_cuadriceps', // Verificar si existe
-  // 'Curl de isquios': 'trainfit/piernas/curl_isquios', // Verificar si existe
+  // 'Sentadilla búlgara': 'fitpro/piernas/sentadilla_bulgara', // Verificar si existe
+  // 'Extensión de cuádriceps': 'fitpro/piernas/extension_cuadriceps', // Verificar si existe
+  // 'Curl de isquios': 'fitpro/piernas/curl_isquios', // Verificar si existe
   
   // Potencia
   'Arranque a 1 Brazo': 'Arranque_a_1_Brazo_zwmxcg',

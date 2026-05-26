@@ -86,8 +86,8 @@ export class CalendarService {
 
       const calendarEvent = {
         summary: event.title,
-        description: event.description || `Sesión de ${event.type} con TrainFit`,
-        location: event.location || 'TrainFit - Gimnasio',
+        description: event.description || `Sesión de ${event.type} con FitPro`,
+        location: event.location || 'FitPro - Gimnasio',
         start: {
           dateTime: event.startDate.toISOString(),
           timeZone: 'America/Argentina/Buenos_Aires'
@@ -106,9 +106,9 @@ export class CalendarService {
             { method: 'popup', minutes: 10 }
           ]
         },
-        colorId: '11', // Rojo para eventos de TrainFit
+        colorId: '11', // Rojo para eventos de FitPro
         source: {
-          title: 'TrainFit',
+          title: 'FitPro',
           url: `${process.env.FRONTEND_URL}/events/${event.id}`
         }
       };

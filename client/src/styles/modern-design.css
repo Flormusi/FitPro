@@ -1,4 +1,4 @@
-/* Estilos modernos para TrainFit - Diseño atractivo con profundidad visual */
+/* Estilos modernos para FitPro - Diseño atractivo con profundidad visual */
 
 /* Tarjetas principales con diseño moderno */
 .modern-card {
@@ -224,13 +224,13 @@
   white-space: nowrap; /* evitar salto de línea del chip */
 }
 
-/* TrainFit Header gradient for modals/panel titles */
+/* FitPro Header gradient for modals/panel titles */
 .tf-header-gradient {
   background: linear-gradient(135deg, #E63946 0%, #C5303E 100%);
   box-shadow: 0 4px 20px rgba(230, 57, 70, 0.25);
 }
 
-/* TrainFit routine cards with accent strip */
+/* FitPro routine cards with accent strip */
 .tf-card {
   position: relative;
   overflow: hidden;
@@ -294,7 +294,7 @@
   border-color: rgba(220, 38, 38, 0.8);
 }
 
-/* Botones unificados TrainFit */
+/* Botones unificados FitPro */
 .tf-btn {
   display: inline-flex;
   align-items: center;

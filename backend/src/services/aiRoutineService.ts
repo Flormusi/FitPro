@@ -258,7 +258,7 @@ class AIRoutineService {
       message += `\n`;
     });
 
-    message += `✅ *¡Rutina generada automáticamente por TrainFit Bot!*`;
+    message += `✅ *¡Rutina generada automáticamente por FitPro Bot!*`;
     
     return message;
   }

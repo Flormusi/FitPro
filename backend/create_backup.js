@@ -16,7 +16,7 @@ async function createBackup() {
       fs.mkdirSync(backupDir);
     }
     
-    const backupFile = path.join(backupDir, `trainfit_backup_${timestamp}.json`);
+    const backupFile = path.join(backupDir, `fitpro_backup_${timestamp}.json`);
     
     // Obtener todos los datos de las tablas principales
     const backup = {

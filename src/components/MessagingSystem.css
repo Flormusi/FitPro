@@ -263,7 +263,7 @@
   border-bottom: none;
 }
 
-/* Hover rojo TrainFit para acciones destructivas */
+/* Hover rojo FitPro para acciones destructivas */
 .chat-options-item.destructive:hover {
   background: #C71C1C;
   color: #ffffff;

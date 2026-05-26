@@ -19,7 +19,7 @@
   border-top: 3px solid #D62828; /* acento rojo superior */
 }
 
-.trainfit-logo {
+.fitpro-logo {
   font-size: 1.8rem;
   font-weight: 800;
   color: #D62828 !important; /* rojo característico con prioridad */
@@ -29,7 +29,7 @@
   gap: 8px;
 }
 
-.trainfit-logo .logo-icon {
+.fitpro-logo .logo-icon {
   font-size: 2rem;
   color: #D62828; /* acento rojo como antes */
   font-weight: bold;

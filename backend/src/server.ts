@@ -22,7 +22,7 @@ const prisma = new PrismaClient();
 const PORT = process.env.PORT || 5004;
 
 // // Connect to MongoDB // Eliminar este bloque completo
-// const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/trainfit';
+// const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/fitpro';
 // mongoose.connect(mongoUri)
 // .then(() => console.log('✅ Connected to MongoDB'))
 // .catch(err => {

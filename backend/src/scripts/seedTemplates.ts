@@ -488,7 +488,7 @@ async function seedTemplates() {
     let adminUser = await prisma.user.findFirst({
       where: {
         OR: [
-          { email: 'admin@trainfit.com' },
+          { email: 'admin@fitpro.com' },
           { role: 'ADMIN' }
         ]
       }
@@ -499,7 +499,7 @@ async function seedTemplates() {
       adminUser = await prisma.user.create({
         data: {
           name: 'Sistema',
-          email: 'system@trainfit.com',
+          email: 'system@fitpro.com',
           password: 'temp_password',
           role: 'ADMIN'
         }

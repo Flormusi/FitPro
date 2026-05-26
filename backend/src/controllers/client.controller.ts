@@ -622,14 +622,14 @@ export const sendMonthlyRoutineEmail = async (req: Request, res: Response): Prom
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER || 'demo@trainfit.com',
+        user: process.env.EMAIL_USER || 'demo@fitpro.com',
         pass: process.env.EMAIL_PASS || 'demo_password'
       }
     });
 
     // Crear el contenido del email
     const emailContent = `
-      <h2>Tu Rutina Mensual - TrainFit</h2>
+      <h2>Tu Rutina Mensual - FitPro</h2>
       <p>Hola ${user.name || 'Cliente'},</p>
       <p>Aquí tienes tu rutina mensual asignada por tu entrenador ${routine.trainer?.name || 'tu entrenador'}:</p>
       
@@ -649,14 +649,14 @@ export const sendMonthlyRoutineEmail = async (req: Request, res: Response): Prom
        </ul>
       
       <p>¡Sigue trabajando duro y alcanza tus objetivos!</p>
-      <p>Saludos,<br>El equipo de TrainFit</p>
+      <p>Saludos,<br>El equipo de FitPro</p>
     `;
 
     // Enviar el email
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM || 'noreply@trainfit.com',
+      from: process.env.EMAIL_FROM || 'noreply@fitpro.com',
       to: user.email,
-      subject: 'Tu Rutina Mensual - TrainFit',
+      subject: 'Tu Rutina Mensual - FitPro',
       html: emailContent
     });
 

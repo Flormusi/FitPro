@@ -445,21 +445,21 @@ const TrainerClientProgressPage: React.FC = () => {
       const pageHeight = pdf.internal.pageSize.getHeight();
       let yPosition = 15;
 
-      // Paleta de colores Trainfit - Negro, Rojo y Gris
-      const trainfitRed = [220, 38, 38] as [number, number, number]; // #dc2626 - Rojo principal
-      const trainfitOrange = [255, 107, 53] as [number, number, number]; // #ff6b35 - Naranja secundario
-      const trainfitBlack = [10, 10, 10] as [number, number, number]; // #0a0a0a - Negro principal
-      const trainfitDarkGray = [26, 26, 26] as [number, number, number]; // #1a1a1a - Gris oscuro
-      const trainfitLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
-      const trainfitWhite = [255, 255, 255] as [number, number, number]; // #ffffff - Blanco
+      // Paleta de colores FitPro - Negro, Rojo y Gris
+      const fitproRed = [220, 38, 38] as [number, number, number]; // #dc2626 - Rojo principal
+      const fitproOrange = [255, 107, 53] as [number, number, number]; // #ff6b35 - Naranja secundario
+      const fitproBlack = [10, 10, 10] as [number, number, number]; // #0a0a0a - Negro principal
+      const fitproDarkGray = [26, 26, 26] as [number, number, number]; // #1a1a1a - Gris oscuro
+      const fitproLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
+      const fitproWhite = [255, 255, 255] as [number, number, number]; // #ffffff - Blanco
 
-      // Header con diseño Trainfit mejorado (más alto) - ahora negro
-      pdf.setFillColor(...trainfitBlack);
+      // Header con diseño FitPro mejorado (más alto) - ahora negro
+      pdf.setFillColor(...fitproBlack);
       pdf.rect(0, 0, pageWidth, 35, 'F');
       
       // Branding en el header: logo + títulos
       try {
-        const logoResp = await fetch('/images/logo-trainfit.png');
+        const logoResp = await fetch('/images/logo-fitpro.png');
         const logoBlob = await logoResp.blob();
         const logoBase64 = await new Promise<string>((resolve) => {
           const reader = new FileReader();
@@ -477,16 +477,16 @@ const TrainerClientProgressPage: React.FC = () => {
         pdf.addImage(imgEl, 'PNG', 12, 9, targetW, targetH);
       } catch (error) {
         // Fallback al texto si el logo no carga
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFontSize(18);
         pdf.setFont('helvetica', 'bold');
-        pdf.text('TRAINFIT', 15, 15);
+        pdf.text('FITPRO', 15, 15);
       }
       
       // Subtítulo junto al logo
       pdf.setFontSize(10);
       pdf.setFont('helvetica', 'normal');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.text('FITNESS & TRAINING', 15, 25);
       
       // Título grande: Plan de Entrenamiento - Día X
@@ -506,23 +506,23 @@ const TrainerClientProgressPage: React.FC = () => {
       pdf.line(15, 35, pageWidth - 15, 35);
       
       yPosition = 45;
-      pdf.setTextColor(...trainfitBlack);
+      pdf.setTextColor(...fitproBlack);
 
-      // Información del cliente con diseño Trainfit mejorado
-      pdf.setFillColor(...trainfitDarkGray);
+      // Información del cliente con diseño FitPro mejorado
+      pdf.setFillColor(...fitproDarkGray);
       pdf.rect(15, yPosition, pageWidth - 30, 25, 'F');
-      pdf.setDrawColor(...trainfitLightGray);
+      pdf.setDrawColor(...fitproLightGray);
       pdf.setLineWidth(0.25);
       pdf.rect(15, yPosition, pageWidth - 30, 25);
       
       pdf.setFontSize(12);
       pdf.setFont('helvetica', 'bold');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.text('INFORMACIÓN GENERAL', 20, yPosition + 10);
       
       pdf.setFont('helvetica', 'normal');
       pdf.setFontSize(10);
-      pdf.setTextColor(...trainfitLightGray);
+      pdf.setTextColor(...fitproLightGray);
       const infoY = yPosition + 16;
       pdf.text(`Cliente: ${client?.name || 'N/A'}`, 20, infoY);
       pdf.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, pageWidth / 2 - 30, infoY);
@@ -588,11 +588,11 @@ const TrainerClientProgressPage: React.FC = () => {
       const colWidths = [12, 46, 80, 22, 34, 34, 39]; // suma = 267mm = tableWidth
       let xPosition = tableStartX;
 
-      // Encabezados de tabla con diseño Trainfit
-      // Rojo institucional TrainFit para encabezado de tabla
-      pdf.setFillColor(...trainfitRed);
+      // Encabezados de tabla con diseño FitPro
+      // Rojo institucional FitPro para encabezado de tabla
+      pdf.setFillColor(...fitproRed);
       pdf.rect(tableStartX, yPosition, tableWidth, 14, 'F');
-      pdf.setTextColor(...trainfitWhite);
+      pdf.setTextColor(...fitproWhite);
       pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(11);
 
@@ -602,7 +602,7 @@ const TrainerClientProgressPage: React.FC = () => {
       });
 
       yPosition += 14;
-      pdf.setTextColor(...trainfitBlack);
+      pdf.setTextColor(...fitproBlack);
       pdf.setFont('helvetica', 'normal');
 
       // Filas de ejercicios con imágenes mejoradas
@@ -616,10 +616,10 @@ const TrainerClientProgressPage: React.FC = () => {
           yPosition = 20;
           
           // Repetir encabezados en nueva página
-          // Rojo institucional TrainFit
-          pdf.setFillColor(...trainfitRed);
+          // Rojo institucional FitPro
+          pdf.setFillColor(...fitproRed);
           pdf.rect(tableStartX, yPosition, tableWidth, 14, 'F');
-          pdf.setTextColor(...trainfitWhite);
+          pdf.setTextColor(...fitproWhite);
           pdf.setFont('helvetica', 'bold');
           pdf.setFontSize(11);
           
@@ -630,18 +630,18 @@ const TrainerClientProgressPage: React.FC = () => {
           });
           
           yPosition += 14;
-          pdf.setTextColor(...trainfitBlack);
+          pdf.setTextColor(...fitproBlack);
           pdf.setFont('helvetica', 'normal');
         }
 
-        // Alternar color de fila con colores Trainfit
+        // Alternar color de fila con colores FitPro
         if (index % 2 === 0) {
-          pdf.setFillColor(245, 245, 245); // Gris muy claro Trainfit
+          pdf.setFillColor(245, 245, 245); // Gris muy claro FitPro
           pdf.rect(tableStartX, yPosition, tableWidth, rowHeight, 'F');
         }
 
-        // Bordes de celda finos con colores Trainfit
-        pdf.setDrawColor(...trainfitLightGray);
+        // Bordes de celda finos con colores FitPro
+        pdf.setDrawColor(...fitproLightGray);
         pdf.setLineWidth(0.25);
         xPosition = tableStartX;
         
@@ -654,19 +654,19 @@ const TrainerClientProgressPage: React.FC = () => {
         // Contenido de las celdas
         xPosition = tableStartX;
         
-        // Número de ejercicio con círculo rojo Trainfit
-        pdf.setFillColor(...trainfitRed);
+        // Número de ejercicio con círculo rojo FitPro
+        pdf.setFillColor(...fitproRed);
         const circleX = xPosition + colWidths[0]/2;
         const circleY = yPosition + rowHeight/2;
         pdf.circle(circleX, circleY, 5, 'F');
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFontSize(10);
         pdf.setFont('helvetica', 'bold');
         pdf.text((index + 1).toString(), circleX, circleY + 2, { align: 'center' });
         xPosition += colWidths[0];
 
         // Imagen del ejercicio con mejor proporción y padding simétrico
-        pdf.setTextColor(...trainfitBlack);
+        pdf.setTextColor(...fitproBlack);
         pdf.setFont('helvetica', 'normal');
         if (exercise.imageBase64) {
           try {
@@ -726,14 +726,14 @@ const TrainerClientProgressPage: React.FC = () => {
             pdf.text(line, xPosition + 3, notesY + i * 4);
           });
           pdf.setFont('helvetica', 'normal');
-          pdf.setTextColor(...trainfitBlack);
+          pdf.setTextColor(...fitproBlack);
         }
         xPosition += colWidths[2];
 
         // Datos numéricos con mejor formato
       pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(10);
-      pdf.setTextColor(...trainfitDarkGray);
+      pdf.setTextColor(...fitproDarkGray);
 
         // Series
         pdf.text((exercise.sets?.toString() || exercise.series?.toString() || '-'), xPosition + colWidths[3]/2, yPosition + rowHeight/2, { align: 'center' });
@@ -792,19 +792,19 @@ const TrainerClientProgressPage: React.FC = () => {
       // (Eliminado) Sección final de "Notas del entrenador"
       // Las notas ya se renderizan bajo el nombre del ejercicio dentro de la fila.
 
-      // Footer con fondo negro y logo TRAINFIT
+      // Footer con fondo negro y logo FITPRO
       // Footer con branding y número de página
       const footerHeight = 22;
       const footerY = pageHeight - footerHeight;
       const totalPages = pdf.getNumberOfPages();
       for (let p = 1; p <= totalPages; p++) {
         pdf.setPage(p);
-        pdf.setFillColor(...trainfitBlack);
+        pdf.setFillColor(...fitproBlack);
         pdf.rect(0, footerY, pageWidth, footerHeight, 'F');
-        pdf.setTextColor(...trainfitWhite);
+        pdf.setTextColor(...fitproWhite);
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(9);
-        pdf.text('Trainfit - Tu entrenamiento a medida', pageWidth / 2, footerY + 14, { align: 'center' });
+        pdf.text('FitPro - Tu entrenamiento a medida', pageWidth / 2, footerY + 14, { align: 'center' });
         pdf.setFontSize(8);
         pdf.text(`Página ${p} de ${totalPages}`, pageWidth - 20, footerY + 14, { align: 'right' });
       }
@@ -812,7 +812,7 @@ const TrainerClientProgressPage: React.FC = () => {
       // Guardar PDF con nombre seguro
       const fileName = `rutina-${routine.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${client?.name?.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase() || 'cliente'}.pdf`;
       pdf.save(fileName);
-      toast.success('PDF con diseño Trainfit generado correctamente');
+      toast.success('PDF con diseño FitPro generado correctamente');
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : String(error);
       console.error('Error generando PDF:', message);
@@ -1045,7 +1045,7 @@ const TrainerClientProgressPage: React.FC = () => {
 
       {/* Contenedor de contenido principal para alinear título y secciones */}
       <div className="trainer-client-progress-container">
-      {/* Título principal con acciones a la derecha (rojo TrainFit) */}
+      {/* Título principal con acciones a la derecha (rojo FitPro) */}
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -1443,7 +1443,7 @@ const TrainerClientProgressPage: React.FC = () => {
                           e.stopPropagation();
                           const subject = encodeURIComponent(`Rutina asignada: ${routine.name}`);
                           const body = encodeURIComponent(
-                            `Hola ${client?.name || ''},\n\nTe comparto la rutina "${routine.name}".\n\n¡Éxitos!\nEquipo TrainFit`
+                            `Hola ${client?.name || ''},\n\nTe comparto la rutina "${routine.name}".\n\n¡Éxitos!\nEquipo FitPro`
                           );
                           const email = client?.email || '';
                           window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
@@ -2200,7 +2200,7 @@ const TrainerClientProgressPage: React.FC = () => {
                      }}
                      style={{
                       padding: '12px 20px',
-                      backgroundColor: '#dc2626', // Rojo Trainfit
+                      backgroundColor: '#dc2626', // Rojo FitPro
                       color: '#fff',
                       border: 'none',
                       borderRadius: '8px',
@@ -2236,7 +2236,7 @@ const TrainerClientProgressPage: React.FC = () => {
                     }}
                     style={{
                       padding: '12px 20px',
-                      backgroundColor: '#dc2626', // Rojo Trainfit
+                      backgroundColor: '#dc2626', // Rojo FitPro
                       color: '#fff',
                       border: 'none',
                       borderRadius: '8px',

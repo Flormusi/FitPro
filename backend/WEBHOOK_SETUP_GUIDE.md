@@ -20,7 +20,7 @@ Esta guía te llevará paso a paso para configurar el webhook de WhatsApp Busine
 1. Haz clic en "Crear aplicación"
 2. Selecciona "Empresa" como tipo de aplicación
 3. Completa la información:
-   - **Nombre de la aplicación**: `TrainFit WhatsApp Bot`
+   - **Nombre de la aplicación**: `FitPro WhatsApp Bot`
    - **Email de contacto**: tu email
    - **Propósito comercial**: `Automatización de servicios de fitness`
 4. Haz clic en "Crear aplicación"
@@ -135,7 +135,7 @@ WHATSAPP_BUSINESS_ACCOUNT_ID=1234567890123456
      -H "Content-Type: application/json" \
      -d '{
        "to": "NUMERO_DE_TELEFONO",
-       "message": "¡Hola! El bot de TrainFit está funcionando correctamente."
+       "message": "¡Hola! El bot de FitPro está funcionando correctamente."
      }'
    ```
 

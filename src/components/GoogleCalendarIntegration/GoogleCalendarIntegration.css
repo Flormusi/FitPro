@@ -50,7 +50,7 @@
 .calendar-icon {
   width: 24px;
   height: 24px;
-  color: #2D6CDF; /* Azul secundario TrainFit */
+  color: #2D6CDF; /* Azul secundario FitPro */
 }
 
 .icon-title h3 {
@@ -130,7 +130,7 @@
   justify-content: center;
   gap: 8px;
   padding: 14px 24px;
-  background: #2D6CDF; /* Azul secundario TrainFit */
+  background: #2D6CDF; /* Azul secundario FitPro */
   color: #fff;
   border: none;
   border-radius: 12px;

@@ -1,17 +1,17 @@
-/* Trainfit Color Variables */
+/* FitPro Color Variables */
 :root {
-  --trainfit-primary: #D62828;
-  --trainfit-primary-light: #ef4444;
-  --trainfit-primary-dark: #FF3B30;
-  --trainfit-bg-primary: #000000;
-  --trainfit-bg-secondary: #1a1a1a;
-  --trainfit-bg-tertiary: #2a2a2a;
-  --trainfit-text-primary: #ffffff;
-  --trainfit-text-secondary: #b3b3b3;
-  --trainfit-text-muted: #808080;
-  --trainfit-border: #333333;
-  --trainfit-success: #10b981;
-  --trainfit-warning: #f59e0b;
+  --fitpro-primary: #D62828;
+  --fitpro-primary-light: #ef4444;
+  --fitpro-primary-dark: #FF3B30;
+  --fitpro-bg-primary: #000000;
+  --fitpro-bg-secondary: #1a1a1a;
+  --fitpro-bg-tertiary: #2a2a2a;
+  --fitpro-text-primary: #ffffff;
+  --fitpro-text-secondary: #b3b3b3;
+  --fitpro-text-muted: #808080;
+  --fitpro-border: #333333;
+  --fitpro-success: #10b981;
+  --fitpro-warning: #f59e0b;
 }
 
 /* Modal Overlay */
@@ -31,7 +31,7 @@
 
 /* Modal Content */
 .routine-modal-content {
-  background: var(--trainfit-bg-secondary);
+  background: var(--fitpro-bg-secondary);
   border-radius: 16px;
   width: 100%;
   max-width: 800px;
@@ -40,12 +40,12 @@
   flex-direction: column;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  border: 1px solid var(--trainfit-border);
+  border: 1px solid var(--fitpro-border);
 }
 
 /* Modal Header */
 .routine-modal-header {
-  background: linear-gradient(135deg, var(--trainfit-primary) 0%, var(--trainfit-primary-dark) 100%);
+  background: linear-gradient(135deg, var(--fitpro-primary) 0%, var(--fitpro-primary-dark) 100%);
   border-radius: 12px 12px 0 0;
   padding: 0;
 }
@@ -61,8 +61,8 @@
   flex: 1;
 }
 
-.trainfit-logo {
-  color: var(--trainfit-text-primary);
+.fitpro-logo {
+  color: var(--fitpro-text-primary);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -74,7 +74,7 @@
 }
 
 .header-info h2 {
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   margin: 0 0 0.5rem 0;
   font-size: 1.75rem;
   font-weight: 700;
@@ -82,7 +82,7 @@
 }
 
 .routine-subtitle {
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   margin: 0;
   font-size: 1rem;
   opacity: 0.8;
@@ -97,7 +97,7 @@
 
 .btn-download {
   background: rgba(255, 255, 255, 0.15);
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 8px 16px;
   border-radius: 8px;
@@ -121,7 +121,7 @@
 .btn-close {
   background: none;
   border: none;
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   font-size: 24px;
   cursor: pointer;
   padding: 4px;
@@ -138,8 +138,8 @@
   flex: 1;
   overflow-y: auto;
   padding: 24px;
-  background: var(--trainfit-bg-secondary);
-  color: var(--trainfit-text-primary);
+  background: var(--fitpro-bg-secondary);
+  color: var(--fitpro-text-primary);
 }
 
 /* Loading State */
@@ -149,14 +149,14 @@
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
 }
 
 .spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid var(--trainfit-border);
-  border-top: 3px solid var(--trainfit-primary);
+  border: 3px solid var(--fitpro-border);
+  border-top: 3px solid var(--fitpro-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;
@@ -171,7 +171,7 @@
 .error-state {
   text-align: center;
   padding: 60px 20px;
-  color: var(--trainfit-primary-light);
+  color: var(--fitpro-primary-light);
 }
 
 /* Routine Stats */
@@ -183,11 +183,11 @@
 }
 
 .stat-card {
-  background: var(--trainfit-bg-tertiary);
+  background: var(--fitpro-bg-tertiary);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
-  border: 1px solid var(--trainfit-border);
+  border: 1px solid var(--fitpro-border);
   transition: all 0.3s ease;
 }
 
@@ -199,14 +199,14 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--trainfit-primary);
+  color: var(--fitpro-primary);
   margin-bottom: 0.5rem;
   line-height: 1;
 }
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -220,19 +220,19 @@
   flex-wrap: wrap; /* Evita que se peguen en pantallas pequeñas */
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--trainfit-border);
+  border-bottom: 2px solid var(--fitpro-border);
 }
 
 .exercises-header h3 {
-  color: var(--trainfit-primary);
+  color: var(--fitpro-primary);
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .exercises-count {
-  background: var(--trainfit-primary);
-  color: var(--trainfit-text-primary);
+  background: var(--fitpro-primary);
+  color: var(--fitpro-text-primary);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.875rem;
@@ -242,8 +242,8 @@
 
 /* Exercise Card */
 .exercise-card {
-  background: var(--trainfit-bg-tertiary);
-  border: 1px solid var(--trainfit-border);
+  background: var(--fitpro-bg-tertiary);
+  border: 1px solid var(--fitpro-border);
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -260,7 +260,7 @@
   left: 0;
   width: 4px;
   height: 100%;
-  background: var(--trainfit-primary);
+  background: var(--fitpro-primary);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -268,7 +268,7 @@
 .exercise-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(220, 38, 38, 0.2);
-  border-color: var(--trainfit-primary);
+  border-color: var(--fitpro-primary);
 }
 
 .exercise-card:hover::before {
@@ -283,8 +283,8 @@
 }
 
 .exercise-number {
-  background: linear-gradient(135deg, var(--trainfit-primary) 0%, var(--trainfit-primary-dark) 100%);
-  color: var(--trainfit-text-primary);
+  background: linear-gradient(135deg, var(--fitpro-primary) 0%, var(--fitpro-primary-dark) 100%);
+  color: var(--fitpro-text-primary);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -311,7 +311,7 @@
 
 .exercise-title-section h4 {
   margin: 0 0 0.75rem 0;
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.3;
@@ -324,8 +324,8 @@
 }
 
 .quick-stat {
-  background: var(--trainfit-primary);
-  color: var(--trainfit-text-primary);
+  background: var(--fitpro-primary);
+  color: var(--fitpro-text-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -343,13 +343,13 @@
   height: 100px;
   object-fit: cover;
   border-radius: 12px;
-  border: 2px solid var(--trainfit-border);
+  border: 2px solid var(--fitpro-border);
   transition: all 0.3s ease;
 }
 
 .exercise-image:hover {
   transform: scale(1.05);
-  border-color: var(--trainfit-primary);
+  border-color: var(--fitpro-primary);
 }
 
 /* Exercise Parameters */
@@ -373,36 +373,36 @@
 .param-group label {
   font-size: 14px;
   font-weight: 500;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
 }
 
 .param-input {
   padding: 8px 12px;
-  border: 1px solid var(--trainfit-border);
+  border: 1px solid var(--fitpro-border);
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.2s ease;
-  background: var(--trainfit-bg-primary);
-  color: var(--trainfit-text-primary);
+  background: var(--fitpro-bg-primary);
+  color: var(--fitpro-text-primary);
 }
 
 .param-input:focus {
   outline: none;
-  border-color: var(--trainfit-primary);
+  border-color: var(--fitpro-primary);
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
 .param-input:hover {
-  border-color: var(--trainfit-text-muted);
+  border-color: var(--fitpro-text-muted);
 }
 
 .param-group.readonly span {
   padding: 8px 12px;
-  background: var(--trainfit-bg-tertiary);
-  border: 1px solid var(--trainfit-border);
+  background: var(--fitpro-bg-tertiary);
+  border: 1px solid var(--fitpro-border);
   border-radius: 6px;
   font-size: 14px;
-  color: var(--trainfit-text-muted);
+  color: var(--fitpro-text-muted);
 }
 
 /* Exercise Notes */
@@ -410,22 +410,22 @@
   background: rgba(245, 158, 11, 0.1);
   padding: 12px;
   border-radius: 6px;
-  border-left: 3px solid var(--trainfit-warning);
+  border-left: 3px solid var(--fitpro-warning);
   font-size: 14px;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
   line-height: 1.5;
   border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .exercise-notes strong {
-  color: var(--trainfit-warning);
+  color: var(--fitpro-warning);
 }
 
 /* Modal Footer */
 .routine-modal-footer {
   padding: 20px 24px;
-  border-top: 1px solid var(--trainfit-border);
-  background: var(--trainfit-bg-tertiary);
+  border-top: 1px solid var(--fitpro-border);
+  background: var(--fitpro-bg-tertiary);
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -454,9 +454,9 @@
 }
 
 .btn-cancel {
-  background: var(--trainfit-bg-primary);
-  color: var(--trainfit-text-secondary);
-  border: 1px solid var(--trainfit-border);
+  background: var(--fitpro-bg-primary);
+  color: var(--fitpro-text-secondary);
+  border: 1px solid var(--fitpro-border);
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -465,9 +465,9 @@
 }
 
 .btn-cancel:hover:not(:disabled) {
-  background: var(--trainfit-bg-tertiary);
-  border-color: var(--trainfit-text-muted);
-  color: var(--trainfit-text-primary);
+  background: var(--fitpro-bg-tertiary);
+  border-color: var(--fitpro-text-muted);
+  color: var(--fitpro-text-primary);
 }
 
 .btn-cancel:disabled {

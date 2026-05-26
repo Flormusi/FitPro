@@ -23,7 +23,7 @@ Esta guía te llevará paso a paso para configurar tu bot de WhatsApp en Meta fo
 2. Selecciona **"Empresa"** como tipo de aplicación
 3. Completa los datos:
    ```
-   Nombre de la app: Trainfit WhatsApp Bot
+   Nombre de la app: FitPro WhatsApp Bot
    Email de contacto: tu-email@ejemplo.com
    Propósito: Automatización de rutinas de fitness
    ```
@@ -131,7 +131,7 @@ WHATSAPP_BUSINESS_ACCOUNT_ID=tu_business_account_id
 
 # Bot Configuration
 BOT_ENABLED=true
-BOT_WELCOME_MESSAGE=¡Hola! 👋 Soy el asistente de Trainfit.
+BOT_WELCOME_MESSAGE=¡Hola! 👋 Soy el asistente de FitPro.
 ```
 
 ### 4.2 Reiniciar Servidor
@@ -312,4 +312,4 @@ grep "WhatsApp" logs/app.log
 2. Ejecuta el script de verificación: `node test-whatsapp-config.js`
 3. Consulta la documentación oficial: https://developers.facebook.com/docs/whatsapp
 
-**¡Tu bot de WhatsApp para Trainfit está listo para generar rutinas automáticamente!** 🚀
+**¡Tu bot de WhatsApp para FitPro está listo para generar rutinas automáticamente!** 🚀

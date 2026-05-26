@@ -556,7 +556,7 @@ const CreateRoutinePage: React.FC = () => {
       setSuccessMessage('Rutina creada exitosamente!');
       try {
         localStorage.setItem(
-          'trainfit_trainingObjective_lastSelection',
+          'fitpro_trainingObjective_lastSelection',
           JSON.stringify({ value: routineData.trainingObjective, timestamp: Date.now() })
         );
       } catch (e) {

@@ -1,41 +1,41 @@
 /* Importar estilos de react-big-calendar */
 @import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-/* Variables CSS para el calendario unificado - Tema TrainFit (modo oscuro) */
+/* Variables CSS para el calendario unificado - Tema FitPro (modo oscuro) */
 :root {
-  /* Colores principales - TrainFit */
-  --trainfit-primary: #E53935; /* rojo marca */
-  --trainfit-primary-light: #F0625A; /* rojo claro para hover */
-  --trainfit-primary-dark: #C62828; /* rojo más oscuro */
-  --trainfit-brand-red: #E53935; /* uso consistente */
-  --trainfit-brand-red-overlay: rgba(229, 57, 53, 0.14); /* overlay para hoy/eventos en oscuro */
+  /* Colores principales - FitPro */
+  --fitpro-primary: #E53935; /* rojo marca */
+  --fitpro-primary-light: #F0625A; /* rojo claro para hover */
+  --fitpro-primary-dark: #C62828; /* rojo más oscuro */
+  --fitpro-brand-red: #E53935; /* uso consistente */
+  --fitpro-brand-red-overlay: rgba(229, 57, 53, 0.14); /* overlay para hoy/eventos en oscuro */
   
   /* Colores de estado */
-  --trainfit-success: #10b981;
-  --trainfit-warning: #f59e0b;
-  --trainfit-danger: #dc2626;
-  --trainfit-info: #3b82f6;
+  --fitpro-success: #10b981;
+  --fitpro-warning: #f59e0b;
+  --fitpro-danger: #dc2626;
+  --fitpro-info: #3b82f6;
   
-  /* Fondo y texto - Modo oscuro TrainFit */
-  --trainfit-bg-primary: #1a1a1a; /* área general */
-  --trainfit-bg-secondary: #242424; /* card calendario */
-  --trainfit-bg-tertiary: #2a2a2a; /* toolbar oscura */
-  --trainfit-bg-quaternary: #333333; /* botones neutrales */
+  /* Fondo y texto - Modo oscuro FitPro */
+  --fitpro-bg-primary: #1a1a1a; /* área general */
+  --fitpro-bg-secondary: #242424; /* card calendario */
+  --fitpro-bg-tertiary: #2a2a2a; /* toolbar oscura */
+  --fitpro-bg-quaternary: #333333; /* botones neutrales */
   
-  --trainfit-text-primary: #ffffff; /* texto principal */
-  --trainfit-text-secondary: #b0b0b0; /* subtítulos y textos secundarios */
-  --trainfit-text-muted: #8a8a8a; /* gris suave */
+  --fitpro-text-primary: #ffffff; /* texto principal */
+  --fitpro-text-secondary: #b0b0b0; /* subtítulos y textos secundarios */
+  --fitpro-text-muted: #8a8a8a; /* gris suave */
   
   /* Bordes y sombras */
-  --trainfit-border: #3a3a3a; /* borde oscuro sutil */
-  --trainfit-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --fitpro-border: #3a3a3a; /* borde oscuro sutil */
+  --fitpro-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
 .unified-calendar {
   min-height: 100vh !important;
-  background-color: var(--trainfit-bg-primary) !important;
-  color: var(--trainfit-text-primary) !important;
+  background-color: var(--fitpro-bg-primary) !important;
+  color: var(--fitpro-text-primary) !important;
   padding: 24px !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   margin: 0 !important;
@@ -43,15 +43,15 @@
 
 /* ===== HEADER DEL CALENDARIO ===== */
 .unified-calendar-page, .unified-calendar {
-  background-color: var(--trainfit-bg-primary) !important;
+  background-color: var(--fitpro-bg-primary) !important;
 }
 
 .unified-calendar .rbc-calendar {
-  background-color: var(--trainfit-bg-secondary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 12px !important;
-  box-shadow: var(--trainfit-shadow) !important;
-  color: var(--trainfit-text-primary) !important;
+  box-shadow: var(--fitpro-shadow) !important;
+  color: var(--fitpro-text-primary) !important;
 }
 
 /* Fuerza el fondo del calendario y sus sub-vistas a gris oscuro */
@@ -60,27 +60,27 @@
 .unified-calendar .rbc-agenda-view,
 .unified-calendar .rbc-time-header,
 .unified-calendar .rbc-time-content {
-  background-color: var(--trainfit-bg-secondary) !important;
-  color: var(--trainfit-text-primary) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
+  color: var(--fitpro-text-primary) !important;
 }
 
 /* Encabezados de días/horas en modo oscuro */
 .unified-calendar .rbc-header {
-  background-color: var(--trainfit-bg-tertiary) !important;
-  color: var(--trainfit-text-primary) !important;
-  border-bottom: 1px solid var(--trainfit-border) !important;
+  background-color: var(--fitpro-bg-tertiary) !important;
+  color: var(--fitpro-text-primary) !important;
+  border-bottom: 1px solid var(--fitpro-border) !important;
 }
 
 /* Texto de gutter y marcas de tiempo en vistas semanales/diarias */
 .unified-calendar .rbc-time-gutter,
 .unified-calendar .rbc-time-gutter .rbc-timeslot-group,
 .unified-calendar .rbc-time-header-gutter {
-  color: var(--trainfit-text-secondary) !important;
+  color: var(--fitpro-text-secondary) !important;
 }
 
 /* Texto y fondo de celdas de fecha en modo oscuro */
 .unified-calendar .rbc-date-cell {
-  color: var(--trainfit-text-primary) !important;
+  color: var(--fitpro-text-primary) !important;
 }
 .unified-calendar .rbc-day-bg {
   background-color: transparent !important;
@@ -96,7 +96,7 @@
 .unified-calendar .rbc-day-bg,
 .unified-calendar .rbc-header,
 .unified-calendar .rbc-month-row {
-  border-color: var(--trainfit-border) !important;
+  border-color: var(--fitpro-border) !important;
 }
 
 .calendar-header {
@@ -110,12 +110,12 @@
 .calendar-title {
   font-size: 2.25rem !important;
   font-weight: 800 !important;
-  color: var(--trainfit-text-primary) !important;
+  color: var(--fitpro-text-primary) !important;
   margin: 0 !important;
 }
 
 .calendar-description {
-  color: var(--trainfit-text-secondary) !important;
+  color: var(--fitpro-text-secondary) !important;
 }
 
 .calendar-actions {
@@ -127,7 +127,7 @@
 }
 
 .btn-create-event {
-  background-color: var(--trainfit-primary) !important;
+  background-color: var(--fitpro-primary) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 12px !important;
@@ -146,26 +146,26 @@
 }
 
 .btn-create-event:hover {
-  background-color: var(--trainfit-primary-dark) !important;
+  background-color: var(--fitpro-primary-dark) !important;
   transform: translateY(-1px) !important;
 }
 
 /* ===== CONTENEDOR DEL CALENDARIO ===== */
 .calendar-container {
-  background-color: var(--trainfit-bg-secondary) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
   border-radius: 16px !important;
   padding: 24px !important;
-  box-shadow: var(--trainfit-shadow) !important;
+  box-shadow: var(--fitpro-shadow) !important;
   min-height: 600px !important;
   margin: 0 !important;
   overflow-x: hidden !important;
 }
 
-/* ===== ESTILOS DE REACT-BIG-CALENDAR - TEMA TRAINFIT ===== */
+/* ===== ESTILOS DE REACT-BIG-CALENDAR - TEMA FITPRO ===== */
 .unified-calendar .rbc-calendar {
-  background-color: var(--trainfit-bg-secondary) !important;
-  color: var(--trainfit-text-primary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
+  color: var(--fitpro-text-primary) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
   margin: 0 !important;
@@ -181,9 +181,9 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  background-color: var(--trainfit-bg-tertiary) !important;
+  background-color: var(--fitpro-bg-tertiary) !important;
   padding: 12px 16px !important;
-  border: 1px solid var(--trainfit-border) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 12px !important;
   margin-bottom: 12px !important;
 }
@@ -195,9 +195,9 @@
 }
 
 .btn-nav, .btn-today, .btn-view {
-  color: var(--trainfit-text-primary) !important;
-  background-color: var(--trainfit-bg-quaternary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  color: var(--fitpro-text-primary) !important;
+  background-color: var(--fitpro-bg-quaternary) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 10px !important;
   padding: 8px 14px !important;
   font-weight: 600 !important;
@@ -209,23 +209,23 @@
 }
 
 .btn-nav:hover, .btn-today:hover, .btn-view:hover {
-  background-color: var(--trainfit-border) !important; /* #3a3a3a */
+  background-color: var(--fitpro-border) !important; /* #3a3a3a */
   color: #ffffff !important;
-  border-color: var(--trainfit-border) !important;
+  border-color: var(--fitpro-border) !important;
 }
 
 .btn-create-event:hover {
-  background-color: var(--trainfit-primary-dark) !important;
+  background-color: var(--fitpro-primary-dark) !important;
 }
 
 .btn-nav:focus-visible, .btn-today:focus-visible, .btn-view:focus-visible, .btn-create-event:focus-visible {
-  outline: 2px solid var(--trainfit-primary) !important;
+  outline: 2px solid var(--fitpro-primary) !important;
   outline-offset: 2px !important;
 }
 
 .btn-view.active {
-  background-color: var(--trainfit-primary) !important; /* solo el activo en rojo */
-  border-color: var(--trainfit-primary) !important;
+  background-color: var(--fitpro-primary) !important; /* solo el activo en rojo */
+  border-color: var(--fitpro-primary) !important;
   color: #ffffff !important;
 }
 
@@ -233,31 +233,31 @@
 .view-selector {
   display: flex !important;
   align-items: center !important;
-  background: var(--trainfit-bg-secondary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  background: var(--fitpro-bg-secondary) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
 }
 .btn-view {
   background: transparent !important;
   border: 0 !important;
-  color: var(--trainfit-text-secondary) !important;
+  color: var(--fitpro-text-secondary) !important;
   padding: 8px 14px !important;
 }
 .btn-view:not(.active):hover {
-  background-color: var(--trainfit-bg-quaternary) !important;
+  background-color: var(--fitpro-bg-quaternary) !important;
 }
 
 .btn-nav:hover, .btn-today:hover, .btn-view:hover {
-  border-color: var(--trainfit-brand-red) !important; /* borde claro al hover */
-  background-color: var(--trainfit-bg-quaternary) !important; /* mantener gris oscuro */
+  border-color: var(--fitpro-brand-red) !important; /* borde claro al hover */
+  background-color: var(--fitpro-bg-quaternary) !important; /* mantener gris oscuro */
 }
 
 /* Headers de días */
 .unified-calendar .rbc-header {
-  background-color: var(--trainfit-bg-tertiary);
-  color: var(--trainfit-text-secondary);
-  border-bottom: 1px solid var(--trainfit-border);
+  background-color: var(--fitpro-bg-tertiary);
+  color: var(--fitpro-text-secondary);
+  border-bottom: 1px solid var(--fitpro-border);
   padding: 12px 8px;
   font-weight: 600;
   font-size: 0.875rem;
@@ -267,17 +267,17 @@
 
 /* Vista de mes */
 .unified-calendar .rbc-month-view {
-  border-color: var(--trainfit-border);
-  background-color: var(--trainfit-bg-secondary);
+  border-color: var(--fitpro-border);
+  background-color: var(--fitpro-bg-secondary);
 }
 
 .unified-calendar .rbc-day-bg {
-  background-color: var(--trainfit-bg-secondary);
-  border-color: var(--trainfit-border);
+  background-color: var(--fitpro-bg-secondary);
+  border-color: var(--fitpro-border);
 }
 
 .unified-calendar .rbc-day-bg:hover {
-  background-color: var(--trainfit-brand-red-overlay) !important;
+  background-color: var(--fitpro-brand-red-overlay) !important;
   box-shadow: inset 0 0 0 1px rgba(229, 57, 53, 0.35) !important;
 }
 
@@ -285,22 +285,22 @@
   background-color: #1f1f1f !important;
 }
 .unified-calendar .rbc-off-range {
-  color: var(--trainfit-text-muted) !important;
+  color: var(--fitpro-text-muted) !important;
 }
 
 .unified-calendar .rbc-off-range {
-  color: var(--trainfit-text-muted);
+  color: var(--fitpro-text-muted);
 }
 
 .unified-calendar .rbc-today {
-  background-color: var(--trainfit-brand-red-overlay) !important;
-  box-shadow: inset 0 0 0 2px var(--trainfit-primary) !important;
+  background-color: var(--fitpro-brand-red-overlay) !important;
+  box-shadow: inset 0 0 0 2px var(--fitpro-primary) !important;
 }
 
 /* Vistas de semana/día/agenda en modo oscuro */
 .unified-calendar .rbc-time-view,
 .unified-calendar .rbc-agenda-view {
-  background-color: var(--trainfit-bg-secondary) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
 }
 .unified-calendar .rbc-event {
   color: #ffffff !important;
@@ -308,33 +308,33 @@
 }
 
 .unified-calendar .rbc-row-segment {
-  color: var(--trainfit-text-primary) !important;
+  color: var(--fitpro-text-primary) !important;
 }
 
 /* Agenda view en modo oscuro (tabla) */
 .unified-calendar .rbc-agenda-table {
-  border-color: var(--trainfit-border) !important;
+  border-color: var(--fitpro-border) !important;
 }
 .unified-calendar .rbc-agenda-table th,
 .unified-calendar .rbc-agenda-table td {
-  background-color: var(--trainfit-bg-secondary) !important;
-  color: var(--trainfit-text-primary) !important;
-  border-color: var(--trainfit-border) !important;
+  background-color: var(--fitpro-bg-secondary) !important;
+  color: var(--fitpro-text-primary) !important;
+  border-color: var(--fitpro-border) !important;
 }
 .unified-calendar .rbc-agenda-date-cell,
 .unified-calendar .rbc-agenda-time-cell,
 .unified-calendar .rbc-agenda-event-cell {
-  color: var(--trainfit-text-primary) !important;
+  color: var(--fitpro-text-primary) !important;
 }
 
 .unified-calendar .rbc-date-cell {
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   padding: 8px;
   cursor: default;
 }
 
 .unified-calendar .rbc-date-cell.rbc-off-range {
-  color: var(--trainfit-text-muted);
+  color: var(--fitpro-text-muted);
 }
 
 /* Hacer clickeables las fechas en vista de mes */
@@ -360,7 +360,7 @@
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background-color: var(--trainfit-border);
+  background-color: var(--fitpro-border);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
 .marker-rutina { background-color: #E53935 !important; }
@@ -382,17 +382,17 @@
 .legend-items {
   display: flex !important;
   gap: 16px !important;
-  background: var(--trainfit-bg-secondary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  background: var(--fitpro-bg-secondary) !important;
+  border: 1px solid var(--fitpro-border) !important;
   border-radius: 12px !important;
   padding: 10px 14px !important;
-  box-shadow: var(--trainfit-shadow) !important;
+  box-shadow: var(--fitpro-shadow) !important;
 }
 .legend-item {
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
-  color: var(--trainfit-text-secondary) !important;
+  color: var(--fitpro-text-secondary) !important;
   font-weight: 600 !important;
 }
 .legend-dot {
@@ -432,34 +432,34 @@
 
 /* Vista de semana y día */
 .unified-calendar .rbc-time-view {
-  background-color: var(--trainfit-bg-secondary);
-  border-color: var(--trainfit-border);
+  background-color: var(--fitpro-bg-secondary);
+  border-color: var(--fitpro-border);
 }
 
 .unified-calendar .rbc-time-content {
-  border-top: 1px solid var(--trainfit-border);
+  border-top: 1px solid var(--fitpro-border);
 }
 
 .unified-calendar .rbc-time-header {
-  background-color: var(--trainfit-bg-tertiary);
-  border-bottom: 1px solid var(--trainfit-border);
+  background-color: var(--fitpro-bg-tertiary);
+  border-bottom: 1px solid var(--fitpro-border);
 }
 
 .unified-calendar .rbc-time-gutter {
-  background-color: var(--trainfit-bg-tertiary);
-  border-right: 1px solid var(--trainfit-border);
+  background-color: var(--fitpro-bg-tertiary);
+  border-right: 1px solid var(--fitpro-border);
 }
 
 .unified-calendar .rbc-timeslot-group {
-  border-bottom: 1px solid var(--trainfit-border);
+  border-bottom: 1px solid var(--fitpro-border);
 }
 
 .unified-calendar .rbc-time-slot {
   border-top: 1px solid rgba(51, 51, 51, 0.3);
-  color: var(--trainfit-text-muted);
+  color: var(--fitpro-text-muted);
 }
 
-/* ===== EVENTOS POR TIPO CON COLORES TRAINFIT ===== */
+/* ===== EVENTOS POR TIPO CON COLORES FITPRO ===== */
 .unified-calendar .rbc-event {
   border-radius: 6px;
   border: none;
@@ -470,13 +470,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.2s ease;
-  background-color: var(--trainfit-bg-tertiary) !important; /* fondo neutro por defecto */
-  border-left: 3px solid var(--trainfit-border) !important; /* acento neutro por defecto */
+  background-color: var(--fitpro-bg-tertiary) !important; /* fondo neutro por defecto */
+  border-left: 3px solid var(--fitpro-border) !important; /* acento neutro por defecto */
 }
 
 /* Acentos por tipo (solo borde izquierdo) */
 .unified-calendar .rbc-event.event-rutina {
-  background-color: #E53935 !important; /* Rutinas → rojo TrainFit */
+  background-color: #E53935 !important; /* Rutinas → rojo FitPro */
   border-left-color: #C62828 !important; /* acento más oscuro */
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.30) !important; /* separación sutil entre eventos del mismo tipo */
 }
@@ -502,17 +502,17 @@
 }
 
 .unified-calendar .rbc-event.status-cancelado {
-  background-color: var(--trainfit-text-muted) !important;
+  background-color: var(--fitpro-text-muted) !important;
   text-decoration: line-through;
 }
 
 .unified-calendar .rbc-event.status-completado {
-  background-color: var(--trainfit-success) !important;
+  background-color: var(--fitpro-success) !important;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .unified-calendar .rbc-event.status-no-presentado {
-  background-color: var(--trainfit-warning) !important;
+  background-color: var(--fitpro-warning) !important;
 }
 
 /* Hover effects */
@@ -523,41 +523,41 @@
 
 /* Selección de eventos */
 .unified-calendar .rbc-event.rbc-selected {
-  border: 2px solid var(--trainfit-brand-red) !important; /* borde rojo claro para seleccionado */
-  background-color: var(--trainfit-brand-red-overlay) !important;
+  border: 2px solid var(--fitpro-brand-red) !important; /* borde rojo claro para seleccionado */
+  background-color: var(--fitpro-brand-red-overlay) !important;
 }
 
 /* Vista de agenda */
 .unified-calendar .rbc-agenda-view {
-  background-color: var(--trainfit-bg-secondary);
-  color: var(--trainfit-text-primary);
+  background-color: var(--fitpro-bg-secondary);
+  color: var(--fitpro-text-primary);
 }
 
 .unified-calendar .rbc-agenda-view table {
-  background-color: var(--trainfit-bg-secondary);
+  background-color: var(--fitpro-bg-secondary);
 }
 
 .unified-calendar .rbc-agenda-view .rbc-agenda-table {
-  border: 1px solid var(--trainfit-border);
+  border: 1px solid var(--fitpro-border);
 }
 
 .unified-calendar .rbc-agenda-view .rbc-agenda-table tbody > tr > td {
-  border-top: 1px solid var(--trainfit-border);
-  color: var(--trainfit-text-primary);
+  border-top: 1px solid var(--fitpro-border);
+  color: var(--fitpro-text-primary);
   padding: 12px;
 }
 
 .unified-calendar .rbc-agenda-view .rbc-agenda-table .rbc-agenda-time-cell {
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
 }
 
 .unified-calendar .rbc-agenda-view .rbc-agenda-table .rbc-agenda-event-cell {
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
 }
 
 .unified-calendar .rbc-agenda-view .rbc-agenda-date-cell {
-  background-color: var(--trainfit-bg-tertiary);
-  color: var(--trainfit-text-primary);
+  background-color: var(--fitpro-bg-tertiary);
+  color: var(--fitpro-text-primary);
   font-weight: 600;
 }
 
@@ -621,7 +621,7 @@
 .modal-close {
   background: none;
   border: none;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
   font-size: 1.2rem;
   cursor: pointer;
   padding: 4px;
@@ -635,8 +635,8 @@
 }
 
 .modal-close:hover {
-  color: var(--trainfit-text-primary);
-  background-color: var(--trainfit-bg-quaternary);
+  color: var(--fitpro-text-primary);
+  background-color: var(--fitpro-bg-quaternary);
 }
 
 .modal-form {
@@ -663,11 +663,11 @@
 .form-input,
 .form-select,
 .form-textarea {
-  background-color: var(--trainfit-bg-primary);
-  border: 1px solid var(--trainfit-border);
+  background-color: var(--fitpro-bg-primary);
+  border: 1px solid var(--fitpro-border);
   border-radius: 6px;
   padding: 10px 12px;
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
   font-size: 0.9rem;
   transition: all 0.2s ease;
   box-sizing: border-box;
@@ -685,13 +685,13 @@ div.form-input {
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--trainfit-primary);
+  border-color: var(--fitpro-primary);
   box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--trainfit-text-muted);
+  color: var(--fitpro-text-muted);
 }
 
 .form-textarea {
@@ -724,7 +724,7 @@ div.form-input {
 
 .btn-cancel {
   background-color: transparent;
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
   border: 1px solid #3a3a3a;
   border-radius: 10px;
   padding: 10px 20px;
@@ -759,7 +759,7 @@ div.form-input {
 }
 
 .btn-save:disabled {
-  background-color: var(--trainfit-text-muted);
+  background-color: var(--fitpro-text-muted);
   cursor: not-allowed;
   transform: none;
 }
@@ -782,7 +782,7 @@ div.form-input {
 
 .btn-confirm,
 .btn-completed {
-  background-color: #E53935; /* rojo TrainFit */
+  background-color: #E53935; /* rojo FitPro */
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -909,13 +909,13 @@ div.form-input {
 
 /* ===== TOOLTIP PERSONALIZADO ===== */
 .event-tooltip {
-  background-color: var(--trainfit-bg-quaternary);
-  color: var(--trainfit-text-primary);
-  border: 1px solid var(--trainfit-border);
+  background-color: var(--fitpro-bg-quaternary);
+  color: var(--fitpro-text-primary);
+  border: 1px solid var(--fitpro-border);
   border-radius: 8px;
   padding: 12px;
   font-size: 0.75rem;
-  box-shadow: var(--trainfit-shadow);
+  box-shadow: var(--fitpro-shadow);
   max-width: 200px;
   z-index: 1001;
 }
@@ -923,16 +923,16 @@ div.form-input {
 .tooltip-title {
   font-weight: 600;
   margin-bottom: 4px;
-  color: var(--trainfit-text-primary);
+  color: var(--fitpro-text-primary);
 }
 
 .tooltip-time {
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
   margin-bottom: 4px;
 }
 
 .tooltip-client {
-  color: var(--trainfit-text-secondary);
+  color: var(--fitpro-text-secondary);
 }
 
 /* ===== ANIMACIONES ===== */
@@ -958,9 +958,9 @@ div.form-input {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--trainfit-text-muted);
+  border: 2px solid var(--fitpro-text-muted);
   border-radius: 50%;
-  border-top-color: var(--trainfit-text-primary);
+  border-top-color: var(--fitpro-text-primary);
   animation: spin 1s ease-in-out infinite;
 }
 
@@ -971,8 +971,8 @@ div.form-input {
 }
 
 .unified-calendar .rbc-show-more {
-  background-color: var(--trainfit-primary);
-  color: var(--trainfit-text-primary);
+  background-color: var(--fitpro-primary);
+  color: var(--fitpro-text-primary);
   border-radius: 4px;
   padding: 2px 6px;
   font-size: 0.7rem;
@@ -980,7 +980,7 @@ div.form-input {
 }
 
 .unified-calendar .rbc-show-more:hover {
-  background-color: var(--trainfit-primary-dark);
+  background-color: var(--fitpro-primary-dark);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1070,7 +1070,7 @@ div.form-input {
     border-radius: 4px !important;
     padding: 2px 6px !important;
     border-left-width: 3px !important;
-    color: var(--trainfit-text-primary) !important;
+    color: var(--fitpro-text-primary) !important;
   }
   .unified-calendar .rbc-month-view .rbc-event-label {
     display: none !important; /* oculta rango de horas para mes */
@@ -1135,13 +1135,13 @@ div.form-input {
   .modal-header {
     padding: 8px 12px !important;
     margin-bottom: 12px !important;
-    background-color: var(--trainfit-bg-tertiary) !important;
+    background-color: var(--fitpro-bg-tertiary) !important;
     border-radius: 6px !important;
   }
   
   .modal-title {
     font-size: 1rem !important;
-    color: var(--trainfit-text-primary) !important;
+    color: var(--fitpro-text-primary) !important;
   }
   
   .modal-close {
@@ -1161,7 +1161,7 @@ div.form-input {
   
   .form-label {
     font-size: 0.8rem !important;
-    color: var(--trainfit-text-primary) !important;
+    color: var(--fitpro-text-primary) !important;
     margin-bottom: 3px !important;
   }
   
@@ -1190,7 +1190,7 @@ div.form-input {
     gap: 8px !important;
     margin-top: 16px !important;
     padding-top: 12px !important;
-    border-top: 1px solid var(--trainfit-border) !important;
+    border-top: 1px solid var(--fitpro-border) !important;
   }
   
   .btn-cancel,
@@ -1219,13 +1219,13 @@ div.form-input {
   .modal-header {
     margin-bottom: 10px !important;
     padding: 6px 10px !important;
-    background-color: var(--trainfit-bg-tertiary) !important;
+    background-color: var(--fitpro-bg-tertiary) !important;
     border-radius: 5px !important;
   }
   
   .modal-title {
     font-size: 0.95rem !important;
-    color: var(--trainfit-text-primary) !important;
+    color: var(--fitpro-text-primary) !important;
   }
   
   .modal-close {
@@ -1245,7 +1245,7 @@ div.form-input {
   
   .form-label {
     font-size: 0.75rem !important;
-    color: var(--trainfit-text-primary) !important;
+    color: var(--fitpro-text-primary) !important;
     margin-bottom: 2px !important;
   }
   
@@ -1271,7 +1271,7 @@ div.form-input {
     margin-top: 12px !important;
     padding-top: 10px !important;
     gap: 6px !important;
-    border-top: 1px solid var(--trainfit-border) !important;
+    border-top: 1px solid var(--fitpro-border) !important;
   }
   
   .btn-cancel,
@@ -1285,19 +1285,19 @@ div.form-input {
 
 /* ===== ACCESIBILIDAD ===== */
 .unified-calendar:focus-within {
-  outline: 2px solid var(--trainfit-primary);
+  outline: 2px solid var(--fitpro-primary);
   outline-offset: 2px;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  outline: 2px solid var(--trainfit-primary);
+  outline: 2px solid var(--fitpro-primary);
   outline-offset: 2px;
 }
 
 .rbc-event:focus {
-  outline: 2px solid var(--trainfit-text-primary);
+  outline: 2px solid var(--fitpro-text-primary);
   outline-offset: 2px;
 }
 
@@ -1319,18 +1319,18 @@ div.form-input {
   padding: 6px 10px !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
-  color: var(--trainfit-text-primary) !important;
-  background-color: var(--trainfit-bg-tertiary) !important;
-  border: 1px solid var(--trainfit-border) !important;
+  color: var(--fitpro-text-primary) !important;
+  background-color: var(--fitpro-bg-tertiary) !important;
+  border: 1px solid var(--fitpro-border) !important;
 }
 
-.legend-rutina { border-color: var(--trainfit-primary) !important; }
+.legend-rutina { border-color: var(--fitpro-primary) !important; }
 .legend-sesion { border-color: #f59e0b !important; }
 .legend-consulta { border-color: #7c3aed !important; }
 /* Día seleccionado (slots) */
 .unified-calendar .rbc-selected-cell {
   outline: none !important;
-  box-shadow: inset 0 0 0 2px var(--trainfit-brand-red) !important; /* borde rojo claro */
+  box-shadow: inset 0 0 0 2px var(--fitpro-brand-red) !important; /* borde rojo claro */
 }
   /* Grilla vertical limpia en mobile (aproximación) */
   .unified-calendar .rbc-month-view {
@@ -1346,7 +1346,7 @@ div.form-input {
   }
   .unified-calendar .rbc-date-cell {
     padding: 6px !important;
-    border-bottom: 1px solid var(--trainfit-border) !important;
+    border-bottom: 1px solid var(--fitpro-border) !important;
   }
   .unified-calendar .rbc-event {
     white-space: normal !important; /* evitar corte */

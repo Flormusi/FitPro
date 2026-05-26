@@ -113,7 +113,7 @@ export class EmailService {
       }
 
       await this.transporter.sendMail({
-        from: emailData.from || process.env.EMAIL_FROM || 'noreply@trainfit.com',
+        from: emailData.from || process.env.EMAIL_FROM || 'noreply@fitpro.com',
         to: emailData.to,
         subject: emailData.subject,
         html: emailData.html
@@ -155,7 +155,7 @@ export class EmailService {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nueva Rutina Asignada - TrainFit</title>
+        <title>Nueva Rutina Asignada - FitPro</title>
       </head>
       <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
@@ -177,7 +177,7 @@ export class EmailService {
                 </filter>
               </defs>
               
-              <!-- TRAINFIT text -->
+              <!-- FITPRO text -->
               <text x="125" y="38" 
                     font-family="'Segoe UI', Arial, sans-serif" 
                     font-size="28" 
@@ -185,7 +185,7 @@ export class EmailService {
                     fill="url(#redGradientHeader)"
                     filter="url(#glowHeader)"
                     text-anchor="middle"
-                    letter-spacing="1px">TRAINFIT</text>
+                    letter-spacing="1px">FITPRO</text>
               
               <!-- Icono de pesa -->
               <g transform="translate(200, 18)">
@@ -265,8 +265,8 @@ export class EmailService {
                 
                 <rect width="300" height="75" fill="#000000"/>
                 
-                <!-- TRAINFIT text -->
-                <text x="150" y="45" text-anchor="middle" fill="url(#redGradientFooter)" filter="url(#glowFooter)" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="900" letter-spacing="4">TRAINFIT</text>
+                <!-- FITPRO text -->
+                <text x="150" y="45" text-anchor="middle" fill="url(#redGradientFooter)" filter="url(#glowFooter)" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="900" letter-spacing="4">FITPRO</text>
                 
                 <!-- Icono de pesa -->
                 <g transform="translate(255, 26)">
@@ -291,7 +291,7 @@ export class EmailService {
 
     return this.sendEmail({
       to: data.clientEmail,
-      subject: '🎉 ¡Nueva Rutina Asignada! - TrainFit',
+      subject: '🎉 ¡Nueva Rutina Asignada! - FitPro',
       html: emailContent
     });
   }
@@ -301,17 +301,17 @@ export class EmailService {
    */
   static async sendPaymentReminderEmail(clientEmail: string, clientName: string, trainerName: string): Promise<boolean> {
     const emailContent = `
-      <h2>Recordatorio de Pago - TrainFit</h2>
+      <h2>Recordatorio de Pago - FitPro</h2>
       <p>Hola ${clientName},</p>
       <p>Este es un recordatorio amistoso de que tienes un pago pendiente para tu entrenador ${trainerName}.</p>
       <p>Por favor, realiza el pago lo antes posible para continuar disfrutando de todos los beneficios de tu membresía.</p>
       <p>Si ya has realizado el pago, por favor ignora este mensaje.</p>
-      <p>Saludos,<br>El equipo de TrainFit</p>
+      <p>Saludos,<br>El equipo de FitPro</p>
     `;
 
     return this.sendEmail({
       to: clientEmail,
-      subject: 'Recordatorio de Pago - TrainFit',
+      subject: 'Recordatorio de Pago - FitPro',
       html: emailContent
     });
   }

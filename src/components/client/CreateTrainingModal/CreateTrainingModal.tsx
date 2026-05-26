@@ -30,7 +30,7 @@ const CreateTrainingModal: React.FC<CreateTrainingModalProps> = ({
     minute: 0,
     duration: 1,
     exercises: [],
-    location: 'Gimnasio TrainFit',
+    location: 'Gimnasio FitPro',
     notes: ''
   });
   
@@ -85,7 +85,7 @@ const CreateTrainingModal: React.FC<CreateTrainingModalProps> = ({
       minute: 0,
       duration: 1,
       exercises: [],
-      location: 'Gimnasio TrainFit',
+      location: 'Gimnasio FitPro',
       notes: ''
     });
     setExerciseInput('');
@@ -243,7 +243,7 @@ const CreateTrainingModal: React.FC<CreateTrainingModalProps> = ({
                 value={formData.location}
                 onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                 className={errors.location ? 'error' : ''}
-                placeholder="Ej: Gimnasio TrainFit, Casa, Parque..."
+                placeholder="Ej: Gimnasio FitPro, Casa, Parque..."
               />
               {errors.location && <span className="error-message">{errors.location}</span>}
             </div>

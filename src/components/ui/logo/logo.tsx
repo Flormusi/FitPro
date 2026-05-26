@@ -7,12 +7,12 @@ interface LogoProps {
   text?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ src, altText = "Trainfit Logo", text }) => {
+const Logo: React.FC<LogoProps> = ({ src, altText = "FitPro Logo", text }) => {
   return (
     <div className="logo-container" style={{ display: 'flex', alignItems: 'center' }}>
       {src && <img src={src} alt={altText} className="logo-image" />}
       {text && <span className="logo-text">{text}</span>}
-      {!src && !text && <span className="logo-text">TrainFit</span>}
+      {!src && !text && <span className="logo-text">FitPro</span>}
     </div>
   );
 };

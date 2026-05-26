@@ -76,8 +76,8 @@ export const createSubscription = async (req: AuthRequest, res: Response) => {
 
     // Crear producto y precio en Stripe si no existen
     const product = await stripe.products.create({
-      name: `TrainFit ${plan}`,
-      description: `Suscripción ${plan} de TrainFit`,
+      name: `FitPro ${plan}`,
+      description: `Suscripción ${plan} de FitPro`,
     });
 
     const price = await stripe.prices.create({

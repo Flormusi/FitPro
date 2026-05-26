@@ -49,7 +49,7 @@ async function notifyMaintenanceToUsers() {
         await prisma.notification.create({
           data: {
             userId: user.id,
-            title: '🔧 Mantenimiento Programado - TrainFit',
+            title: '🔧 Mantenimiento Programado - FitPro',
             message: `Estimado usuario, realizaremos un mantenimiento programado el ${maintenanceTime}. Duración estimada: ${estimatedDuration}. Durante este tiempo, la plataforma no estará disponible. Gracias por tu comprensión.`,
             type: 'system',
             isRead: false
@@ -65,12 +65,12 @@ async function notifyMaintenanceToUsers() {
           // Usar el servicio de email existente para enviar notificación personalizada
           const emailContent = {
             to: user.email,
-            subject: '🔧 Mantenimiento Programado - TrainFit',
+            subject: '🔧 Mantenimiento Programado - FitPro',
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
                 <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                   <div style="text-align: center; margin-bottom: 30px;">
-                    <h1 style="color: #2563eb; margin: 0; font-size: 28px;">🔧 TrainFit</h1>
+                    <h1 style="color: #2563eb; margin: 0; font-size: 28px;">🔧 FitPro</h1>
                     <p style="color: #6b7280; margin: 5px 0 0 0; font-size: 16px;">Mantenimiento Programado</p>
                   </div>
                   
@@ -90,7 +90,7 @@ async function notifyMaintenanceToUsers() {
                     <ul style="color: #374151; font-size: 16px; line-height: 1.8; margin: 0; padding-left: 20px;">
                       <li><strong>Fecha y hora:</strong> ${maintenanceTime}</li>
                       <li><strong>Duración estimada:</strong> ${estimatedDuration}</li>
-                      <li><strong>Servicios afectados:</strong> Toda la plataforma TrainFit</li>
+                      <li><strong>Servicios afectados:</strong> Toda la plataforma FitPro</li>
                     </ul>
                   </div>
                   
@@ -108,7 +108,7 @@ async function notifyMaintenanceToUsers() {
                   </p>
                   
                   <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-                    <p style="color: #6b7280; font-size: 14px; margin: 0;">Equipo TrainFit</p>
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">Equipo FitPro</p>
                     <p style="color: #6b7280; font-size: 12px; margin: 5px 0 0 0;">Este es un mensaje automático, no responder a este email.</p>
                   </div>
                 </div>

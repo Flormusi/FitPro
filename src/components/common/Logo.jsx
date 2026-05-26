@@ -6,9 +6,9 @@ const Logo = ({ size = 'medium' }) => {
   return (
     <div className={`logo-container logo-${size}`}>
       {/* Example: Using text as logo */}
-      <span>TrainFit</span>
+      <span>FitPro</span>
       {/* Example: Using an image - ensure you have logo.png in your public folder or import it */}
-      {/* <img src="/logo.png" alt="TrainFit Logo" /> */}
+      {/* <img src="/logo.png" alt="FitPro Logo" /> */}
     </div>
   );
 };

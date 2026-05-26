@@ -1,7 +1,7 @@
 {
-  "name": "trainfit-backend",
+  "name": "fitpro-backend",
   "version": "1.0.0",
-  "description": "Backend for TrainFit application",
+  "description": "Backend for FitPro application",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
