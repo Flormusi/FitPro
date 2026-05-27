@@ -1,8 +1,8 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { Star, Crown, Zap } from 'lucide-react';
 
-// Clave pública de Stripe (reemplaza con tu clave real)
-const stripePublishableKey = 'pk_test_51234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef';
+// Clave pública de Stripe — configurar en .env como VITE_STRIPE_PUBLISHABLE_KEY
+const stripePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '';
 
 // Inicializar Stripe
 export const stripePromise = loadStripe(stripePublishableKey);

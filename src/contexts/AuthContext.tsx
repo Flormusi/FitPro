@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
-import type { LoginCredentials, User } from '../services/authService';
+import type { LoginCredentials, RegisterData, User } from '../services/authService';
 import axios from '../services/axiosConfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 interface AuthContextType {
   user: User | null;
   login: (credentials: LoginCredentials) => Promise<void>;
+  register: (data: RegisterData) => Promise<void>;
   logout: () => void;
   isAuthenticated: () => boolean;
   loading: boolean;
@@ -90,6 +91,33 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, [navigate, navigateBasedOnRole]);
 
+  const register = useCallback(async (data: RegisterData): Promise<void> => {
+    setLoading(true);
+    try {
+      const userData = await authService.register(data);
+      if (userData && userData.token) {
+        setUser(userData);
+        localStorage.setItem('token', userData.token);
+        localStorage.setItem('user', JSON.stringify(userData));
+        toast.success('¡Cuenta creada exitosamente!');
+        const role = userData.role.toUpperCase();
+        if (role === 'TRAINER') {
+          navigate('/trainer/subscription', { replace: true });
+        } else {
+          navigate('/client/onboarding', { replace: true });
+        }
+      }
+    } catch (error) {
+      let errorMessage = 'Error al crear la cuenta. Por favor, intente nuevamente.';
+      if (axios.isAxiosError(error) && error.response) {
+        errorMessage = error.response.data?.message || errorMessage;
+      }
+      toast.error(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  }, [navigate]);
+
   const logout = useCallback(() => {
     console.log('[AuthContext] Logging out user');
     setUser(null);
@@ -164,12 +192,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     () => ({
       user,
       login,
+      register,
       logout,
       isAuthenticated,
       loading,
       saveOnboardingData,
     }),
-    [user, login, logout, isAuthenticated, loading, saveOnboardingData]
+    [user, login, register, logout, isAuthenticated, loading, saveOnboardingData]
   );
 
   return (
