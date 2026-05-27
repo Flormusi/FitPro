@@ -5,7 +5,7 @@ import Stripe from 'stripe';
 const prisma = new PrismaClient();
 
 // Inicializar Stripe (necesitarás agregar tu clave secreta en .env)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_placeholder_not_used_in_mvp');
 
 // Precios de los planes (en centavos)
 const PLAN_PRICES = {
