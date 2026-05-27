@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-
 import { useAuth } from './contexts/AuthContext';
 import { Toaster, toast } from 'react-hot-toast';
 
+const LandingPage = React.lazy(() => import('./pages/LandingPage/LandingPage'));
 const Login = React.lazy(() => import('./components/auth/Login'));
 const Register = React.lazy(() => import('./components/auth/Register'));
 const TrainerSignup = React.lazy(() => import('./pages/TrainerSignup/TrainerSignup'));
@@ -99,6 +100,7 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Suspense fallback={<div style={{ color: '#fff' }}>Cargando...</div>}>
         <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/trainer-signup" element={<TrainerSignup />} />
@@ -358,16 +360,7 @@ function App() {
           }
         />
         
-        {/* Ruta por defecto o página de inicio */}
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <RootRedirect />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
