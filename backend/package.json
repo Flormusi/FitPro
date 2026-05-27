@@ -2,9 +2,9 @@
   "name": "fitpro-backend",
   "version": "1.0.0",
   "description": "Backend for FitPro application",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "dev": "nodemon --exec npx ts-node --project tsconfig.json src/server.ts",
     "build": "tsc",
     "test": "jest"
