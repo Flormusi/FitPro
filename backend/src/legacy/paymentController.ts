@@ -64,7 +64,7 @@ export const createPaymentPreference = async (req: AuthenticatedRequest, res: Re
         }
       ],
       payer: {
-        name: trainerClientRelation.client.name,
+        name: trainerClientRelation.client.name ?? undefined,
         email: trainerClientRelation.client.email
       },
       back_urls: {

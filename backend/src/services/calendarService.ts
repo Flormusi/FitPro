@@ -53,7 +53,7 @@ export class CalendarService {
    */
   async sendCalendarInvitation(event: TrainingEvent, customMessage?: string): Promise<void> {
     try {
-      const result = await EmailService.sendCalendarInvitation(event, customMessage);
+      const result = await (EmailService as any).sendCalendarInvitation(event, customMessage);
       
       if (!result.success) {
         throw new Error(result.error || 'Error enviando invitación de calendario');

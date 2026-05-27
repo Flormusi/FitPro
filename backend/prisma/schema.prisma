@@ -76,18 +76,27 @@ model User {
   createdAt              DateTime  @default(now())
   updatedAt              DateTime  @updatedAt
 
-  trainerProfile   TrainerProfile?
-  clientProfile    ClientProfile?
-  subscription     Subscription?
-  invoices         Invoice[]
-  notifications    Notification[]
-  progress         Progress[]
-  reminders        Reminder[]
-  sentMessages     Message[]       @relation("SentMessages")
-  receivedMessages Message[]       @relation("ReceivedMessages")
-  trainerClients   TrainerClient[] @relation("TrainerRelation")
-  clientTrainers   TrainerClient[] @relation("ClientRelation")
-  exercises        Exercise[]
+  trainerProfile              TrainerProfile?
+  clientProfile               ClientProfile?
+  subscription                Subscription?
+  invoices                    Invoice[]
+  notifications               Notification[]
+  progressRecords             Progress[]           @relation("UserProgress")
+  reminders                   Reminder[]
+  sentMessages                Message[]            @relation("SentMessages")
+  receivedMessages            Message[]            @relation("ReceivedMessages")
+  trainerClients              TrainerClient[]      @relation("TrainerRelation")
+  trainersAsClient            TrainerClient[]      @relation("ClientRelation")
+  exercises                   Exercise[]
+  assignedRoutines            RoutineAssignment[]  @relation("ClientRoutineAssignments")
+  trainerAssignments          RoutineAssignment[]  @relation("TrainerRoutineAssignments")
+  assignedNutritionPlans      NutritionPlan[]      @relation("ClientNutritionPlans")
+  routineTemplates            RoutineTemplate[]    @relation("TemplateCreator")
+  calendarIntegrations        CalendarIntegration[]
+  createdRoutines             Routine[]            @relation("RoutineTrainer")
+  clientRoutines              Routine[]            @relation("RoutineClient")
+  clientAppointments          Appointment[]        @relation("AppointmentClient")
+  trainerAppointments         Appointment[]        @relation("AppointmentTrainer")
 }
 
 model TrainerProfile {
@@ -180,6 +189,9 @@ model Routine {
   assignments   RoutineAssignment[]
   progress      Progress[]
   notifications Notification[]
+
+  trainer User @relation("RoutineTrainer", fields: [trainerId], references: [id], onDelete: Cascade)
+  client  User @relation("RoutineClient", fields: [clientId], references: [id], onDelete: Cascade)
 }
 
 model RoutineAssignment {
@@ -197,6 +209,8 @@ model RoutineAssignment {
   updatedAt             DateTime @updatedAt
 
   routine Routine @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  client  User    @relation("ClientRoutineAssignments", fields: [clientId], references: [id], onDelete: Cascade)
+  trainer User    @relation("TrainerRoutineAssignments", fields: [trainerId], references: [id], onDelete: Cascade)
 }
 
 model RoutineTemplate {
@@ -214,13 +228,15 @@ model RoutineTemplate {
   createdBy         String
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
+
+  creator User @relation("TemplateCreator", fields: [createdBy], references: [id])
 }
 
 model Subscription {
   id                   String             @id @default(cuid())
   userId               String             @unique
   stripeCustomerId     String?
-  stripeSubscriptionId String?
+  stripeSubscriptionId String?  @unique
   plan                 SubscriptionPlan   @default(BASIC)
   status               SubscriptionStatus @default(ACTIVE)
   currentPeriodStart   DateTime?
@@ -322,6 +338,8 @@ model NutritionPlan {
   clientId    String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  client User @relation("ClientNutritionPlans", fields: [clientId], references: [id], onDelete: Cascade)
 }
 
 model Progress {
@@ -335,7 +353,7 @@ model Progress {
   updatedAt DateTime @updatedAt
 
   routine Routine @relation(fields: [routineId], references: [id], onDelete: Cascade)
-  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user    User    @relation("UserProgress", fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Reminder {
@@ -351,7 +369,8 @@ model Reminder {
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  appointment Appointment? @relation("AppointmentReminders", fields: [appointmentId], references: [id], onDelete: SetNull)
 }
 
 model Appointment {
@@ -361,12 +380,17 @@ model Appointment {
   startTime   DateTime
   endTime     DateTime
   status      AppointmentStatus @default(SCHEDULED)
+  type        String?
   location    String?
   notes       String?
   clientId    String
   trainerId   String
   createdAt   DateTime          @default(now())
   updatedAt   DateTime          @updatedAt
+
+  client    User       @relation("AppointmentClient",  fields: [clientId],  references: [id], onDelete: Cascade)
+  trainer   User       @relation("AppointmentTrainer", fields: [trainerId], references: [id], onDelete: Cascade)
+  reminders Reminder[] @relation("AppointmentReminders")
 }
 
 model CalendarIntegration {
@@ -381,4 +405,6 @@ model CalendarIntegration {
   isActive     Boolean  @default(true)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
 }
