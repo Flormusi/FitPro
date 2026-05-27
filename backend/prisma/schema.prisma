@@ -1,0 +1,384 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  TRAINER
+  CLIENT
+}
+
+enum SubscriptionPlan {
+  BASIC
+  PREMIUM
+  PROFESSIONAL
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  INACTIVE
+  CANCELLED
+  PAST_DUE
+  TRIALING
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  CANCELLED
+  REFUNDED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  OPEN
+  PAID
+  VOID
+  UNCOLLECTIBLE
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  NO_SHOW
+}
+
+enum ReminderType {
+  APPOINTMENT
+  WORKOUT
+  NUTRITION
+  PROGRESS_CHECK
+  CUSTOM
+}
+
+// ─── Models ──────────────────────────────────────────────────────────────────
+
+model User {
+  id                     String    @id @default(cuid())
+  email                  String    @unique
+  password               String
+  role                   Role      @default(CLIENT)
+  name                   String?
+  status                 String?   @default("active")
+  resetPasswordToken     String?
+  resetPasswordExpire    DateTime?
+  hasCompletedOnboarding Boolean   @default(false)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  trainerProfile   TrainerProfile?
+  clientProfile    ClientProfile?
+  subscription     Subscription?
+  invoices         Invoice[]
+  notifications    Notification[]
+  progress         Progress[]
+  reminders        Reminder[]
+  sentMessages     Message[]       @relation("SentMessages")
+  receivedMessages Message[]       @relation("ReceivedMessages")
+  trainerClients   TrainerClient[] @relation("TrainerRelation")
+  clientTrainers   TrainerClient[] @relation("ClientRelation")
+  exercises        Exercise[]
+}
+
+model TrainerProfile {
+  id                      String  @id @default(cuid())
+  userId                  String  @unique
+  name                    String
+  specialty               String?
+  defaultPercentIncrement Float?  @default(7.5)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model TrainerClient {
+  id        String   @id @default(cuid())
+  trainerId String
+  clientId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  trainer User @relation("TrainerRelation", fields: [trainerId], references: [id], onDelete: Cascade)
+  client  User @relation("ClientRelation", fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@unique([trainerId, clientId])
+}
+
+model ClientProfile {
+  id                  String    @id @default(cuid())
+  userId              String    @unique
+  name                String
+  phone               String?
+  goals               String[]
+  weight              Float?
+  height              Float?
+  age                 Int?
+  gender              String?
+  fitnessLevel        String?
+  medicalConditions   String?
+  medications         String?
+  injuries            String?
+  initialObjective    String    @default("Sin definir")
+  trainingDaysPerWeek Int       @default(3)
+  nickname            String?
+  profileImage        String?
+  lastTrainingDate    DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ClientNote {
+  id        String   @id @default(cuid())
+  content   String
+  clientId  String
+  trainerId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Exercise {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  type        String?
+  equipment   String?
+  difficulty  String?
+  muscles     String[]
+  objectives  String[]
+  imageUrl    String?
+  videoUrl    String?
+  trainerId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  trainer User @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+}
+
+model Routine {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  trainerId   String
+  clientId    String
+  exercises   Json?
+  duration    String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  assignments   RoutineAssignment[]
+  progress      Progress[]
+  notifications Notification[]
+}
+
+model RoutineAssignment {
+  id                    String   @id @default(cuid())
+  clientId              String
+  routineId             String
+  trainerId             String
+  startDate             DateTime
+  endDate               DateTime
+  assignedDate          DateTime @default(now())
+  pyramidalRepsPattern  String?
+  pyramidalRepsSequence Json?
+  trainingObjectives    Json?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  routine Routine @relation(fields: [routineId], references: [id], onDelete: Cascade)
+}
+
+model RoutineTemplate {
+  id                String   @id @default(cuid())
+  name              String
+  description       String?
+  trainingObjective String
+  level             String
+  daysPerWeek       Int
+  gender            String?
+  duration          String?
+  exercises         Json
+  notes             String?
+  isActive          Boolean  @default(true)
+  createdBy         String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String             @unique
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  plan                 SubscriptionPlan   @default(BASIC)
+  status               SubscriptionStatus @default(ACTIVE)
+  currentPeriodStart   DateTime?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean            @default(false)
+  trialEnd             DateTime?
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments Payment[]
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  subscriptionId  String
+  stripePaymentId String?
+  amount          Float
+  currency        String        @default("usd")
+  status          PaymentStatus @default(PENDING)
+  description     String?
+  paymentMethod   String?
+  failureReason   String?
+  paidAt          DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+}
+
+model PaymentPreference {
+  id                String   @id @default(cuid())
+  preferenceId      String?
+  trainerId         String
+  clientId          String
+  amount            Float
+  description       String
+  planType          String
+  status            String   @default("pending")
+  externalReference String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Invoice {
+  id              String        @id @default(cuid())
+  userId          String
+  stripeInvoiceId String?
+  amount          Float
+  currency        String        @default("usd")
+  status          InvoiceStatus @default(DRAFT)
+  description     String?
+  dueDate         DateTime?
+  paidAt          DateTime?
+  invoiceNumber   String?
+  downloadUrl     String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  content     String
+  senderId    String
+  receiverId  String
+  isRead      Boolean  @default(false)
+  messageType String   @default("text")
+  attachments Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sender   User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String
+  type      String
+  userId    String
+  isRead    Boolean  @default(false)
+  routineId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  routine Routine? @relation(fields: [routineId], references: [id], onDelete: SetNull)
+}
+
+model NutritionPlan {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  meals       Json?
+  trainerId   String
+  clientId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Progress {
+  id        String   @id @default(cuid())
+  routineId String
+  userId    String
+  date      DateTime @default(now())
+  notes     String?
+  metrics   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  routine Routine @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Reminder {
+  id            String       @id @default(cuid())
+  title         String
+  message       String
+  reminderTime  DateTime
+  isActive      Boolean      @default(true)
+  isSent        Boolean      @default(false)
+  reminderType  ReminderType
+  userId        String
+  appointmentId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Appointment {
+  id          String            @id @default(cuid())
+  title       String
+  description String?
+  startTime   DateTime
+  endTime     DateTime
+  status      AppointmentStatus @default(SCHEDULED)
+  location    String?
+  notes       String?
+  clientId    String
+  trainerId   String
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model CalendarIntegration {
+  id           String   @id @default(cuid())
+  clientId     String
+  provider     String
+  accessToken  String
+  refreshToken String
+  expiresAt    DateTime
+  scope        String?
+  email        String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
