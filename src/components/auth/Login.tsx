@@ -7,9 +7,9 @@ import { useAuth } from '../../contexts/AuthContext';
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const { login, user, isAuthenticated, loading: authLoading } = useAuth();
-  const [credentials, setCredentials] = useState({ 
-    email: 'test.trainer@fitpro.com', 
-    password: 'test123' 
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: ''
   });
   const [loading, setLoading] = useState(false);
 
@@ -96,7 +96,7 @@ const Login: React.FC = () => {
 
 
 
-      <button className="btn-register-link" onClick={() => navigate('/register')} disabled={loading}>
+      <button className="btn-register-link" onClick={() => navigate('/trainer-signup')} disabled={loading}>
         REGISTRARSE
       </button>
     </div>

@@ -5,6 +5,7 @@ import { Toaster, toast } from 'react-hot-toast';
 
 const Login = React.lazy(() => import('./components/auth/Login'));
 const Register = React.lazy(() => import('./components/auth/Register'));
+const TrainerSignup = React.lazy(() => import('./pages/TrainerSignup/TrainerSignup'));
 const ClientOnboarding = React.lazy(() => import('./components/onboarding/ClientOnboarding'));
 const ClientDashboard = React.lazy(() => import('./pages/ClientDashboard/ClientDashboard'));
 const ClientProgressPage = React.lazy(() => import('./pages/client/ClientProgressPage'));
@@ -100,6 +101,7 @@ function App() {
         <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/trainer-signup" element={<TrainerSignup />} />
         <Route path="/auth/google/callback" element={<GoogleAuthCallback />} />
         <Route path="/debug-clients" element={<ProtectedRoute role="trainer"><DebugClients /></ProtectedRoute>} />
         <Route path="/debug-clients-list" element={<ProtectedRoute role="trainer"><DebugClientsList /></ProtectedRoute>} />
