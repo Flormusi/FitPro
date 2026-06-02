@@ -43,66 +43,70 @@ import {
 import { addClientByTrainer, getClientById, getClientRoutines } from '../controllers/client.controller';
 import { protect, authorize } from '../middleware/auth.middleware';
 import { requestMiddleware } from '../middleware/request.middleware';
+import { requireActiveSubscription } from '../middleware/subscription.middleware';
 import { Role } from '@prisma/client';
 import { RequestWithUser } from '../types/express';
 
 const router = Router();
 
-// Client management
-router.get('/clients', protect, requestMiddleware, authorize([Role.TRAINER]), getTrainerClients);
-router.post('/clients', protect, requestMiddleware, authorize([Role.TRAINER]), addClientByTrainer);
-router.get('/clients/:clientId', protect, requestMiddleware, authorize([Role.TRAINER]), getClientById);
-router.put('/clients/:clientId', protect, requestMiddleware, authorize([Role.TRAINER]), updateClientInfo);
-router.get('/clients/:clientId/routines', protect, requestMiddleware, authorize([Role.TRAINER]), getClientRoutines);
-router.delete('/clients/:clientId/routines/:routineId', protect, requestMiddleware, authorize([Role.TRAINER]), removeClientRoutine);
-router.post('/clients/:clientId/routines/:routineId/resend-email', protect, requestMiddleware, authorize([Role.TRAINER]), resendRoutineEmail);
-router.get('/clients/:clientId/progress', protect, requestMiddleware, authorize([Role.TRAINER]), getClientProgressByTrainer);
+// Todas las rutas de trainer requieren suscripción activa
+const trainerGuard = [protect, requestMiddleware, authorize([Role.TRAINER]), requireActiveSubscription];
 
-router.get('/dashboard', protect, requestMiddleware, authorize([Role.TRAINER]), getDashboardData);
+// Client management
+router.get('/clients', ...trainerGuard, getTrainerClients);
+router.post('/clients', ...trainerGuard, addClientByTrainer);
+router.get('/clients/:clientId', ...trainerGuard, getClientById);
+router.put('/clients/:clientId', ...trainerGuard, updateClientInfo);
+router.get('/clients/:clientId/routines', ...trainerGuard, getClientRoutines);
+router.delete('/clients/:clientId/routines/:routineId', ...trainerGuard, removeClientRoutine);
+router.post('/clients/:clientId/routines/:routineId/resend-email', ...trainerGuard, resendRoutineEmail);
+router.get('/clients/:clientId/progress', ...trainerGuard, getClientProgressByTrainer);
+
+router.get('/dashboard', ...trainerGuard, getDashboardData);
 
 // Workout Plans management - ORDEN CORREGIDO
-router.get('/workout-plans/unassigned', protect, requestMiddleware, authorize([Role.TRAINER]), getUnassignedWorkoutPlans);
-router.get('/workout-plans', protect, requestMiddleware, authorize([Role.TRAINER]), getAllWorkoutPlans);
-router.post('/workout-plans', protect, requestMiddleware, authorize([Role.TRAINER]), createWorkoutPlan);
-router.delete('/workout-plans/:id', protect, requestMiddleware, authorize([Role.TRAINER]), deleteWorkoutPlan);
+router.get('/workout-plans/unassigned', ...trainerGuard, getUnassignedWorkoutPlans);
+router.get('/workout-plans', ...trainerGuard, getAllWorkoutPlans);
+router.post('/workout-plans', ...trainerGuard, createWorkoutPlan);
+router.delete('/workout-plans/:id', ...trainerGuard, deleteWorkoutPlan);
 
-router.get('/exercises', protect, requestMiddleware, authorize([Role.TRAINER]), getExercises);
-router.post('/exercises', protect, requestMiddleware, authorize([Role.TRAINER]), createExercise);
-router.put('/exercises/:id', protect, requestMiddleware, authorize([Role.TRAINER]), updateExercise);
-router.delete('/exercises/:id', protect, requestMiddleware, authorize([Role.TRAINER]), deleteExercise);
+router.get('/exercises', ...trainerGuard, getExercises);
+router.post('/exercises', ...trainerGuard, createExercise);
+router.put('/exercises/:id', ...trainerGuard, updateExercise);
+router.delete('/exercises/:id', ...trainerGuard, deleteExercise);
 
-router.get('/routines', protect, requestMiddleware, authorize([Role.TRAINER]), getRoutines);
-router.get('/routines/:id', protect, requestMiddleware, authorize([Role.TRAINER]), getRoutineById);
-router.post('/routines', protect, requestMiddleware, authorize([Role.TRAINER]), createRoutine);
-router.post('/routines/assign', protect, requestMiddleware, authorize([Role.TRAINER]), assignRoutineToClient);
-router.get('/routines/assignments', protect, requestMiddleware, authorize([Role.TRAINER]), getRoutineAssignments);
-router.delete('/routines/assignments/:assignmentId', protect, requestMiddleware, authorize([Role.TRAINER]), removeRoutineAssignment);
-router.put('/routines/:id', protect, requestMiddleware, authorize([Role.TRAINER]), updateRoutine);
-router.delete('/routines/:id', protect, requestMiddleware, authorize([Role.TRAINER]), deleteRoutine);
+router.get('/routines', ...trainerGuard, getRoutines);
+router.get('/routines/:id', ...trainerGuard, getRoutineById);
+router.post('/routines', ...trainerGuard, createRoutine);
+router.post('/routines/assign', ...trainerGuard, assignRoutineToClient);
+router.get('/routines/assignments', ...trainerGuard, getRoutineAssignments);
+router.delete('/routines/assignments/:assignmentId', ...trainerGuard, removeRoutineAssignment);
+router.put('/routines/:id', ...trainerGuard, updateRoutine);
+router.delete('/routines/:id', ...trainerGuard, deleteRoutine);
 
-router.get('/nutrition-plans', protect, requestMiddleware, authorize([Role.TRAINER]), getNutritionPlans);
-router.post('/nutrition-plans', protect, requestMiddleware, authorize([Role.TRAINER]), createNutritionPlan);
-router.put('/nutrition-plans/:id', protect, requestMiddleware, authorize([Role.TRAINER]), updateNutritionPlan);
-router.delete('/nutrition-plans/:id', protect, requestMiddleware, authorize([Role.TRAINER]), deleteNutritionPlan);
+router.get('/nutrition-plans', ...trainerGuard, getNutritionPlans);
+router.post('/nutrition-plans', ...trainerGuard, createNutritionPlan);
+router.put('/nutrition-plans/:id', ...trainerGuard, updateNutritionPlan);
+router.delete('/nutrition-plans/:id', ...trainerGuard, deleteNutritionPlan);
 
-router.get('/profile', protect, requestMiddleware, authorize([Role.TRAINER]), getProfile);
-router.put('/profile', protect, requestMiddleware, authorize([Role.TRAINER]), updateProfile);
+router.get('/profile', ...trainerGuard, getProfile);
+router.put('/profile', ...trainerGuard, updateProfile);
 
-router.get('/analytics', protect, requestMiddleware, authorize([Role.TRAINER]), getAnalytics);
+router.get('/analytics', ...trainerGuard, getAnalytics);
 
 // Obtener notificaciones del cliente
-router.get('/notifications', protect, requestMiddleware, authorize([Role.TRAINER]), getClientNotifications);
+router.get('/notifications', ...trainerGuard, getClientNotifications);
 
 // Marcar notificación como leída
-router.put('/notifications/:notificationId/read', protect, requestMiddleware, authorize([Role.TRAINER]), markNotificationAsRead);
+router.put('/notifications/:notificationId/read', ...trainerGuard, markNotificationAsRead);
 
 // Obtener notificaciones no leídas
-router.get('/notifications/unread', protect, requestMiddleware, authorize([Role.TRAINER]), getUnreadNotifications);
+router.get('/notifications/unread', ...trainerGuard, getUnreadNotifications);
 
 // Marcar todas las notificaciones como leídas
-router.put('/notifications/mark-all-read', protect, requestMiddleware, authorize([Role.TRAINER]), markAllNotificationsAsRead);
+router.put('/notifications/mark-all-read', ...trainerGuard, markAllNotificationsAsRead);
 
 // Crear notificación de prueba (para testing)
-router.post('/notifications/test', protect, requestMiddleware, authorize([Role.TRAINER]), createTestNotification);
+router.post('/notifications/test', ...trainerGuard, createTestNotification);
 
 export default router;

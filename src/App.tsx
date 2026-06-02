@@ -34,6 +34,7 @@ const MessagingSystem = React.lazy(() => import('./components/MessagingSystem'))
 const AppointmentCalendar = React.lazy(() => import('./components/AppointmentCalendar'));
 const UnifiedCalendar = React.lazy(() => import('./components/UnifiedCalendar'));
 const SubscriptionPage = React.lazy(() => import('./pages/SubscriptionPage'));
+const AdminPage = React.lazy(() => import('./pages/AdminPage'));
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode; role?: 'client' | 'trainer' }> = ({ children, role }) => {
   const { user, loading, isAuthenticated } = useAuth();
@@ -369,6 +370,9 @@ function App() {
           }
         />
         
+        {/* Panel admin — sin ProtectedRoute, tiene su propio auth por clave */}
+        <Route path="/admin" element={<AdminPage />} />
+
         <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
