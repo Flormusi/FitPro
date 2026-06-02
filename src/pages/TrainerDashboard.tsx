@@ -45,7 +45,7 @@ const TrainerDashboard: React.FC = () => {
   // Colocar en `true` para reactivar el botón en el dashboard.
   const SHOW_SECURITY = false;
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
   const [dashboardData, setDashboardData] = useState<DashboardData>({
     clientCount: 0,
     routineCount: 0,
@@ -133,7 +133,7 @@ const TrainerDashboard: React.FC = () => {
             FITPRO <Dumbbell className="logo-icon" />
           </h1>
           <div className="greeting">
-            <h2>¡Hola, Maga!</h2>
+            <h2>¡Hola, {user?.name?.split(' ')[0] || 'Trainer'}!</h2>
             <p>Aquí tienes un resumen de tu actividad</p>
           </div>
         </div>
