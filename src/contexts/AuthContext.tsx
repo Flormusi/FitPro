@@ -102,7 +102,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         toast.success('¡Cuenta creada exitosamente!');
         const role = userData.role.toUpperCase();
         if (role === 'TRAINER') {
-          navigate('/trainer/subscription', { replace: true });
+          navigate('/trainer/subscription?new=true', { replace: true });
         } else {
           navigate('/client/onboarding', { replace: true });
         }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Check, Zap, Star, Crown, MessageCircle, Mail } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -53,6 +54,8 @@ const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || '';
 const SubscriptionPage: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const { user, logout } = useAuth();
+  const [searchParams] = useSearchParams();
+  const isNewRegistration = searchParams.get('new') === 'true';
 
   const handleContactWhatsapp = (planName: string) => {
     const message = encodeURIComponent(
@@ -82,13 +85,22 @@ const SubscriptionPage: React.FC = () => {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{ fontSize: 40, marginBottom: 8 }}>💪</div>
+          <div style={{ fontSize: 40, marginBottom: 8 }}>{isNewRegistration ? '💪' : '🔒'}</div>
           <h1 style={{ color: 'var(--color-text)', fontSize: '1.75rem', fontWeight: 700, margin: 0 }}>
-            ¡Cuenta creada con éxito{user?.name ? `, ${user.name.split(' ')[0]}` : ''}!
+            {isNewRegistration
+              ? `¡Cuenta creada con éxito${user?.name ? `, ${user.name.split(' ')[0]}` : ''}!`
+              : `¡Hola${user?.name ? `, ${user.name.split(' ')[0]}` : ''}!`}
           </h1>
           <p style={{ color: 'var(--color-text-muted)', marginTop: 8, fontSize: '1rem' }}>
-            Elegí tu plan y activá tu cuenta para empezar a gestionar tus alumnos.
+            {isNewRegistration
+              ? 'Elegí tu plan y contactanos para activar tu cuenta.'
+              : 'Tu plan aún no fue activado. Una vez que lo procesemos vas a poder acceder al dashboard completo.'}
           </p>
+          {!isNewRegistration && (
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', marginTop: 6 }}>
+              ¿Ya contactaste y no recibiste respuesta? Escribinos de nuevo por WhatsApp o email 👇
+            </p>
+          )}
         </div>
 
         {/* Plans */}
