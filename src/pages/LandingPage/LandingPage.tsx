@@ -100,10 +100,11 @@ const LandingPage: React.FC = () => {
       const res = await fetch(`${API_URL}/auth/demo`);
       const json = await res.json();
       if (json.success && json.token) {
-        // Guardamos token y user manualmente igual que hace el login normal
+        // Usamos window.location para forzar recarga completa y que
+        // AuthContext detecte al usuario demo desde localStorage
         localStorage.setItem('token', json.token);
         localStorage.setItem('user', JSON.stringify(json.user));
-        navigate('/trainer-dashboard', { replace: true });
+        window.location.href = '/trainer-dashboard';
       } else {
         alert('La demo no está disponible en este momento.');
       }
