@@ -110,9 +110,21 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       };
     }
 
+    if (userRole === Role.TRAINER) {
+      userData.subscription = {
+        create: {
+          plan: 'BASIC',
+          status: 'INACTIVE',
+        },
+      };
+    }
+
     const user = await prisma.user.create({
       data: userData,
-      include: { clientProfile: userRole === Role.CLIENT },
+      include: {
+        clientProfile: userRole === Role.CLIENT,
+        subscription: userRole === Role.TRAINER,
+      },
     });
 
     sendTokenResponse(user, 201, res);
@@ -143,7 +155,10 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         role: true,
         hasCompletedOnboarding: true,
         password: true,
-        name: true
+        name: true,
+        subscription: {
+          select: { status: true, plan: true }
+        }
       },
     });
 

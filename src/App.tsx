@@ -61,6 +61,15 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode; role?: 'client' | 't
         return <Navigate to="/client/onboarding" replace />;
       }
     }
+
+    // Trainers sin suscripción activa → bloquear el dashboard y redirigir a suscripción
+    if (role === 'trainer') {
+      const subStatus = (user as any).subscription?.status;
+      const isSubscriptionRoute = location.pathname === '/trainer/subscription';
+      if (subStatus && subStatus !== 'ACTIVE' && subStatus !== 'TRIALING' && !isSubscriptionRoute) {
+        return <Navigate to="/trainer/subscription" replace />;
+      }
+    }
   }
 
   return <>{children}</>;
