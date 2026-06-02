@@ -133,7 +133,7 @@ const TrainerDashboard: React.FC = () => {
             FITPRO <Dumbbell className="logo-icon" />
           </h1>
           <div className="greeting">
-            <h2>¡Hola, {user?.name?.split(' ')[0] || 'Trainer'}!</h2>
+            <h2>¡Hola, {user?.name || 'Trainer'}!</h2>
             <p>Aquí tienes un resumen de tu actividad</p>
           </div>
         </div>
