@@ -44,7 +44,8 @@ app.use(cors({
     'Pragma',
     'Expires',
     'If-Modified-Since',
-    'If-None-Match'
+    'If-None-Match',
+    'X-Admin-Key'
   ],
   exposedHeaders: ['Set-Cookie', 'Authorization'],
   maxAge: 86400
