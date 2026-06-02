@@ -59,7 +59,7 @@ const Register: React.FC = () => {
     <div className="register-container">
       <form onSubmit={handleSubmit} className="register-form">
         <img 
-          src="/images/logo-fitpro.png" // Asegúrate que esta ruta es correcta
+          src="/images/logo-fitpro.svg" // Asegúrate que esta ruta es correcta
           alt="FitPro Logo" 
           className="register-logo" 
         />

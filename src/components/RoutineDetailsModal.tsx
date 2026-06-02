@@ -154,7 +154,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       
       // Logo FITPRO (carga desde /public/images)
       try {
-        const logoResp = await fetch('/images/logo-fitpro.png');
+        const logoResp = await fetch('/images/logo-fitpro.svg');
         const logoBlob = await logoResp.blob();
         const logoBase64 = await new Promise<string>((resolve) => {
           const reader = new FileReader();

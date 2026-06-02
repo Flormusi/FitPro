@@ -67,7 +67,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <img src="/images/logo-fitpro.png" alt="FitPro Logo" className="login-logo" />
+      <img src="/images/logo-fitpro.svg" alt="FitPro Logo" className="login-logo" />
       <h1 className="login-title">INICIAR SESIÓN</h1>
 
       <form onSubmit={handleSubmit} className="login-form">
