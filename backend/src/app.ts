@@ -26,7 +26,10 @@ app.use(cors({
     const origins = allowedOrigins.length ? [...allowedOrigins, ...defaultOrigins] : defaultOrigins;
     // Allow requests with no origin (mobile apps, curl, Render health checks)
     if (!origin) return callback(null, true);
+    // Allow exact matches
     if (origins.includes(origin)) return callback(null, true);
+    // Allow any Vercel preview deployment (*.vercel.app)
+    if (origin.endsWith('.vercel.app')) return callback(null, true);
     callback(new Error(`CORS: origin ${origin} not allowed`));
   },
   credentials: true,
