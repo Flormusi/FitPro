@@ -66,7 +66,12 @@ const SubscriptionPage: React.FC = () => {
     const body = encodeURIComponent(
       `Hola! Me registré en FitPro y quiero activar el plan ${planName}.\n\nMi email: ${user?.email || ''}\nMi nombre: ${user?.name || ''}`
     );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    // Intentar abrir Gmail compose (funciona sin cliente de email instalado)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}&su=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    // Abrir Gmail en nueva pestaña; si falla, caer a mailto
+    const newTab = window.open(gmailUrl, '_blank');
+    if (!newTab) window.location.href = mailtoUrl;
   };
 
   const selectedPlanName = plans.find(p => p.id === selectedPlan)?.name || 'Pro';
