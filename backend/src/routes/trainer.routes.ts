@@ -43,14 +43,14 @@ import {
 import { addClientByTrainer, getClientById, getClientRoutines } from '../controllers/client.controller';
 import { protect, authorize } from '../middleware/auth.middleware';
 import { requestMiddleware } from '../middleware/request.middleware';
-import { requireActiveSubscription } from '../middleware/subscription.middleware';
+import { requireActiveSubscription, blockDemoWrites } from '../middleware/subscription.middleware';
 import { Role } from '@prisma/client';
 import { RequestWithUser } from '../types/express';
 
 const router = Router();
 
-// Todas las rutas de trainer requieren suscripción activa
-const trainerGuard = [protect, requestMiddleware, authorize([Role.TRAINER]), requireActiveSubscription];
+// Todas las rutas de trainer requieren suscripción activa; demo es solo lectura
+const trainerGuard = [protect, requestMiddleware, authorize([Role.TRAINER]), requireActiveSubscription, blockDemoWrites];
 
 // Client management
 router.get('/clients', ...trainerGuard, getTrainerClients);

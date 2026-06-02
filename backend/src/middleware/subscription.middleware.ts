@@ -2,6 +2,28 @@ import { Response, NextFunction, Request } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
+const DEMO_EMAIL = 'demo@fitpro.com';
+
+/**
+ * Bloquea operaciones de escritura para la cuenta demo.
+ * GET siempre pasa; POST/PUT/PATCH/DELETE devuelven 403.
+ */
+export const blockDemoWrites = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
+  const userEmail = req.user?.email;
+  if (userEmail === DEMO_EMAIL && req.method !== 'GET') {
+    res.status(403).json({
+      success: false,
+      message: 'La cuenta demo es de solo lectura. Creá tu cuenta para usar esta función.',
+      isDemo: true,
+    });
+    return;
+  }
+  next();
+};
 
 /**
  * Verifica que el trainer autenticado tenga una suscripción activa.
