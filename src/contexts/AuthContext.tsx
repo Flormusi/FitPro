@@ -14,6 +14,7 @@ interface AuthContextType {
   isAuthenticated: () => boolean;
   loading: boolean;
   saveOnboardingData: (data: any) => Promise<void>;
+  isDemoMode: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -188,6 +189,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, [user, navigateBasedOnRole]);
 
+  const isDemoMode = user?.email === 'demo@fitpro.com';
+
   const contextValue = useMemo(
     () => ({
       user,
@@ -197,8 +200,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       isAuthenticated,
       loading,
       saveOnboardingData,
+      isDemoMode,
     }),
-    [user, login, register, logout, isAuthenticated, loading, saveOnboardingData]
+    [user, login, register, logout, isAuthenticated, loading, saveOnboardingData, isDemoMode]
   );
 
   return (

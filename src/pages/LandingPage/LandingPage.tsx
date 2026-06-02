@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import {
   Dumbbell, Users, MessageCircle, CreditCard,
   BarChart2, Calendar, Check, ChevronDown, ChevronUp,
@@ -85,9 +86,33 @@ const faqs = [
   },
 ];
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [demoLoading, setDemoLoading] = useState(false);
+
+  const handleDemo = async () => {
+    setDemoLoading(true);
+    try {
+      const res = await fetch(`${API_URL}/auth/demo`);
+      const json = await res.json();
+      if (json.success && json.token) {
+        // Guardamos token y user manualmente igual que hace el login normal
+        localStorage.setItem('token', json.token);
+        localStorage.setItem('user', JSON.stringify(json.user));
+        navigate('/trainer-dashboard', { replace: true });
+      } else {
+        alert('La demo no está disponible en este momento.');
+      }
+    } catch {
+      alert('No se pudo conectar con el servidor.');
+    } finally {
+      setDemoLoading(false);
+    }
+  };
 
   return (
     <div style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
@@ -145,12 +170,18 @@ const LandingPage: React.FC = () => {
           }}>
             Crear cuenta gratis
           </button>
-          <button onClick={() => navigate('/login')} style={{
-            backgroundColor: 'var(--color-surface)', color: 'var(--color-text)',
-            border: '1px solid var(--color-border)', borderRadius: 10,
-            padding: '0.85rem 2rem', fontWeight: 600, fontSize: '1rem', cursor: 'pointer',
-          }}>
-            Ya tengo cuenta
+          <button
+            onClick={handleDemo}
+            disabled={demoLoading}
+            style={{
+              backgroundColor: 'var(--color-surface)', color: 'var(--color-text)',
+              border: '1px solid var(--color-border)', borderRadius: 10,
+              padding: '0.85rem 2rem', fontWeight: 600, fontSize: '1rem',
+              cursor: demoLoading ? 'wait' : 'pointer',
+              opacity: demoLoading ? 0.7 : 1,
+            }}
+          >
+            {demoLoading ? 'Cargando...' : '👀 Ver demo'}
           </button>
         </div>
       </section>

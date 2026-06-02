@@ -25,6 +25,7 @@ import api from "../services/api";
 import NotificationCenter from "../components/NotificationCenter";
 import DashboardCharts from "../components/charts/DashboardCharts";
 import RoutineManagement from "../components/RoutineManagement";
+import DemoBanner from "../components/DemoBanner";
 import "./TrainerDashboard.css";
 
 interface DashboardData {
@@ -45,7 +46,7 @@ const TrainerDashboard: React.FC = () => {
   // Colocar en `true` para reactivar el botón en el dashboard.
   const SHOW_SECURITY = false;
   const navigate = useNavigate();
-  const { logout, user } = useAuth();
+  const { logout, user, isDemoMode } = useAuth();
   const [dashboardData, setDashboardData] = useState<DashboardData>({
     clientCount: 0,
     routineCount: 0,
@@ -126,6 +127,7 @@ const TrainerDashboard: React.FC = () => {
 
   return (
     <div className="trainer-dashboard">
+      {isDemoMode && <DemoBanner />}
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-left">
@@ -214,18 +216,22 @@ const TrainerDashboard: React.FC = () => {
           Acciones Rápidas
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-          <button onClick={handleAddClientClick} className="action-btn primary">
-            <PlusIcon className="action-icon" />
-            Agregar alumno
-          </button>
+          {!isDemoMode && (
+            <button onClick={handleAddClientClick} className="action-btn primary">
+              <PlusIcon className="action-icon" />
+              Agregar alumno
+            </button>
+          )}
           <button onClick={handleViewClientsClick} className="action-btn">
             <UsersIcon className="action-icon" />
             Alumnos
           </button>
-          <button onClick={handleCreateRoutineClick} className="action-btn primary">
-            <PlusCircleIcon className="action-icon" />
-            Crear nueva rutina
-          </button>
+          {!isDemoMode && (
+            <button onClick={handleCreateRoutineClick} className="action-btn primary">
+              <PlusCircleIcon className="action-icon" />
+              Crear nueva rutina
+            </button>
+          )}
           <button onClick={handleViewRoutinesClick} className="action-btn">
             <BookOpenIcon className="action-icon" />
             Biblioteca de rutinas

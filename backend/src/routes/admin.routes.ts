@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { listTrainers, updateSubscriptionStatus } from '../controllers/admin.controller';
+import { seedDemo } from '../controllers/demo.controller';
 
 const router = Router();
 
@@ -19,5 +20,6 @@ const adminAuth = (req: Request, res: Response, next: NextFunction): void => {
 
 router.get('/trainers', adminAuth, listTrainers);
 router.patch('/trainers/:trainerId/subscription', adminAuth, updateSubscriptionStatus);
+router.post('/seed-demo', adminAuth, seedDemo);
 
 export default router;
