@@ -66,7 +66,7 @@ const SubscriptionPage: React.FC = () => {
     const body = encodeURIComponent(
       `Hola! Me registré en FitPro y quiero activar el plan ${planName}.\n\nMi email: ${user?.email || ''}\nMi nombre: ${user?.name || ''}`
     );
-    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`, '_blank');
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   const selectedPlanName = plans.find(p => p.id === selectedPlan)?.name || 'Pro';
