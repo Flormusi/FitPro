@@ -159,7 +159,7 @@ const ClientList: React.FC = () => {
   };
 
   const handleBackToDashboard = () => {
-    navigate('/trainer/dashboard');
+    navigate('/trainer-dashboard');
   };
 
   if (loading) {

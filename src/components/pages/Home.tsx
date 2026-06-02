@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     if (isAuthenticated && user) {
       // Redirect based on user role
       if (user.role === 'trainer') {
-        navigate('/trainer/dashboard');
+        navigate('/trainer-dashboard');
       } else if (user.role === 'client') {
         navigate('/client/dashboard');
       }

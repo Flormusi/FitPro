@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
   useEffect(() => {
     if (isAuthenticated() && user) {
       if (user.role === 'trainer') {
-        navigate('/trainer/dashboard');
+        navigate('/trainer-dashboard');
       } else if (user.role === 'client') {
         navigate(`/client/dashboard/${user.id}`);
       }

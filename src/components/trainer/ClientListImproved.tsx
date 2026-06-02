@@ -395,7 +395,7 @@ const ClientListImproved: React.FC = () => {
           gap: '12px'
         }}>
           <button 
-            onClick={() => navigate('/trainer/dashboard')} 
+            onClick={() => navigate('/trainer-dashboard')}
             style={{
               display: 'flex',
               alignItems: 'center',
