@@ -118,28 +118,32 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
       createdClients.push(client);
     }
 
-    // Crear rutinas demo
+    // Helper para generar URL de Cloudinary
+    const cdn = (publicId: string) =>
+      `https://res.cloudinary.com/dsflesvzj/image/upload/c_fit,w_300,h_200,f_auto,q_auto/${publicId}`;
+
+    // Crear rutinas demo con nombres y URLs exactas del mapa de ejercicios
     const routinesData = [
       {
         name: 'Full Body - Fuerza',
         description: 'Rutina completa de fuerza para 3 días por semana',
         clientIndex: 0,
         exercises: [
-          { name: 'Sentadilla con barra', sets: 4, reps: 8, weight: 80, restSeconds: 90 },
-          { name: 'Press de banca', sets: 4, reps: 8, weight: 70, restSeconds: 90 },
-          { name: 'Peso muerto', sets: 3, reps: 6, weight: 100, restSeconds: 120 },
-          { name: 'Dominadas', sets: 3, reps: 8, weight: 0, restSeconds: 90 },
+          { name: 'Sentadillas con barra', sets: 4, reps: 8, weight: 80, restSeconds: 90,  imageUrl: cdn('Sentadillas_con_barra_ahjld7') },
+          { name: 'Press de banca plano',  sets: 4, reps: 8, weight: 70, restSeconds: 90,  imageUrl: cdn('Press_de_banca_plano_ukvqzd') },
+          { name: 'Peso muerto con barra', sets: 3, reps: 6, weight: 100, restSeconds: 120, imageUrl: cdn('Peso_muerto_con_barra_vuuoxv') },
+          { name: 'Dominadas en barra fija', sets: 3, reps: 8, weight: 0, restSeconds: 90, imageUrl: cdn('Dominadas_en_barra_fija_nioao6') },
         ],
       },
       {
-        name: 'Cardio + Abdominales',
+        name: 'Cardio + Core',
         description: 'Rutina de cardio funcional y core',
         clientIndex: 1,
         exercises: [
-          { name: 'Burpees', sets: 4, reps: 15, weight: 0, restSeconds: 60 },
-          { name: 'Plancha', sets: 3, reps: 1, weight: 0, restSeconds: 45 },
-          { name: 'Mountain climbers', sets: 3, reps: 20, weight: 0, restSeconds: 45 },
-          { name: 'Salto a la soga', sets: 3, reps: 60, weight: 0, restSeconds: 60 },
+          { name: 'Burpee Completo',  sets: 4, reps: 15, weight: 0, restSeconds: 60, imageUrl: cdn('Burpee_Completo_c2nha3') },
+          { name: 'Plancha baja',     sets: 3, reps: 1,  weight: 0, restSeconds: 45, imageUrl: cdn('Plancha_baja_fe82xz') },
+          { name: 'Escaladores',      sets: 3, reps: 20, weight: 0, restSeconds: 45, imageUrl: cdn('Escaladores_lft6ug') },
+          { name: 'Soga',             sets: 3, reps: 60, weight: 0, restSeconds: 60, imageUrl: cdn('Soga_heyxy0') },
         ],
       },
       {
@@ -147,10 +151,10 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
         description: 'Enfocado en pecho, hombros y espalda',
         clientIndex: 2,
         exercises: [
-          { name: 'Press militar', sets: 4, reps: 10, weight: 50, restSeconds: 90 },
-          { name: 'Remo con barra', sets: 4, reps: 10, weight: 60, restSeconds: 90 },
-          { name: 'Aperturas con mancuernas', sets: 3, reps: 12, weight: 18, restSeconds: 60 },
-          { name: 'Face pull', sets: 3, reps: 15, weight: 20, restSeconds: 60 },
+          { name: 'Press Militar',                        sets: 4, reps: 10, weight: 50, restSeconds: 90, imageUrl: cdn('Press_Militar_nhjfsw') },
+          { name: 'Remos con barra',                      sets: 4, reps: 10, weight: 60, restSeconds: 90, imageUrl: cdn('Remos_con_barra_kgswja') },
+          { name: 'Aperturas mancuernas banco plano',     sets: 3, reps: 12, weight: 18, restSeconds: 60, imageUrl: cdn('Aperturas_mancuernas_banco_plano_jysgao') },
+          { name: 'Face Pull',                            sets: 3, reps: 15, weight: 20, restSeconds: 60, imageUrl: cdn('Face_Pull_yaymsh') },
         ],
       },
       {
@@ -158,10 +162,10 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
         description: 'Rutina de piernas enfocada en glúteos y cuádriceps',
         clientIndex: 3,
         exercises: [
-          { name: 'Hip thrust', sets: 4, reps: 12, weight: 60, restSeconds: 90 },
-          { name: 'Sentadilla sumo', sets: 3, reps: 12, weight: 50, restSeconds: 75 },
-          { name: 'Zancadas', sets: 3, reps: 10, weight: 20, restSeconds: 60 },
-          { name: 'Extensión de cadera en cable', sets: 3, reps: 15, weight: 15, restSeconds: 60 },
+          { name: 'Hip Thrust con Barra',           sets: 4, reps: 12, weight: 60, restSeconds: 90, imageUrl: cdn('Hip_Thrust_con_Barra_mspzfl') },
+          { name: 'Sentadilla sumo con barra',      sets: 3, reps: 12, weight: 50, restSeconds: 75, imageUrl: cdn('Sentadilla_sumo_con_barra_bt7l5f') },
+          { name: 'Estocadas caminadas',            sets: 3, reps: 10, weight: 20, restSeconds: 60, imageUrl: cdn('Estocadas_caminadas_h6epkt') },
+          { name: 'Patada Gluteo polea pierna recta', sets: 3, reps: 15, weight: 15, restSeconds: 60, imageUrl: cdn('Patada_Gluteo_polea_pierna_recta_y8tgcc') },
         ],
       },
       {
@@ -169,10 +173,10 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
         description: 'Alta intensidad para atletas con experiencia',
         clientIndex: 4,
         exercises: [
-          { name: 'Clean and press', sets: 5, reps: 5, weight: 60, restSeconds: 120 },
-          { name: 'Box jump', sets: 4, reps: 8, weight: 0, restSeconds: 90 },
-          { name: 'Turkish get-up', sets: 3, reps: 5, weight: 16, restSeconds: 90 },
-          { name: 'Kettlebell swing', sets: 4, reps: 20, weight: 24, restSeconds: 60 },
+          { name: 'Sentadilla Búlgara',  sets: 4, reps: 8,  weight: 40, restSeconds: 90, imageUrl: cdn('Sentadilla_Búlgara_jamqwb') },
+          { name: 'Swing Ketbell',       sets: 4, reps: 20, weight: 24, restSeconds: 60, imageUrl: cdn('Swing_Ketbell_tgwey7') },
+          { name: 'Plancha lateral',     sets: 3, reps: 1,  weight: 0,  restSeconds: 45, imageUrl: cdn('Plancha_lateral_xlup7o') },
+          { name: 'Remo a un brazo',     sets: 3, reps: 12, weight: 28, restSeconds: 60, imageUrl: cdn('Remo_a_un_brazo_izmkjf') },
         ],
       },
     ];
