@@ -524,7 +524,7 @@ export const updateRoutine = async (req: Request, res: Response): Promise<void> 
     const routine = await prisma.routine.update({
       where: { id, trainerId: user.id },
       data: req.body,
-      include: { client: true }
+      include: { client: { select: { id: true, name: true, email: true, role: true, status: true, hasCompletedOnboarding: true, createdAt: true } } }
     });
 
     res.status(200).json(routine);
@@ -585,7 +585,7 @@ export const getRoutines = async (req: Request, res: Response): Promise<void> =>
 
     const routines = await prisma.routine.findMany({
       where: { trainerId: user.id },
-      include: { client: true }
+      include: { client: { select: { id: true, name: true, email: true, role: true, status: true, hasCompletedOnboarding: true, createdAt: true } } }
     });
 
     // Enriquecer ejercicios con datos completos
@@ -651,7 +651,7 @@ export const getNutritionPlans = async (req: Request, res: Response): Promise<vo
 
     const nutritionPlans = await prisma.nutritionPlan.findMany({
       where: { trainerId: user.id },
-      include: { client: true }
+      include: { client: { select: { id: true, name: true, email: true, role: true, status: true, hasCompletedOnboarding: true, createdAt: true } } }
     });
 
     res.status(200).json(nutritionPlans);
