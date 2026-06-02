@@ -576,11 +576,13 @@ const CreateRoutinePage: React.FC = () => {
       setPercentPerExercise([]);
     } catch (err: any) {
       console.error('Error creating routine:', err);
-      if (err.response && err.response.data && err.response.data.message) {
+      if (err.response?.data?.isDemo) {
+        setError('👀 Esto es una demo de solo lectura. Creá tu cuenta gratis para guardar rutinas y asignarlas a tus alumnos.');
+      } else if (err.response?.data?.message) {
         setError(`Error al crear la rutina: ${err.response.data.message}`);
-      } else if (err.response && err.response.headers && err.response.headers['content-type']?.includes('text/html')) {
+      } else if (err.response?.headers?.['content-type']?.includes('text/html')) {
         setError('Error de autenticación al crear la rutina. Por favor, inicia sesión de nuevo.');
-      }else {
+      } else {
         setError('Error al crear la rutina. Intenta de nuevo más tarde.');
       }
     }

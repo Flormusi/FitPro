@@ -226,12 +226,10 @@ const TrainerDashboard: React.FC = () => {
             <UsersIcon className="action-icon" />
             Alumnos
           </button>
-          {!isDemoMode && (
-            <button onClick={handleCreateRoutineClick} className="action-btn primary">
-              <PlusCircleIcon className="action-icon" />
-              Crear nueva rutina
-            </button>
-          )}
+          <button onClick={handleCreateRoutineClick} className="action-btn primary">
+            <PlusCircleIcon className="action-icon" />
+            Crear nueva rutina
+          </button>
           <button onClick={handleViewRoutinesClick} className="action-btn">
             <BookOpenIcon className="action-icon" />
             Biblioteca de rutinas
