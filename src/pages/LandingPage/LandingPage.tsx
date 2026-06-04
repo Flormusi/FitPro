@@ -88,7 +88,7 @@ const faqs = [
 
 const API_URL = import.meta.env.VITE_API_URL || '';
 const WA_NUMBER = '541156578922';
-const WA_MESSAGE = encodeURIComponent('Hola! Vi FitPro y quiero saber más 💪');
+const WA_MESSAGE = encodeURIComponent('Hola! Vi fitpro.ar y quiero saber más 💪');
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 const LandingPage: React.FC = () => {
