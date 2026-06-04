@@ -44,7 +44,7 @@ const plans = [
   {
     id: 'STARTER',
     name: 'Starter',
-    price: 8990,
+    price: 30000,
     icon: Star,
     popular: false,
     features: ['Hasta 10 alumnos', 'Rutinas ilimitadas', 'Chat con alumnos', 'Gestión de cuotas'],
@@ -52,7 +52,7 @@ const plans = [
   {
     id: 'PRO',
     name: 'Pro',
-    price: 15990,
+    price: 55000,
     icon: Crown,
     popular: true,
     features: ['Hasta 30 alumnos', 'Todo lo del Starter', 'Métricas y progreso', 'Soporte prioritario'],
@@ -60,7 +60,7 @@ const plans = [
   {
     id: 'UNLIMITED',
     name: 'Ilimitado',
-    price: 24990,
+    price: 90000,
     icon: Zap,
     popular: false,
     features: ['Alumnos ilimitados', 'Todo lo del Pro', 'Configuraciones avanzadas', 'Onboarding personalizado'],
