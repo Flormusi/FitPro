@@ -1,0 +1,21 @@
+name: Keep Backend Alive
+
+on:
+  schedule:
+    # Corre cada 10 minutos para evitar que Render duerma el servidor
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # También se puede triggear manualmente
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping FitPro backend
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://fitpro-mgnt.onrender.com/api/health)
+          echo "Backend response: $response"
+          if [ "$response" = "200" ]; then
+            echo "✅ Backend is alive"
+          else
+            echo "⚠️ Backend returned status $response"
+          fi
