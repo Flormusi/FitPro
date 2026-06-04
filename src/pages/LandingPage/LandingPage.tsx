@@ -96,15 +96,17 @@ const LandingPage: React.FC = () => {
   const { login } = useAuth();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [demoLoading, setDemoLoading] = useState(false);
+  const [demoSlowMsg, setDemoSlowMsg] = useState(false);
 
   const handleDemo = async () => {
     setDemoLoading(true);
+    setDemoSlowMsg(false);
+    const slowTimer = setTimeout(() => setDemoSlowMsg(true), 4000);
     try {
       const res = await fetch(`${API_URL}/auth/demo`);
       const json = await res.json();
+      clearTimeout(slowTimer);
       if (json.success && json.token) {
-        // Usamos window.location para forzar recarga completa y que
-        // AuthContext detecte al usuario demo desde localStorage
         localStorage.setItem('token', json.token);
         localStorage.setItem('user', JSON.stringify(json.user));
         window.location.href = '/trainer-dashboard';
@@ -112,9 +114,11 @@ const LandingPage: React.FC = () => {
         alert('La demo no está disponible en este momento.');
       }
     } catch {
-      alert('No se pudo conectar con el servidor.');
+      clearTimeout(slowTimer);
+      alert('No se pudo conectar con el servidor. Intentá de nuevo en unos segundos.');
     } finally {
       setDemoLoading(false);
+      setDemoSlowMsg(false);
     }
   };
 
@@ -174,19 +178,26 @@ const LandingPage: React.FC = () => {
           }}>
             Crear cuenta gratis
           </button>
-          <button
-            onClick={handleDemo}
-            disabled={demoLoading}
-            style={{
-              backgroundColor: 'var(--color-surface)', color: 'var(--color-text)',
-              border: '1px solid var(--color-border)', borderRadius: 10,
-              padding: '0.85rem 2rem', fontWeight: 600, fontSize: '1rem',
-              cursor: demoLoading ? 'wait' : 'pointer',
-              opacity: demoLoading ? 0.7 : 1,
-            }}
-          >
-            {demoLoading ? 'Cargando...' : '👀 Ver demo'}
-          </button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+            <button
+              onClick={handleDemo}
+              disabled={demoLoading}
+              style={{
+                backgroundColor: 'var(--color-surface)', color: 'var(--color-text)',
+                border: '1px solid var(--color-border)', borderRadius: 10,
+                padding: '0.85rem 2rem', fontWeight: 600, fontSize: '1rem',
+                cursor: demoLoading ? 'wait' : 'pointer',
+                opacity: demoLoading ? 0.7 : 1,
+              }}
+            >
+              {demoLoading ? '⏳ Iniciando...' : '👀 Ver demo'}
+            </button>
+            {demoSlowMsg && (
+              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textAlign: 'center' }}>
+                El servidor está despertando, tardá unos segundos más... ☕
+              </span>
+            )}
+          </div>
         </div>
       </section>
 
