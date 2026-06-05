@@ -97,6 +97,31 @@ const LandingPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [demoLoading, setDemoLoading] = useState(false);
   const [demoSlowMsg, setDemoSlowMsg] = useState(false);
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadName, setLeadName] = useState('');
+  const [leadStatus, setLeadStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleLeadSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLeadStatus('loading');
+    try {
+      const res = await fetch(`${API_URL}/leads`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: leadEmail, name: leadName }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setLeadStatus('success');
+        setLeadEmail('');
+        setLeadName('');
+      } else {
+        setLeadStatus('error');
+      }
+    } catch {
+      setLeadStatus('error');
+    }
+  };
 
   const handleDemo = async () => {
     setDemoLoading(true);
@@ -201,8 +226,74 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* LEAD CAPTURE */}
+      <section style={{ padding: '3rem 1.5rem', backgroundColor: 'var(--color-surface)' }}>
+        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center' }}>
+          {leadStatus === 'success' ? (
+            <div style={{ padding: '2rem', borderRadius: 12, backgroundColor: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)' }}>
+              <p style={{ fontSize: '1.3rem', margin: 0 }}>🎉</p>
+              <p style={{ fontWeight: 700, margin: '8px 0 4px' }}>¡Te anotaste!</p>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', margin: 0 }}>Te vamos a escribir pronto con acceso anticipado.</p>
+            </div>
+          ) : (
+            <>
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.4rem' }}>
+                ¿No estás listo para registrarte todavía?
+              </h2>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                Dejá tu email y te avisamos cuando tengamos disponibilidad — sin spam, sin compromiso.
+              </p>
+              <form onSubmit={handleLeadSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  value={leadName}
+                  onChange={e => setLeadName(e.target.value)}
+                  style={{
+                    padding: '0.75rem 1rem', borderRadius: 8, border: '1px solid var(--color-border)',
+                    backgroundColor: 'var(--color-surface-2)', color: 'var(--color-text)',
+                    fontSize: '0.95rem', outline: 'none',
+                  }}
+                />
+                <div style={{ display: 'flex', gap: 8 }}>
+                  <input
+                    type="email"
+                    placeholder="Tu email"
+                    value={leadEmail}
+                    onChange={e => setLeadEmail(e.target.value)}
+                    required
+                    style={{
+                      flex: 1, padding: '0.75rem 1rem', borderRadius: 8, border: '1px solid var(--color-border)',
+                      backgroundColor: 'var(--color-surface-2)', color: 'var(--color-text)',
+                      fontSize: '0.95rem', outline: 'none',
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={leadStatus === 'loading'}
+                    style={{
+                      backgroundColor: 'var(--color-primary)', color: '#fff', border: 'none',
+                      borderRadius: 8, padding: '0.75rem 1.25rem', fontWeight: 600,
+                      fontSize: '0.9rem', cursor: 'pointer', whiteSpace: 'nowrap',
+                      opacity: leadStatus === 'loading' ? 0.7 : 1,
+                    }}
+                  >
+                    {leadStatus === 'loading' ? '...' : 'Me anoto'}
+                  </button>
+                </div>
+                {leadStatus === 'error' && (
+                  <p style={{ color: '#ef4444', fontSize: '0.8rem', margin: 0 }}>
+                    Algo salió mal. Intentá de nuevo.
+                  </p>
+                )}
+              </form>
+            </>
+          )}
+        </div>
+      </section>
+
       {/* FEATURES */}
-      <section style={{ padding: '4rem 1.5rem', backgroundColor: 'var(--color-surface)' }}>
+      <section style={{ padding: '4rem 1.5rem', backgroundColor: 'var(--color-bg)' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', fontSize: '1.7rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             Todo lo que necesitás en un solo lugar

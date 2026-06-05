@@ -14,6 +14,7 @@ import paymentRoutes from './payment.routes';
 import paymentReminderRoutes from './paymentReminderRoutes';
 import webhookRoutes from './webhook.routes';
 import adminRoutes from './admin.routes';
+import { captureLead } from '../controllers/leads.controller';
 
 const router = Router();
 
@@ -37,5 +38,6 @@ router.use('/payments', paymentRoutes);
 router.use('/payment-reminders', paymentReminderRoutes);
 router.use('/webhooks', webhookRoutes);
 router.use('/admin', adminRoutes);
+router.post('/leads', captureLead);
 
 export default router;

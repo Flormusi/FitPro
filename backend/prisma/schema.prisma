@@ -408,3 +408,11 @@ model CalendarIntegration {
 
   client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
 }
+
+model Lead {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  source    String?  @default("landing")
+  createdAt DateTime @default(now())
+}
