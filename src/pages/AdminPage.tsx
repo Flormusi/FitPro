@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, X, RefreshCw, LogOut, Users, Mail } from 'lucide-react';
+import { Check, X, RefreshCw, LogOut, Users, Mail, KeyRound } from 'lucide-react';
 
 const ADMIN_API = import.meta.env.VITE_API_URL || '';
 
@@ -34,7 +34,7 @@ const STATUS_LABELS: Record<string, { label: string; color: string }> = {
 
 const PLAN_OPTIONS = ['BASIC', 'PREMIUM', 'PROFESSIONAL'];
 
-type Tab = 'trainers' | 'leads';
+type Tab = 'trainers' | 'leads' | 'reset';
 
 const AdminPage: React.FC = () => {
   const [adminKey, setAdminKey] = useState('');
@@ -51,6 +51,11 @@ const AdminPage: React.FC = () => {
 
   const [leads, setLeads] = useState<Lead[]>([]);
   const [leadsLoading, setLeadsLoading] = useState(false);
+
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetResult, setResetResult] = useState<{ tempPassword: string; name: string; email: string } | null>(null);
+  const [resetError, setResetError] = useState('');
+  const [resetLoading, setResetLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -97,6 +102,31 @@ const AdminPage: React.FC = () => {
       console.error('Error fetching leads');
     } finally {
       setLeadsLoading(false);
+    }
+  };
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setResetError('');
+    setResetResult(null);
+    setResetLoading(true);
+    try {
+      const res = await fetch(`${ADMIN_API}/admin/reset-password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Admin-Key': adminKey },
+        body: JSON.stringify({ email: resetEmail }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setResetResult(json);
+        setResetEmail('');
+      } else {
+        setResetError(json.message || 'Error al resetear.');
+      }
+    } catch {
+      setResetError('No se pudo conectar al servidor.');
+    } finally {
+      setResetLoading(false);
     }
   };
 
@@ -265,6 +295,24 @@ const AdminPage: React.FC = () => {
               {leads.length}
             </span>
           </button>
+          <button
+            onClick={() => setActiveTab('reset')}
+            style={{
+              backgroundColor: 'transparent',
+              color: activeTab === 'reset' ? '#e11d48' : '#6b7280',
+              border: 'none',
+              borderBottom: activeTab === 'reset' ? '2px solid #e11d48' : '2px solid transparent',
+              padding: '0.6rem 1.1rem',
+              cursor: 'pointer',
+              fontWeight: activeTab === 'reset' ? 700 : 400,
+              fontSize: '0.9rem',
+              display: 'flex', alignItems: 'center', gap: 7,
+              marginBottom: -1,
+            }}
+          >
+            <KeyRound size={15} />
+            Resetear clave
+          </button>
         </div>
 
         {/* ── TRAINERS TAB ── */}
@@ -424,6 +472,70 @@ const AdminPage: React.FC = () => {
               </table>
             </div>
           )
+        )}
+
+        {/* ── RESET TAB ── */}
+        {activeTab === 'reset' && (
+          <div style={{ maxWidth: 420 }}>
+            <p style={{ color: '#9ca3af', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
+              Ingresá el email del usuario para generar una contraseña temporal. El usuario deberá cambiarla después de ingresar.
+            </p>
+            <form onSubmit={handleResetPassword} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <input
+                type="email"
+                placeholder="Email del usuario"
+                value={resetEmail}
+                onChange={e => setResetEmail(e.target.value)}
+                required
+                style={{
+                  backgroundColor: '#111', color: '#fff',
+                  border: '1px solid #333', borderRadius: 8,
+                  padding: '0.75rem', fontSize: '0.9rem',
+                }}
+              />
+              <button
+                type="submit"
+                disabled={resetLoading}
+                style={{
+                  backgroundColor: '#e11d48', color: '#fff',
+                  border: 'none', borderRadius: 8,
+                  padding: '0.75rem', fontWeight: 700,
+                  cursor: resetLoading ? 'default' : 'pointer',
+                  opacity: resetLoading ? 0.7 : 1,
+                }}
+              >
+                {resetLoading ? 'Reseteando…' : 'Resetear contraseña'}
+              </button>
+            </form>
+
+            {resetError && (
+              <p style={{ color: '#ef4444', marginTop: 12, fontSize: '0.875rem' }}>{resetError}</p>
+            )}
+
+            {resetResult && (
+              <div style={{
+                marginTop: 16, backgroundColor: '#052e16', border: '1px solid #16a34a',
+                borderRadius: 10, padding: '1rem 1.25rem',
+              }}>
+                <p style={{ color: '#22c55e', fontWeight: 700, margin: '0 0 6px' }}>✅ Contraseña reseteada</p>
+                <p style={{ color: '#9ca3af', fontSize: '0.85rem', margin: '0 0 4px' }}>
+                  Usuario: <span style={{ color: '#fff' }}>{resetResult.name} ({resetResult.email})</span>
+                </p>
+                <p style={{ color: '#9ca3af', fontSize: '0.85rem', margin: 0 }}>
+                  Nueva contraseña temporal:{' '}
+                  <span style={{
+                    color: '#fff', fontFamily: 'monospace', fontSize: '1rem',
+                    backgroundColor: '#0a3a1a', padding: '2px 8px', borderRadius: 4,
+                  }}>
+                    {resetResult.tempPassword}
+                  </span>
+                </p>
+                <p style={{ color: '#6b7280', fontSize: '0.75rem', marginTop: 8 }}>
+                  Copiá esta contraseña y mandásela al usuario. Solo se muestra una vez.
+                </p>
+              </div>
+            )}
+          </div>
         )}
 
         <p style={{ color: '#2a2a2a', fontSize: '0.75rem', textAlign: 'center', marginTop: '2rem' }}>

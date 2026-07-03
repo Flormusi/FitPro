@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { PrismaClient, SubscriptionStatus, SubscriptionPlan } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
@@ -73,6 +74,33 @@ export const updateSubscriptionStatus = async (req: Request, res: Response): Pro
     res.status(200).json({ success: true, data: subscription });
   } catch (error) {
     console.error('[admin] updateSubscriptionStatus error:', error);
+    res.status(500).json({ success: false, message: 'Error interno del servidor' });
+  }
+};
+
+/** POST /api/admin/reset-password — resetea la contraseña de un usuario */
+export const resetUserPassword = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { email } = req.body as { email: string };
+    if (!email) {
+      res.status(400).json({ success: false, message: 'Email requerido' });
+      return;
+    }
+
+    const user = await prisma.user.findUnique({ where: { email: email.toLowerCase().trim() } });
+    if (!user) {
+      res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+      return;
+    }
+
+    const tempPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-4).toUpperCase();
+    const hashed = await bcrypt.hash(tempPassword, 10);
+
+    await prisma.user.update({ where: { id: user.id }, data: { password: hashed } });
+
+    res.json({ success: true, tempPassword, name: user.name, email: user.email });
+  } catch (error) {
+    console.error('[admin] resetUserPassword error:', error);
     res.status(500).json({ success: false, message: 'Error interno del servidor' });
   }
 };

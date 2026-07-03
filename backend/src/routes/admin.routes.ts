@@ -1,5 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { listTrainers, updateSubscriptionStatus } from '../controllers/admin.controller';
+import { listTrainers, updateSubscriptionStatus, resetUserPassword } from '../controllers/admin.controller';
 import { seedDemo } from '../controllers/demo.controller';
 import { getLeads } from '../controllers/leads.controller';
 
@@ -23,5 +23,6 @@ router.get('/trainers', adminAuth, listTrainers);
 router.patch('/trainers/:trainerId/subscription', adminAuth, updateSubscriptionStatus);
 router.post('/seed-demo', adminAuth, seedDemo);
 router.get('/leads', adminAuth, getLeads);
+router.post('/reset-password', adminAuth, resetUserPassword);
 
 export default router;
