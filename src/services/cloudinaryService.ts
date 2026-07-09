@@ -2,6 +2,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { auto, fit } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { format, quality } from '@cloudinary/url-gen/actions/delivery';
+import { localExerciseImages } from '../data/localExerciseImages';
 
 // Configuración de Cloudinary
 const cld = new Cloudinary({
@@ -334,12 +335,18 @@ export const exerciseImageMap: Record<string, string> = {
 
 // Función para obtener la URL de imagen de un ejercicio
 export const getExerciseImageUrl = (exerciseName: string, width = 300, height = 200): string => {
+  // Las ilustraciones propias tienen prioridad sobre las fotos de Cloudinary
+  const localImage = localExerciseImages[exerciseName];
+  if (localImage) {
+    return localImage;
+  }
+
   const publicId = exerciseImageMap[exerciseName];
-  
+
   if (publicId) {
     return getOptimizedImageUrl(publicId, width, height);
   }
-  
+
   // Fallback a placeholder
   return '/images/exercises/placeholder.svg';
 };
