@@ -350,7 +350,7 @@ html body .trainer-calendar.trainer-calendar .calendar-day.has-events-dot::befor
 }
 
 .event-dot.both {
-  background: #ff9800;
+  background: #c084fc;
 }
 
 /* Legend */
@@ -388,7 +388,7 @@ html body .trainer-calendar.trainer-calendar .calendar-day.has-events-dot::befor
 }
 
 .legend-dot.both {
-  background: #ff9800;
+  background: #c084fc;
 }
 
 /* Responsive Design */

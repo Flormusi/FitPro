@@ -201,7 +201,7 @@
   justify-content: center;
   gap: 8px;
   padding: 14px 24px;
-  background: linear-gradient(90deg, #E74C3C, #F39C12);
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -213,13 +213,13 @@
   min-width: 160px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(231, 76, 60, 0.25);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25);
 }
 
 .btn-sync:hover:not(:disabled) {
   filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.35);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
 }
 
 .btn-sync:disabled {
@@ -237,7 +237,7 @@
 /* Botón desconectar (alerta, rojo) */
 .btn-disconnect {
   padding: 14px 24px;
-  background: #C0392B;
+  background: #7c3aed;
   color: #fff;
   border: none;
   border-radius: 12px;

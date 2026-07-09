@@ -219,7 +219,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                           <div className="mb-3 sm:mb-4">
                             <div className="flex items-start gap-3 sm:gap-4">
                               {routine.type === 'preset' ? (
-                                <div className="w-10 h-10 bg-gradient-to-r from-[#a78bfa] to-[#e6342a] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 bg-gradient-to-r from-[#a78bfa] to-[#9333ea] rounded-full flex items-center justify-center flex-shrink-0">
                                   <Star className="text-white" size={16} />
                                 </div>
                               ) : (

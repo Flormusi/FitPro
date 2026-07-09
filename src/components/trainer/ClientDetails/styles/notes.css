@@ -74,7 +74,7 @@
 }
 
 .add-note-btn:hover {
-  background-color: #d32f2f;
+  background-color: #7c3aed;
 }
 
 .add-note-btn:disabled {
@@ -260,7 +260,7 @@
 }
 
 .save-edit-btn:hover {
-  background-color: #d32f2f;
+  background-color: #7c3aed;
 }
 
 .cancel-edit-btn:hover {

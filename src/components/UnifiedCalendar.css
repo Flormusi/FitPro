@@ -5,8 +5,8 @@
 :root {
   /* Colores principales - FitPro */
   --fitpro-primary: #9333ea; /* rojo marca */
-  --fitpro-primary-light: #F0625A; /* rojo claro para hover */
-  --fitpro-primary-dark: #C62828; /* rojo más oscuro */
+  --fitpro-primary-light: #a78bfa; /* rojo claro para hover */
+  --fitpro-primary-dark: #7c3aed; /* rojo más oscuro */
   --fitpro-brand-red: #9333ea; /* uso consistente */
   --fitpro-brand-red-overlay: rgba(229, 57, 53, 0.14); /* overlay para hoy/eventos en oscuro */
   
@@ -364,7 +364,7 @@
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
 .marker-rutina { background-color: #9333ea !important; }
-.marker-sesion { background-color: #FB8C00 !important; }
+.marker-sesion { background-color: #a855f7 !important; }
 .marker-consulta { background-color: #8E24AA !important; }
 
 /* Eventos con hover/tooltip y estilo moderno adicional */
@@ -401,7 +401,7 @@
   border-radius: 9999px !important;
 }
 .legend-dot.legend-rutina { background: #9333ea !important; }
-.legend-dot.legend-sesion { background: #FB8C00 !important; }
+.legend-dot.legend-sesion { background: #a855f7 !important; }
 .legend-dot.legend-consulta { background: #8E24AA !important; }
 
 /* Responsive: apilar header y toolbar en pantallas pequeñas */
@@ -477,12 +477,12 @@
 /* Acentos por tipo (solo borde izquierdo) */
 .unified-calendar .rbc-event.event-rutina {
   background-color: #9333ea !important; /* Rutinas → rojo FitPro */
-  border-left-color: #C62828 !important; /* acento más oscuro */
+  border-left-color: #7c3aed !important; /* acento más oscuro */
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.30) !important; /* separación sutil entre eventos del mismo tipo */
 }
 .unified-calendar .rbc-event.event-sesion {
-  background-color: #FB8C00 !important; /* Sesiones → naranja */
-  border-left-color: #EF6C00 !important; /* acento más oscuro */
+  background-color: #a855f7 !important; /* Sesiones → naranja */
+  border-left-color: #a855f7 !important; /* acento más oscuro */
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.30) !important;
 }
 .unified-calendar .rbc-event.event-consulta {
@@ -794,7 +794,7 @@ div.form-input {
 }
 .btn-confirm:hover,
 .btn-completed:hover {
-  background-color: #cf2f2c;
+  background-color: #9333ea;
 }
 
 .btn-no-show {

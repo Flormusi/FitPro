@@ -316,11 +316,11 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
     const colors: { [key: string]: string } = {
       'Fuerza': 'border-[#7c3aed] text-[#a855f7]',
       'Hipertrofia': 'border-[#7c3aed] text-[#a78bfa]',
-      'Resistencia': 'border-[#7c3aed] text-[#e6342a]',
+      'Resistencia': 'border-[#7c3aed] text-[#9333ea]',
       'Potencia': 'border-[#7c3aed] text-[#a855f7]',
       'Definición': 'border-[#7c3aed] text-[#a78bfa]',
       'Quema de Grasa': 'border-[#7c3aed] text-[#a855f7]',
-      'Estética y Salud': 'border-[#7c3aed] text-[#e6342a]'
+      'Estética y Salud': 'border-[#7c3aed] text-[#9333ea]'
     };
     return colors[objective] || 'border-[#7c3aed] text-[#a78bfa]';
   };
@@ -576,7 +576,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                           borderRadius: '8px'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#c5303e';
+                          e.currentTarget.style.background = '#7c3aed';
                           e.currentTarget.style.boxShadow = '0 0 15px rgba(230, 57, 70, 0.4)';
                           e.currentTarget.style.transform = 'translateY(-1px)';
                         }}

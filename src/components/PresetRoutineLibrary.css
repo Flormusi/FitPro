@@ -202,7 +202,7 @@
 }
 
 .use-routine-button:hover {
-  background: #c5303e; /* Darker red */
+  background: #7c3aed; /* Darker red */
   box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); /* Red glow */
   transform: translateY(-1px);
 }
@@ -239,8 +239,8 @@
 }
 
 .secondary-button.view-button:hover {
-  background: #c5303e;
-  border-color: #c5303e;
+  background: #7c3aed;
+  border-color: #7c3aed;
   box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
 }
 

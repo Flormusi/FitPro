@@ -127,7 +127,7 @@
 .add-client-btn,
 .create-class-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #8b5cf6 0%, #E83E3E 100%) !important;
+  background: linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%) !important;
   color: #fff;
   padding: 10px 20px;
   border-radius: 8px;

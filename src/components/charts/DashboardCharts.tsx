@@ -63,7 +63,7 @@ const DashboardCharts: React.FC = () => {
             <Line
               type="monotone"
               dataKey="Cliente2"
-              stroke="#F04E3E"
+              stroke="#a855f7"
               strokeWidth={2}
             />
           </LineChart>

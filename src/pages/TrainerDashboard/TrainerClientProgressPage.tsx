@@ -447,7 +447,7 @@ const TrainerClientProgressPage: React.FC = () => {
 
       // Paleta de colores FitPro - Negro, Rojo y Gris
       const fitproRed = [220, 38, 38] as [number, number, number]; // #7c3aed - Rojo principal
-      const fitproOrange = [255, 107, 53] as [number, number, number]; // #ff6b35 - Naranja secundario
+      const fitproOrange = [255, 107, 53] as [number, number, number]; // #a855f7 - Naranja secundario
       const fitproBlack = [10, 10, 10] as [number, number, number]; // #0a0a1c - Negro principal
       const fitproDarkGray = [26, 26, 26] as [number, number, number]; // #18182f - Gris oscuro
       const fitproLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
@@ -1109,7 +1109,7 @@ const TrainerClientProgressPage: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              background: 'linear-gradient(135deg, #ec1b21 0%, #9b1212 100%)',
+              background: 'linear-gradient(135deg, #a855f7 0%, #6d28d9 100%)',
               color: 'white',
               border: 'none',
               padding: '10px 18px',
@@ -1127,7 +1127,7 @@ const TrainerClientProgressPage: React.FC = () => {
               e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #ec1b21 0%, #9b1212 100%)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #a855f7 0%, #6d28d9 100%)';
               e.currentTarget.style.boxShadow = '0 8px 18px rgba(168,85,247,0.25)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
@@ -1766,7 +1766,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 }}
                 style={{
                   padding: '10px 20px',
-                  backgroundColor: '#ff6b35',
+                  backgroundColor: '#a855f7',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '6px',
@@ -2002,7 +2002,7 @@ const TrainerClientProgressPage: React.FC = () => {
                                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                                  {exercise.muscleGroup && (
                                    <span style={{
-                                     backgroundColor: '#ff6b35',
+                                     backgroundColor: '#a855f7',
                                      color: '#fff',
                                      padding: '4px 8px',
                                      borderRadius: '12px',
@@ -2036,7 +2036,7 @@ const TrainerClientProgressPage: React.FC = () => {
                              )}
 
                              {exercise.equipment && (
-                               <p style={{ color: '#ff6b35', margin: '0 0 10px 0', fontSize: '12px', fontWeight: 'bold' }}>
+                               <p style={{ color: '#a855f7', margin: '0 0 10px 0', fontSize: '12px', fontWeight: 'bold' }}>
                                  🏋️ Equipamiento: {exercise.equipment}
                                </p>
                              )}
@@ -2144,7 +2144,7 @@ const TrainerClientProgressPage: React.FC = () => {
                          {/* Instrucciones */}
                          {exercise.instructions && exercise.instructions.length > 0 && (
                            <div>
-                             <h6 style={{ color: '#ff6b35', margin: '0 0 10px 0', fontSize: '14px', fontWeight: 'bold' }}>
+                             <h6 style={{ color: '#a855f7', margin: '0 0 10px 0', fontSize: '14px', fontWeight: 'bold' }}>
                                📝 INSTRUCCIONES
                              </h6>
                              <ol style={{ color: '#ccc', fontSize: '13px', lineHeight: '1.5', paddingLeft: '20px', margin: 0 }}>
@@ -2165,7 +2165,7 @@ const TrainerClientProgressPage: React.FC = () => {
                                target="_blank" 
                                rel="noopener noreferrer"
                                style={{
-                                 color: '#ff6b35',
+                                 color: '#a855f7',
                                  textDecoration: 'none',
                                  fontSize: '13px',
                                  fontWeight: 'bold'

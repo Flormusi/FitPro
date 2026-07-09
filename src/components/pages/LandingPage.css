@@ -170,26 +170,26 @@ body.dark-theme .landing-footer {
 }
 
 .btn-register-dark {
-  background-color: #ff2d20; /* Rojo FitPro */
+  background-color: #a855f7; /* Rojo FitPro */
   color: #ffffff;
-  border-color: #ff2d20;
+  border-color: #a855f7;
 }
 
 .btn-register-dark:hover {
-  background-color: #e60000; /* Rojo un poco más oscuro al pasar el mouse */
-  border-color: #e60000;
+  background-color: #7c3aed; /* Rojo un poco más oscuro al pasar el mouse */
+  border-color: #7c3aed;
 }
 
 .btn-login-dark {
   background-color: transparent;
-  color: #ff2d20; /* Texto rojo FitPro */
-  border: 2px solid #ff2d20; /* Borde rojo FitPro */
+  color: #a855f7; /* Texto rojo FitPro */
+  border: 2px solid #a855f7; /* Borde rojo FitPro */
 }
 
 .btn-login-dark:hover {
-  background-color: rgba(255, 45, 32, 0.1); /* Un fondo rojo muy sutil al pasar el mouse */
-  color: #e60000;
-  border-color: #e60000;
+  background-color: rgba(168, 85, 247, 0.1); /* Un fondo rojo muy sutil al pasar el mouse */
+  color: #7c3aed;
+  border-color: #7c3aed;
 }
 
 /* Media query para pantallas más grandes si quieres los botones en línea */

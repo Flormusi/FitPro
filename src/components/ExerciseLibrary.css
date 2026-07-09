@@ -96,7 +96,7 @@
 }
 
 .category-btn.active {
-  background: linear-gradient(145deg, #a855f7, #e6322f);
+  background: linear-gradient(145deg, #a855f7, #9333ea);
   border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 
     0 6px 24px rgba(168, 85, 247, 0.3),
@@ -196,7 +196,7 @@
 }
 
 .difficulty-level.intermediate {
-  background-color: #ff9500;
+  background-color: #c084fc;
   color: #fff;
 }
 
@@ -280,7 +280,7 @@
 }
 
 .difficulty-tag.intermediate {
-  background-color: #ff9500;
+  background-color: #c084fc;
   color: #fff;
 }
 
@@ -448,7 +448,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  background-color: #e0301a;
+  background-color: #9333ea;
 }
 
 .submit-btn:disabled {

@@ -260,7 +260,7 @@
 }
 
 .client-status.pending {
-  background-color: #ff9500;
+  background-color: #c084fc;
 }
 
 .client-actions {
@@ -1418,8 +1418,8 @@
   }
   
   .payment-status.pending {
-    background-color: rgba(255, 149, 0, 0.2);
-    color: #ff9500;
+    background-color: rgba(192, 132, 252, 0.2);
+    color: #c084fc;
   }
   
   .payment-status.failed {
@@ -1759,7 +1759,7 @@
 
 .progress-fill-mini {
   height: 100%;
-  background: linear-gradient(90deg, #a855f7, #ff6b5a);
+  background: linear-gradient(90deg, #a855f7, #c4b5fd);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -1826,7 +1826,7 @@
 }
 
 .action-btn.primary {
-  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #c4b5fd 100%);
   color: #fff;
   box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
 }
@@ -1878,7 +1878,7 @@
 }
 
 .routine-action-btn.primary {
-  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #c4b5fd 100%);
   color: #fff;
   box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
 }
@@ -1890,13 +1890,13 @@
 }
 
 .routine-action-btn.edit {
-  background: linear-gradient(135deg, #ff9500 0%, #ffb340 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #c4b5fd 100%);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(192, 132, 252, 0.3);
 }
 
 .routine-action-btn.danger {
-  background: linear-gradient(135deg, #ff453a 0%, #ff6961 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
   color: #fff;
   box-shadow: 0 2px 8px rgba(255, 69, 58, 0.3);
 }

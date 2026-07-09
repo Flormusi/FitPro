@@ -259,11 +259,11 @@ const PresetRoutineLibrary: React.FC<PresetRoutineLibraryProps> = ({
     const colors: { [key: string]: string } = {
       'Fuerza': 'bg-[#7c3aed]/20 text-[#a855f7] border-[#7c3aed]/30',
       'Hipertrofia': 'bg-[#7c3aed]/15 text-[#a78bfa] border-[#7c3aed]/25',
-      'Resistencia': 'bg-[#7c3aed]/10 text-[#e6342a] border-[#7c3aed]/20',
+      'Resistencia': 'bg-[#7c3aed]/10 text-[#9333ea] border-[#7c3aed]/20',
       'Potencia': 'bg-[#7c3aed]/25 text-[#a855f7] border-[#7c3aed]/35',
       'Definición': 'bg-[#7c3aed]/18 text-[#a78bfa] border-[#7c3aed]/28',
       'Quema de Grasa': 'bg-[#7c3aed]/22 text-[#a855f7] border-[#7c3aed]/32',
-      'Estética y Salud': 'bg-[#7c3aed]/12 text-[#e6342a] border-[#7c3aed]/22'
+      'Estética y Salud': 'bg-[#7c3aed]/12 text-[#9333ea] border-[#7c3aed]/22'
     };
     return colors[objective] || 'bg-[#7c3aed]/15 text-[#a78bfa] border-[#7c3aed]/25';
   };

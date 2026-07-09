@@ -42,7 +42,7 @@ const SecurityPage: React.FC = () => {
       </p>
 
       {loading && <div>Cargando historial...</div>}
-      {error && <div style={{ color: '#ff5555' }}>Error: {error}</div>}
+      {error && <div style={{ color: '#a78bfa' }}>Error: {error}</div>}
 
       {!loading && !error && (
         rotations.length === 0 ? (

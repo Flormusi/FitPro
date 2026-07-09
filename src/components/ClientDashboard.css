@@ -182,7 +182,7 @@
   margin-top: 10px;
 }
 .view-routine-button:hover {
-  background-color: #e0301a;
+  background-color: #9333ea;
 }
 
 /* --- Tarjetas de Avances (dentro de la columna derecha) --- */
@@ -223,7 +223,7 @@
 }
 .chart-icon {
   font-size: 28px;
-  color: #FF5252;
+  color: #a78bfa;
 }
 
 .plan-completion-card .percentage-display { /* Para "79%" */

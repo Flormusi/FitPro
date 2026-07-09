@@ -39,7 +39,7 @@
   transition: background .18s ease, color .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .back-btn:hover { 
-  background: linear-gradient(90deg, #9333ea, #F57C00); /* degradado rojo-naranja */
+  background: linear-gradient(90deg, #9333ea, #9333ea); /* degradado rojo-naranja */
   color: #ffffff; /* texto blanco en hover */
   border-color: transparent;
   box-shadow: 0 4px 16px rgba(229,57,53,0.28);
@@ -50,7 +50,7 @@
 .clear-btn {
   background: #1c1c38;
   color: #E5E7EB;
-  border: 1px solid #C71C1C;
+  border: 1px solid #6d28d9;
   padding: 8px 12px;
   border-radius: 8px;
 }
@@ -92,7 +92,7 @@
 .folder-icon { font-size: 24px; }
 .folder-info { display: flex; flex-direction: column; justify-content: center; }
 .gradient-text {
-  background: linear-gradient(90deg, #9333ea, #F57C00); /* paleta FitPro */
+  background: linear-gradient(90deg, #9333ea, #9333ea); /* paleta FitPro */
   -webkit-background-clip: text; background-clip: text; color: transparent;
   -webkit-text-fill-color: transparent; /* evita bloque de color en hover en WebKit */
   display: inline-block; /* acota el fondo al ancho del texto */
@@ -121,7 +121,7 @@
 .error-container,
 .empty-state { margin-top: 16px; padding: 16px; }
 .loading-spinner {
-  width: 20px; height: 20px; border-radius: 50%; border: 2px solid #C71C1C;
+  width: 20px; height: 20px; border-radius: 50%; border: 2px solid #6d28d9;
   border-right-color: transparent; display: inline-block; margin-right: 8px;
   animation: spin .8s linear infinite;
 }
@@ -151,13 +151,13 @@
 }
 .routine-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; color: #b0b0b0; }
 .meta-chip { background: #262626; border: 1px solid #28284c; color: #b0b0b0; padding: 4px 8px; border-radius: 999px; font-size: 12px; }
-.type-chip { background: #C71C1C; border-color: #C71C1C; color: #fff; }
+.type-chip { background: #6d28d9; border-color: #6d28d9; color: #fff; }
 .routine-desc { color: #b0b0b0; font-size: 13px; }
 .routine-actions { margin-top: 12px; display: flex; gap: 8px; }
 
 /* Botones FitPro básicos (fallback) */
 .tf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; font-weight: 600; }
-.tf-btn-primary { background: linear-gradient(90deg, #C71C1C, #ff7a18); color: #fff; }
+.tf-btn-primary { background: linear-gradient(90deg, #6d28d9, #a855f7); color: #fff; }
 .tf-btn-secondary { background: #262626; color: #E5E7EB; border-color: #28284c; }
 .tf-btn:hover { filter: brightness(1.06); }
 

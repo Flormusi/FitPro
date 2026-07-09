@@ -113,7 +113,7 @@
 }
 
 .payment-indicator.overdue {
-  background: linear-gradient(135deg, #c084fc 0%, #ff3742 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #c084fc 100%);
   color: white;
   border: 1px solid rgba(192, 132, 252, 0.3);
 }
@@ -221,7 +221,7 @@
 }
 
 .routine-status.pending {
-  background: linear-gradient(135deg, #ffa502 0%, #ff6348 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #c084fc 100%);
   color: white;
 }
 

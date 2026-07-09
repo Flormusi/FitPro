@@ -505,7 +505,7 @@ const UnifiedCalendar: React.FC = () => {
     if (["rutina", "routine", "rutinas"].includes(type || '')) {
       backgroundColor = '#9333ea';
     } else if (["sesion", "session", "sesiones"].includes(type || '')) {
-      backgroundColor = '#FB8C00';
+      backgroundColor = '#a855f7';
     } else if (["consulta", "consultation", "consultas"].includes(type || '')) {
       backgroundColor = '#8E24AA';
     } else {

@@ -19,7 +19,7 @@
 
 /* Botones modernos con efectos tridimensionales */
 .modern-button {
-  background: linear-gradient(135deg, #FF3B3B 0%, #E53E3E 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #9333ea 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -38,7 +38,7 @@
 .modern-button:hover {
   background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 59, 59, 0.4);
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.4);
 }
 
 .modern-button:active {
@@ -51,7 +51,7 @@
 
 /* Botones secundarios */
 .modern-button-secondary {
-  background: #FF3B3B;
+  background: #a78bfa;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -70,7 +70,7 @@
 .modern-button-secondary:hover {
   background: #c4b5fd;
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
 }
 
 /* Inputs modernos */
@@ -135,7 +135,7 @@
 }
 
 .modern-modal-header {
-  background: linear-gradient(135deg, #FF3B3B 0%, #000000 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #000000 100%);
   color: white;
   padding: 24px;
   display: flex;
@@ -185,7 +185,7 @@
 
 /* Gradientes para fondos atractivos */
 .gradient-bg-primary {
-  background: linear-gradient(135deg, #a78bfa 0%, #cc3333 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #9333ea 100%);
 }
 
 .gradient-bg-secondary {
@@ -193,12 +193,12 @@
 }
 
 .gradient-bg-accent {
-  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #cc3333 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #9333ea 100%);
 }
 
 /* Chip styles for labels */
 .predesigned-chip {
-  background: #FF3B3B;
+  background: #a78bfa;
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -226,7 +226,7 @@
 
 /* FitPro Header gradient for modals/panel titles */
 .tf-header-gradient {
-  background: linear-gradient(135deg, #9333ea 0%, #C5303E 100%);
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
   box-shadow: 0 4px 20px rgba(230, 57, 70, 0.25);
 }
 
@@ -310,13 +310,13 @@
 }
 
 .tf-btn-primary {
-  background: linear-gradient(135deg, #FF3B3B 0%, #E53E3E 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #9333ea 100%);
   color: #ffffff;
   border: 1px solid rgba(229, 62, 62, 0.6);
 }
 .tf-btn-primary:hover {
   background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
-  box-shadow: 0 8px 25px rgba(255, 59, 59, 0.35);
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.35);
 }
 
 .tf-btn-secondary {

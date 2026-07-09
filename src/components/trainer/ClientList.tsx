@@ -267,7 +267,7 @@ const ClientList: React.FC = () => {
             alignItems: 'center',
             gap: '8px',
             padding: '12px 20px',
-            background: 'linear-gradient(135deg, #8b5cf6 0%, #E83E3E 100%)',
+            background: 'linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%)',
             color: 'white',
             border: 'none',
             borderRadius: '12px',
@@ -578,7 +578,7 @@ const ClientList: React.FC = () => {
               onClick={handleAddClient} 
               style={{
                 padding: '12px 20px',
-                background: 'linear-gradient(135deg, #8b5cf6 0%, #E83E3E 100%)',
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '12px',
@@ -757,7 +757,7 @@ const ClientList: React.FC = () => {
                         border: 'none',
                         borderRadius: '6px',
                         background: 'transparent',
-                        color: '#e57373',
+                        color: '#c4b5fd',
                         cursor: 'pointer'
                       }}
                     >

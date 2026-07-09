@@ -458,7 +458,7 @@
 
 /* Título con línea inferior roja (reemplaza subrayado previo) */
 .client-summary-card .summary-title {
-  border-bottom: 1px solid #C71C1C; /* rojo marca FitPro */
+  border-bottom: 1px solid #6d28d9; /* rojo marca FitPro */
   padding-bottom: 8px;
   margin-bottom: 12px;
   font-size: 20px; /* alinear con .client-info h2 */

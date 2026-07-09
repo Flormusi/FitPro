@@ -173,9 +173,9 @@ const RoutineCard = ({ routine, clientId }) => {
           title="Reenviar email de rutina"
           onClick={handleResendEmail}
           style={{
-            backgroundColor: '#ff6600',
+            backgroundColor: '#a855f7',
             color: 'white',
-            border: '3px solid #ff4400',
+            border: '3px solid #a855f7',
             padding: '15px 25px',
             borderRadius: '10px',
             minWidth: '160px',
@@ -192,12 +192,12 @@ const RoutineCard = ({ routine, clientId }) => {
             letterSpacing: '1px'
           }}
           onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#ff4400';
+            e.target.style.backgroundColor = '#a855f7';
             e.target.style.transform = 'translateY(-2px)';
             e.target.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
           }}
           onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#ff6600';
+            e.target.style.backgroundColor = '#a855f7';
             e.target.style.transform = 'translateY(0)';
             e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
           }}

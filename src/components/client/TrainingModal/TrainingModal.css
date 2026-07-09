@@ -195,12 +195,12 @@
 }
 
 .btn-edit {
-  background: #ffa502;
+  background: #c4b5fd;
   color: white;
 }
 
 .btn-edit:hover {
-  background: #ff9500;
+  background: #c084fc;
   transform: translateY(-1px);
 }
 
@@ -210,7 +210,7 @@
 }
 
 .btn-delete:hover {
-  background: #ff3742;
+  background: #c084fc;
   transform: translateY(-1px);
 }
 

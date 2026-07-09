@@ -540,7 +540,7 @@
 .client-dashboard-page .messages-card .messages-preview-content { color: #ddd; margin-bottom: 4px; }
 .client-dashboard-page .messages-card .messages-preview-time { color: #9aa5b1; font-size: 0.9rem; }
 .client-dashboard-page .messages-card .open-messaging-btn {
-  background-image: linear-gradient(90deg, #E74C3C, #F39C12);
+  background-image: linear-gradient(90deg, #8b5cf6, #c084fc);
   color: #fff;
   font-weight: 600;
   border: none;
@@ -836,11 +836,11 @@
   border: 1px dashed #26264a;
 }
 .client-dashboard-page .calendar-day.today { border-color: #10B981; box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35); }
-.client-dashboard-page .calendar-day.has-training { border-color: #E74C3C; }
+.client-dashboard-page .calendar-day.has-training { border-color: #8b5cf6; }
 .client-dashboard-page .calendar-day.has-google-event { border-color: #0EA5E9; }
 .client-dashboard-page .calendar-day.has-both-events { border-color: #8B5CF6; }
 .client-dashboard-page .calendar-day.has-server-routine { border-color: #9333ea; }
-.client-dashboard-page .calendar-day.has-server-session { border-color: #FB8C00; }
+.client-dashboard-page .calendar-day.has-server-session { border-color: #a855f7; }
 .client-dashboard-page .calendar-day.has-server-consultation { border-color: #8E24AA; }
 .client-dashboard-page .calendar-day .calendar-day-number { font-weight: 700; color: #fff; }
 
@@ -862,7 +862,7 @@
   justify-content: center;
   border-radius: 6px;
 }
-.client-dashboard-page .day-indicators .training-indicator { background-color: #E74C3C; }
+.client-dashboard-page .day-indicators .training-indicator { background-color: #8b5cf6; }
 .client-dashboard-page .day-indicators .google-indicator { background-color: #0EA5E9; }
 
 /* === Vista semanal móvil === */
@@ -881,10 +881,10 @@
   text-align: center;
 }
 .client-dashboard-page .weekly-day-card.today { border-color: #10B981; box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35); }
-.client-dashboard-page .weekly-day-card.has-training { border-color: #E74C3C; }
+.client-dashboard-page .weekly-day-card.has-training { border-color: #8b5cf6; }
 .client-dashboard-page .weekly-day-name { font-size: 0.8rem; font-weight: 600; color: #a0a0a0; }
 .client-dashboard-page .weekly-day-number { font-size: 1.25rem; font-weight: 700; color: #fff; }
-.client-dashboard-page .weekly-training-indicator { width: 8px; height: 8px; border-radius: 9999px; background-color: #E74C3C; }
+.client-dashboard-page .weekly-training-indicator { width: 8px; height: 8px; border-radius: 9999px; background-color: #8b5cf6; }
 .client-dashboard-page .weekly-training-type { font-size: 0.75rem; color: #bbb; font-weight: 500; }
 
 @media (max-width: 767px) {
