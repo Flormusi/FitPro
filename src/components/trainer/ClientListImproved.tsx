@@ -321,8 +321,8 @@ const ClientListImproved: React.FC = () => {
           <div style={{
             width: '50px',
             height: '50px',
-            border: '4px solid #333',
-            borderTop: '4px solid #dc2626',
+            border: '4px solid #2f2f55',
+            borderTop: '4px solid #7c3aed',
             borderRadius: '50%',
             animation: 'spin 1s linear infinite'
           }}></div>
@@ -335,24 +335,24 @@ const ClientListImproved: React.FC = () => {
   if (error) {
     return (
       <div className="client-list-container" style={{ 
-        backgroundColor: '#121212', 
+        backgroundColor: '#111128', 
         minHeight: '100vh', 
         padding: '20px' 
       }}>
         <div className="error-message" style={{
           textAlign: 'center',
           padding: '60px',
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+          background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
           borderRadius: '12px',
           color: '#ffffff'
         }}>
-          <h3 style={{ color: '#ff3b30', marginBottom: '16px' }}>Error al cargar clientes</h3>
+          <h3 style={{ color: '#a855f7', marginBottom: '16px' }}>Error al cargar clientes</h3>
           <p style={{ marginBottom: '24px' }}>{error}</p>
           <button 
             onClick={() => window.location.reload()} 
             style={{
               padding: '12px 24px',
-              background: '#D62828',
+              background: '#8b5cf6',
               color: 'white',
               border: 'none',
               borderRadius: '8px',
@@ -373,7 +373,7 @@ const ClientListImproved: React.FC = () => {
       padding: '16px',
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#121212',
+      backgroundColor: '#111128',
       color: '#ffffff'
     }}>
       {/* Header */}
@@ -383,7 +383,7 @@ const ClientListImproved: React.FC = () => {
         gap: '16px',
         marginBottom: '24px',
         padding: '16px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px'
       }}>
         {/* Navegación y título */}
@@ -416,7 +416,7 @@ const ClientListImproved: React.FC = () => {
             onClick={() => navigate('/add-client')} 
             style={{
               padding: '12px 24px',
-              background: '#D62828',
+              background: '#8b5cf6',
               color: 'white',
               border: 'none',
               borderRadius: '8px',
@@ -452,7 +452,7 @@ const ClientListImproved: React.FC = () => {
         gap: '16px',
         marginBottom: '24px',
         padding: '16px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px'
       }}>
         {/* Búsqueda */}
@@ -482,8 +482,8 @@ const ClientListImproved: React.FC = () => {
             style={{
               flex: 1,
               padding: '12px 16px',
-              background: '#2d2d2d',
-              border: '1px solid #404040',
+              background: '#29294d',
+              border: '1px solid #3b3b66',
               borderRadius: '8px',
               color: '#ffffff',
               fontSize: '0.9rem'
@@ -499,7 +499,7 @@ const ClientListImproved: React.FC = () => {
               }}
               style={{
                 padding: '12px 16px',
-                background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '8px',
@@ -518,8 +518,8 @@ const ClientListImproved: React.FC = () => {
               top: '100%',
               left: '0',
               right: '0',
-              background: '#2d2d2d',
-              border: '1px solid #404040',
+              background: '#29294d',
+              border: '1px solid #3b3b66',
               borderTop: 'none',
               borderRadius: '0 0 8px 8px',
               padding: '8px 12px',
@@ -546,8 +546,8 @@ const ClientListImproved: React.FC = () => {
             }}
             style={{
               padding: '12px 16px',
-              background: '#2d2d2d',
-              border: '1px solid #404040',
+              background: '#29294d',
+              border: '1px solid #3b3b66',
               borderRadius: '8px',
               color: '#ffffff',
               fontSize: '0.9rem'
@@ -569,8 +569,8 @@ const ClientListImproved: React.FC = () => {
             }}
             style={{
               padding: '12px 16px',
-              background: '#2d2d2d',
-              border: '1px solid #404040',
+              background: '#29294d',
+              border: '1px solid #3b3b66',
               borderRadius: '8px',
               color: '#ffffff',
               fontSize: '0.9rem'
@@ -592,8 +592,8 @@ const ClientListImproved: React.FC = () => {
             }}
             style={{
               padding: '12px 16px',
-              background: '#2d2d2d',
-              border: '1px solid #404040',
+              background: '#29294d',
+              border: '1px solid #3b3b66',
               borderRadius: '8px',
               color: '#ffffff',
               fontSize: '0.9rem'
@@ -624,7 +624,7 @@ const ClientListImproved: React.FC = () => {
         <div style={{
           textAlign: 'center',
           padding: '60px',
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+          background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
           borderRadius: '12px'
         }}>
           <h3 style={{ color: '#ffffff', marginBottom: '16px' }}>
@@ -641,7 +641,7 @@ const ClientListImproved: React.FC = () => {
               onClick={() => navigate('/add-client')}
               style={{
                 padding: '12px 24px',
-                background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '8px',
@@ -668,7 +668,7 @@ const ClientListImproved: React.FC = () => {
           }}>
             {paginatedClients.map((client) => (
               <div key={client.id} style={{
-                background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+                background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
                 borderRadius: '12px',
                 padding: isTablet ? '16px' : '24px',
                 transition: 'all 0.3s ease',
@@ -681,7 +681,7 @@ const ClientListImproved: React.FC = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(220, 38, 38, 0.15)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(124, 58, 237, 0.15)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -692,7 +692,7 @@ const ClientListImproved: React.FC = () => {
                   width: '60px',
                   height: '60px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                  background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -732,12 +732,12 @@ const ClientListImproved: React.FC = () => {
                       fontWeight: '600',
                       textTransform: 'uppercase',
                       background: client.membership_tier === 'premium' 
-                        ? 'rgba(214, 40, 40, 0.2)' 
+                        ? 'rgba(139, 92, 246, 0.2)' 
                         : client.membership_tier === 'pro'
                         ? 'rgba(245, 158, 11, 0.2)'
                         : 'rgba(156, 163, 175, 0.2)',
                       color: client.membership_tier === 'premium' 
-                        ? '#D62828' 
+                        ? '#8b5cf6' 
                         : client.membership_tier === 'pro'
                         ? '#f59e0b'
                         : '#9ca3af'
@@ -763,7 +763,7 @@ const ClientListImproved: React.FC = () => {
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       textAlign: 'center',
-                      background: '#D62828',
+                      background: '#8b5cf6',
                       color: 'white'
                     }}
                   >
@@ -779,7 +779,7 @@ const ClientListImproved: React.FC = () => {
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       textAlign: 'center',
-                      background: '#D62828',
+                      background: '#8b5cf6',
                       color: 'white'
                     }}
                   >
@@ -795,7 +795,7 @@ const ClientListImproved: React.FC = () => {
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       textAlign: 'center',
-                      background: '#D62828',
+                      background: '#8b5cf6',
                       color: 'white'
                     }}
                   >
@@ -815,7 +815,7 @@ const ClientListImproved: React.FC = () => {
               gap: '8px',
               marginTop: '32px',
               padding: '16px',
-              background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+              background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
               borderRadius: '12px'
             }}>
               <button
@@ -823,7 +823,7 @@ const ClientListImproved: React.FC = () => {
                 disabled={currentPage === 1}
                 style={{
                   padding: '8px 12px',
-                  background: currentPage === 1 ? '#404040' : '#D62828',
+                  background: currentPage === 1 ? '#3b3b66' : '#8b5cf6',
                   color: currentPage === 1 ? '#666' : 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -856,8 +856,8 @@ const ClientListImproved: React.FC = () => {
                       style={{
                         padding: '8px 12px',
                         background: pageNumber === currentPage 
-                          ? '#D62828' 
-                          : '#404040',
+                          ? '#8b5cf6' 
+                          : '#3b3b66',
                         color: 'white',
                         border: 'none',
                         borderRadius: '6px',
@@ -876,7 +876,7 @@ const ClientListImproved: React.FC = () => {
                 disabled={currentPage === paginationInfo.totalPages}
                 style={{
                   padding: '8px 12px',
-                  background: currentPage === paginationInfo.totalPages ? '#404040' : '#D62828',
+                  background: currentPage === paginationInfo.totalPages ? '#3b3b66' : '#8b5cf6',
                   color: currentPage === paginationInfo.totalPages ? '#666' : 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -904,24 +904,24 @@ const ClientListImproved: React.FC = () => {
         onHide={() => setShowDeleteModal(false)}
         centered
       >
-        <Modal.Header closeButton style={{ backgroundColor: '#1a1a1a', borderColor: '#404040' }}>
+        <Modal.Header closeButton style={{ backgroundColor: '#18182f', borderColor: '#3b3b66' }}>
           <Modal.Title style={{ color: '#ffffff' }}>Confirmar eliminación</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ backgroundColor: '#1a1a1a', color: '#ffffff' }}>
+        <Modal.Body style={{ backgroundColor: '#18182f', color: '#ffffff' }}>
           ¿Estás seguro de que quieres eliminar a {clientToDelete?.name}? Esta acción no se puede deshacer.
         </Modal.Body>
-        <Modal.Footer style={{ backgroundColor: '#1a1a1a', borderColor: '#404040' }}>
+        <Modal.Footer style={{ backgroundColor: '#18182f', borderColor: '#3b3b66' }}>
           <Button 
             variant="secondary" 
             onClick={() => setShowDeleteModal(false)}
-            style={{ backgroundColor: '#404040', borderColor: '#404040' }}
+            style={{ backgroundColor: '#3b3b66', borderColor: '#3b3b66' }}
           >
             Cancelar
           </Button>
           <Button 
             variant="danger" 
             onClick={handleConfirmDelete}
-            style={{ backgroundColor: '#dc2626', borderColor: '#dc2626' }}
+            style={{ backgroundColor: '#7c3aed', borderColor: '#7c3aed' }}
           >
             Eliminar
           </Button>

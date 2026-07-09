@@ -10,7 +10,7 @@ const ResponsiveNavbar = () => {
   };
 
   return (
-    <nav className="responsive-navbar" style={{ backgroundColor: '#333', color: 'white', padding: '10px 20px' }}>
+    <nav className="responsive-navbar" style={{ backgroundColor: '#2f2f55', color: 'white', padding: '10px 20px' }}>
       <div className="navbar-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Logo text="FitPro" /> {/* Or pass an image src */}
         <div className="menu-icon md:hidden" onClick={toggleMenu} style={{ cursor: 'pointer' }}>

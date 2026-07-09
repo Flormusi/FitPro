@@ -22,27 +22,27 @@
 
 /* Asegurar que las tarjetas tengan sombras oscuras apropiadas */
 .client-card {
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-  background-color: #1e1e1e !important;
+  background-color: #1c1c38 !important;
 }
 
 .stat-card {
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-  background-color: #1e1e1e !important;
+  background-color: #1c1c38 !important;
 }
 
 /* Eliminar bordes blancos de modales pero mantener estructura */
 .modal-content {
-  border: 1px solid #2a2a2a !important;
-  background-color: #1e1e1e !important;
+  border: 1px solid #26264a !important;
+  background-color: #1c1c38 !important;
 }
 
 .modal-header,
 .modal-footer,
 .modal-body {
-  border-color: #2a2a2a !important;
+  border-color: #26264a !important;
 }
 
 /* Mantener bordes redondeados en botones */
@@ -53,7 +53,7 @@
 .retry-btn,
 .add-first-client-btn {
   border-radius: 8px !important;
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
 }
 
 /* Inputs con bordes oscuros apropiados */
@@ -62,9 +62,9 @@
 input,
 select,
 textarea {
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
   border-radius: 6px !important;
-  background-color: #1e1e1e !important;
+  background-color: #1c1c38 !important;
 }
 
 /* Contenedores principales sin bordes blancos */
@@ -73,5 +73,5 @@ textarea {
 .stats-section,
 .client-grid {
   border: none !important;
-  background-color: #121212 !important;
+  background-color: #111128 !important;
 }

@@ -155,7 +155,7 @@ const WorkoutPlan = () => {
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
         </div>
       ) : error ? (
-        <div className="p-4 text-center" style={{ color: '#ff3b30' }}>{error}</div>
+        <div className="p-4 text-center" style={{ color: '#a855f7' }}>{error}</div>
       ) : (
         <>
           <div className="flex justify-between items-center mb-6">
@@ -163,7 +163,7 @@ const WorkoutPlan = () => {
             <button 
               onClick={() => setShowCreateForm(true)}
               className="px-6 py-3 text-white font-semibold rounded-lg shadow-lg transition duration-150 ease-in-out flex items-center gap-2"
-              style={{ backgroundColor: '#D62828' }}
+              style={{ backgroundColor: '#8b5cf6' }}
             >
               <PlusCircleIcon className="h-5 w-5" />
               Crear Nueva Rutina
@@ -207,7 +207,7 @@ const WorkoutPlan = () => {
                   <button 
                     onClick={() => handleDeletePlan(plan.id)}
                     className="transition-colors"
-                    style={{ color: '#D62828' }}
+                    style={{ color: '#8b5cf6' }}
                   >
                     Delete
                   </button>

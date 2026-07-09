@@ -49,7 +49,7 @@ const DashboardCharts: React.FC = () => {
         <h3 className="chart-title">Progreso de Peso - Clientes</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={weightData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#2f2f55" />
             <XAxis dataKey="month" stroke="#aaa" />
             <YAxis stroke="#aaa" />
             <Tooltip />
@@ -57,7 +57,7 @@ const DashboardCharts: React.FC = () => {
             <Line
               type="monotone"
               dataKey="FlorenciaM"
-              stroke="#D62828"
+              stroke="#8b5cf6"
               strokeWidth={2}
             />
             <Line
@@ -75,11 +75,11 @@ const DashboardCharts: React.FC = () => {
         <h3 className="chart-title">Entrenamientos Completados</h3>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={trainingsData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#2f2f55" />
             <XAxis dataKey="month" stroke="#aaa" />
             <YAxis stroke="#aaa" />
             <Tooltip />
-            <Bar dataKey="entrenamientos" fill="#D62828" barSize={40} />
+            <Bar dataKey="entrenamientos" fill="#8b5cf6" barSize={40} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -89,11 +89,11 @@ const DashboardCharts: React.FC = () => {
         <h3 className="chart-title">Nuevos Clientes por Mes</h3>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={clientsData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#2f2f55" />
             <XAxis dataKey="month" stroke="#aaa" />
             <YAxis stroke="#aaa" />
             <Tooltip />
-            <Bar dataKey="nuevos" fill="#D62828" barSize={40} />
+            <Bar dataKey="nuevos" fill="#8b5cf6" barSize={40} />
           </BarChart>
         </ResponsiveContainer>
       </div>

@@ -68,7 +68,7 @@ const TrainerDashboard = () => {
         <div className="summary-card">
           <span className="summary-value">{dashboardData?.clientCount || 0}</span>
           <span className="summary-label">Alumnos Activos</span>
-          <div style={{fontSize: '16px', color: '#ffffff', backgroundColor: '#ff0000', padding: '10px', marginTop: '10px', borderRadius: '5px', border: '2px solid #ffffff'}}>
+          <div style={{fontSize: '16px', color: '#ffffff', backgroundColor: '#a855f7', padding: '10px', marginTop: '10px', borderRadius: '5px', border: '2px solid #ffffff'}}>
             🔍 DEBUG: {dashboardData ? JSON.stringify(dashboardData) : 'dashboardData is null/undefined'}
           </div>
           <div style={{fontSize: '16px', color: '#000000', backgroundColor: '#00ff00', padding: '10px', marginTop: '5px', borderRadius: '5px', border: '2px solid #000000'}}>

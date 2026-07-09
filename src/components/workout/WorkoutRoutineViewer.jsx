@@ -13,7 +13,7 @@ const WorkoutRoutineViewer = ({ plan }) => {
 
   return (
     <div className="workout-routine-viewer" style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ textAlign: 'center', color: '#333' }}>{plan.name || 'Workout Routine'}</h1>
+      <h1 style={{ textAlign: 'center', color: '#2f2f55' }}>{plan.name || 'Workout Routine'}</h1>
       {plan.description && <p style={{ textAlign: 'center', color: '#555' }}>{plan.description}</p>}
 
       {(plan.weeks || plan.days)?.map((weekOrDay, index) => ( // Adapt based on your WorkoutPlan structure

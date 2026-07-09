@@ -619,19 +619,19 @@ const CreateRoutinePage: React.FC = () => {
 
   // Actualizar la sección de renderizado para mostrar las imágenes
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-white p-6">
+    <div className="min-h-screen bg-[#18182f] text-white p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-[#ff4444]">
+            <h1 className="text-4xl font-bold text-[#a78bfa]">
               Crear Nueva Rutina
             </h1>
             <p className="text-gray-400 mt-2">Diseña una rutina personalizada para tu cliente</p>
           </div>
           <button
             onClick={handleBackClick}
-            className="px-6 py-3 bg-transparent border border-[#555555] hover:bg-[#333333] hover:border-[#777777] rounded-lg font-medium transition-all duration-300"
+            className="px-6 py-3 bg-transparent border border-[#555555] hover:bg-[#2f2f55] hover:border-[#777777] rounded-lg font-medium transition-all duration-300"
           >
             ← {((location.state as any)?.fromLibrary) ? 'Volver a la Biblioteca' : 'Volver al Dashboard'}
           </button>
@@ -665,7 +665,7 @@ const CreateRoutinePage: React.FC = () => {
           </div>
         )}
 
-        <div className="bg-[#2a2a2a] rounded-2xl shadow-2xl p-8">
+        <div className="bg-[#26264a] rounded-2xl shadow-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -693,7 +693,7 @@ const CreateRoutinePage: React.FC = () => {
                   name="clientId"
                   value={routineData.clientId}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                   required
                 >
                   <option value="" className="bg-gray-700">Selecciona un cliente</option>
@@ -710,7 +710,7 @@ const CreateRoutinePage: React.FC = () => {
                   name="trainingObjective"
                   value={routineData.trainingObjective}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                   required
                 >
                   <option value="">Selecciona un objetivo</option>
@@ -781,7 +781,7 @@ const CreateRoutinePage: React.FC = () => {
                   <select
                     value={defaultPercent}
                     onChange={(e) => setDefaultPercent(parseFloat(e.target.value))}
-                    className="px-3 py-2 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white"
+                    className="px-3 py-2 bg-[#18182f] border border-[#555555] rounded-lg text-white"
                   >
                     <option value={5}>5%</option>
                     <option value={7.5}>7.5%</option>
@@ -792,7 +792,7 @@ const CreateRoutinePage: React.FC = () => {
               </div>
 
               {routineData.exercises.map((exercise, index) => (
-                <div key={exercise.id} className="bg-[#1a1a1a] border border-[#555555] rounded-lg p-6">
+                <div key={exercise.id} className="bg-[#18182f] border border-[#555555] rounded-lg p-6">
                   <div className="flex justify-between items-center mb-6">
                     <h4 className="text-lg font-semibold text-white flex items-center gap-2">
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-sm font-bold">
@@ -823,18 +823,18 @@ const CreateRoutinePage: React.FC = () => {
                           setShowDropdowns(newShowDropdowns);
                         }}
                         placeholder="Escribe para buscar ejercicios..."
-                        className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                        className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                         required
                       />
                   
                       {showDropdowns[index] && (
-                        <div className="absolute z-10 w-full bg-[#2a2a2a] border border-[#555555] rounded-lg shadow-lg max-h-60 overflow-y-auto mt-1">
+                        <div className="absolute z-10 w-full bg-[#26264a] border border-[#555555] rounded-lg shadow-lg max-h-60 overflow-y-auto mt-1">
                           {getFilteredExercisesForIndex(index).length > 0 ? (
                             getFilteredExercisesForIndex(index).map((ex) => (
                               <div
                                 key={ex.id}
                                 onClick={() => selectExercise(index, ex)}
-                                className="px-4 py-3 hover:bg-[#333333] cursor-pointer border-b border-[#555555] last:border-b-0 text-white hover:text-[#ff4444] transition-all duration-200"
+                                className="px-4 py-3 hover:bg-[#2f2f55] cursor-pointer border-b border-[#555555] last:border-b-0 text-white hover:text-[#a78bfa] transition-all duration-200"
                               >
                                 {ex.name}
                               </div>
@@ -870,7 +870,7 @@ const CreateRoutinePage: React.FC = () => {
                         name="series"
                         value={exercise.series}
                         onChange={(e) => handleExerciseChange(index, e)}
-                        className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                        className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                         placeholder="Ej: 3"
                         required
                       />
@@ -885,7 +885,7 @@ const CreateRoutinePage: React.FC = () => {
                         name="reps"
                         value={exercise.reps}
                         onChange={(e) => handleExerciseChange(index, e)}
-                        className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                        className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                         placeholder="Ej: 12"
                         required
                         disabled={pyramidalEnabled[index]}
@@ -897,7 +897,7 @@ const CreateRoutinePage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => togglePyramidal(index)}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 ${pyramidalEnabled[index] ? 'bg-[#ff4444] text-white border-[#ff4444]' : 'bg-[#1a1a1a] text-gray-200 border-[#555555] hover:bg-[#333333]'} `}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 ${pyramidalEnabled[index] ? 'bg-[#a78bfa] text-white border-[#a78bfa]' : 'bg-[#18182f] text-gray-200 border-[#555555] hover:bg-[#2f2f55]'} `}
                         aria-pressed={pyramidalEnabled[index] ? 'true' : 'false'}
                         title="Repeticiones piramidales"
                       >
@@ -910,7 +910,7 @@ const CreateRoutinePage: React.FC = () => {
                         <div className="flex items-center gap-2 text-sm text-gray-300">
                           <span className="font-semibold">Secuencia:</span>
                           {PYRAMIDAL_SEQUENCE.map((rep, i) => (
-                            <span key={`${index}-seq-${i}`} className="px-2 py-1 rounded bg-[#2a2a2a] border border-[#555555]">{rep}</span>
+                            <span key={`${index}-seq-${i}`} className="px-2 py-1 rounded bg-[#26264a] border border-[#555555]">{rep}</span>
                           ))}
                         </div>
                       )}
@@ -943,7 +943,7 @@ const CreateRoutinePage: React.FC = () => {
                                 <select
                                   value={percentPerExercise[index] ?? defaultPercent}
                                   onChange={(e) => handlePercentChange(index, e.target.value)}
-                                  className="px-3 py-2 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white"
+                                  className="px-3 py-2 bg-[#18182f] border border-[#555555] rounded-lg text-white"
                                 >
                                   <option value={5}>5%</option>
                                   <option value={7.5}>7.5%</option>
@@ -953,7 +953,7 @@ const CreateRoutinePage: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => suggestWeights(index, percentPerExercise[index] ?? defaultPercent)}
-                                className="bg-[#1a1a1a] hover:bg-[#333333] text-gray-200 font-medium py-2 px-4 rounded-lg transition-all duration-300 border border-[#555555]"
+                                className="bg-[#18182f] hover:bg-[#2f2f55] text-gray-200 font-medium py-2 px-4 rounded-lg transition-all duration-300 border border-[#555555]"
                                 title={`Sugerir pesos por serie (+${percentPerExercise[index] ?? defaultPercent}% por serie)`}
                               >
                                 Sugerir pesos
@@ -982,7 +982,7 @@ const CreateRoutinePage: React.FC = () => {
                         value={exercise.notes || ''}
                         onChange={(e) => handleExerciseChange(index, e)}
                         rows={3}
-                        className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300 resize-none"
+                        className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300 resize-none"
                         placeholder="Notas adicionales sobre este ejercicio..."
                       />
                     </div>
@@ -994,7 +994,7 @@ const CreateRoutinePage: React.FC = () => {
                 <button
                   type="button"
                   onClick={addExercise}
-                  className="bg-[#ff4444] hover:bg-[#ff3333] text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 flex items-center gap-2"
+                  className="bg-[#a78bfa] hover:bg-[#a78bfa] text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 flex items-center gap-2"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -1007,7 +1007,7 @@ const CreateRoutinePage: React.FC = () => {
             <div className="flex justify-end pt-6">
               <button
                 type="submit"
-                className="bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center gap-2"
+                className="bg-[#a78bfa] hover:bg-[#a78bfa] text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

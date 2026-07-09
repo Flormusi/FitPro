@@ -85,8 +85,8 @@ const ClientProgress = () => {
         {
           label: exerciseName,
           data: exerciseData.map(record => record.weight),
-          borderColor: '#ff3b30',
-          backgroundColor: 'rgba(255, 59, 48, 0.5)',
+          borderColor: '#a855f7',
+          backgroundColor: 'rgba(168, 85, 247, 0.5)',
         }
       ]
     };

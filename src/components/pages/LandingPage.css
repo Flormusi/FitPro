@@ -6,7 +6,7 @@
   min-height: 100vh;
   text-align: center;
   background-color: #f0f2f5; /* Un color de fondo claro por defecto */
-  color: #333; /* Color de texto oscuro por defecto */
+  color: #2f2f55; /* Color de texto oscuro por defecto */
   padding: 20px;
   box-sizing: border-box;
 }
@@ -83,7 +83,7 @@
 /* Ejemplo de estilos oscuros (puedes activarlos o crear un tema) */
 /*
 body.dark-theme .landing-page-container {
-  background-color: #121212;
+  background-color: #111128;
   color: #e0e0e0;
 }
 

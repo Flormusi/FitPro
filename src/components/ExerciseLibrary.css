@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   color: #fff;
-  background-color: #121212;
+  background-color: #111128;
   min-height: 100vh;
 }
 
@@ -25,7 +25,7 @@
 
 .library-header h1 {
   font-size: 2rem;
-  color: #ff3b30;
+  color: #a855f7;
   margin: 0;
 }
 
@@ -47,7 +47,7 @@
   padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  background: linear-gradient(145deg, #35355e, #26264a);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,11 +58,11 @@
 
 .search-bar input:focus {
   outline: none;
-  border-color: rgba(255, 59, 48, 0.5);
-  background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+  border-color: rgba(168, 85, 247, 0.5);
+  background: linear-gradient(145deg, #45456f, #35355e);
   box-shadow: 
     inset 0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 0 3px rgba(255, 59, 48, 0.1),
+    0 0 0 3px rgba(168, 85, 247, 0.1),
     0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .category-btn {
-  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  background: linear-gradient(145deg, #35355e, #26264a);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   padding: 10px 18px;
@@ -89,23 +89,23 @@
 
 .category-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+  background: linear-gradient(145deg, #45456f, #35355e);
   box-shadow: 
     0 8px 28px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .category-btn.active {
-  background: linear-gradient(145deg, #ff3b30, #e6322f);
-  border-color: rgba(255, 59, 48, 0.3);
+  background: linear-gradient(145deg, #a855f7, #e6322f);
+  border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 
-    0 6px 24px rgba(255, 59, 48, 0.3),
+    0 6px 24px rgba(168, 85, 247, 0.3),
     0 2px 8px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .add-exercise-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -116,8 +116,8 @@
 }
 
 .error-message {
-  background-color: rgba(255, 59, 48, 0.2);
-  color: #ff3b30;
+  background-color: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -130,7 +130,7 @@
 }
 
 .exercise-card {
-  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  background: linear-gradient(145deg, #26264a, #18182f);
   border-radius: 20px;
   padding: 24px;
   cursor: pointer;
@@ -149,12 +149,12 @@
     0 16px 48px rgba(0, 0, 0, 0.4),
     0 4px 16px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 59, 48, 0.3);
+  border-color: rgba(168, 85, 247, 0.3);
 }
 
 .exercise-category {
   display: inline-block;
-  background-color: #2c2c2c;
+  background-color: #28284c;
   color: #aaa;
   padding: 4px 8px;
   border-radius: 4px;
@@ -201,7 +201,7 @@
 }
 
 .difficulty-level.advanced {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .exercise-details {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 25px;
   width: 90%;
@@ -251,7 +251,7 @@
 
 .exercise-details h2 {
   margin: 0 0 15px 0;
-  color: #ff3b30;
+  color: #a855f7;
   padding-right: 30px;
 }
 
@@ -270,7 +270,7 @@
 }
 
 .category-tag {
-  background-color: #2c2c2c;
+  background-color: #28284c;
   color: #fff;
 }
 
@@ -285,7 +285,7 @@
 }
 
 .difficulty-tag.advanced {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
 }
 
@@ -315,7 +315,7 @@
 }
 
 .details-section h3 {
-  color: #ff3b30;
+  color: #a855f7;
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
@@ -329,7 +329,7 @@
 }
 
 .use-in-routine-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -354,7 +354,7 @@
 }
 
 .add-exercise-modal {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 25px;
   width: 90%;
@@ -372,7 +372,7 @@
 
 .modal-header h2 {
   margin: 0;
-  color: #ff3b30;
+  color: #a855f7;
 }
 
 .close-modal-btn {
@@ -409,8 +409,8 @@ textarea {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #2c2c2c;
+  border: 1px solid #2f2f55;
+  background-color: #28284c;
   color: #fff;
   font-size: 1rem;
 }
@@ -442,7 +442,7 @@ textarea {
 }
 
 .submit-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   font-weight: 500;
 }

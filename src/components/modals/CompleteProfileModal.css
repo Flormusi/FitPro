@@ -15,10 +15,10 @@
 
 /* Modal Container */
 .modal-container {
-  background: #1a1a1a;
+  background: #18182f;
   border-radius: 16px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
   max-width: 600px;
   width: 100%;
   max-height: 90vh;
@@ -32,7 +32,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 24px 0 24px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
   margin-bottom: 24px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .modal-close-btn:hover {
-  background-color: #333;
+  background-color: #2f2f55;
   color: #fff;
 }
 
@@ -75,7 +75,7 @@
   font-weight: 600;
   margin: 0 0 16px 0;
   padding-bottom: 8px;
-  border-bottom: 2px solid #ff4444;
+  border-bottom: 2px solid #a78bfa;
 }
 
 /* Form Groups */
@@ -98,7 +98,7 @@
 }
 
 .required {
-  color: #ff4444;
+  color: #a78bfa;
   margin-left: 4px;
 }
 
@@ -107,7 +107,7 @@
 .form-group textarea {
   width: 100%;
   padding: 12px 16px;
-  background-color: #2a2a2a;
+  background-color: #26264a;
   border: 2px solid #444;
   border-radius: 8px;
   color: #ffffff;
@@ -119,8 +119,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff4444;
-  background-color: #333;
+  border-color: #a78bfa;
+  background-color: #2f2f55;
   box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
 }
 
@@ -131,12 +131,12 @@
 
 /* Required Fields */
 .required-field {
-  border-color: #ff6b6b !important;
+  border-color: #c4b5fd !important;
   background-color: rgba(255, 107, 107, 0.05) !important;
 }
 
 .required-field:focus {
-  border-color: #ff4444 !important;
+  border-color: #a78bfa !important;
   box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2) !important;
 }
 
@@ -164,7 +164,7 @@
   gap: 12px;
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #2f2f55;
 }
 
 .btn-cancel,
@@ -190,12 +190,12 @@
 }
 
 .btn-save {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #ffffff;
 }
 
 .btn-save:hover:not(:disabled) {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   transform: none;
 }
 

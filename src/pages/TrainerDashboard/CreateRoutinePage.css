@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 20px;
   color: white;
-  background-color: #1a1a1a;
+  background-color: #18182f;
   min-height: 100vh;
 }
 
@@ -13,13 +13,13 @@
 }
 
 .create-routine-header h1 {
-  color: #ff4444;
+  color: #a78bfa;
   font-size: 24px;
   margin: 0;
 }
 
 .error-message {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
   padding: 10px;
   border-radius: 4px;
@@ -27,7 +27,7 @@
 }
 
 .routine-form {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -54,7 +54,7 @@
   padding: 10px;
   border: 1px solid #444;
   border-radius: 4px;
-  background-color: #333;
+  background-color: #2f2f55;
   color: white;
   font-size: 14px;
 }
@@ -62,7 +62,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff4444;
+  border-color: #a78bfa;
 }
 
 .form-group textarea {
@@ -71,7 +71,7 @@
 }
 
 .exercises-section {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -84,11 +84,11 @@
 }
 
 .exercise-card {
-  background-color: #333;
+  background-color: #2f2f55;
   padding: 15px;
   border-radius: 4px;
   margin-bottom: 10px;
-  border-left: 4px solid #ff4444;
+  border-left: 4px solid #a78bfa;
 }
 
 .exercise-card h4 {
@@ -114,7 +114,7 @@
 }
 
 .remove-exercise-btn {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -128,7 +128,7 @@
 }
 
 .exercise-selection {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -149,7 +149,7 @@
   padding: 10px;
   border: 1px solid #444;
   border-radius: 4px;
-  background-color: #333;
+  background-color: #2f2f55;
   color: white;
 }
 
@@ -159,7 +159,7 @@
 }
 
 .exercise-item {
-  background-color: #333;
+  background-color: #2f2f55;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 4px;
@@ -202,7 +202,7 @@
 }
 
 .btn-primary {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
 }
 

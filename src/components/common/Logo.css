@@ -1,9 +1,9 @@
 /* Styles for Logo.jsx */
 .logo-container {
   font-weight: 800;
-  color: #D62828 !important;
+  color: #8b5cf6 !important;
   display: inline-block;
-  text-shadow: 0 0 8px rgba(214, 40, 40, 0.6), 0 0 24px rgba(214, 40, 40, 0.35);
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 24px rgba(139, 92, 246, 0.35);
 }
 
 .logo-container span {

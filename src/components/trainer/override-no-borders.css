@@ -18,8 +18,8 @@ div[class*="col-"] {
 .trainer-dashboard .analytics-card {
   /* Asegurar que las tarjetas tengan sombras sutiles oscuras */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-  background-color: #1e1e1e !important;
-  border: 1px solid #2a2a2a !important;
+  background-color: #1c1c38 !important;
+  border: 1px solid #26264a !important;
   border-radius: 12px !important;
 }
 
@@ -33,14 +33,14 @@ div[class*="col-"] {
 /* Asegurar que los modales también tengan bordes correctos */
 .modal-content {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
   border-radius: 12px !important;
 }
 
 /* Inputs y formularios */
 .form-control,
 .form-select {
-  border: 1px solid #2a2a2a !important;
+  border: 1px solid #26264a !important;
   border-radius: 8px !important;
 }
 

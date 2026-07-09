@@ -1,5 +1,5 @@
 .skeleton-card {
-  background-color: #1E1E1E;
+  background-color: #1c1c38;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -8,7 +8,7 @@
 .skeleton-title,
 .skeleton-line,
 .skeleton-button {
-  background: linear-gradient(90deg, #2c2c2c 25%, #3a3a3a 50%, #2c2c2c 75%);
+  background: linear-gradient(90deg, #28284c 25%, #35355e 50%, #28284c 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite ease-in-out;
   border-radius: 4px;

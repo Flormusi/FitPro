@@ -26,13 +26,13 @@
 }
 
 .tab-button:hover {
-  color: #e63946;
+  color: #9333ea;
   background-color: rgba(230, 57, 70, 0.05);
 }
 
 .tab-button.active {
-  color: #e63946;
-  border-bottom-color: #e63946;
+  color: #9333ea;
+  border-bottom-color: #9333ea;
   background-color: rgba(230, 57, 70, 0.1);
 }
 

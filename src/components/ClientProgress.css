@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   color: #fff;
-  background-color: #121212;
+  background-color: #111128;
   min-height: 100vh;
 }
 
@@ -25,7 +25,7 @@
 
 .progress-header h1 {
   font-size: 2rem;
-  color: #ff3b30;
+  color: #a855f7;
   margin: 0;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .stat-card {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -59,12 +59,12 @@
 }
 
 .negative {
-  color: #ff3b30;
+  color: #a855f7;
 }
 
 .progress-tabs {
   display: flex;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
   margin-bottom: 20px;
 }
 
@@ -79,12 +79,12 @@
 }
 
 .tab-button.active {
-  border-bottom-color: #ff3b30;
-  color: #ff3b30;
+  border-bottom-color: #a855f7;
+  color: #a855f7;
 }
 
 .tab-content {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -99,7 +99,7 @@
 .attendance-tab h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #ff3b30;
+  color: #a855f7;
 }
 
 .progress-summary p {
@@ -109,8 +109,8 @@
 .trainer-notes {
   width: 100%;
   height: 120px;
-  background-color: #2c2c2c;
-  border: 1px solid #333;
+  background-color: #28284c;
+  border: 1px solid #2f2f55;
   border-radius: 8px;
   padding: 10px;
   color: #fff;
@@ -120,7 +120,7 @@
 }
 
 .save-notes-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -134,7 +134,7 @@
 }
 
 .chart-container {
-  background-color: #2c2c2c;
+  background-color: #28284c;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
@@ -149,7 +149,7 @@
 .records-table td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
 }
 
 .records-table th {

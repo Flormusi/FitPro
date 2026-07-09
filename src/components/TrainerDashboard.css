@@ -14,13 +14,13 @@
 } 
 
 .logo { 
-  color: #e63946; 
+  color: #9333ea; 
   font-size: 1.8rem; 
   font-weight: bold; 
 } 
 
 .greeting { 
-  color: #e63946; 
+  color: #9333ea; 
   margin: 0; 
 } 
 
@@ -36,7 +36,7 @@
 } 
 
 .btn-logout { 
-  background: #e63946; 
+  background: #9333ea; 
   color: #fff; 
   border: none; 
   padding: 0.5rem 1rem; 
@@ -54,7 +54,7 @@
 } 
 
 .summary-card { 
-  background: #1a1a1a; 
+  background: #18182f; 
   padding: 1rem; 
   border-radius: 12px; 
   box-shadow: 0 2px 6px rgba(0,0,0,0.4); 
@@ -76,7 +76,7 @@
 .card-icon { 
   font-size: 1.5rem; 
   margin-bottom: 0.3rem; 
-  color: #e63946; 
+  color: #9333ea; 
 } 
 
 .variation { 
@@ -121,12 +121,12 @@
 } 
 
 .btn-primary { 
-  background: #e63946; 
+  background: #9333ea; 
   color: #fff; 
 } 
 
 .btn-secondary { 
-  background: #333; 
+  background: #2f2f55; 
   color: #fff; 
 } 
 
@@ -139,7 +139,7 @@
 
 .chart { 
   flex: 1; 
-  background: #1a1a1a; 
+  background: #18182f; 
   padding: 1rem; 
   border-radius: 12px; 
   text-align: center; 

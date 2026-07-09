@@ -4,18 +4,18 @@
 
 :root {
   /* Brand colors — change these to white-label for each client */
-  --color-primary: #e11d48;
+  --color-primary: #8b5cf6;
   --color-primary-hover: #be123c;
   --color-accent: #667eea;
 
   /* Background scale */
-  --color-bg: #121212;
-  --color-surface: #1e1e1e;
-  --color-surface-2: #2a2a2a;
-  --color-surface-3: #2c2c2c;
+  --color-bg: #111128;
+  --color-surface: #1c1c38;
+  --color-surface-2: #26264a;
+  --color-surface-3: #28284c;
 
   /* Borders & text */
-  --color-border: #333333;
+  --color-border: #2f2f55;
   --color-text: #ffffff;
   --color-text-muted: #888888;
 }
@@ -24,11 +24,11 @@
 html, body {
   overflow-x: hidden;
   /* Enforce dark background to avoid white flashes during HMR/reloads */
-  background-color: #121212;
+  background-color: #111128;
   color-scheme: dark;
 }
 
 /* Ensure the root element inherits the dark background immediately */
 #root {
-  background-color: #121212;
+  background-color: #111128;
 }

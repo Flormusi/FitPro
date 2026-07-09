@@ -10,8 +10,8 @@
 *[style*="background: #fff"],
 *[style*="background: #ffffff"],
 *[style*="background: rgb(255, 255, 255)"] {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
 }
 
 /* Clases CSS con fondos blancos */
@@ -21,8 +21,8 @@
 .white-bg,
 *[class*="bg-white"],
 *[class*="white"] {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
 }
 
 /* Elementos específicos que suelen tener fondo blanco */
@@ -41,8 +41,8 @@ div[class*="col-"],
 .tab-content,
 .table,
 .list-group-item {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
   color: #ffffff !important;
 }
 
@@ -51,7 +51,7 @@ div[class*="col-"],
 .rbc-calendar *,
 .routine-calendar-container,
 .routine-calendar-container * {
-  background-color: #1e1e1e !important;
+  background-color: #1c1c38 !important;
   color: #ffffff !important;
 }
 
@@ -64,8 +64,8 @@ div[class*="col-"],
 .rbc-time-header-content,
 .rbc-row-bg,
 .rbc-date-cell {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
   color: #ffffff !important;
 }
 
@@ -73,21 +73,21 @@ div[class*="col-"],
 .rbc-toolbar button,
 .today-btn,
 .view-btn {
-  background-color: #2a2a2a !important;
+  background-color: #26264a !important;
   color: #ffffff !important;
   border-color: #444444 !important;
 }
 
 .rbc-toolbar button.rbc-active,
 .view-btn.active {
-  background-color: #dc2626 !important;
+  background-color: #7c3aed !important;
   color: #ffffff !important;
 }
 
 /* Asegurar que las tarjetas de clientes mantengan su diseño */
 .client-card,
 .stat-card {
-  background-color: #1e1e1e !important;
-  border: 1px solid #2a2a2a !important;
+  background-color: #1c1c38 !important;
+  border: 1px solid #26264a !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }

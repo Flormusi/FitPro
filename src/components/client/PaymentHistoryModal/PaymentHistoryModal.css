@@ -14,8 +14,8 @@
 }
 
 .payment-history-modal {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  border: 1px solid #333;
+  background: linear-gradient(135deg, #18182f 0%, #26264a 100%);
+  border: 1px solid #2f2f55;
   border-radius: 16px;
   max-width: 800px;
   width: 100%;
@@ -29,8 +29,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  border-bottom: 1px solid #333;
-  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-bottom: 1px solid #2f2f55;
+  background: linear-gradient(135deg, #26264a 0%, #1d1d3a 100%);
 }
 
 .modal-header h3 {
@@ -43,7 +43,7 @@
 .modal-close {
   background: none;
   border: none;
-  color: #ff4757;
+  color: #c084fc;
   cursor: pointer;
   padding: 0;
   width: 30px;
@@ -56,7 +56,7 @@
 }
 
 .modal-close:hover {
-  background-color: rgba(255, 71, 87, 0.1);
+  background-color: rgba(192, 132, 252, 0.1);
   transform: scale(1.1);
 }
 
@@ -70,8 +70,8 @@
 /* Estilos para historial de pagos */
 .payment-history-summary {
   padding: 16px;
-  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-  border: 1px solid #333;
+  background: linear-gradient(135deg, #26264a 0%, #1d1d3a 100%);
+  border: 1px solid #2f2f55;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@
 }
 
 .summary-value {
-  color: #ff4757;
+  color: #c084fc;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -105,8 +105,8 @@
 }
 
 .payment-history-item {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-  border: 1px solid #333;
+  background: linear-gradient(135deg, #26264a 0%, #1d1d3a 100%);
+  border: 1px solid #2f2f55;
   border-radius: 12px;
   padding: 16px;
   transition: all 0.3s ease;
@@ -121,15 +121,15 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #ff4757, #ff6b7a);
+  background: linear-gradient(90deg, #c084fc, #ff6b7a);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .payment-history-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 71, 87, 0.1);
-  border-color: #ff4757;
+  box-shadow: 0 8px 25px rgba(192, 132, 252, 0.1);
+  border-color: #c084fc;
 }
 
 .payment-history-item:hover::before {
@@ -153,7 +153,7 @@
 }
 
 .payment-item-date svg {
-  color: #ff4757;
+  color: #c084fc;
 }
 
 .payment-item-status {
@@ -181,9 +181,9 @@
 }
 
 .status-overdue {
-  background: linear-gradient(135deg, #ff4757, #c44569);
+  background: linear-gradient(135deg, #c084fc, #c44569);
   color: white;
-  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  box-shadow: 0 2px 8px rgba(192, 132, 252, 0.3);
 }
 
 .payment-item-details {
@@ -205,13 +205,13 @@
 }
 
 .payment-item-method svg {
-  color: #ff4757;
+  color: #c084fc;
 }
 
 .payment-item-amount {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ff4757;
+  color: #c084fc;
   text-align: right;
 }
 

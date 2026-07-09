@@ -164,7 +164,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--fitpro-primary);
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 .form-group input::placeholder,
@@ -174,8 +174,8 @@
 
 .form-group input.error,
 .form-group select.error {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
 }
 
 .readonly-input {
@@ -228,22 +228,22 @@
 }
 
 .btn-save {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
 }
 
 .btn-save:hover:not(:disabled) {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   transform: none;
 }
 
 .btn-delete {
-  background-color: #ef4444;
+  background-color: #a855f7;
   color: white;
 }
 
 .btn-delete:hover {
-  background-color: #dc2626;
+  background-color: #7c3aed;
   transform: translateY(-1px);
 }
 
@@ -282,7 +282,7 @@
   border-color: var(--fitpro-primary);
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
 }
 
 .btn-calendar-action:disabled {
@@ -343,7 +343,7 @@
 }
 
 .error-message {
-  color: #ef4444;
+  color: #a855f7;
   font-size: 0.85rem;
   margin-top: 4px;
   display: flex;

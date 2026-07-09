@@ -44,8 +44,8 @@ const TrainerDashboard = () => {
               text={`${progress}%`}
               styles={buildStyles({
                 textColor: "#fff",
-                pathColor: "#E63946",
-                trailColor: "#333",
+                pathColor: "#9333ea",
+                trailColor: "#2f2f55",
               })}
             />
           </div>

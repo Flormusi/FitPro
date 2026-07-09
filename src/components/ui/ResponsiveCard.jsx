@@ -8,7 +8,7 @@ const ResponsiveCard = ({ title, children, className }) => {
     padding: '20px',
     margin: '10px',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    backgroundColor: '#1e1e1e',
+    backgroundColor: '#1c1c38',
     color: '#ffffff',
   };
 

@@ -353,7 +353,7 @@ const TrainerClientProgressPage: React.FC = () => {
   const getProgressColor = (p: number) => {
     if (p >= 80) return '#10b981'; // verde
     if (p >= 40) return '#f59e0b'; // ámbar
-    return '#dc2626'; // rojo
+    return '#7c3aed'; // rojo
   };
 
   const checkProfileCompleteness = () => {
@@ -446,10 +446,10 @@ const TrainerClientProgressPage: React.FC = () => {
       let yPosition = 15;
 
       // Paleta de colores FitPro - Negro, Rojo y Gris
-      const fitproRed = [220, 38, 38] as [number, number, number]; // #dc2626 - Rojo principal
+      const fitproRed = [220, 38, 38] as [number, number, number]; // #7c3aed - Rojo principal
       const fitproOrange = [255, 107, 53] as [number, number, number]; // #ff6b35 - Naranja secundario
-      const fitproBlack = [10, 10, 10] as [number, number, number]; // #0a0a0a - Negro principal
-      const fitproDarkGray = [26, 26, 26] as [number, number, number]; // #1a1a1a - Gris oscuro
+      const fitproBlack = [10, 10, 10] as [number, number, number]; // #0a0a1c - Negro principal
+      const fitproDarkGray = [26, 26, 26] as [number, number, number]; // #18182f - Gris oscuro
       const fitproLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
       const fitproWhite = [255, 255, 255] as [number, number, number]; // #ffffff - Blanco
 
@@ -864,7 +864,7 @@ const TrainerClientProgressPage: React.FC = () => {
 
   return (
     <div style={{
-      backgroundColor: '#0a0a0a',
+      backgroundColor: '#0a0a1c',
       minHeight: '100vh',
       padding: '24px',
       color: 'white',
@@ -925,33 +925,33 @@ const TrainerClientProgressPage: React.FC = () => {
             style={{
               marginLeft: '12px',
               padding: '8px 14px',
-              background: 'linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)',
+              background: 'linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)',
               color: 'white',
-              border: '1px solid rgba(220, 38, 38, 0.3)',
+              border: '1px solid rgba(124, 58, 237, 0.3)',
               borderRadius: '8px',
               fontWeight: '600',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
               boxShadow: `
-                0 4px 12px rgba(220, 38, 38, 0.3),
+                0 4px 12px rgba(124, 58, 237, 0.3),
                 0 2px 6px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2)
               `
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)';
               e.currentTarget.style.transform = 'translateY(-1px)';
               e.currentTarget.style.boxShadow = `
-                0 6px 16px rgba(220, 38, 38, 0.4),
+                0 6px 16px rgba(124, 58, 237, 0.4),
                 0 2px 8px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2)
               `;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)';
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = `
-                0 4px 12px rgba(220, 38, 38, 0.3),
+                0 4px 12px rgba(124, 58, 237, 0.3),
                 0 2px 6px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2)
               `;
@@ -975,7 +975,7 @@ const TrainerClientProgressPage: React.FC = () => {
       }}>
         <button 
           style={{
-            backgroundColor: activeTab === 'resumen' ? '#dc2626' : 'transparent',
+            backgroundColor: activeTab === 'resumen' ? '#7c3aed' : 'transparent',
             color: 'white',
             border: 'none',
             padding: '8px 16px',
@@ -992,7 +992,7 @@ const TrainerClientProgressPage: React.FC = () => {
         </button>
         <button 
           style={{
-            backgroundColor: activeTab === 'rutinas' ? '#dc2626' : 'transparent',
+            backgroundColor: activeTab === 'rutinas' ? '#7c3aed' : 'transparent',
             color: 'white',
             border: 'none',
             padding: '8px 16px',
@@ -1009,7 +1009,7 @@ const TrainerClientProgressPage: React.FC = () => {
         </button>
         <button 
           style={{
-            backgroundColor: activeTab === 'pagos' ? '#dc2626' : 'transparent',
+            backgroundColor: activeTab === 'pagos' ? '#7c3aed' : 'transparent',
             color: 'white',
             border: 'none',
             padding: '8px 16px',
@@ -1026,7 +1026,7 @@ const TrainerClientProgressPage: React.FC = () => {
         </button>
         <button 
           style={{
-            backgroundColor: activeTab === 'notas' ? '#dc2626' : 'transparent',
+            backgroundColor: activeTab === 'notas' ? '#7c3aed' : 'transparent',
             color: 'white',
             border: 'none',
             padding: '8px 16px',
@@ -1078,7 +1078,7 @@ const TrainerClientProgressPage: React.FC = () => {
               gap: '8px',
               background: 'rgba(255,255,255,0.06)',
               color: 'white',
-              border: '1px solid #3a3a3a',
+              border: '1px solid #35355e',
               padding: '10px 16px',
               borderRadius: '10px',
               fontSize: '14px',
@@ -1090,12 +1090,12 @@ const TrainerClientProgressPage: React.FC = () => {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
-              e.currentTarget.style.borderColor = '#4a4a4a';
+              e.currentTarget.style.borderColor = '#45456f';
               e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-              e.currentTarget.style.borderColor = '#3a3a3a';
+              e.currentTarget.style.borderColor = '#35355e';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -1119,16 +1119,16 @@ const TrainerClientProgressPage: React.FC = () => {
               cursor: 'pointer',
               transition: 'transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease',
               outline: 'none',
-              boxShadow: '0 8px 18px rgba(239,68,68,0.25)'
+              boxShadow: '0 8px 18px rgba(168,85,247,0.25)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)';
-              e.currentTarget.style.boxShadow = '0 10px 20px rgba(239,68,68,0.35)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #a855f7 0%, #6d28d9 100%)';
+              e.currentTarget.style.boxShadow = '0 10px 20px rgba(168,85,247,0.35)';
               e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'linear-gradient(135deg, #ec1b21 0%, #9b1212 100%)';
-              e.currentTarget.style.boxShadow = '0 8px 18px rgba(239,68,68,0.25)';
+              e.currentTarget.style.boxShadow = '0 8px 18px rgba(168,85,247,0.25)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -1197,7 +1197,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 <span className="summary-label" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>📊 Progreso general</span>
                 <span style={{ color: '#fff', fontWeight: 600 }}>{getOverallProgress()}%</span>
               </div>
-              <div style={{ width: '100%', height: 6, background: '#3a3a3a', borderRadius: 999, overflow: 'hidden' }}>
+              <div style={{ width: '100%', height: 6, background: '#35355e', borderRadius: 999, overflow: 'hidden' }}>
                 <div style={{ width: `${getOverallProgress()}%`, height: '100%', background: getProgressColor(getOverallProgress()) }} />
               </div>
             </div>
@@ -1208,7 +1208,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 onClick={() => setActiveTab('rutinas')}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8,
-                  background: 'linear-gradient(90deg, #dc2626, #ef4444)',
+                  background: 'linear-gradient(90deg, #7c3aed, #a855f7)',
                   color: 'white', border: 'none', padding: '10px 16px',
                   borderRadius: '10px', fontSize: '14px', fontWeight: 700,
                   cursor: 'pointer', transition: 'filter 0.2s ease'
@@ -1224,18 +1224,18 @@ const TrainerClientProgressPage: React.FC = () => {
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8,
                   background: 'rgba(255,255,255,0.06)',
-                  color: 'white', border: '1px solid #3a3a3a', padding: '10px 16px',
+                  color: 'white', border: '1px solid #35355e', padding: '10px 16px',
                   borderRadius: '10px', fontSize: '14px', fontWeight: 600,
                   cursor: 'pointer', transition: 'transform 0.15s ease, background 0.15s ease, border-color 0.15s ease'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
-                  e.currentTarget.style.borderColor = '#4a4a4a';
+                  e.currentTarget.style.borderColor = '#45456f';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-                  e.currentTarget.style.borderColor = '#3a3a3a';
+                  e.currentTarget.style.borderColor = '#35355e';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -1259,7 +1259,7 @@ const TrainerClientProgressPage: React.FC = () => {
           backgroundColor: 'transparent'
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             borderRadius: '12px',
             padding: '24px',
             marginBottom: '24px',
@@ -1278,27 +1278,27 @@ const TrainerClientProgressPage: React.FC = () => {
                     key={routine.id || index}
                     data-status={routine.status}
                     style={{
-                      backgroundColor: '#2a2a2a',
+                      backgroundColor: '#26264a',
                       borderRadius: '10px',
                       padding: '16px',
-                      border: '1px solid #333',
+                      border: '1px solid #2f2f55',
                       borderLeft: routine.status === 'vencida' ? '2px solid #f59e0b' : '2px solid transparent',
                       transition: 'background 0.2s ease, border-color 0.2s ease',
                       position: 'relative'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#333';
+                      e.currentTarget.style.backgroundColor = '#2f2f55';
                       // Mantener el borde ámbar en vencidas
                       const status = e.currentTarget.getAttribute('data-status');
                       if (status !== 'vencida') {
-                        e.currentTarget.style.borderColor = '#3a3a3a';
+                        e.currentTarget.style.borderColor = '#35355e';
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#2a2a2a';
+                      e.currentTarget.style.backgroundColor = '#26264a';
                       const status = e.currentTarget.getAttribute('data-status');
                       if (status !== 'vencida') {
-                        e.currentTarget.style.borderColor = '#333';
+                        e.currentTarget.style.borderColor = '#2f2f55';
                       }
                     }}
                   >
@@ -1306,7 +1306,7 @@ const TrainerClientProgressPage: React.FC = () => {
                       <h3 style={{ color: 'white', margin: 0, flex: 1, fontSize: '18px', fontWeight: 700, letterSpacing: '0.2px' }}>{routine.name}</h3>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         {(() => {
-                          const bg = routine.status === 'completed' ? '#3b82f6' : routine.status === 'paused' ? '#dc2626' : routine.status === 'vencida' ? '#f59e0b' : '#10b981';
+                          const bg = routine.status === 'completed' ? '#3b82f6' : routine.status === 'paused' ? '#7c3aed' : routine.status === 'vencida' ? '#f59e0b' : '#10b981';
                           const label = routine.status === 'completed' ? 'Completada' : routine.status === 'paused' ? 'Pausada' : routine.status === 'vencida' ? 'Vencida ⚠️' : 'Activa';
                           const tooltip = routine.status === 'completed'
                             ? 'Progreso ≥ 95% o todos los ejercicios completados.'
@@ -1346,11 +1346,11 @@ const TrainerClientProgressPage: React.FC = () => {
                       </div>
                     )}
                     <div style={{ margin: '6px 0 12px 0' }}>
-                      <div style={{ color: '#dc2626', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
+                      <div style={{ color: '#7c3aed', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
                         Progreso: {routine.progress || 0}%
                       </div>
-                      <div style={{ width: '100%', height: '6px', background: '#3a3a3a', borderRadius: '999px', overflow: 'hidden' }}>
-                        <div style={{ width: `${Math.min(Math.max(Number(routine.progress) || 0, 0), 100)}%`, height: '100%', background: '#dc2626' }} />
+                      <div style={{ width: '100%', height: '6px', background: '#35355e', borderRadius: '999px', overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.min(Math.max(Number(routine.progress) || 0, 0), 100)}%`, height: '100%', background: '#7c3aed' }} />
                       </div>
                     </div>
                     
@@ -1362,7 +1362,7 @@ const TrainerClientProgressPage: React.FC = () => {
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                           {routine.exercises.slice(0, 4).map((exercise, idx) => (
                             <span key={idx} style={{
-                              backgroundColor: '#3a3a3a',
+                              backgroundColor: '#35355e',
                               color: 'white',
                               padding: '3px 8px',
                               borderRadius: '999px',
@@ -1374,7 +1374,7 @@ const TrainerClientProgressPage: React.FC = () => {
                           ))}
                           {routine.exercises.length > 4 && (
                             <span style={{
-                              backgroundColor: '#3a3a3a',
+                              backgroundColor: '#35355e',
                               color: '#c9c9c9',
                               padding: '3px 8px',
                               borderRadius: '999px',
@@ -1394,7 +1394,7 @@ const TrainerClientProgressPage: React.FC = () => {
                       display: 'flex',
                       gap: '12px',
                       justifyContent: 'flex-end',
-                      borderTop: '1px solid #333',
+                      borderTop: '1px solid #2f2f55',
                       paddingTop: '12px'
                     }}>
                       <button
@@ -1417,9 +1417,9 @@ const TrainerClientProgressPage: React.FC = () => {
                           display: 'flex',
                           alignItems: 'center',
                           gap: '8px',
-                          backgroundColor: 'rgba(220,38,38,0.08)',
-                          color: '#ef4444',
-                          border: '1px solid #dc2626',
+                          backgroundColor: 'rgba(124,58,237,0.08)',
+                          color: '#a855f7',
+                          border: '1px solid #7c3aed',
                           padding: '10px 16px',
                           borderRadius: '10px',
                           fontSize: '14px',
@@ -1428,12 +1428,12 @@ const TrainerClientProgressPage: React.FC = () => {
                           transition: 'background 0.2s ease, border-color 0.2s ease'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(220,38,38,0.15)';
-                          e.currentTarget.style.borderColor = '#ef4444';
+                          e.currentTarget.style.backgroundColor = 'rgba(124,58,237,0.15)';
+                          e.currentTarget.style.borderColor = '#a855f7';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(220,38,38,0.08)';
-                          e.currentTarget.style.borderColor = '#dc2626';
+                          e.currentTarget.style.backgroundColor = 'rgba(124,58,237,0.08)';
+                          e.currentTarget.style.borderColor = '#7c3aed';
                         }}
                       >
                         🗑️ Eliminar
@@ -1454,7 +1454,7 @@ const TrainerClientProgressPage: React.FC = () => {
                           gap: '8px',
                           backgroundColor: 'rgba(255,255,255,0.06)',
                           color: 'white',
-                          border: '1px solid #3a3a3a',
+                          border: '1px solid #35355e',
                           padding: '10px 16px',
                           borderRadius: '10px',
                           fontSize: '14px',
@@ -1464,11 +1464,11 @@ const TrainerClientProgressPage: React.FC = () => {
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-                          e.currentTarget.style.borderColor = '#4a4a4a';
+                          e.currentTarget.style.borderColor = '#45456f';
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)';
-                          e.currentTarget.style.borderColor = '#3a3a3a';
+                          e.currentTarget.style.borderColor = '#35355e';
                         }}
                       >
                         📧 Enviar Email
@@ -1494,7 +1494,7 @@ const TrainerClientProgressPage: React.FC = () => {
                           display: 'flex',
                           alignItems: 'center',
                           gap: '8px',
-                          background: 'linear-gradient(90deg, #dc2626, #ef4444)',
+                          background: 'linear-gradient(90deg, #7c3aed, #a855f7)',
                           color: 'white',
                           border: 'none',
                           padding: '10px 18px',
@@ -1540,7 +1540,7 @@ const TrainerClientProgressPage: React.FC = () => {
           backgroundColor: 'transparent'
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             borderRadius: '12px',
             padding: '24px',
             marginBottom: '24px',
@@ -1554,10 +1554,10 @@ const TrainerClientProgressPage: React.FC = () => {
             
             {paymentStatus ? (
               <div style={{
-                backgroundColor: '#2a2a2a',
+                backgroundColor: '#26264a',
                 borderRadius: '8px',
                 padding: '16px',
-                border: '1px solid #333'
+                border: '1px solid #2f2f55'
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                   <span style={{ color: 'white', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -1565,7 +1565,7 @@ const TrainerClientProgressPage: React.FC = () => {
                     Estado:
                   </span>
                   <span style={{ 
-                    color: paymentStatus.status === 'paid' ? '#10b981' : paymentStatus.status === 'pending' ? '#f59e0b' : '#dc2626',
+                    color: paymentStatus.status === 'paid' ? '#10b981' : paymentStatus.status === 'pending' ? '#f59e0b' : '#7c3aed',
                     fontWeight: 500
                   }}>
                     {paymentStatus.status === 'paid' ? 'Pagado' : paymentStatus.status === 'pending' ? 'Pendiente' : 'Vencido'}
@@ -1587,7 +1587,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 </div>
 
                 {/* Divisor sutil */}
-                <div style={{ height: '1px', backgroundColor: '#333', opacity: 0.8, margin: '16px 0' }} />
+                <div style={{ height: '1px', backgroundColor: '#2f2f55', opacity: 0.8, margin: '16px 0' }} />
 
                 {/* Botones de acción */}
                 <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end', paddingTop: '4px' }}>
@@ -1624,7 +1624,7 @@ const TrainerClientProgressPage: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
-                      backgroundColor: '#dc2626',
+                      backgroundColor: '#7c3aed',
                       color: 'white',
                       border: 'none',
                       padding: '10px 16px',
@@ -1635,10 +1635,10 @@ const TrainerClientProgressPage: React.FC = () => {
                       transition: 'all 0.2s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#b91c1c';
+                      e.currentTarget.style.backgroundColor = '#6d28d9';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#dc2626';
+                      e.currentTarget.style.backgroundColor = '#7c3aed';
                     }}
                   >
                     <span>✏️</span>
@@ -1664,7 +1664,7 @@ const TrainerClientProgressPage: React.FC = () => {
           backgroundColor: 'transparent'
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             borderRadius: '12px',
             padding: '24px',
             marginBottom: '24px',
@@ -1677,10 +1677,10 @@ const TrainerClientProgressPage: React.FC = () => {
             <h2 style={{ color: 'white', marginBottom: '20px' }}>Notas del Cliente</h2>
             
             <div style={{
-              backgroundColor: '#2a2a2a',
+              backgroundColor: '#26264a',
               borderRadius: '8px',
               padding: '16px',
-              border: '1px solid #333',
+              border: '1px solid #2f2f55',
               minHeight: '200px'
             }}>
               <textarea
@@ -1699,7 +1699,7 @@ const TrainerClientProgressPage: React.FC = () => {
               />
               <div style={{ marginTop: '12px', textAlign: 'right' }}>
                 <button style={{
-                  backgroundColor: '#dc2626',
+                  backgroundColor: '#7c3aed',
                   color: 'white',
                   border: 'none',
                   padding: '8px 16px',
@@ -1734,12 +1734,12 @@ const TrainerClientProgressPage: React.FC = () => {
           zIndex: 1000
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             padding: '30px',
             borderRadius: '12px',
             maxWidth: '500px',
             width: '90%',
-            border: '1px solid #333'
+            border: '1px solid #2f2f55'
           }}>
             <h3 style={{ color: '#fff', marginBottom: '20px' }}>Completar Perfil del Cliente</h3>
             <p style={{ color: '#ccc', marginBottom: '20px' }}>
@@ -1750,7 +1750,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 onClick={() => setIsCompleteProfileModalOpen(false)}
                 style={{
                   padding: '10px 20px',
-                  backgroundColor: '#333',
+                  backgroundColor: '#2f2f55',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '6px',
@@ -1796,24 +1796,24 @@ const TrainerClientProgressPage: React.FC = () => {
           padding: '20px'
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             borderRadius: '12px',
             maxWidth: '800px',
             width: '100%',
             maxHeight: '90vh',
             overflow: 'auto',
-            border: '1px solid #333'
+            border: '1px solid #2f2f55'
           }}>
             {/* Header del modal */}
             <div style={{
               padding: '20px 30px',
-              borderBottom: '1px solid #333',
+              borderBottom: '1px solid #2f2f55',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               position: 'sticky',
               top: 0,
-              backgroundColor: '#1a1a1a',
+              backgroundColor: '#18182f',
               zIndex: 1
             }}>
               <h2 style={{ color: '#fff', margin: 0 }}>{selectedRoutine.name}</h2>
@@ -1853,7 +1853,7 @@ const TrainerClientProgressPage: React.FC = () => {
                      selectedRoutine.status === 'completed' ? 'Completada' : 'Pausada'}
                   </div>
                   <div style={{
-                    backgroundColor: '#dc2626',
+                    backgroundColor: '#7c3aed',
                     color: '#fff',
                     padding: '6px 12px',
                     borderRadius: '20px',
@@ -1872,20 +1872,20 @@ const TrainerClientProgressPage: React.FC = () => {
                 )}
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', marginBottom: '20px' }}>
-                  <div style={{ backgroundColor: '#2a2a2a', padding: '15px', borderRadius: '8px' }}>
-                    <h5 style={{ color: '#dc2626', margin: '0 0 5px 0', fontSize: '12px' }}>EJERCICIOS</h5>
+                  <div style={{ backgroundColor: '#26264a', padding: '15px', borderRadius: '8px' }}>
+                    <h5 style={{ color: '#7c3aed', margin: '0 0 5px 0', fontSize: '12px' }}>EJERCICIOS</h5>
                     <p style={{ color: '#fff', margin: 0, fontSize: '18px', fontWeight: 'bold' }}>
                       {selectedRoutine.exercises?.length || 0}
                     </p>
                   </div>
-                  <div style={{ backgroundColor: '#2a2a2a', padding: '15px', borderRadius: '8px' }}>
-                    <h5 style={{ color: '#dc2626', margin: '0 0 5px 0', fontSize: '12px' }}>DURACIÓN ESTIMADA</h5>
+                  <div style={{ backgroundColor: '#26264a', padding: '15px', borderRadius: '8px' }}>
+                    <h5 style={{ color: '#7c3aed', margin: '0 0 5px 0', fontSize: '12px' }}>DURACIÓN ESTIMADA</h5>
                     <p style={{ color: '#fff', margin: 0, fontSize: '18px', fontWeight: 'bold' }}>
                       {selectedRoutine.estimatedDuration || 'N/A'}
                     </p>
                   </div>
-                  <div style={{ backgroundColor: '#2a2a2a', padding: '15px', borderRadius: '8px' }}>
-                    <h5 style={{ color: '#dc2626', margin: '0 0 5px 0', fontSize: '12px' }}>DIFICULTAD</h5>
+                  <div style={{ backgroundColor: '#26264a', padding: '15px', borderRadius: '8px' }}>
+                    <h5 style={{ color: '#7c3aed', margin: '0 0 5px 0', fontSize: '12px' }}>DIFICULTAD</h5>
                     <p style={{ color: '#fff', margin: 0, fontSize: '18px', fontWeight: 'bold' }}>
                       {selectedRoutine.difficulty || 'Media'}
                     </p>
@@ -1900,10 +1900,10 @@ const TrainerClientProgressPage: React.FC = () => {
                    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                      {selectedRoutine.exercises.map((exercise: any, index: number) => (
                        <div key={index} style={{
-                         backgroundColor: '#2a2a2a',
+                         backgroundColor: '#26264a',
                          padding: '20px',
                          borderRadius: '12px',
-                         border: '1px solid #333'
+                         border: '1px solid #2f2f55'
                        }}>
                          <div style={{ display: 'flex', gap: '20px', marginBottom: '15px' }}>
                            {/* Imagen del ejercicio */}
@@ -1943,7 +1943,7 @@ const TrainerClientProgressPage: React.FC = () => {
                                      height: '160px',
                                      objectFit: 'contain',
                                      borderRadius: '8px',
-                                     border: '2px solid #dc2626'
+                                     border: '2px solid #7c3aed'
                                    }}
                                    onError={(e) => {
                                      console.error('Error loading image:', imageUrl);
@@ -2052,16 +2052,16 @@ const TrainerClientProgressPage: React.FC = () => {
                          {/* Series detalladas */}
                          {exercise.seriesDetails && exercise.seriesDetails.length > 0 ? (
                            <div style={{ marginBottom: '15px' }}>
-                             <h6 style={{ color: '#dc2626', margin: '0 0 10px 0', fontSize: '14px', fontWeight: 'bold' }}>
+                             <h6 style={{ color: '#7c3aed', margin: '0 0 10px 0', fontSize: '14px', fontWeight: 'bold' }}>
                                📋 SERIES DETALLADAS
                              </h6>
                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
                                {exercise.seriesDetails.map((serie: any, serieIndex: number) => (
                                  <div key={serieIndex} style={{
-                                   backgroundColor: '#1a1a1a',
+                                   backgroundColor: '#18182f',
                                    padding: '12px',
                                    borderRadius: '6px',
-                                   border: '1px solid #dc2626'
+                                   border: '1px solid #7c3aed'
                                  }}>
                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
                                      <span style={{ color: '#fff', fontWeight: 'bold', fontSize: '12px' }}>
@@ -2097,20 +2097,20 @@ const TrainerClientProgressPage: React.FC = () => {
                              return (
                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '10px', marginBottom: '15px' }}>
                                  {(parsedExercise.sets || parsedExercise.series) && (
-                                   <div style={{ backgroundColor: '#1a1a1a', padding: '10px', borderRadius: '6px', border: '1px solid #dc2626' }}>
-                                     <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 'bold' }}>SERIES</span>
+                                   <div style={{ backgroundColor: '#18182f', padding: '10px', borderRadius: '6px', border: '1px solid #7c3aed' }}>
+                                     <span style={{ color: '#7c3aed', fontSize: '12px', fontWeight: 'bold' }}>SERIES</span>
                                      <p style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '16px', fontWeight: 'bold' }}>{parsedExercise.sets || parsedExercise.series}</p>
                                    </div>
                                  )}
                                  {parsedExercise.reps && (
-                                   <div style={{ backgroundColor: '#1a1a1a', padding: '10px', borderRadius: '6px', border: '1px solid #dc2626' }}>
-                                     <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 'bold' }}>REPETICIONES</span>
+                                   <div style={{ backgroundColor: '#18182f', padding: '10px', borderRadius: '6px', border: '1px solid #7c3aed' }}>
+                                     <span style={{ color: '#7c3aed', fontSize: '12px', fontWeight: 'bold' }}>REPETICIONES</span>
                                      <p style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '16px', fontWeight: 'bold' }}>{parsedExercise.reps}</p>
                                    </div>
                                  )}
                                  {(parsedExercise.weight || (Array.isArray(parsedExercise.weightsPerSeries) && parsedExercise.weightsPerSeries.length > 0)) && (
-                                   <div style={{ backgroundColor: '#1a1a1a', padding: '10px', borderRadius: '6px', border: '1px solid #dc2626' }}>
-                                     <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 'bold' }}>PESO</span>
+                                   <div style={{ backgroundColor: '#18182f', padding: '10px', borderRadius: '6px', border: '1px solid #7c3aed' }}>
+                                     <span style={{ color: '#7c3aed', fontSize: '12px', fontWeight: 'bold' }}>PESO</span>
                                      {(() => {
                                        const rawWeights = Array.isArray(parsedExercise.weightsPerSeries) && parsedExercise.weightsPerSeries.length > 0
                                          ? parsedExercise.weightsPerSeries.map((w: any) => String(w).replace(/kg/gi, '').trim()).join('-')
@@ -2125,14 +2125,14 @@ const TrainerClientProgressPage: React.FC = () => {
                                    </div>
                                  )}
                                  {parsedExercise.duration && (
-                                   <div style={{ backgroundColor: '#1a1a1a', padding: '10px', borderRadius: '6px', border: '1px solid #dc2626' }}>
-                                     <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 'bold' }}>DURACIÓN</span>
+                                   <div style={{ backgroundColor: '#18182f', padding: '10px', borderRadius: '6px', border: '1px solid #7c3aed' }}>
+                                     <span style={{ color: '#7c3aed', fontSize: '12px', fontWeight: 'bold' }}>DURACIÓN</span>
                                      <p style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '16px', fontWeight: 'bold' }}>{parsedExercise.duration}</p>
                                    </div>
                                  )}
                                  {(parsedExercise.restTime || parsedExercise.rest_time) && (
-                                   <div style={{ backgroundColor: '#1a1a1a', padding: '10px', borderRadius: '6px', border: '1px solid #dc2626' }}>
-                                     <span style={{ color: '#dc2626', fontSize: '12px', fontWeight: 'bold' }}>DESCANSO</span>
+                                   <div style={{ backgroundColor: '#18182f', padding: '10px', borderRadius: '6px', border: '1px solid #7c3aed' }}>
+                                     <span style={{ color: '#7c3aed', fontSize: '12px', fontWeight: 'bold' }}>DESCANSO</span>
                                      <p style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '16px', fontWeight: 'bold' }}>{parsedExercise.restTime || parsedExercise.rest_time}</p>
                                    </div>
                                  )}
@@ -2185,7 +2185,7 @@ const TrainerClientProgressPage: React.FC = () => {
               <div style={{ 
                 marginTop: '30px', 
                 paddingTop: '20px', 
-                borderTop: '1px solid #333',
+                borderTop: '1px solid #2f2f55',
                 display: 'flex', 
                 gap: '15px', 
                 justifyContent: 'space-between',
@@ -2200,7 +2200,7 @@ const TrainerClientProgressPage: React.FC = () => {
                      }}
                      style={{
                       padding: '12px 20px',
-                      backgroundColor: '#dc2626', // Rojo FitPro
+                      backgroundColor: '#7c3aed', // Rojo FitPro
                       color: '#fff',
                       border: 'none',
                       borderRadius: '8px',
@@ -2211,17 +2211,17 @@ const TrainerClientProgressPage: React.FC = () => {
                       alignItems: 'center',
                       gap: '8px',
                       transition: 'all 0.3s ease',
-                      boxShadow: '0 2px 4px rgba(220, 38, 38, 0.3)'
+                      boxShadow: '0 2px 4px rgba(124, 58, 237, 0.3)'
                     }}
                     onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#b91c1c';
+                      e.currentTarget.style.backgroundColor = '#6d28d9';
                       e.currentTarget.style.transform = 'translateY(-1px)';
-                      e.currentTarget.style.boxShadow = '0 4px 8px rgba(220, 38, 38, 0.4)';
+                      e.currentTarget.style.boxShadow = '0 4px 8px rgba(124, 58, 237, 0.4)';
                     }}
                     onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = '#dc2626';
+                      e.currentTarget.style.backgroundColor = '#7c3aed';
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(220, 38, 38, 0.3)';
+                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(124, 58, 237, 0.3)';
                     }}
                   >
                     📄 Descargar PDF
@@ -2236,7 +2236,7 @@ const TrainerClientProgressPage: React.FC = () => {
                     }}
                     style={{
                       padding: '12px 20px',
-                      backgroundColor: '#dc2626', // Rojo FitPro
+                      backgroundColor: '#7c3aed', // Rojo FitPro
                       color: '#fff',
                       border: 'none',
                       borderRadius: '8px',
@@ -2247,17 +2247,17 @@ const TrainerClientProgressPage: React.FC = () => {
                       alignItems: 'center',
                       gap: '8px',
                       transition: 'all 0.3s ease',
-                      boxShadow: '0 2px 4px rgba(220, 38, 38, 0.3)'
+                      boxShadow: '0 2px 4px rgba(124, 58, 237, 0.3)'
                     }}
                     onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#b91c1c';
+                      e.currentTarget.style.backgroundColor = '#6d28d9';
                       e.currentTarget.style.transform = 'translateY(-1px)';
-                      e.currentTarget.style.boxShadow = '0 4px 8px rgba(220, 38, 38, 0.4)';
+                      e.currentTarget.style.boxShadow = '0 4px 8px rgba(124, 58, 237, 0.4)';
                     }}
                     onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = '#dc2626';
+                      e.currentTarget.style.backgroundColor = '#7c3aed';
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(220, 38, 38, 0.3)';
+                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(124, 58, 237, 0.3)';
                     }}
                   >
                     ✏️ Editar Rutina
@@ -2303,12 +2303,12 @@ const TrainerClientProgressPage: React.FC = () => {
           padding: '20px'
         }}>
           <div style={{
-            backgroundColor: '#1a1a1a',
+            backgroundColor: '#18182f',
             borderRadius: '12px',
             padding: '30px',
             maxWidth: '500px',
             width: '100%',
-            border: '1px solid #333'
+            border: '1px solid #2f2f55'
           }}>
             <h3 style={{ color: '#fff', marginBottom: '20px', textAlign: 'center' }}>
               Editar Información de Pago
@@ -2331,7 +2331,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 style={{
                   width: '100%',
                   padding: '12px',
-                  backgroundColor: '#2a2a2a',
+                  backgroundColor: '#26264a',
                   border: '1px solid #444',
                   borderRadius: '6px',
                   color: '#fff',
@@ -2361,7 +2361,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 style={{
                   width: '100%',
                   padding: '12px',
-                  backgroundColor: '#2a2a2a',
+                  backgroundColor: '#26264a',
                   border: '1px solid #444',
                   borderRadius: '6px',
                   color: '#fff',
@@ -2391,7 +2391,7 @@ const TrainerClientProgressPage: React.FC = () => {
                 onClick={handleSavePaymentChanges}
                 style={{
                   padding: '12px 20px',
-                  backgroundColor: '#dc2626',
+                  backgroundColor: '#7c3aed',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '6px',
@@ -2401,10 +2401,10 @@ const TrainerClientProgressPage: React.FC = () => {
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#b91c1c';
+                  e.currentTarget.style.backgroundColor = '#6d28d9';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#dc2626';
+                  e.currentTarget.style.backgroundColor = '#7c3aed';
                 }}
               >
                 Guardar cambios

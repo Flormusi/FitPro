@@ -12,7 +12,7 @@ body, html {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #0d0d24 0%, #18182f 100%);
   color: #FFFFFF;
   text-align: center;
   padding: 40px 20px;
@@ -122,26 +122,26 @@ body, html {
 }
 
 .landing-button.primary {
-  background: linear-gradient(135deg, #FF0000 0%, #D60000 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
   color: #FFFFFF;
   border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .landing-button.primary:hover {
-  background: linear-gradient(135deg, #D60000 0%, #B50000 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(255, 0, 0, 0.4);
 }
 
 .landing-button.secondary {
-  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
-  color: #FF0000;
-  border: 2px solid #FF0000;
+  background: linear-gradient(135deg, #26264a 0%, #35355e 100%);
+  color: #a855f7;
+  border: 2px solid #a855f7;
 }
 
 .landing-button.secondary:hover {
   background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0.05) 100%);
-  border-color: #FF3333;
+  border-color: #a78bfa;
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(255, 0, 0, 0.2);
 }
@@ -157,8 +157,8 @@ body, html {
 }
 
 .feature-card {
-  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-  border: 1px solid #333;
+  background: linear-gradient(135deg, #1c1c38 0%, #26264a 100%);
+  border: 1px solid #2f2f55;
   border-radius: 16px;
   padding: 24px;
   text-align: center;
@@ -297,6 +297,6 @@ body, html {
 /* Dark mode compatibility */
 @media (prefers-color-scheme: dark) {
   .landing-container {
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #0d0d24 0%, #18182f 100%);
   }
 }

@@ -34,7 +34,7 @@ const SecurityPage: React.FC = () => {
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: 24, color: '#fff' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-        <ShieldCheckIcon style={{ width: 24, height: 24, color: '#E63946', marginRight: 8 }} />
+        <ShieldCheckIcon style={{ width: 24, height: 24, color: '#9333ea', marginRight: 8 }} />
         <h1 style={{ margin: 0 }}>Seguridad — Historial de Rotaciones</h1>
       </div>
       <p style={{ color: '#94a3b8', marginTop: 0 }}>
@@ -51,7 +51,7 @@ const SecurityPage: React.FC = () => {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #333' }}>
+                <tr style={{ borderBottom: '1px solid #2f2f55' }}>
                   <th style={{ textAlign: 'left', padding: '8px 12px' }}>Fecha</th>
                   <th style={{ textAlign: 'left', padding: '8px 12px' }}>Entorno</th>
                   <th style={{ textAlign: 'left', padding: '8px 12px' }}>Rotado por</th>

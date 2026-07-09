@@ -45,9 +45,9 @@
 }
 
 .metric-btn.active {
-  background-color: #e63946;
+  background-color: #9333ea;
   color: white;
-  border-color: #e63946;
+  border-color: #9333ea;
 }
 
 .time-range-selector {
@@ -145,7 +145,7 @@
 }
 
 .stat-value.change {
-  color: #e63946;
+  color: #9333ea;
 }
 
 .measurement-history {

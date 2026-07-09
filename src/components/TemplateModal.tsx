@@ -314,25 +314,25 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
 
   const getObjectiveColor = (objective: string) => {
     const colors: { [key: string]: string } = {
-      'Fuerza': 'border-[#dc2626] text-[#ff3b30]',
-      'Hipertrofia': 'border-[#dc2626] text-[#ff4444]',
-      'Resistencia': 'border-[#dc2626] text-[#e6342a]',
-      'Potencia': 'border-[#dc2626] text-[#ff3b30]',
-      'Definición': 'border-[#dc2626] text-[#ff4444]',
-      'Quema de Grasa': 'border-[#dc2626] text-[#ff3b30]',
-      'Estética y Salud': 'border-[#dc2626] text-[#e6342a]'
+      'Fuerza': 'border-[#7c3aed] text-[#a855f7]',
+      'Hipertrofia': 'border-[#7c3aed] text-[#a78bfa]',
+      'Resistencia': 'border-[#7c3aed] text-[#e6342a]',
+      'Potencia': 'border-[#7c3aed] text-[#a855f7]',
+      'Definición': 'border-[#7c3aed] text-[#a78bfa]',
+      'Quema de Grasa': 'border-[#7c3aed] text-[#a855f7]',
+      'Estética y Salud': 'border-[#7c3aed] text-[#e6342a]'
     };
-    return colors[objective] || 'border-[#dc2626] text-[#ff4444]';
+    return colors[objective] || 'border-[#7c3aed] text-[#a78bfa]';
   };
 
   const getLevelColor = (level: string) => {
     const colors: { [key: string]: string } = {
-      'Principiante': 'bg-[#dc2626]/80',
-      'Intermedio': 'bg-[#dc2626]',
-      'Avanzado': 'bg-[#b91c1c]',
-      'General': 'bg-[#dc2626]/90'
+      'Principiante': 'bg-[#7c3aed]/80',
+      'Intermedio': 'bg-[#7c3aed]',
+      'Avanzado': 'bg-[#6d28d9]',
+      'General': 'bg-[#7c3aed]/90'
     };
-    return colors[level] || 'bg-[#dc2626]/70';
+    return colors[level] || 'bg-[#7c3aed]/70';
   };
 
   if (!isOpen) return null;
@@ -357,12 +357,12 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
         </div>
 
         {/* Pestañas */}
-        <div className="flex border-b border-gray-600/30 bg-[#1a1a1a]">
+        <div className="flex border-b border-gray-600/30 bg-[#18182f]">
           <button
             onClick={() => setActiveTab('existing')}
             className={`px-6 py-3 font-medium transition-colors ${
               activeTab === 'existing'
-                ? 'text-[#ff4444] border-b-2 border-[#ff4444] bg-[#2a2a2a]'
+                ? 'text-[#a78bfa] border-b-2 border-[#a78bfa] bg-[#26264a]'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -372,7 +372,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
             onClick={() => setActiveTab('generate')}
             className={`px-6 py-3 font-medium transition-colors ${
               activeTab === 'generate'
-                ? 'text-[#ff4444] border-b-2 border-[#ff4444] bg-[#2a2a2a]'
+                ? 'text-[#a78bfa] border-b-2 border-[#a78bfa] bg-[#26264a]'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -382,12 +382,12 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
 
         {/* Filtros - Solo para pestaña existentes */}
         {activeTab === 'existing' && (
-          <div className="p-6 border-b border-gray-600/30 bg-[#1a1a1a]">
+          <div className="p-6 border-b border-gray-600/30 bg-[#18182f]">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-white">Filtros</h3>
               <button
                 onClick={clearFilters}
-                className="text-sm text-[#ff4444] hover:text-[#ff3333] font-medium transition-colors"
+                className="text-sm text-[#a78bfa] hover:text-[#a78bfa] font-medium transition-colors"
               >
                 Limpiar filtros
               </button>
@@ -454,7 +454,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
           {activeTab === 'existing' ? (
             loading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ff4444]"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#a78bfa]"></div>
                 <span className="ml-3 text-gray-400">Cargando plantillas...</span>
               </div>
             ) : error ? (
@@ -467,7 +467,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                 </div>
                 <button
                   onClick={fetchTemplates}
-                  className="px-4 py-2 bg-[#ff4444] hover:bg-[#ff3333] text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-[#a78bfa] hover:bg-[#a78bfa] text-white rounded-lg transition-colors"
                 >
                   Reintentar
                 </button>
@@ -487,7 +487,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                 {filteredTemplates.map((template) => (
                   <div
                     key={template.id}
-                    className="bg-[#1a1a1a] border border-gray-600/30 rounded-xl p-6 transition-all duration-300 cursor-pointer group"
+                    className="bg-[#18182f] border border-gray-600/30 rounded-xl p-6 transition-all duration-300 cursor-pointer group"
                     style={{
                       borderRadius: '12px',
                       height: '280px',
@@ -497,7 +497,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.border = '1px solid #E63946';
+                      e.currentTarget.style.border = '1px solid #9333ea';
                       e.currentTarget.style.boxShadow = '0 12px 30px rgba(230, 57, 70, 0.15), 0 0 20px rgba(230, 57, 70, 0.1)';
                     }}
                     onMouseLeave={(e) => {
@@ -509,7 +509,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-white group-hover:text-[#ff4444] transition-colors mb-2">
+                        <h3 className="text-lg font-bold text-white group-hover:text-[#a78bfa] transition-colors mb-2">
                           {template.name}
                         </h3>
                         {template.description && (
@@ -528,7 +528,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                         <span 
                           className="text-white text-xs font-semibold"
                           style={{
-                            background: '#E63946',
+                            background: '#9333ea',
                             padding: '4px 10px',
                             borderRadius: '50px',
                             fontSize: '0.65rem',
@@ -572,7 +572,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                       <button 
                         className="w-full text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
                         style={{
-                          background: '#E63946',
+                          background: '#9333ea',
                           borderRadius: '8px'
                         }}
                         onMouseEnter={(e) => {
@@ -581,7 +581,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
                           e.currentTarget.style.transform = 'translateY(-1px)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.background = '#E63946';
+                          e.currentTarget.style.background = '#9333ea';
                           e.currentTarget.style.boxShadow = 'none';
                           e.currentTarget.style.transform = 'translateY(0)';
                         }}
@@ -599,7 +599,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
           ) : (
             // Contenido de generación de plantillas
             <div className="max-w-2xl mx-auto">
-              <div className="bg-[#1a1a1a] rounded-xl p-6 border border-gray-600/30 modern-card">
+              <div className="bg-[#18182f] rounded-xl p-6 border border-gray-600/30 modern-card">
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-white mb-2">Biblioteca de Rutinas Prediseñadas</h3>
                   <p className="text-gray-400">Selecciona los criterios para encontrar la rutina perfecta o generar una nueva</p>
@@ -705,7 +705,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ isOpen, onClose, onSelect
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-gray-600/30 bg-[#1a1a1a]">
+        <div className="p-6 border-t border-gray-600/30 bg-[#18182f]">
           <div className="flex items-center justify-between">
             {activeTab === 'existing' ? (
               <p className="text-sm text-gray-400">

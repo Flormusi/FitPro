@@ -192,7 +192,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
 
             {/* Error State */}
             {error && (
-              <div className="bg-[#dc2626]/20 border border-[#dc2626]/30 rounded-lg p-4 mb-6">
+              <div className="bg-[#7c3aed]/20 border border-[#7c3aed]/30 rounded-lg p-4 mb-6">
                 <p className="text-[#fca5a5]">{error}</p>
               </div>
             )}
@@ -219,11 +219,11 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                           <div className="mb-3 sm:mb-4">
                             <div className="flex items-start gap-3 sm:gap-4">
                               {routine.type === 'preset' ? (
-                                <div className="w-10 h-10 bg-gradient-to-r from-[#ff4444] to-[#e6342a] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 bg-gradient-to-r from-[#a78bfa] to-[#e6342a] rounded-full flex items-center justify-center flex-shrink-0">
                                   <Star className="text-white" size={16} />
                                 </div>
                               ) : (
-                                <div className="w-10 h-10 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 bg-gradient-to-r from-[#7c3aed] to-[#6d28d9] rounded-full flex items-center justify-center flex-shrink-0">
                                   <Eye className="text-white" size={16} />
                                 </div>
                               )}
@@ -242,7 +242,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                             <p className="text-gray-300 text-sm mb-4 line-clamp-3 group-hover:line-clamp-none leading-relaxed tf-text-solid">{routine.description}</p>
                           )}
                           
-                          <div className="text-sm text-gray-300 mb-4 bg-[#1E1E1E] p-3 rounded-lg border border-[#333]">
+                          <div className="text-sm text-gray-300 mb-4 bg-[#1c1c38] p-3 rounded-lg border border-[#2f2f55]">
                             <div className="flex items-center gap-2 mb-2">
                               <span className="w-2 h-2 bg-red-500 rounded-full"></span>
                               <span className="font-semibold text-white tf-text-solid">{routine.exercises?.length || 0} ejercicios</span>

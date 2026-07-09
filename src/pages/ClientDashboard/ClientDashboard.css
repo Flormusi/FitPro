@@ -3,7 +3,7 @@
 /* ============================= */
 
 .client-dashboard-page {
-  background: #121212;
+  background: #111128;
   color: #ffffff;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -69,7 +69,7 @@
 
 /* Botón de notificaciones: círculo rojo compacto con icono centrado */
 .client-dashboard-page .dashboard-header .notification-btn {
-  background-image: linear-gradient(to right, #dc2626, #ef4444);
+  background-image: linear-gradient(to right, #7c3aed, #a855f7);
   border: none;
   color: #fff;
   font-weight: 600;
@@ -144,7 +144,7 @@
 .dashboard-section.progress-metrics .metric-value {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #D62828;
+  color: #8b5cf6;
 }
 
 .dashboard-section.progress-metrics .metric-subtext {
@@ -231,7 +231,7 @@
 .client-dashboard-page .dashboard-content { gap: 20px; }
 
 /* Fondo oscuro forzado para la card de rutina */
-.client-dashboard-page .routine-overview .card { background-color: #1e1e1e; }
+.client-dashboard-page .routine-overview .card { background-color: #1c1c38; }
 
 /* Título de "TU RUTINA DEL MES" más chico */
 .client-dashboard-page .routine-overview .card h2 { font-size: 1.25rem; font-weight: 700; line-height: 1.6; }
@@ -240,20 +240,20 @@
 /* Ajuste de padding en la card principal de rutina */
 .client-dashboard-page .routine-overview .card.main-routine-card { padding: 1.75rem; }
 /* Fondo oscuro forzado para la card del calendario */
-.client-dashboard-page .training-calendar .card { background-color: #1e1e1e; }
+.client-dashboard-page .training-calendar .card { background-color: #1c1c38; }
 
 /* Fondo oscuro forzado para la card de métricas de progreso */
-.client-dashboard-page .progress-metrics .card { background-color: #1e1e1e; }
+.client-dashboard-page .progress-metrics .card { background-color: #1c1c38; }
 
 /* Fondo oscuro forzado para la card de estado de cuotas */
- .client-dashboard-page .payment-management .card { background-color: #1e1e1e; color: #fff; }
+ .client-dashboard-page .payment-management .card { background-color: #1c1c38; color: #fff; }
  
  /* Header y badges */
  .client-dashboard-page .payment-management .payment-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
  .client-dashboard-page .payment-management .payment-header h2 { color: #fff; font-size: 1.1rem; font-weight: 700; }
  .client-dashboard-page .payment-management .status-badge { background-color: transparent; color: inherit; border: none; padding: 0; border-radius: 0; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
  .client-dashboard-page .payment-management .status-badge.up-to-date { background-color: transparent; color: #10b981; border-color: transparent; }
- .client-dashboard-page .payment-management .status-badge.overdue { background-color: transparent; color: #ef4444; border-color: transparent; }
+ .client-dashboard-page .payment-management .status-badge.overdue { background-color: transparent; color: #a855f7; border-color: transparent; }
  .client-dashboard-page .payment-management .status-badge.due-soon { background-color: transparent; color: #f59e0b; border-color: transparent; }
  
  /* Layout de overview */
@@ -274,7 +274,7 @@
  .client-dashboard-page .payment-management .status-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9999px; color: #fff; }
  .client-dashboard-page .payment-management .status-indicator.paid { background-color: transparent; color: #10b981; box-shadow: none; border: 1px solid rgba(16, 185, 129, 0.45); }
  .client-dashboard-page .payment-management .status-indicator.pending { background-color: transparent; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.45); }
- .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.45); }
+ .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.45); }
  .client-dashboard-page .payment-management .status-text { color: #fff; font-weight: 600; text-align: center; }
  .client-dashboard-page .payment-management .status-details { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; }
  .client-dashboard-page .payment-management .payment-amount-section { display: flex; flex-direction: column; align-items: center; }
@@ -303,16 +303,16 @@
 }
 .client-dashboard-page .payment-management .progress-label { color: #cbd5e1; justify-self: start; }
 .client-dashboard-page .payment-management .progress-value { color: #fff; font-weight: 600; justify-self: end; display: inline-block; text-align: right; }
-.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1f1f1f; border: 1px solid #2a2a2a; border-radius: 9999px; overflow: hidden; }
+.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1d1d3a; border: 1px solid #26264a; border-radius: 9999px; overflow: hidden; }
 .client-dashboard-page .payment-management .progress-fill { position: absolute; left: 0; top: 0; height: 100%; background-image: linear-gradient(to right, #f59e0b, #fbbf24); border-radius: inherit; box-shadow: none; transition: width 0.4s ease; }
  
  /* Acciones */
  .client-dashboard-page .payment-management .payment-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
  .client-dashboard-page .payment-management .btn-payment { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; }
- .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #2a2a2a; color: #fff; border: 1px solid #3a3a3a; }
- .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #333333; border-color: #4a4a4a; }
-.client-dashboard-page .payment-management .btn-payment.primary { background-color: #D62828; color: #fff; font-weight: 600; border: none; box-shadow: none; }
-.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #D62828; box-shadow: none; }
+ .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #26264a; color: #fff; border: 1px solid #35355e; }
+ .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #2f2f55; border-color: #45456f; }
+.client-dashboard-page .payment-management .btn-payment.primary { background-color: #8b5cf6; color: #fff; font-weight: 600; border: none; box-shadow: none; }
+.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #8b5cf6; box-shadow: none; }
  
  /* Responsive padding y gap (más compacto en pantallas pequeñas) */
 @media (max-width: 1023px) {
@@ -372,14 +372,14 @@
   box-shadow: none;
 }
 .client-dashboard-page .payment-management .payment-progress.overdue .progress-fill {
-  background-image: linear-gradient(to right, #ef4444, #f87171);
+  background-image: linear-gradient(to right, #a855f7, #f87171);
   box-shadow: none;
 }
 
 /* Texto de estado por estado */
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.paid ~ .status-details .status-text { color: #10b981; }
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.pending ~ .status-details .status-text { color: #f59e0b; }
-.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #ef4444; }
+.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #a855f7; }
 
 /* Botón "Ver historial" con mayor visibilidad y coherencia estética */
 .client-dashboard-page .payment-management .btn-payment { padding: 12px 18px; font-size: 0.95rem; font-weight: 600; }
@@ -528,11 +528,11 @@
 }
 .client-dashboard-page .legend-item { display: inline-flex; align-items: center; gap: 8px; color: #fff; }
 .client-dashboard-page .legend-item .legend-icon { font-size: 16px; line-height: 1; display: inline-block; }
-.client-dashboard-page .legend-item .legend-color { width: 14px; height: 14px; border-radius: 4px; border: 1px solid #333; }
+.client-dashboard-page .legend-item .legend-color { width: 14px; height: 14px; border-radius: 4px; border: 1px solid #2f2f55; }
 .client-dashboard-page .legend-item .legend-color.today { background-color: #10B981; }
 
 /* === Mensajes: contraste y botón === */
-.client-dashboard-page .messages-card .card { background-color: #1e1e1e; }
+.client-dashboard-page .messages-card .card { background-color: #1c1c38; }
 .client-dashboard-page .messages-card .messages-summary { color: #9CA3AF; }
 .client-dashboard-page .messages-card .messages-icon { display: inline-flex; align-items: center; }
 .client-dashboard-page .messages-card .messages-preview { color: #aaa; }
@@ -553,9 +553,9 @@
   transform: translateY(-1px);
 }
 .client-dashboard-page .messages-card .status-badge {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   color: #fff;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 8px;
   padding: 2px 8px;
 }
@@ -575,7 +575,7 @@
  .client-dashboard-page .payment-management .status-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9999px; color: #fff; }
  .client-dashboard-page .payment-management .status-indicator.paid { background-color: transparent; color: #10b981; box-shadow: none; border: 1px solid rgba(16, 185, 129, 0.45); }
  .client-dashboard-page .payment-management .status-indicator.pending { background-color: transparent; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.45); }
- .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.45); }
+ .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.45); }
  .client-dashboard-page .payment-management .status-text { color: #fff; font-weight: 600; text-align: center; }
  .client-dashboard-page .payment-management .status-details { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; }
  .client-dashboard-page .payment-management .payment-amount-section { display: flex; flex-direction: column; align-items: center; }
@@ -604,16 +604,16 @@
 }
 .client-dashboard-page .payment-management .progress-label { color: #cbd5e1; justify-self: start; }
 .client-dashboard-page .payment-management .progress-value { color: #fff; font-weight: 600; justify-self: end; display: inline-block; text-align: right; }
-.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1f1f1f; border: 1px solid #2a2a2a; border-radius: 9999px; overflow: hidden; }
+.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1d1d3a; border: 1px solid #26264a; border-radius: 9999px; overflow: hidden; }
 .client-dashboard-page .payment-management .progress-fill { position: absolute; left: 0; top: 0; height: 100%; background-image: linear-gradient(to right, #f59e0b, #fbbf24); border-radius: inherit; box-shadow: none; transition: width 0.4s ease; }
  
  /* Acciones */
  .client-dashboard-page .payment-management .payment-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
  .client-dashboard-page .payment-management .btn-payment { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; }
- .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #2a2a2a; color: #fff; border: 1px solid #3a3a3a; }
- .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #333333; border-color: #4a4a4a; }
-.client-dashboard-page .payment-management .btn-payment.primary { background-color: #D62828; color: #fff; font-weight: 600; border: none; box-shadow: none; }
-.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #D62828; box-shadow: none; }
+ .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #26264a; color: #fff; border: 1px solid #35355e; }
+ .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #2f2f55; border-color: #45456f; }
+.client-dashboard-page .payment-management .btn-payment.primary { background-color: #8b5cf6; color: #fff; font-weight: 600; border: none; box-shadow: none; }
+.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #8b5cf6; box-shadow: none; }
  
  /* Responsive padding y gap (más compacto en pantallas pequeñas) */
 @media (max-width: 1023px) {
@@ -673,14 +673,14 @@
   box-shadow: none;
 }
 .client-dashboard-page .payment-management .payment-progress.overdue .progress-fill {
-  background-image: linear-gradient(to right, #ef4444, #f87171);
+  background-image: linear-gradient(to right, #a855f7, #f87171);
   box-shadow: none;
 }
 
 /* Texto de estado por estado */
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.paid ~ .status-details .status-text { color: #10b981; }
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.pending ~ .status-details .status-text { color: #f59e0b; }
-.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #ef4444; }
+.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #a855f7; }
 
 /* Botón "Ver historial" con mayor visibilidad y coherencia estética */
 .client-dashboard-page .payment-management .btn-payment { padding: 12px 18px; font-size: 0.95rem; font-weight: 600; }
@@ -823,7 +823,7 @@
 .client-dashboard-page .calendar-days .calendar-day {
   position: relative;
   background-color: #1c1c1c;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #26264a;
   border-radius: 10px;
   min-height: 72px;
   display: flex;
@@ -833,13 +833,13 @@
 }
 .client-dashboard-page .calendar-days .calendar-day.empty {
   background: transparent;
-  border: 1px dashed #2a2a2a;
+  border: 1px dashed #26264a;
 }
 .client-dashboard-page .calendar-day.today { border-color: #10B981; box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35); }
 .client-dashboard-page .calendar-day.has-training { border-color: #E74C3C; }
 .client-dashboard-page .calendar-day.has-google-event { border-color: #0EA5E9; }
 .client-dashboard-page .calendar-day.has-both-events { border-color: #8B5CF6; }
-.client-dashboard-page .calendar-day.has-server-routine { border-color: #E53935; }
+.client-dashboard-page .calendar-day.has-server-routine { border-color: #9333ea; }
 .client-dashboard-page .calendar-day.has-server-session { border-color: #FB8C00; }
 .client-dashboard-page .calendar-day.has-server-consultation { border-color: #8E24AA; }
 .client-dashboard-page .calendar-day .calendar-day-number { font-weight: 700; color: #fff; }
@@ -870,7 +870,7 @@
 .client-dashboard-page .weekly-scroll-container { display: flex; gap: 10px; overflow-x: auto; padding-block: 10px; }
 .client-dashboard-page .weekly-day-card {
   background-color: #1c1c1c;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #26264a;
   border-radius: 10px;
   padding: 12px;
   min-width: 80px;
@@ -912,7 +912,7 @@
  .client-dashboard-page .payment-management .status-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9999px; color: #fff; }
  .client-dashboard-page .payment-management .status-indicator.paid { background-color: transparent; color: #10b981; box-shadow: none; border: 1px solid rgba(16, 185, 129, 0.45); }
  .client-dashboard-page .payment-management .status-indicator.pending { background-color: transparent; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.45); }
- .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.45); }
+ .client-dashboard-page .payment-management .status-indicator.overdue { background-color: transparent; color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.45); }
  .client-dashboard-page .payment-management .status-text { color: #fff; font-weight: 600; text-align: center; }
  .client-dashboard-page .payment-management .status-details { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; }
  .client-dashboard-page .payment-management .payment-amount-section { display: flex; flex-direction: column; align-items: center; }
@@ -941,16 +941,16 @@
 }
 .client-dashboard-page .payment-management .progress-label { color: #cbd5e1; justify-self: start; }
 .client-dashboard-page .payment-management .progress-value { color: #fff; font-weight: 600; justify-self: end; display: inline-block; text-align: right; }
-.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1f1f1f; border: 1px solid #2a2a2a; border-radius: 9999px; overflow: hidden; }
+.client-dashboard-page .payment-management .progress-bar { position: relative; height: 10px; background-color: #1d1d3a; border: 1px solid #26264a; border-radius: 9999px; overflow: hidden; }
 .client-dashboard-page .payment-management .progress-fill { position: absolute; left: 0; top: 0; height: 100%; background-image: linear-gradient(to right, #f59e0b, #fbbf24); border-radius: inherit; box-shadow: none; transition: width 0.4s ease; }
  
  /* Acciones */
  .client-dashboard-page .payment-management .payment-actions { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
  .client-dashboard-page .payment-management .btn-payment { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; }
- .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #2a2a2a; color: #fff; border: 1px solid #3a3a3a; }
- .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #333333; border-color: #4a4a4a; }
-.client-dashboard-page .payment-management .btn-payment.primary { background-color: #D62828; color: #fff; font-weight: 600; border: none; box-shadow: none; }
-.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #D62828; box-shadow: none; }
+ .client-dashboard-page .payment-management .btn-payment.secondary { background-color: #26264a; color: #fff; border: 1px solid #35355e; }
+ .client-dashboard-page .payment-management .btn-payment.secondary:hover { background-color: #2f2f55; border-color: #45456f; }
+.client-dashboard-page .payment-management .btn-payment.primary { background-color: #8b5cf6; color: #fff; font-weight: 600; border: none; box-shadow: none; }
+.client-dashboard-page .payment-management .btn-payment.primary:hover { background-color: #8b5cf6; box-shadow: none; }
  
  /* Responsive padding y gap (más compacto en pantallas pequeñas) */
 @media (max-width: 1023px) {
@@ -1010,14 +1010,14 @@
   box-shadow: none;
 }
 .client-dashboard-page .payment-management .payment-progress.overdue .progress-fill {
-  background-image: linear-gradient(to right, #ef4444, #f87171);
+  background-image: linear-gradient(to right, #a855f7, #f87171);
   box-shadow: none;
 }
 
 /* Texto de estado por estado */
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.paid ~ .status-details .status-text { color: #10b981; }
 .client-dashboard-page .payment-management .payment-status-section .status-indicator.pending ~ .status-details .status-text { color: #f59e0b; }
-.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #ef4444; }
+.client-dashboard-page .payment-management .payment-status-section .status-indicator.overdue ~ .status-details .status-text { color: #a855f7; }
 
 /* Botón "Ver historial" con mayor visibilidad y coherencia estética */
 .client-dashboard-page .payment-management .btn-payment { padding: 12px 18px; font-size: 0.95rem; font-weight: 600; }

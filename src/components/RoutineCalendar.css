@@ -31,7 +31,7 @@
 }
 
 .today-btn {
-  background: linear-gradient(135deg, #ff3b30 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -40,13 +40,13 @@
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
 .today-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 59, 48, 0.4);
-  background: linear-gradient(135deg, #ff6b5a 0%, #ff3b30 100%);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+  background: linear-gradient(135deg, #ff6b5a 0%, #a855f7 100%);
 }
 
 .view-selector {
@@ -77,9 +77,9 @@
 }
 
 .view-btn.active {
-  background: linear-gradient(135deg, #ff3b30 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
 /* Estilos para el estado de carga */
@@ -97,7 +97,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border-left-color: #ff3b30;
+  border-left-color: #a855f7;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;
 }
@@ -144,10 +144,10 @@
 
 .rbc-toolbar button:active,
 .rbc-toolbar button.rbc-active {
-  background: linear-gradient(135deg, #ff3b30 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
   color: white;
-  border-color: #ff3b30;
-  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+  border-color: #a855f7;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
 .rbc-toolbar-label {
@@ -194,25 +194,25 @@
 }
 
 .rbc-today {
-  background: rgba(255, 59, 48, 0.1);
-  border: 1px solid rgba(255, 59, 48, 0.3);
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .rbc-event {
-  background: linear-gradient(135deg, #ff3b30 0%, #ff6b5a 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ff6b5a 100%);
   border: none;
   border-radius: 6px;
   color: white;
   font-weight: 500;
   font-size: 12px;
   padding: 2px 6px;
-  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
   transition: all 0.2s ease;
 }
 
 .rbc-event:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
 }
 
 .rbc-event-label {
@@ -221,16 +221,16 @@
 }
 
 .rbc-show-more {
-  color: #ff3b30;
+  color: #a855f7;
   font-weight: 600;
-  background: rgba(255, 59, 48, 0.1);
+  background: rgba(168, 85, 247, 0.1);
   border-radius: 4px;
   padding: 2px 6px;
   transition: all 0.2s ease;
 }
 
 .rbc-show-more:hover {
-  background: rgba(255, 59, 48, 0.2);
+  background: rgba(168, 85, 247, 0.2);
 }
 
 /* Responsive Design */

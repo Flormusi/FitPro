@@ -13,7 +13,7 @@
 }
 
 .preset-routine-modal .modal-content {
-  background: #1a1a1a;
+  background: #18182f;
   border-radius: 16px;
   width: 90%;
   max-width: 1200px;
@@ -23,7 +23,7 @@
 }
 
 .preset-routine-header {
-  background: linear-gradient(135deg, #E63946 0%, #000000 100%);
+  background: linear-gradient(135deg, #9333ea 0%, #000000 100%);
   box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.3);
   color: white;
   padding: 16px 24px;
@@ -65,8 +65,8 @@
   flex: 1;
   min-width: 200px;
   padding: 12px 16px;
-  background: #2a2a2a;
-  border: 1px solid #404040;
+  background: #26264a;
+  border: 1px solid #3b3b66;
   border-radius: 8px;
   color: #EAEAEA;
   font-size: 14px;
@@ -78,8 +78,8 @@
 
 .filter-select {
   padding: 12px 16px;
-  background: #2a2a2a;
-  border: 1px solid #404040;
+  background: #26264a;
+  border: 1px solid #3b3b66;
   border-radius: 8px;
   color: #EAEAEA;
   font-size: 14px;
@@ -101,8 +101,8 @@
 }
 
 .preset-routine-card {
-  background: #1E1E1E;
-  border: 1px solid #333;
+  background: #1c1c38;
+  border: 1px solid #2f2f55;
   border-radius: 12px; /* Changed from 16px to 12px */
   padding: 20px;
   transition: all 0.3s ease;
@@ -116,7 +116,7 @@
 
 .preset-routine-card:hover {
   transform: translateY(-4px);
-  border: 1px solid #E63946; /* 1px red border glow */
+  border: 1px solid #9333ea; /* 1px red border glow */
   box-shadow: 0 12px 30px rgba(230, 57, 70, 0.15), 0 0 20px rgba(230, 57, 70, 0.1); /* Red glow */
 }
 
@@ -138,7 +138,7 @@
 }
 
 .predesigned-tag {
-  background: #E63946; /* Bright red background */
+  background: #9333ea; /* Bright red background */
   color: white;
   padding: 4px 10px;
   border-radius: 50px; /* Rounded-pill style */
@@ -176,7 +176,7 @@
 .routine-detail .icon {
   width: 16px;
   height: 16px;
-  color: #dc2626;
+  color: #7c3aed;
   opacity: 0.7;
 }
 
@@ -187,7 +187,7 @@
 }
 
 .use-routine-button {
-  background: #E63946; /* Red background */
+  background: #9333ea; /* Red background */
   color: white;
   border: none;
   padding: 12px 16px;
@@ -214,7 +214,7 @@
 .secondary-button {
   background: transparent;
   color: #EAEAEA;
-  border: 1px solid #404040;
+  border: 1px solid #3b3b66;
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -233,9 +233,9 @@
 
 /* View button - same styling as Use Routine for red background */
 .secondary-button.view-button {
-  background: #E63946;
+  background: #9333ea;
   color: white;
-  border: 1px solid #E63946;
+  border: 1px solid #9333ea;
 }
 
 .secondary-button.view-button:hover {
@@ -246,14 +246,14 @@
 
 /* Edit and Delete buttons - outline/ghost style */
 .secondary-button.edit-button:hover {
-  border-color: #E63946;
-  color: #E63946;
+  border-color: #9333ea;
+  color: #9333ea;
   background: transparent;
 }
 
 .secondary-button.delete-button:hover {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: #a855f7;
+  color: #a855f7;
   background: transparent;
 }
 
@@ -269,8 +269,8 @@
 .loading-spinner {
   width: 32px;
   height: 32px;
-  border: 3px solid #333;
-  border-top: 3px solid #dc2626;
+  border: 3px solid #2f2f55;
+  border-top: 3px solid #7c3aed;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-right: 12px;
@@ -285,7 +285,7 @@
 .preset-routine-error {
   text-align: center;
   padding: 48px;
-  color: #dc2626;
+  color: #7c3aed;
 }
 
 .preset-routine-error svg {

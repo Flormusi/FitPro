@@ -3,14 +3,14 @@
   margin: 0 auto;
   padding: 20px;
   color: #fff;
-  background-color: #121212;
+  background-color: #111128;
   min-height: 100vh;
 }
 
 .routine-header {
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
 }
 
 .back-link {
@@ -22,7 +22,7 @@
 }
 
 .back-link:hover {
-  color: #D62828;
+  color: #8b5cf6;
 }
 
 .routine-header h1 {
@@ -45,7 +45,7 @@
 
 .routine-difficulty,
 .routine-duration {
-  background-color: #2c2c2c;
+  background-color: #28284c;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -60,7 +60,7 @@
 }
 
 .exercises-list {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -69,14 +69,14 @@
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: #D62828;
+  color: #8b5cf6;
 }
 
 .exercise-item {
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color: #2c2c2c;
+  background-color: #28284c;
   border-radius: 8px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -88,8 +88,8 @@
 }
 
 .exercise-item.active {
-  background-color: rgba(214, 40, 40, 0.1);
-  border-left: 3px solid #D62828;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid #8b5cf6;
 }
 
 .exercise-item.completed {
@@ -99,7 +99,7 @@
 .exercise-number {
   width: 30px;
   height: 30px;
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -142,7 +142,7 @@
 }
 
 .exercise-details {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -157,11 +157,11 @@
 .exercise-header h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #D62828;
+  color: #8b5cf6;
 }
 
 .exercise-category {
-  background-color: #2c2c2c;
+  background-color: #28284c;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -202,7 +202,7 @@
 }
 
 .exercise-log {
-  background-color: #2c2c2c;
+  background-color: #28284c;
   border-radius: 8px;
   padding: 20px;
 }
@@ -248,8 +248,8 @@
 
 .complete-btn {
   background-color: transparent;
-  border: 1px solid #D62828;
-  color: #D62828;
+  border: 1px solid #8b5cf6;
+  color: #8b5cf6;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -258,11 +258,11 @@
 }
 
 .complete-btn:hover {
-  background-color: rgba(214, 40, 40, 0.1);
+  background-color: rgba(139, 92, 246, 0.1);
 }
 
 .complete-btn.completed {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
 }
 
@@ -282,7 +282,7 @@
 }
 
 .save-progress-btn {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
   border: none;
   padding: 12px 30px;
@@ -294,7 +294,7 @@
 }
 
 .save-progress-btn:hover {
-  background-color: #D62828;
+  background-color: #8b5cf6;
 }
 
 /* Responsive adjustments */

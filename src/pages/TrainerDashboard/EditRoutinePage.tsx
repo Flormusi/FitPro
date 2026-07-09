@@ -298,21 +298,21 @@ const EditRoutinePage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a0a1c] flex items-center justify-center">
         <div className="text-white text-xl">Cargando rutina...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#0a0a1c] text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate(-1)}
-                className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-[#555555] hover:border-[#777777]"
+                className="bg-[#18182f] hover:bg-[#26264a] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-[#555555] hover:border-[#777777]"
               >
                 ← Volver
               </button>
@@ -335,7 +335,7 @@ const EditRoutinePage: React.FC = () => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="bg-[#1a1a1a] border border-[#555555] rounded-lg p-6">
+            <div className="bg-[#18182f] border border-[#555555] rounded-lg p-6">
               <h2 className="text-xl font-semibold mb-6 text-white">Información de la Rutina</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -348,7 +348,7 @@ const EditRoutinePage: React.FC = () => {
                     name="name"
                     value={routineData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                    className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                     placeholder="Ej: Rutina de Fuerza - Semana 1"
                     required
                   />
@@ -362,7 +362,7 @@ const EditRoutinePage: React.FC = () => {
                     name="clientId"
                     value={routineData.clientId}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                    className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                     required
                   >
                     <option value="">Selecciona un cliente</option>
@@ -383,7 +383,7 @@ const EditRoutinePage: React.FC = () => {
                     name="duration"
                     value={routineData.duration}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                    className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                     placeholder="Ej: 4 semanas, 45 minutos"
                     required
                   />
@@ -399,7 +399,7 @@ const EditRoutinePage: React.FC = () => {
                     min={1}
                     value={typeof routineData.totalWeeks === 'number' ? routineData.totalWeeks : 4}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                    className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                     placeholder="Ej: 4"
                   />
                 </div>
@@ -414,13 +414,13 @@ const EditRoutinePage: React.FC = () => {
                   value={routineData.notes}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300 resize-none"
                   placeholder="Instrucciones especiales, objetivos, etc..."
                 />
               </div>
             </div>
 
-            <div className="bg-[#1a1a1a] border border-[#555555] rounded-lg p-6">
+            <div className="bg-[#18182f] border border-[#555555] rounded-lg p-6">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-semibold text-white">Ejercicios</h2>
                 <button
@@ -434,7 +434,7 @@ const EditRoutinePage: React.FC = () => {
 
               <div className="space-y-6">
                 {routineData.exercises.map((exercise, index) => (
-                  <div key={exercise.id} className="bg-[#1a1a1a] border border-[#555555] rounded-lg p-6">
+                  <div key={exercise.id} className="bg-[#18182f] border border-[#555555] rounded-lg p-6">
                     <div className="flex justify-between items-center mb-6">
                       <h4 className="text-lg font-semibold text-white flex items-center gap-2">
                         <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-sm font-bold">
@@ -465,18 +465,18 @@ const EditRoutinePage: React.FC = () => {
                             newShowDropdowns[index] = true;
                             setShowDropdowns(newShowDropdowns);
                           }}
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                          className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                           placeholder="Buscar ejercicio..."
                           required
                         />
                         
                         {showDropdowns[index] && (
-                          <div className="absolute z-10 w-full mt-1 bg-[#2a2a2a] border border-[#555555] rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                          <div className="absolute z-10 w-full mt-1 bg-[#26264a] border border-[#555555] rounded-lg shadow-lg max-h-60 overflow-y-auto">
                             {getFilteredExercisesForIndex(index).slice(0, 10).map((ex) => (
                               <div
                                 key={ex.id}
                                 onClick={() => selectExercise(index, ex)}
-                                className="px-4 py-2 hover:bg-[#3a3a3a] cursor-pointer text-white border-b border-[#444444] last:border-b-0"
+                                className="px-4 py-2 hover:bg-[#35355e] cursor-pointer text-white border-b border-[#444444] last:border-b-0"
                               >
                                 {ex.name}
                               </div>
@@ -494,7 +494,7 @@ const EditRoutinePage: React.FC = () => {
                           name="series"
                           value={exercise.series}
                           onChange={(e) => handleExerciseChange(index, e)}
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                          className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                           placeholder="Ej: 3"
                           required
                         />
@@ -509,7 +509,7 @@ const EditRoutinePage: React.FC = () => {
                           name="reps"
                           value={exercise.reps}
                           onChange={(e) => handleExerciseChange(index, e)}
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                          className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                           placeholder="Ej: 12"
                           required
                         />
@@ -524,7 +524,7 @@ const EditRoutinePage: React.FC = () => {
                           name="weight"
                           value={exercise.weight || ''}
                           onChange={(e) => handleExerciseChange(index, e)}
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                          className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                           placeholder="Ej: 20kg"
                         />
                       </div>
@@ -537,7 +537,7 @@ const EditRoutinePage: React.FC = () => {
                           name="day"
                           value={exercise.day || 1}
                           onChange={(e) => handleExerciseChange(index, e)}
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300"
+                          className="w-full px-4 py-3 bg-[#26264a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300"
                         >
                           {[1, 2, 3, 4, 5, 6, 7].map(day => (
                             <option key={day} value={day}>Día {day}</option>
@@ -555,7 +555,7 @@ const EditRoutinePage: React.FC = () => {
                         value={exercise.notes || ''}
                         onChange={(e) => handleExerciseChange(index, e)}
                         rows={3}
-                        className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ff4444] focus:border-[#ff4444] transition-all duration-300 resize-none"
+                        className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#a78bfa] focus:border-[#a78bfa] transition-all duration-300 resize-none"
                         placeholder="Notas adicionales sobre este ejercicio..."
                       />
                     </div>
@@ -587,7 +587,7 @@ const EditRoutinePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate(-1)}
-                className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-[#555555] hover:border-[#777777]"
+                className="bg-[#18182f] hover:bg-[#26264a] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-[#555555] hover:border-[#777777]"
               >
                 Cancelar
               </button>

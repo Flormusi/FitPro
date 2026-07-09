@@ -18,7 +18,7 @@
 
 .overview-header h2 {
   margin: 0;
-  color: #333;
+  color: #2f2f55;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -103,7 +103,7 @@
 
 .goal-item:before {
   content: "✓";
-  color: #e63946;
+  color: #9333ea;
   margin-right: 10px;
   font-weight: bold;
 }
@@ -130,7 +130,7 @@
 .view-progress {
   display: inline-block;
   padding: 6px 12px;
-  background-color: #e63946 !important;
+  background-color: #9333ea !important;
   color: white !important;
   text-decoration: none !important;
   border-radius: 4px;

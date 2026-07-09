@@ -1,7 +1,7 @@
 /* Styles for LandingPage.jsx (in components/landingpage) */
 .landing-page-container {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #2f2f55;
   text-align: center;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .landing-footer {
-  background-color: #333;
+  background-color: #2f2f55;
   color: white;
   padding: 15px 20px;
   margin-top: 30px;
@@ -53,7 +53,7 @@
 
 /* Styles for LandingPage component */
 .landing-page-hero {
-  background-color: #333;
+  background-color: #2f2f55;
   color: white;
   padding: 50px 20px;
   text-align: center;

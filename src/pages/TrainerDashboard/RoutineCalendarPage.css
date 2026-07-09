@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 20px;
   color: white;
-  background-color: #1a1a1a;
+  background-color: #18182f;
   min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .calendar-header h1 {
-  color: #ff4444;
+  color: #a78bfa;
   font-size: 24px;
   margin: 0;
 }
@@ -28,7 +28,7 @@
 }
 
 .calendar-nav-btn {
-  background-color: #333;
+  background-color: #2f2f55;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -50,7 +50,7 @@
 }
 
 .calendar-grid {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
@@ -78,7 +78,7 @@
 }
 
 .calendar-day {
-  background-color: #333;
+  background-color: #2f2f55;
   padding: 10px;
   min-height: 80px;
   border-radius: 4px;
@@ -96,7 +96,7 @@
 }
 
 .calendar-day.today {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
 }
 
@@ -118,7 +118,7 @@
 }
 
 .routine-indicator {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
   padding: 2px 6px;
   border-radius: 3px;
@@ -137,7 +137,7 @@
 }
 
 .selected-day-info {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -156,10 +156,10 @@
 }
 
 .routine-item {
-  background-color: #333;
+  background-color: #2f2f55;
   padding: 15px;
   border-radius: 4px;
-  border-left: 4px solid #ff4444;
+  border-left: 4px solid #a78bfa;
 }
 
 .routine-item h4 {
@@ -220,7 +220,7 @@
 
 .error {
   text-align: center;
-  color: #ff4444;
+  color: #a78bfa;
   padding: 40px;
   font-size: 18px;
 }

@@ -43,7 +43,7 @@
 
 .note-input:focus {
   outline: none;
-  border-color: #e63946;
+  border-color: #9333ea;
   box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
 }
 
@@ -64,7 +64,7 @@
 
 .add-note-btn {
   padding: 8px 16px;
-  background-color: #e63946;
+  background-color: #9333ea;
   color: white;
   border: none;
   border-radius: 4px;
@@ -98,7 +98,7 @@
 
 .filter-input:focus {
   outline: none;
-  border-color: #e63946;
+  border-color: #9333ea;
   box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
 }
 
@@ -123,7 +123,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  border-left: 4px solid #e63946;
+  border-left: 4px solid #9333ea;
 }
 
 .note-card.general {
@@ -131,7 +131,7 @@
 }
 
 .note-card.training {
-  border-left-color: #e63946;
+  border-left-color: #9333ea;
 }
 
 .note-card.nutrition {
@@ -228,7 +228,7 @@
 
 .edit-input:focus {
   outline: none;
-  border-color: #e63946;
+  border-color: #9333ea;
   box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
 }
 
@@ -248,7 +248,7 @@
 }
 
 .save-edit-btn {
-  background-color: #e63946;
+  background-color: #9333ea;
   color: white;
   border: none;
 }

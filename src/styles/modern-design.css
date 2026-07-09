@@ -2,8 +2,8 @@
 
 /* Tarjetas principales con diseño moderno */
 .modern-card {
-  background: #1E1E1E;
-  border: 1px solid #2C2C2C;
+  background: #1c1c38;
+  border: 1px solid #28284c;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -36,7 +36,7 @@
 }
 
 .modern-button:hover {
-  background: linear-gradient(135deg, #FF6B6B 0%, #FF4444 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 59, 59, 0.4);
 }
@@ -68,14 +68,14 @@
 }
 
 .modern-button-secondary:hover {
-  background: #FF6B6B;
+  background: #c4b5fd;
   transform: translateY(-1px);
   box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
 }
 
 /* Inputs modernos */
 .modern-input {
-  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  background: linear-gradient(145deg, #26264a, #18182f);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
@@ -97,7 +97,7 @@
 
 /* Contenedores de contenido con profundidad */
 .modern-content-block {
-  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  background: linear-gradient(145deg, #26264a, #18182f);
   border-radius: 24px;
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.4),
@@ -124,14 +124,14 @@
 }
 
 .modern-modal-content {
-  background: #1a1a1a;
+  background: #18182f;
   border-radius: 16px;
   width: 100%;
   max-width: 1200px;
   max-height: 90vh;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
 }
 
 .modern-modal-header {
@@ -141,7 +141,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
 }
 
 /* Efectos de glassmorphism para elementos destacados */
@@ -185,15 +185,15 @@
 
 /* Gradientes para fondos atractivos */
 .gradient-bg-primary {
-  background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #cc3333 100%);
 }
 
 .gradient-bg-secondary {
-  background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #35355e 0%, #18182f 100%);
 }
 
 .gradient-bg-accent {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff4444 50%, #cc3333 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #cc3333 100%);
 }
 
 /* Chip styles for labels */
@@ -211,7 +211,7 @@
 
 /* Chip para rutinas propias */
 .personal-chip {
-  background: #3a3a3a; /* gris ligeramente más claro para contraste */
+  background: #35355e; /* gris ligeramente más claro para contraste */
   color: #f3f4f6; /* texto más claro para legibilidad */
   font-size: 12px;
   font-weight: 700;
@@ -226,7 +226,7 @@
 
 /* FitPro Header gradient for modals/panel titles */
 .tf-header-gradient {
-  background: linear-gradient(135deg, #E63946 0%, #C5303E 100%);
+  background: linear-gradient(135deg, #9333ea 0%, #C5303E 100%);
   box-shadow: 0 4px 20px rgba(230, 57, 70, 0.25);
 }
 
@@ -244,7 +244,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #ff3b30 0%, #dc2626 60%, #b91c1c 100%);
+  background: linear-gradient(90deg, #a855f7 0%, #7c3aed 60%, #6d28d9 100%);
 }
 
 .tf-card:hover {
@@ -254,7 +254,7 @@
 
 /* Neutral gray button */
 .button-neutral {
-  background: #3a3a3a;
+  background: #35355e;
   color: #e5e7eb;
   border: 1px solid #4b5563;
   border-radius: 12px;
@@ -277,7 +277,7 @@
 .button-danger-outline {
   background: transparent;
   color: #fca5a5;
-  border: 1px solid rgba(220, 38, 38, 0.5);
+  border: 1px solid rgba(124, 58, 237, 0.5);
   border-radius: 12px;
   padding: 12px 20px;
   font-weight: 600;
@@ -290,8 +290,8 @@
 
 .button-danger-outline:hover {
   color: #fecaca;
-  background: rgba(220, 38, 38, 0.1);
-  border-color: rgba(220, 38, 38, 0.8);
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.8);
 }
 
 /* Botones unificados FitPro */
@@ -315,7 +315,7 @@
   border: 1px solid rgba(229, 62, 62, 0.6);
 }
 .tf-btn-primary:hover {
-  background: linear-gradient(135deg, #FF6B6B 0%, #FF4444 100%);
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
   box-shadow: 0 8px 25px rgba(255, 59, 59, 0.35);
 }
 
@@ -330,7 +330,7 @@
 }
 
 .tf-btn-neutral {
-  background: #3a3a3a;
+  background: #35355e;
   color: #e5e7eb;
   border: 1px solid #4b5563;
 }
@@ -342,12 +342,12 @@
 .tf-btn-danger {
   background: transparent;
   color: #fca5a5;
-  border: 1px solid rgba(220, 38, 38, 0.6);
+  border: 1px solid rgba(124, 58, 237, 0.6);
 }
 .tf-btn-danger:hover {
   color: #fecaca;
-  background: rgba(220, 38, 38, 0.10);
-  border-color: rgba(220, 38, 38, 0.85);
+  background: rgba(124, 58, 237, 0.10);
+  border-color: rgba(124, 58, 237, 0.85);
 }
 
 /* Input de búsqueda con alto contraste */

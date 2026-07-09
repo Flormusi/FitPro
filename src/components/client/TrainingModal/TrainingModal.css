@@ -13,14 +13,14 @@
 }
 
 .training-modal {
-  background: #1a1a1a;
+  background: #18182f;
   border-radius: 16px;
   width: 90%;
   max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
 }
 
 .modal-header {
@@ -28,7 +28,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 24px 16px 24px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2f2f55;
 }
 
 .modal-header h2 {
@@ -56,7 +56,7 @@
 }
 
 .close-button:hover {
-  background: #333;
+  background: #2f2f55;
   color: #fff;
 }
 
@@ -74,7 +74,7 @@
 
 .training-section h3 {
   margin: 0 0 16px 0;
-  color: #ff4757;
+  color: #c084fc;
   font-size: 1.1rem;
   font-weight: 600;
   display: flex;
@@ -84,28 +84,28 @@
 
 .training-card,
 .google-event-card {
-  background: #2a2a2a;
+  background: #26264a;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 16px;
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
   transition: all 0.2s ease;
 }
 
 .server-event-card {
-  background: #2a2a2a;
+  background: #26264a;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 16px;
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
   transition: all 0.2s ease;
 }
 
 .training-card:hover,
 .google-event-card:hover {
-  border-color: #ff4757;
+  border-color: #c084fc;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.1);
+  box-shadow: 0 8px 20px rgba(192, 132, 252, 0.1);
 }
 
 .google-event-card:hover {
@@ -132,7 +132,7 @@
 
 .training-time,
 .event-time {
-  background: #ff4757;
+  background: #c084fc;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -205,7 +205,7 @@
 }
 
 .btn-delete {
-  background: #ff4757;
+  background: #c084fc;
   color: white;
 }
 
@@ -240,7 +240,7 @@
 .create-training-section {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #2f2f55;
   margin-top: 20px;
 }
 
@@ -299,7 +299,7 @@
 }
 
 .training-modal::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: #26264a;
   border-radius: 4px;
 }
 

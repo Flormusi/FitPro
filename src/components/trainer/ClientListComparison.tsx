@@ -53,7 +53,7 @@ const ClientListComparison: React.FC = () => {
       padding: '24px',
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#121212',
+      backgroundColor: '#111128',
       color: '#ffffff'
     }}>
       {/* Header */}
@@ -63,7 +63,7 @@ const ClientListComparison: React.FC = () => {
         gap: '16px',
         marginBottom: '32px',
         padding: '24px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px'
       }}>
         <button 
@@ -88,7 +88,7 @@ const ClientListComparison: React.FC = () => {
         <div style={{ textAlign: 'center' }}>
           <h1 style={{
             margin: '0',
-            color: '#D62828',
+            color: '#8b5cf6',
             fontSize: '2.5rem',
             fontWeight: '700'
           }}>
@@ -141,7 +141,7 @@ const ClientListComparison: React.FC = () => {
           onClick={() => navigate('/trainer/clients-improved')}
           style={{
             padding: '16px 32px',
-            background: '#D62828',
+            background: '#8b5cf6',
             color: 'white',
             border: 'none',
             borderRadius: '12px',
@@ -157,14 +157,14 @@ const ClientListComparison: React.FC = () => {
 
       {/* Tabla de comparación */}
       <div style={{
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px',
         overflow: 'hidden',
         marginBottom: '32px'
       }}>
         <div style={{
           padding: '24px',
-          borderBottom: '1px solid #404040'
+          borderBottom: '1px solid #3b3b66'
         }}>
           <h2 style={{
             margin: '0',
@@ -182,11 +182,11 @@ const ClientListComparison: React.FC = () => {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gap: '1px',
-            background: '#404040'
+            background: '#3b3b66'
           }}>
             <div style={{
               padding: '16px',
-              background: '#2d2d2d',
+              background: '#29294d',
               fontWeight: '600',
               color: '#ffffff',
               textAlign: 'center'
@@ -195,7 +195,7 @@ const ClientListComparison: React.FC = () => {
             </div>
             <div style={{
               padding: '16px',
-              background: '#2d2d2d',
+              background: '#29294d',
               fontWeight: '600',
               color: '#ffffff',
               textAlign: 'center'
@@ -204,7 +204,7 @@ const ClientListComparison: React.FC = () => {
             </div>
             <div style={{
               padding: '16px',
-              background: '#2d2d2d',
+              background: '#29294d',
               fontWeight: '600',
               color: '#ffffff',
               textAlign: 'center'
@@ -219,11 +219,11 @@ const ClientListComparison: React.FC = () => {
               display: 'grid',
               gridTemplateColumns: '1fr 1fr 1fr',
               gap: '1px',
-              background: '#404040'
+              background: '#3b3b66'
             }}>
               <div style={{
                 padding: '16px',
-                background: '#1a1a1a',
+                background: '#18182f',
                 fontWeight: '600',
                 color: '#ffffff'
               }}>
@@ -231,14 +231,14 @@ const ClientListComparison: React.FC = () => {
               </div>
               <div style={{
                 padding: '16px',
-                background: '#1a1a1a',
+                background: '#18182f',
                 color: '#b0b0b0'
               }}>
                 {item.original}
               </div>
               <div style={{
                 padding: '16px',
-                background: '#1a1a1a',
+                background: '#18182f',
                 color: '#b0b0b0'
               }}>
                 {item.improved}
@@ -257,13 +257,13 @@ const ClientListComparison: React.FC = () => {
       }}>
         <div style={{
           padding: '24px',
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+          background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
           borderRadius: '12px',
           textAlign: 'center'
         }}>
           <h3 style={{
             margin: '0 0 16px 0',
-            color: '#ef4444',
+            color: '#a855f7',
             fontSize: '1.25rem',
             fontWeight: '600'
           }}>
@@ -280,7 +280,7 @@ const ClientListComparison: React.FC = () => {
 
         <div style={{
           padding: '24px',
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+          background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
           borderRadius: '12px',
           textAlign: 'center'
         }}>
@@ -305,13 +305,13 @@ const ClientListComparison: React.FC = () => {
       {/* Recomendaciones */}
       <div style={{
         padding: '24px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px',
-        border: '1px solid #dc2626'
+        border: '1px solid #7c3aed'
       }}>
         <h3 style={{
           margin: '0 0 16px 0',
-          color: '#dc2626',
+          color: '#7c3aed',
           fontSize: '1.25rem',
           fontWeight: '600'
         }}>

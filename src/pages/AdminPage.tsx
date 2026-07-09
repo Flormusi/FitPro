@@ -26,7 +26,7 @@ interface Lead {
 
 const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   ACTIVE:   { label: 'Activo',    color: '#22c55e' },
-  INACTIVE: { label: 'Inactivo',  color: '#ef4444' },
+  INACTIVE: { label: 'Inactivo',  color: '#a855f7' },
   TRIALING: { label: 'Trial',     color: '#f59e0b' },
   CANCELLED:{ label: 'Cancelado', color: '#6b7280' },
   PAST_DUE: { label: 'Vencido',   color: '#f97316' },
@@ -164,11 +164,11 @@ const AdminPage: React.FC = () => {
   if (!authenticated) {
     return (
       <div style={{
-        minHeight: '100vh', backgroundColor: '#0f0f0f',
+        minHeight: '100vh', backgroundColor: '#0d0d24',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}>
         <div style={{
-          backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a',
+          backgroundColor: '#18182f', border: '1px solid #26264a',
           borderRadius: 12, padding: '2rem', width: '100%', maxWidth: 360,
         }}>
           <h1 style={{ color: '#fff', fontWeight: 800, fontSize: '1.4rem', marginBottom: 4 }}>
@@ -185,20 +185,20 @@ const AdminPage: React.FC = () => {
               onChange={e => setKeyInput(e.target.value)}
               style={{
                 width: '100%', padding: '0.75rem', borderRadius: 8,
-                border: '1px solid #333', backgroundColor: '#111',
+                border: '1px solid #2f2f55', backgroundColor: '#111',
                 color: '#fff', fontSize: '0.95rem', marginBottom: 12,
                 boxSizing: 'border-box',
               }}
               autoFocus
             />
             {error && (
-              <p style={{ color: '#ef4444', fontSize: '0.85rem', marginBottom: 12 }}>{error}</p>
+              <p style={{ color: '#a855f7', fontSize: '0.85rem', marginBottom: 12 }}>{error}</p>
             )}
             <button
               type="submit"
               style={{
                 width: '100%', padding: '0.75rem', borderRadius: 8,
-                backgroundColor: '#e11d48', color: '#fff',
+                backgroundColor: '#8b5cf6', color: '#fff',
                 border: 'none', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
               }}
             >
@@ -211,7 +211,7 @@ const AdminPage: React.FC = () => {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0f0f0f', padding: '2rem 1rem' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#0d0d24', padding: '2rem 1rem' }}>
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
 
         {/* Header */}
@@ -224,8 +224,8 @@ const AdminPage: React.FC = () => {
               onClick={() => { fetchTrainers(); fetchLeads(); }}
               disabled={loading || leadsLoading}
               style={{
-                backgroundColor: '#1a1a1a', color: '#aaa',
-                border: '1px solid #333', borderRadius: 8, padding: '0.5rem 1rem',
+                backgroundColor: '#18182f', color: '#aaa',
+                border: '1px solid #2f2f55', borderRadius: 8, padding: '0.5rem 1rem',
                 cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6,
               }}
             >
@@ -244,14 +244,14 @@ const AdminPage: React.FC = () => {
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'flex', gap: 4, marginBottom: '1.5rem', borderBottom: '1px solid #2a2a2a', paddingBottom: 0 }}>
+        <div style={{ display: 'flex', gap: 4, marginBottom: '1.5rem', borderBottom: '1px solid #26264a', paddingBottom: 0 }}>
           <button
             onClick={() => setActiveTab('trainers')}
             style={{
               backgroundColor: 'transparent',
-              color: activeTab === 'trainers' ? '#e11d48' : '#6b7280',
+              color: activeTab === 'trainers' ? '#8b5cf6' : '#6b7280',
               border: 'none',
-              borderBottom: activeTab === 'trainers' ? '2px solid #e11d48' : '2px solid transparent',
+              borderBottom: activeTab === 'trainers' ? '2px solid #8b5cf6' : '2px solid transparent',
               padding: '0.6rem 1.1rem',
               cursor: 'pointer',
               fontWeight: activeTab === 'trainers' ? 700 : 400,
@@ -263,8 +263,8 @@ const AdminPage: React.FC = () => {
             <Users size={15} />
             Trainers
             <span style={{
-              backgroundColor: activeTab === 'trainers' ? '#e11d4822' : '#2a2a2a',
-              color: activeTab === 'trainers' ? '#e11d48' : '#6b7280',
+              backgroundColor: activeTab === 'trainers' ? '#8b5cf622' : '#26264a',
+              color: activeTab === 'trainers' ? '#8b5cf6' : '#6b7280',
               borderRadius: 20, padding: '1px 8px', fontSize: '0.75rem', fontWeight: 700,
             }}>
               {trainers.length}
@@ -274,9 +274,9 @@ const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('leads')}
             style={{
               backgroundColor: 'transparent',
-              color: activeTab === 'leads' ? '#e11d48' : '#6b7280',
+              color: activeTab === 'leads' ? '#8b5cf6' : '#6b7280',
               border: 'none',
-              borderBottom: activeTab === 'leads' ? '2px solid #e11d48' : '2px solid transparent',
+              borderBottom: activeTab === 'leads' ? '2px solid #8b5cf6' : '2px solid transparent',
               padding: '0.6rem 1.1rem',
               cursor: 'pointer',
               fontWeight: activeTab === 'leads' ? 700 : 400,
@@ -288,8 +288,8 @@ const AdminPage: React.FC = () => {
             <Mail size={15} />
             Leads
             <span style={{
-              backgroundColor: activeTab === 'leads' ? '#e11d4822' : '#2a2a2a',
-              color: activeTab === 'leads' ? '#e11d48' : '#6b7280',
+              backgroundColor: activeTab === 'leads' ? '#8b5cf622' : '#26264a',
+              color: activeTab === 'leads' ? '#8b5cf6' : '#6b7280',
               borderRadius: 20, padding: '1px 8px', fontSize: '0.75rem', fontWeight: 700,
             }}>
               {leads.length}
@@ -299,9 +299,9 @@ const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('reset')}
             style={{
               backgroundColor: 'transparent',
-              color: activeTab === 'reset' ? '#e11d48' : '#6b7280',
+              color: activeTab === 'reset' ? '#8b5cf6' : '#6b7280',
               border: 'none',
-              borderBottom: activeTab === 'reset' ? '2px solid #e11d48' : '2px solid transparent',
+              borderBottom: activeTab === 'reset' ? '2px solid #8b5cf6' : '2px solid transparent',
               padding: '0.6rem 1.1rem',
               cursor: 'pointer',
               fontWeight: activeTab === 'reset' ? 700 : 400,
@@ -335,7 +335,7 @@ const AdminPage: React.FC = () => {
                   <div
                     key={trainer.id}
                     style={{
-                      backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a',
+                      backgroundColor: '#18182f', border: '1px solid #26264a',
                       borderRadius: 10, padding: '1rem 1.25rem',
                       display: 'flex', flexWrap: 'wrap', alignItems: 'center',
                       gap: '1rem', justifyContent: 'space-between',
@@ -367,7 +367,7 @@ const AdminPage: React.FC = () => {
                         id={`plan-${trainer.id}`}
                         style={{
                           backgroundColor: '#111', color: '#aaa',
-                          border: '1px solid #333', borderRadius: 6, padding: '0.4rem 0.6rem',
+                          border: '1px solid #2f2f55', borderRadius: 6, padding: '0.4rem 0.6rem',
                           fontSize: '0.82rem',
                         }}
                       >
@@ -398,8 +398,8 @@ const AdminPage: React.FC = () => {
                         disabled={isUpdating || currentStatus === 'INACTIVE'}
                         onClick={() => updateSubscription(trainer.id, 'INACTIVE', currentPlan)}
                         style={{
-                          backgroundColor: '#1a1a1a', color: '#ef4444',
-                          border: '1px solid #ef444444', borderRadius: 6,
+                          backgroundColor: '#18182f', color: '#a855f7',
+                          border: '1px solid #a855f744', borderRadius: 6,
                           padding: '0.4rem 0.85rem',
                           cursor: currentStatus === 'INACTIVE' ? 'default' : 'pointer',
                           fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: 5,
@@ -422,7 +422,7 @@ const AdminPage: React.FC = () => {
             <p style={{ color: '#6b7280', textAlign: 'center' }}>Cargando…</p>
           ) : leads.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '3rem 0' }}>
-              <Mail size={32} color="#2a2a2a" style={{ marginBottom: 12 }} />
+              <Mail size={32} color="#26264a" style={{ marginBottom: 12 }} />
               <p style={{ color: '#6b7280', margin: 0 }}>Todavía no hay leads capturados.</p>
               <p style={{ color: '#444', fontSize: '0.8rem', marginTop: 6 }}>
                 Cuando alguien complete el formulario de la landing, aparecerá acá.
@@ -432,7 +432,7 @@ const AdminPage: React.FC = () => {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #2a2a2a' }}>
+                  <tr style={{ borderBottom: '1px solid #26264a' }}>
                     {['Email', 'Nombre', 'Fuente', 'Fecha'].map(h => (
                       <th key={h} style={{
                         textAlign: 'left', color: '#6b7280', fontWeight: 600,
@@ -446,7 +446,7 @@ const AdminPage: React.FC = () => {
                     <tr
                       key={lead.id}
                       style={{
-                        borderBottom: '1px solid #1f1f1f',
+                        borderBottom: '1px solid #1d1d3a',
                         backgroundColor: i % 2 === 0 ? 'transparent' : '#141414',
                       }}
                     >
@@ -489,7 +489,7 @@ const AdminPage: React.FC = () => {
                 required
                 style={{
                   backgroundColor: '#111', color: '#fff',
-                  border: '1px solid #333', borderRadius: 8,
+                  border: '1px solid #2f2f55', borderRadius: 8,
                   padding: '0.75rem', fontSize: '0.9rem',
                 }}
               />
@@ -497,7 +497,7 @@ const AdminPage: React.FC = () => {
                 type="submit"
                 disabled={resetLoading}
                 style={{
-                  backgroundColor: '#e11d48', color: '#fff',
+                  backgroundColor: '#8b5cf6', color: '#fff',
                   border: 'none', borderRadius: 8,
                   padding: '0.75rem', fontWeight: 700,
                   cursor: resetLoading ? 'default' : 'pointer',
@@ -509,7 +509,7 @@ const AdminPage: React.FC = () => {
             </form>
 
             {resetError && (
-              <p style={{ color: '#ef4444', marginTop: 12, fontSize: '0.875rem' }}>{resetError}</p>
+              <p style={{ color: '#a855f7', marginTop: 12, fontSize: '0.875rem' }}>{resetError}</p>
             )}
 
             {resetResult && (
@@ -538,7 +538,7 @@ const AdminPage: React.FC = () => {
           </div>
         )}
 
-        <p style={{ color: '#2a2a2a', fontSize: '0.75rem', textAlign: 'center', marginTop: '2rem' }}>
+        <p style={{ color: '#26264a', fontSize: '0.75rem', textAlign: 'center', marginTop: '2rem' }}>
           /admin · uso interno FitPro
         </p>
       </div>

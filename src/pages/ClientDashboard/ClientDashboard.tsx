@@ -1037,7 +1037,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
         <div className="dashboard-left-column">
           {/* Rutina del Mes */}
           <div className="dashboard-section routine-overview">
-            <div className="card main-routine-card bg-[#1e1e1e] rounded-xl p-6 shadow-md">
+            <div className="card main-routine-card bg-[#1c1c38] rounded-xl p-6 shadow-md">
               <h2>💪 TU RUTINA DEL MES</h2>
               {!isLoadingRoutines && assignedRoutines.length > 0 ? (
                 <div className="routine-content">
@@ -1070,7 +1070,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
 
           {/* Calendario de Entrenamientos */}
           <div className="dashboard-section training-calendar">
-            <div className="card bg-[#1e1e1e] rounded-xl p-6 shadow-md">
+            <div className="card bg-[#1c1c38] rounded-xl p-6 shadow-md">
               <div className="calendar-header">
                 <h2>Calendario de entrenamientos</h2>
                 <button className="request-change-btn bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg" style={{ marginBottom: 8 }} onClick={handleRequestChange}>Solicitar cambio</button>
@@ -1130,7 +1130,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
                               <>
                                 {/* Indicadores por tipo de evento del servidor */}
                                 {dayEvents.serverEvents?.some(ev => ev.type === 'routine') && (
-                                  <div title="Rutina" style={{ width: 8, height: 8, borderRadius: 999, background: '#ff4757' }} />
+                                  <div title="Rutina" style={{ width: 8, height: 8, borderRadius: 999, background: '#c084fc' }} />
                                 )}
                                 {dayEvents.serverEvents?.some(ev => ev.type === 'session') && (
                                   <div title="Sesión" style={{ width: 8, height: 8, borderRadius: 999, background: '#f59e0b' }} />
@@ -1241,7 +1241,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
         <div className="dashboard-right-column">
           {/* Métricas de Progreso */}
           <div className="dashboard-section progress-metrics">
-            <div className="card bg-[#1e1e1e] rounded-xl p-6 shadow-md">
+            <div className="card bg-[#1c1c38] rounded-xl p-6 shadow-md">
               <div className="card-header">
                 <h2>Métricas de progreso</h2>
                 <button 
@@ -1326,7 +1326,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
 
           {/* Estado de Cuotas */}
           <div className="dashboard-section payment-management" style={{ marginTop: 16 }}>
-            <div className="card bg-[#1e1e1e] rounded-xl p-6 shadow-md">
+            <div className="card bg-[#1c1c38] rounded-xl p-6 shadow-md">
               <div className="payment-header">
                 <h2>Estado de cuotas</h2>
               </div>

@@ -290,7 +290,7 @@ const UnifiedCalendar: React.FC = () => {
       if (response.status >= 200 && response.status < 300) {
         toast.success('Evento creado con éxito', {
           duration: 3000,
-          style: { background: '#2d2d2d', color: '#fff' }
+          style: { background: '#29294d', color: '#fff' }
         });
         setShowCreateModal(false);
         resetNewEvent();
@@ -298,14 +298,14 @@ const UnifiedCalendar: React.FC = () => {
       } else {
         toast.error('Error al procesar la acción', {
           duration: 3000,
-          style: { background: '#2d2d2d', color: '#fff' }
+          style: { background: '#29294d', color: '#fff' }
         });
       }
     } catch (error) {
       console.error('Error al crear evento:', error);
       toast.error('Error al procesar la acción', {
         duration: 3000,
-        style: { background: '#2d2d2d', color: '#fff' }
+        style: { background: '#29294d', color: '#fff' }
       });
     } finally {
       setLoading(false);
@@ -383,20 +383,20 @@ const UnifiedCalendar: React.FC = () => {
         // Notificación y cierre de modal
         toast.success('Evento eliminado con éxito', {
           duration: 3000,
-          style: { background: '#2d2d2d', color: '#fff' }
+          style: { background: '#29294d', color: '#fff' }
         });
         setEditingEvent(null);
       } else {
         toast.error('Error al procesar la acción', {
           duration: 3000,
-          style: { background: '#2d2d2d', color: '#fff' }
+          style: { background: '#29294d', color: '#fff' }
         });
       }
     } catch (error) {
       console.error('Error al eliminar evento:', error);
       toast.error('Error al procesar la acción', {
         duration: 3000,
-        style: { background: '#2d2d2d', color: '#fff' }
+        style: { background: '#29294d', color: '#fff' }
       });
     }
   };
@@ -503,13 +503,13 @@ const UnifiedCalendar: React.FC = () => {
     // Asignación explícita de color por tipo, contemplando plurales, con fallback rojo
     let backgroundColor: string;
     if (["rutina", "routine", "rutinas"].includes(type || '')) {
-      backgroundColor = '#E53935';
+      backgroundColor = '#9333ea';
     } else if (["sesion", "session", "sesiones"].includes(type || '')) {
       backgroundColor = '#FB8C00';
     } else if (["consulta", "consultation", "consultas"].includes(type || '')) {
       backgroundColor = '#8E24AA';
     } else {
-      backgroundColor = '#E53935';
+      backgroundColor = '#9333ea';
     }
 
     // Mantener clases específicas por tipo (incluyendo plurales)
@@ -626,7 +626,7 @@ const UnifiedCalendar: React.FC = () => {
       <Toaster position="top-right"
         toastOptions={{
           duration: 3000,
-          style: { background: '#2d2d2d', color: '#fff' }
+          style: { background: '#29294d', color: '#fff' }
         }}
       />
       <div className="max-w-7xl mx-auto">

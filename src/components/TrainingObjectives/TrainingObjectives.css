@@ -1,9 +1,9 @@
 .training-objectives {
   margin-bottom: 24px;
   padding: 20px;
-  background: #1a1a1a;
+  background: #18182f;
   border-radius: 12px;
-  border: 1px solid #333;
+  border: 1px solid #2f2f55;
 }
 
 .objectives-title {
@@ -39,7 +39,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px;
-  background: #2a2a2a;
+  background: #26264a;
   border: 2px solid #444444;
   border-radius: 8px;
   cursor: pointer;
@@ -91,7 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
+  background: #18182f;
   transition: all 0.2s ease;
 }
 

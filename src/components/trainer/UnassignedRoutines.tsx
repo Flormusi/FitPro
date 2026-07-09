@@ -75,7 +75,7 @@ const UnassignedRoutines = () => {
   }
 
   if (error) {
-    return <div className="text-center py-4" style={{ color: '#ff3b30' }}>{error}</div>;
+    return <div className="text-center py-4" style={{ color: '#a855f7' }}>{error}</div>;
   }
 
   return (
@@ -107,7 +107,7 @@ const UnassignedRoutines = () => {
                 <button
                   onClick={() => handleAssignClick(plan.id)}
                   className="flex-1 text-white py-2 px-4 rounded transition-colors"
-                  style={{ backgroundColor: '#D62828' }}
+                  style={{ backgroundColor: '#8b5cf6' }}
                 >
                   Asignar Rutina
                 </button>
@@ -121,7 +121,7 @@ const UnassignedRoutines = () => {
                 <button
                   onClick={() => handleDeleteClick(plan.id, plan.name)}
                   className="text-white py-2 px-3 rounded transition-colors"
-                  style={{ backgroundColor: '#D62828' }}
+                  style={{ backgroundColor: '#8b5cf6' }}
                   title="Eliminar rutina"
                 >
                   🗑️

@@ -78,7 +78,7 @@
   padding: 13px 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  background: linear-gradient(145deg, #35355e, #26264a);
   color: var(--color-text);
   font-size: 15px;
   transition: all 0.25s ease;
@@ -86,8 +86,8 @@
 
 .field-group input:focus {
   outline: none;
-  border-color: rgba(214, 40, 40, 0.5);
-  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.1);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .field-group input::placeholder {
@@ -110,14 +110,14 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 6px 24px rgba(214, 40, 40, 0.3);
+  box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);
   width: 100%;
 }
 
 .trainer-signup-btn:hover:not(:disabled) {
   background: var(--color-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 10px 32px rgba(214, 40, 40, 0.4);
+  box-shadow: 0 10px 32px rgba(139, 92, 246, 0.4);
 }
 
 .trainer-signup-btn:disabled {

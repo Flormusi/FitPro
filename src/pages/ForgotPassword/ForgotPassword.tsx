@@ -31,7 +31,7 @@ const ForgotPassword: React.FC = () => {
   };
 
   const containerStyle: React.CSSProperties = {
-    backgroundColor: '#1E1E1E', // Un gris oscuro para el contenedor del formulario
+    backgroundColor: '#1c1c38', // Un gris oscuro para el contenedor del formulario
     padding: '40px',
     borderRadius: '8px',
     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
@@ -46,7 +46,7 @@ const ForgotPassword: React.FC = () => {
     marginBottom: '20px',
     borderRadius: '4px',
     border: 'none',
-    backgroundColor: '#2C2C2C',
+    backgroundColor: '#28284c',
     color: '#FFFFFF',
     fontSize: '16px',
     boxSizing: 'border-box',
@@ -57,7 +57,7 @@ const ForgotPassword: React.FC = () => {
     padding: '12px 15px',
     border: 'none',
     borderRadius: '4px',
-    backgroundColor: '#FF0000', // Rojo característico
+    backgroundColor: '#a855f7', // Rojo característico
     color: 'white',
     cursor: 'pointer',
     fontSize: '16px',
@@ -79,7 +79,7 @@ const ForgotPassword: React.FC = () => {
 
   const messageStyle: React.CSSProperties = {
     marginTop: '20px',
-    color: message.includes('error') || message.includes('falló') ? '#FF6B6B' : '#A0D9A0', // Rojo claro para error, verde claro para éxito
+    color: message.includes('error') || message.includes('falló') ? '#c4b5fd' : '#A0D9A0', // Rojo claro para error, verde claro para éxito
     fontSize: '14px',
   };
 

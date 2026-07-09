@@ -4,30 +4,30 @@
 /* Variables CSS para el calendario unificado - Tema FitPro (modo oscuro) */
 :root {
   /* Colores principales - FitPro */
-  --fitpro-primary: #E53935; /* rojo marca */
+  --fitpro-primary: #9333ea; /* rojo marca */
   --fitpro-primary-light: #F0625A; /* rojo claro para hover */
   --fitpro-primary-dark: #C62828; /* rojo más oscuro */
-  --fitpro-brand-red: #E53935; /* uso consistente */
+  --fitpro-brand-red: #9333ea; /* uso consistente */
   --fitpro-brand-red-overlay: rgba(229, 57, 53, 0.14); /* overlay para hoy/eventos en oscuro */
   
   /* Colores de estado */
   --fitpro-success: #10b981;
   --fitpro-warning: #f59e0b;
-  --fitpro-danger: #dc2626;
+  --fitpro-danger: #7c3aed;
   --fitpro-info: #3b82f6;
   
   /* Fondo y texto - Modo oscuro FitPro */
-  --fitpro-bg-primary: #1a1a1a; /* área general */
+  --fitpro-bg-primary: #18182f; /* área general */
   --fitpro-bg-secondary: #242424; /* card calendario */
-  --fitpro-bg-tertiary: #2a2a2a; /* toolbar oscura */
-  --fitpro-bg-quaternary: #333333; /* botones neutrales */
+  --fitpro-bg-tertiary: #26264a; /* toolbar oscura */
+  --fitpro-bg-quaternary: #2f2f55; /* botones neutrales */
   
   --fitpro-text-primary: #ffffff; /* texto principal */
   --fitpro-text-secondary: #b0b0b0; /* subtítulos y textos secundarios */
   --fitpro-text-muted: #8a8a8a; /* gris suave */
   
   /* Bordes y sombras */
-  --fitpro-border: #3a3a3a; /* borde oscuro sutil */
+  --fitpro-border: #35355e; /* borde oscuro sutil */
   --fitpro-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
@@ -209,7 +209,7 @@
 }
 
 .btn-nav:hover, .btn-today:hover, .btn-view:hover {
-  background-color: var(--fitpro-border) !important; /* #3a3a3a */
+  background-color: var(--fitpro-border) !important; /* #35355e */
   color: #ffffff !important;
   border-color: var(--fitpro-border) !important;
 }
@@ -282,7 +282,7 @@
 }
 
 .unified-calendar .rbc-off-range-bg {
-  background-color: #1f1f1f !important;
+  background-color: #1d1d3a !important;
 }
 .unified-calendar .rbc-off-range {
   color: var(--fitpro-text-muted) !important;
@@ -363,7 +363,7 @@
   background-color: var(--fitpro-border);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
-.marker-rutina { background-color: #E53935 !important; }
+.marker-rutina { background-color: #9333ea !important; }
 .marker-sesion { background-color: #FB8C00 !important; }
 .marker-consulta { background-color: #8E24AA !important; }
 
@@ -400,7 +400,7 @@
   height: 10px !important;
   border-radius: 9999px !important;
 }
-.legend-dot.legend-rutina { background: #E53935 !important; }
+.legend-dot.legend-rutina { background: #9333ea !important; }
 .legend-dot.legend-sesion { background: #FB8C00 !important; }
 .legend-dot.legend-consulta { background: #8E24AA !important; }
 
@@ -476,7 +476,7 @@
 
 /* Acentos por tipo (solo borde izquierdo) */
 .unified-calendar .rbc-event.event-rutina {
-  background-color: #E53935 !important; /* Rutinas → rojo FitPro */
+  background-color: #9333ea !important; /* Rutinas → rojo FitPro */
   border-left-color: #C62828 !important; /* acento más oscuro */
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.30) !important; /* separación sutil entre eventos del mismo tipo */
 }
@@ -589,7 +589,7 @@
   max-height: none;
   overflow: visible;
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   animation: fadeIn 0.2s ease-out;
   box-sizing: border-box;
   position: relative;
@@ -601,9 +601,9 @@
   align-items: center;
   margin-bottom: 16px;
   padding: 14px 18px;
-  background-color: #2a2a2a;
+  background-color: #26264a;
   border-radius: 12px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
 }
 
 .modal-title {
@@ -686,7 +686,7 @@ div.form-input {
 .form-textarea:focus {
   outline: none;
   border-color: var(--fitpro-primary);
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
 }
 
 .form-input::placeholder,
@@ -719,13 +719,13 @@ div.form-input {
   justify-content: flex-end;
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid #3a3a3a;
+  border-top: 1px solid #35355e;
 }
 
 .btn-cancel {
   background-color: transparent;
   color: var(--fitpro-text-secondary);
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -736,12 +736,12 @@ div.form-input {
 }
 
 .btn-cancel:hover {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   color: #ffffff;
 }
 
 .btn-save {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -754,7 +754,7 @@ div.form-input {
 }
 
 .btn-save:hover {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   transform: none;
 }
 
@@ -766,9 +766,9 @@ div.form-input {
 
 /* Botones específicos del modal de detalles */
 .btn-secondary {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   color: #ffffff;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 12px;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -777,12 +777,12 @@ div.form-input {
   transition: all 0.2s ease;
 }
 .btn-secondary:hover {
-  background-color: #333333;
+  background-color: #2f2f55;
 }
 
 .btn-confirm,
 .btn-completed {
-  background-color: #E53935; /* rojo FitPro */
+  background-color: #9333ea; /* rojo FitPro */
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -814,8 +814,8 @@ div.form-input {
 
 .btn-danger {
   background-color: transparent;
-  color: #E53935;
-  border: 1px solid #E53935;
+  color: #9333ea;
+  border: 1px solid #9333ea;
   border-radius: 12px;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -830,7 +830,7 @@ div.form-input {
 .btn-close {
   background-color: #2b2b2b;
   color: #ffffff;
-  border: 1px solid #3a3a3a; /* sin borde rojo */
+  border: 1px solid #35355e; /* sin borde rojo */
   border-radius: 12px; /* igual que otros botones */
   padding: 10px 18px; /* igual que otros botones */
   font-size: 0.9rem;
@@ -839,14 +839,14 @@ div.form-input {
   transition: all 0.2s ease;
 }
 .btn-close:hover {
-  background-color: #3a3a3a;
+  background-color: #35355e;
 }
 
 /* Variante específica para el UnifiedCalendar (evita conflictos con otros .btn-close globales) */
 .btn-close-primary {
   background-color: #2b2b2b;
   color: #ffffff;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 12px;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -855,14 +855,14 @@ div.form-input {
   transition: all 0.2s ease;
 }
 .btn-close-primary:hover {
-  background-color: #3a3a3a;
+  background-color: #35355e;
 }
 
 /* Aumentar especificidad para evitar conflictos con otros modales */
 .event-modal .btn-close {
   background-color: #2b2b2b;
   color: #ffffff;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 12px;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -874,14 +874,14 @@ div.form-input {
   justify-content: center;
 }
 .event-modal .btn-close:hover {
-  background-color: #3a3a3a;
+  background-color: #35355e;
 }
 
 /* Específico para el botón renombrado en el modal de eventos */
 .event-modal .btn-close-primary {
   background-color: #2b2b2b;
   color: #ffffff;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #35355e;
   border-radius: 12px;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -893,7 +893,7 @@ div.form-input {
   justify-content: center;
 }
 .event-modal .btn-close-primary:hover {
-  background-color: #3a3a3a;
+  background-color: #35355e;
 }
 
 /* Punto de color según tipo de evento */
@@ -903,7 +903,7 @@ div.form-input {
   height: 10px;
   border-radius: 50%;
 }
-.dot-rutina { background-color: #E53935; }
+.dot-rutina { background-color: #9333ea; }
 .dot-sesion { background-color: #F59E0B; }
 .dot-consulta { background-color: #8B5CF6; }
 

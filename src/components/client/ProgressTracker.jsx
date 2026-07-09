@@ -106,8 +106,8 @@ const ProgressTracker = () => {
         {
           label: 'Weight (kg)',
           data: filteredData.map(entry => entry.weight),
-          borderColor: '#D62828',
-          backgroundColor: 'rgba(214, 40, 40, 0.1)',
+          borderColor: '#8b5cf6',
+          backgroundColor: 'rgba(139, 92, 246, 0.1)',
           tension: 0.4,
         },
         {

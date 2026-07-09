@@ -1,15 +1,15 @@
 /* FitPro Color Variables */
 :root {
-  --fitpro-primary: #D62828;
-  --fitpro-primary-light: #ef4444;
-  --fitpro-primary-dark: #FF3B30;
+  --fitpro-primary: #8b5cf6;
+  --fitpro-primary-light: #a855f7;
+  --fitpro-primary-dark: #a855f7;
   --fitpro-bg-primary: #000000;
-  --fitpro-bg-secondary: #1a1a1a;
-  --fitpro-bg-tertiary: #2a2a2a;
+  --fitpro-bg-secondary: #18182f;
+  --fitpro-bg-tertiary: #26264a;
   --fitpro-text-primary: #ffffff;
   --fitpro-text-secondary: #b3b3b3;
   --fitpro-text-muted: #808080;
-  --fitpro-border: #333333;
+  --fitpro-border: #2f2f55;
   --fitpro-success: #10b981;
   --fitpro-warning: #f59e0b;
 }
@@ -69,8 +69,8 @@
   margin-bottom: 0.5rem;
   opacity: 0.9;
   text-shadow:
-    0 0 15px rgba(214, 40, 40, 0.35), /* blur principal */
-    0 0 1px rgba(214, 40, 40, 0.35);  /* spread simulado máximo 1px */
+    0 0 15px rgba(139, 92, 246, 0.35), /* blur principal */
+    0 0 1px rgba(139, 92, 246, 0.35);  /* spread simulado máximo 1px */
 }
 
 .header-info h2 {
@@ -193,7 +193,7 @@
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
 }
 
 .stat-number {
@@ -267,7 +267,7 @@
 
 .exercise-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.2);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.2);
   border-color: var(--fitpro-primary);
 }
 
@@ -294,7 +294,7 @@
   font-weight: 600;
   font-size: 14px;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
 }
 
 .exercise-main-info {
@@ -389,7 +389,7 @@
 .param-input:focus {
   outline: none;
   border-color: var(--fitpro-primary);
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 .param-input:hover {
@@ -432,7 +432,7 @@
 }
 
 .btn-save {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -443,7 +443,7 @@
 }
 
 .btn-save:hover:not(:disabled) {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   transform: none;
 }
 

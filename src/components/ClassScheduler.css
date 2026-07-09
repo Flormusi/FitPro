@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   color: #fff;
-  background-color: #121212;
+  background-color: #111128;
   min-height: 100vh;
 }
 
@@ -25,13 +25,13 @@
 
 .scheduler-header h1 {
   font-size: 2rem;
-  color: #ff3b30;
+  color: #a855f7;
   margin: 0;
   flex: 1;
 }
 
 .add-class-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -41,8 +41,8 @@
 }
 
 .error-message {
-  background-color: rgba(255, 59, 48, 0.2);
-  color: #ff3b30;
+  background-color: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -56,7 +56,7 @@
 
 /* Calendar Section */
 .calendar-section {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -99,7 +99,7 @@
 .calendar-day {
   position: relative;
   height: 60px;
-  background-color: #2c2c2c;
+  background-color: #28284c;
   border-radius: 8px;
   padding: 5px;
   cursor: pointer;
@@ -115,7 +115,7 @@
 }
 
 .selected-day {
-  background-color: rgba(255, 59, 48, 0.3);
+  background-color: rgba(168, 85, 247, 0.3);
 }
 
 .day-number {
@@ -127,7 +127,7 @@
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: white;
   width: 20px;
   height: 20px;
@@ -140,7 +140,7 @@
 
 /* Schedule Section */
 .schedule-section {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -149,7 +149,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 1.3rem;
-  color: #ff3b30;
+  color: #a855f7;
   text-transform: capitalize;
 }
 
@@ -167,7 +167,7 @@
 
 .class-item {
   display: flex;
-  background-color: #2c2c2c;
+  background-color: #28284c;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -179,14 +179,14 @@
 }
 
 .class-item.selected {
-  border: 2px solid #ff3b30;
+  border: 2px solid #a855f7;
 }
 
 .class-time {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: white;
   width: 70px;
   font-size: 0.9rem;
@@ -216,7 +216,7 @@
 
 /* Class Details Section */
 .class-details-section {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 20px;
 }
@@ -231,7 +231,7 @@
 .details-header h2 {
   margin: 0;
   font-size: 1.3rem;
-  color: #ff3b30;
+  color: #a855f7;
 }
 
 .close-details-btn {
@@ -264,7 +264,7 @@
 
 .notes-item .detail-value {
   display: block;
-  background-color: #2c2c2c;
+  background-color: #28284c;
   padding: 10px;
   border-radius: 8px;
   margin-top: 5px;
@@ -288,14 +288,14 @@
 }
 
 .edit-class-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
 }
 
 .delete-class-btn {
   background-color: transparent;
-  border: 1px solid #ff3b30;
-  color: #ff3b30;
+  border: 1px solid #a855f7;
+  color: #a855f7;
 }
 
 /* Modal Styles */
@@ -314,7 +314,7 @@
 }
 
 .add-class-modal {
-  background-color: #1e1e1e;
+  background-color: #1c1c38;
   border-radius: 12px;
   padding: 25px;
   width: 90%;
@@ -332,7 +332,7 @@
 
 .modal-header h2 {
   margin: 0;
-  color: #ff3b30;
+  color: #a855f7;
 }
 
 .close-modal-btn {
@@ -371,8 +371,8 @@ textarea {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #2c2c2c;
+  border: 1px solid #2f2f55;
+  background-color: #28284c;
   color: #fff;
   font-size: 1rem;
 }
@@ -415,7 +415,7 @@ textarea {
 }
 
 .submit-btn {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #fff;
   font-weight: 500;
 }

@@ -192,7 +192,7 @@ const ClientList: React.FC = () => {
       padding: '16px',
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#121212',
+      backgroundColor: '#111128',
       color: '#ffffff',
       border: 'none',
       outline: 'none',
@@ -205,12 +205,12 @@ const ClientList: React.FC = () => {
         gap: '16px',
         marginBottom: '24px',
         padding: '16px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px',
         border: 'none',
         outline: 'none',
-        boxShadow: '0 8px 24px rgba(214, 40, 40, 0.12), 0 4px 12px rgba(0, 0, 0, 0.35)',
-        borderTop: '3px solid #D62828'
+        boxShadow: '0 8px 24px rgba(139, 92, 246, 0.12), 0 4px 12px rgba(0, 0, 0, 0.35)',
+        borderTop: '3px solid #8b5cf6'
       }}>
         {/* Primera fila: Botón volver y botón agregar */}
         <div style={{
@@ -267,7 +267,7 @@ const ClientList: React.FC = () => {
             alignItems: 'center',
             gap: '8px',
             padding: '12px 20px',
-            background: 'linear-gradient(135deg, #D62828 0%, #E83E3E 100%)',
+            background: 'linear-gradient(135deg, #8b5cf6 0%, #E83E3E 100%)',
             color: 'white',
             border: 'none',
             borderRadius: '12px',
@@ -275,17 +275,17 @@ const ClientList: React.FC = () => {
             cursor: 'pointer',
             transition: 'all 0.2s ease',
             fontSize: '0.9rem',
-            boxShadow: '0 10px 20px rgba(214, 40, 40, 0.28)'
+            boxShadow: '0 10px 20px rgba(139, 92, 246, 0.28)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.filter = 'brightness(1.08)';
             e.currentTarget.style.transform = 'translateY(-1px)';
-            e.currentTarget.style.boxShadow = '0 12px 24px rgba(214, 40, 40, 0.33)';
+            e.currentTarget.style.boxShadow = '0 12px 24px rgba(139, 92, 246, 0.33)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.filter = 'none';
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 10px 20px rgba(214, 40, 40, 0.28)';
+            e.currentTarget.style.boxShadow = '0 10px 20px rgba(139, 92, 246, 0.28)';
           }}
           >
             <span style={{
@@ -314,14 +314,14 @@ const ClientList: React.FC = () => {
             border: 'none',
             outline: 'none',
             boxShadow: 'none',
-            textShadow: '0 0 8px rgba(214, 40, 40, 0.5), 0 0 24px rgba(214, 40, 40, 0.25)',
+            textShadow: '0 0 8px rgba(139, 92, 246, 0.5), 0 0 24px rgba(139, 92, 246, 0.25)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             gap: '12px'
           }}>
             <span style={{
-              color: '#dc2626',
+              color: '#7c3aed',
               fontSize: '28px'
             }}>👥</span>
             Mis Clientes
@@ -344,12 +344,12 @@ const ClientList: React.FC = () => {
         gap: '12px',
         marginBottom: '20px',
         padding: '16px',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+        background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
         borderRadius: '12px',
         border: 'none',
         outline: 'none',
-        boxShadow: '0 8px 24px rgba(214, 40, 40, 0.12), 0 4px 12px rgba(0, 0, 0, 0.35)',
-        borderTop: '3px solid #D62828'
+        boxShadow: '0 8px 24px rgba(139, 92, 246, 0.12), 0 4px 12px rgba(0, 0, 0, 0.35)',
+        borderTop: '3px solid #8b5cf6'
       }}>
         <div style={{
           display: 'flex',
@@ -376,7 +376,7 @@ const ClientList: React.FC = () => {
                 border: 'none',
                 borderRadius: '8px',
                 fontSize: '1rem',
-                backgroundColor: '#2d2d2d',
+                backgroundColor: '#29294d',
                 color: '#ffffff',
                 transition: 'border-color 0.3s ease',
                 outline: 'none',
@@ -400,7 +400,7 @@ const ClientList: React.FC = () => {
                 border: 'none',
                 borderRadius: '8px',
                 fontSize: '1rem',
-                background: '#2d2d2d',
+                background: '#29294d',
                 color: '#ffffff',
                 cursor: 'pointer',
                 transition: 'border-color 0.3s ease',
@@ -433,7 +433,7 @@ const ClientList: React.FC = () => {
         boxShadow: 'none'
       }}>
         <div style={{
-          background: 'linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%)',
+          background: 'linear-gradient(135deg, #26264a 0%, #1d1d3a 100%)',
           padding: isMobile ? '16px' : '20px',
           borderRadius: '20px',
           textAlign: 'center',
@@ -467,7 +467,7 @@ const ClientList: React.FC = () => {
           }}>Total Clientes</p>
         </div>
         <div style={{
-          background: 'linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%)',
+          background: 'linear-gradient(135deg, #26264a 0%, #1d1d3a 100%)',
           padding: isMobile ? '16px' : '20px',
           borderRadius: '20px',
           textAlign: 'center',
@@ -501,7 +501,7 @@ const ClientList: React.FC = () => {
           }}>Mostrando</p>
         </div>
         <div style={{
-          background: 'linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%)',
+          background: 'linear-gradient(135deg, #26264a 0%, #1d1d3a 100%)',
           padding: isMobile ? '16px' : '20px',
           borderRadius: '20px',
           textAlign: 'center',
@@ -541,7 +541,7 @@ const ClientList: React.FC = () => {
         <div style={{
           textAlign: 'center',
           padding: '60px',
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+          background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
           borderRadius: '12px',
           border: 'none',
           outline: 'none',
@@ -578,7 +578,7 @@ const ClientList: React.FC = () => {
               onClick={handleAddClient} 
               style={{
                 padding: '12px 20px',
-                background: 'linear-gradient(135deg, #D62828 0%, #E83E3E 100%)',
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #E83E3E 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '12px',
@@ -586,17 +586,17 @@ const ClientList: React.FC = () => {
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 fontSize: '1rem',
-                boxShadow: '0 10px 20px rgba(214, 40, 40, 0.28)'
+                boxShadow: '0 10px 20px rgba(139, 92, 246, 0.28)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.filter = 'brightness(1.08)';
                 e.currentTarget.style.transform = 'translateY(-1px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(214, 40, 40, 0.33)';
+                e.currentTarget.style.boxShadow = '0 12px 24px rgba(139, 92, 246, 0.33)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.filter = 'none';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 10px 20px rgba(214, 40, 40, 0.28)';
+                e.currentTarget.style.boxShadow = '0 10px 20px rgba(139, 92, 246, 0.28)';
               }}
             >
               Agregar Primer Cliente
@@ -620,12 +620,12 @@ const ClientList: React.FC = () => {
         }}>
           {filteredClients.map((client) => (
             <div key={client.id} style={{
-              background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+              background: 'linear-gradient(135deg, #18182f 0%, #29294d 100%)',
               borderRadius: '12px',
               padding: isTablet ? '12px' : '16px',
               border: 'none',
-              borderTop: '2px solid #D62828',
-              boxShadow: '0 6px 16px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(214, 40, 40, 0.16)',
+              borderTop: '2px solid #8b5cf6',
+              boxShadow: '0 6px 16px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(139, 92, 246, 0.16)',
               transition: 'transform 0.2s ease, box-shadow 0.2s ease, border 0.15s ease',
               display: 'flex',
               flexDirection: 'column',
@@ -637,12 +637,12 @@ const ClientList: React.FC = () => {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.42), 0 10px 20px rgba(214, 40, 40, 0.18)';
-              e.currentTarget.style.border = '1px solid rgba(214, 40, 40, 0.24)';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.42), 0 10px 20px rgba(139, 92, 246, 0.18)';
+              e.currentTarget.style.border = '1px solid rgba(139, 92, 246, 0.24)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(214, 40, 40, 0.16)';
+              e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(139, 92, 246, 0.16)';
               e.currentTarget.style.border = 'none';
             }}
             >
@@ -694,7 +694,7 @@ const ClientList: React.FC = () => {
                       right: 0,
                     top: '36px',
                       minWidth: '180px',
-                      background: '#1f1f1f',
+                      background: '#1d1d3a',
                       border: '1px solid rgba(255, 255, 255, 0.08)',
                       borderRadius: '8px',
                       boxShadow: '0 8px 20px rgba(0,0,0,0.3)',
@@ -770,7 +770,7 @@ const ClientList: React.FC = () => {
                 width: '60px',
                 height: '60px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%)',
+                background: 'linear-gradient(135deg, #35355e 0%, #26264a 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -778,7 +778,7 @@ const ClientList: React.FC = () => {
                 fontSize: '1.5rem',
                 fontWeight: '700',
                 margin: '0 auto',
-                boxShadow: '0 0 8px rgba(214, 40, 40, 0.35)'
+                boxShadow: '0 0 8px rgba(139, 92, 246, 0.35)'
               }}>
                 {client.name.charAt(0).toUpperCase()}
               </div>
@@ -825,12 +825,12 @@ const ClientList: React.FC = () => {
                     fontWeight: '600',
                     textTransform: 'uppercase',
                     background: client.membership_tier === 'premium' 
-                      ? 'rgba(220, 38, 38, 0.2)' 
+                      ? 'rgba(124, 58, 237, 0.2)' 
                       : client.membership_tier === 'pro'
                       ? 'rgba(245, 158, 11, 0.2)'
                       : 'rgba(156, 163, 175, 0.2)',
                     color: client.membership_tier === 'premium' 
-                      ? '#ef4444' 
+                      ? '#a855f7' 
                       : client.membership_tier === 'pro'
                       ? '#f59e0b'
                       : '#9ca3af',
@@ -854,15 +854,15 @@ const ClientList: React.FC = () => {
                     cursor: 'pointer',
                     transition: 'background 0.2s ease, transform 0.1s ease',
                     textAlign: 'center',
-                    background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                    background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
                     color: 'white'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)';
                     e.currentTarget.style.transform = 'translateY(-1px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)';
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                   title="Ver Perfil"

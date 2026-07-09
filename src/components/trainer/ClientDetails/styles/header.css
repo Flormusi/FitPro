@@ -46,11 +46,11 @@
 .fitpro-logo h2 {
   font-size: 2rem;
   font-weight: 800;
-  color: #D62828 !important;
+  color: #8b5cf6 !important;
   margin: 0;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 8px rgba(214, 40, 40, 0.6), 0 0 24px rgba(214, 40, 40, 0.35);
-  filter: drop-shadow(0 0 6px rgba(214, 40, 40, 0.5)) drop-shadow(0 0 12px rgba(214, 40, 40, 0.25));
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 24px rgba(139, 92, 246, 0.35);
+  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 12px rgba(139, 92, 246, 0.25));
 }
 
 /* Estilos responsivos */

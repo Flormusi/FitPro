@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 20px;
   color: white;
-  background-color: #1a1a1a;
+  background-color: #18182f;
   min-height: 100vh;
 }
 
@@ -16,13 +16,13 @@
 }
 
 .all-routines-header h1 {
-  color: #ff4444;
+  color: #a78bfa;
   font-size: 24px;
   margin: 0;
 }
 
 .create-routine-btn {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -43,10 +43,10 @@
 }
 
 .routine-card {
-  background-color: #2a2a2a;
+  background-color: #26264a;
   border-radius: 8px;
   padding: 20px;
-  border-left: 4px solid #ff4444;
+  border-left: 4px solid #a78bfa;
 }
 
 .routine-card h3 {
@@ -87,7 +87,7 @@
 }
 
 .btn-primary {
-  background-color: #ff4444;
+  background-color: #a78bfa;
   color: white;
 }
 
@@ -122,7 +122,7 @@
 
 .error {
   text-align: center;
-  color: #ff4444;
+  color: #a78bfa;
   padding: 40px;
   font-size: 18px;
 }

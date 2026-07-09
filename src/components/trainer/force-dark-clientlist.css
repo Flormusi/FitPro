@@ -3,8 +3,8 @@
 
 /* Fondo principal de la página */
 .client-list-container {
-  background-color: #121212 !important;
-  background: #121212 !important;
+  background-color: #111128 !important;
+  background: #111128 !important;
 }
 
 /* Solo elementos que específicamente tienen fondo blanco */
@@ -16,8 +16,8 @@
 .client-list-container *[style*="background: #fff"],
 .client-list-container *[style*="background: #ffffff"],
 .client-list-container *[style*="background: rgb(255, 255, 255)"] {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
 }
 
 /* Clases CSS que aplican fondo blanco */
@@ -26,8 +26,8 @@
 .client-list-container .background-white,
 .client-list-container .white-bg,
 .client-list-container *[class*="bg-white"] {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
 }
 
 /* Elementos comunes que suelen tener fondo blanco */
@@ -36,13 +36,13 @@
 .client-list-container .card.bg-white,
 .client-list-container .container.bg-white,
 .client-list-container div.bg-white {
-  background-color: #1e1e1e !important;
-  background: #1e1e1e !important;
+  background-color: #1c1c38 !important;
+  background: #1c1c38 !important;
 }
 
 /* Mantener los botones rojos como están */
-.client-list-container button[style*="background: linear-gradient(135deg, #dc2626"],
-.client-list-container button[style*="background-color: #dc2626"] {
+.client-list-container button[style*="background: linear-gradient(135deg, #7c3aed"],
+.client-list-container button[style*="background-color: #7c3aed"] {
   /* No cambiar estos botones */
 }
 
@@ -50,7 +50,7 @@
 .client-list-container input,
 .client-list-container select,
 .client-list-container textarea {
-  background-color: #2d2d2d !important;
+  background-color: #29294d !important;
   color: #ffffff !important;
   border: 1px solid #444444 !important;
 }
@@ -65,14 +65,14 @@
   .client-list-container *[style*="background-color: white"],
   .client-list-container *[style*="background-color: #fff"],
   .client-list-container *[style*="background-color: #ffffff"] {
-    background-color: #1e1e1e !important;
-    background: #1e1e1e !important;
+    background-color: #1c1c38 !important;
+    background: #1c1c38 !important;
   }
   
   .client-list-container .bg-white,
   .client-list-container .bg-light {
-    background-color: #1e1e1e !important;
-    background: #1e1e1e !important;
+    background-color: #1c1c38 !important;
+    background: #1c1c38 !important;
   }
 }
 
@@ -85,13 +85,13 @@
   .client-list-container *[style*="background-color: white"],
   .client-list-container *[style*="background-color: #fff"],
   .client-list-container *[style*="background-color: #ffffff"] {
-    background-color: #1e1e1e !important;
-    background: #1e1e1e !important;
+    background-color: #1c1c38 !important;
+    background: #1c1c38 !important;
   }
   
   .client-list-container .bg-white,
   .client-list-container .bg-light {
-    background-color: #1e1e1e !important;
-    background: #1e1e1e !important;
+    background-color: #1c1c38 !important;
+    background: #1c1c38 !important;
   }
 }

@@ -154,9 +154,9 @@ const EditClientPage: React.FC = () => {
 
     if (isLoadingData) {
         return (
-            <div className="min-h-screen bg-[#1a1a1a] text-white p-6 flex items-center justify-center">
+            <div className="min-h-screen bg-[#18182f] text-white p-6 flex items-center justify-center">
                 <div className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-8 w-8 text-[#dc2626]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-8 w-8 text-[#7c3aed]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -167,25 +167,25 @@ const EditClientPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#1a1a1a] text-white p-6">
+        <div className="min-h-screen bg-[#18182f] text-white p-6">
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <div>
-                        <h1 className="text-4xl font-bold text-[#dc2626]">
+                        <h1 className="text-4xl font-bold text-[#7c3aed]">
                             Editar Cliente
                         </h1>
                         <p className="text-gray-400 mt-2">Actualiza la información del cliente</p>
                     </div>
                     <button
                         onClick={() => navigate(`/trainer/clients/${clientId}`)}
-                        className="px-6 py-3 bg-transparent border border-[#555555] hover:bg-[#333333] hover:border-[#777777] rounded-lg font-medium transition-all duration-300"
+                        className="px-6 py-3 bg-transparent border border-[#555555] hover:bg-[#2f2f55] hover:border-[#777777] rounded-lg font-medium transition-all duration-300"
                     >
                         ← Volver al Cliente
                     </button>
                 </div>
 
-                <div className="bg-[#2a2a2a] p-8 rounded-2xl shadow-2xl">
+                <div className="bg-[#26264a] p-8 rounded-2xl shadow-2xl">
                 
                     {error && (
                         <div className="bg-[#dc3545]/10 border border-[#dc3545]/30 text-[#dc3545] px-6 py-4 rounded-lg mb-6" role="alert">
@@ -227,7 +227,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="Ingresa el nombre completo"
                                 />
                             </div>
@@ -243,7 +243,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="ejemplo@correo.com"
                                 />
                             </div>
@@ -258,7 +258,7 @@ const EditClientPage: React.FC = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="Número de teléfono"
                                 />
                             </div>
@@ -275,7 +275,7 @@ const EditClientPage: React.FC = () => {
                                     onChange={handleChange}
                                     min="1"
                                     max="120"
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="Edad en años"
                                 />
                             </div>
@@ -290,7 +290,7 @@ const EditClientPage: React.FC = () => {
                                     name="weight"
                                     value={formData.weight}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="Peso en kilogramos"
                                 />
                             </div>
@@ -305,7 +305,7 @@ const EditClientPage: React.FC = () => {
                                     name="height"
                                     value={formData.height}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="Altura en centímetros"
                                 />
                             </div>
@@ -319,7 +319,7 @@ const EditClientPage: React.FC = () => {
                                     name="gender"
                                     value={formData.gender}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                 >
                                     <option value="">Seleccionar género</option>
                                     <option value="MALE">Masculino</option>
@@ -337,7 +337,7 @@ const EditClientPage: React.FC = () => {
                                     name="fitnessLevel"
                                     value={formData.fitnessLevel}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                 >
                                     <option value="">Seleccionar nivel</option>
                                     <option value="BEGINNER">Principiante</option>
@@ -358,7 +358,7 @@ const EditClientPage: React.FC = () => {
                                     onChange={handleChange}
                                     min="1"
                                     max="7"
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300"
                                     placeholder="1-7 días"
                                 />
                             </div>
@@ -371,7 +371,7 @@ const EditClientPage: React.FC = () => {
                             </label>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                                 {['Pérdida de peso', 'Ganancia muscular', 'Resistencia', 'Fuerza', 'Flexibilidad', 'Rehabilitación'].map((goal) => (
-                                    <label key={goal} className="flex items-center space-x-3 p-3 bg-[#1a1a1a] border border-[#555555] rounded-lg hover:border-[#777777] transition-all duration-300 cursor-pointer">
+                                    <label key={goal} className="flex items-center space-x-3 p-3 bg-[#18182f] border border-[#555555] rounded-lg hover:border-[#777777] transition-all duration-300 cursor-pointer">
                                         <input
                                             type="checkbox"
                                             checked={formData.goals.includes(goal)}
@@ -388,7 +388,7 @@ const EditClientPage: React.FC = () => {
                                                     }));
                                                 }
                                             }}
-                                            className="w-4 h-4 text-[#dc2626] bg-[#2a2a2a] border-[#555555] rounded focus:ring-[#dc2626] focus:ring-2"
+                                            className="w-4 h-4 text-[#7c3aed] bg-[#26264a] border-[#555555] rounded focus:ring-[#7c3aed] focus:ring-2"
                                         />
                                         <span className="text-sm text-gray-300">{goal}</span>
                                     </label>
@@ -408,7 +408,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.initialObjective}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300 resize-none"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300 resize-none"
                                     placeholder="Describe el objetivo inicial del cliente..."
                                 />
                             </div>
@@ -423,7 +423,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.medicalConditions}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300 resize-none"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300 resize-none"
                                     placeholder="Describe cualquier condición médica relevante..."
                                 />
                             </div>
@@ -438,7 +438,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.medications}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300 resize-none"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300 resize-none"
                                     placeholder="Lista los medicamentos que toma actualmente..."
                                 />
                             </div>
@@ -453,7 +453,7 @@ const EditClientPage: React.FC = () => {
                                     value={formData.injuries}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all duration-300 resize-none"
+                                    className="w-full px-4 py-3 bg-[#18182f] border border-[#555555] rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-[#7c3aed] focus:border-[#7c3aed] transition-all duration-300 resize-none"
                                     placeholder="Describe lesiones previas o actuales..."
                                 />
                             </div>
@@ -462,7 +462,7 @@ const EditClientPage: React.FC = () => {
                         <div className="flex gap-4 pt-6">
                             <button
                                 type="submit"
-                                className="flex-1 py-4 px-6 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="flex-1 py-4 px-6 bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                 disabled={isLoading}
                             >
                                 {isLoading ? (
@@ -480,7 +480,7 @@ const EditClientPage: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={() => navigate(`/trainer/clients/${clientId}/progress`)}
-                                className="flex-1 py-4 px-6 bg-transparent border border-[#555555] hover:bg-[#333333] hover:border-[#777777] text-gray-300 font-semibold rounded-lg transition-all duration-300"
+                                className="flex-1 py-4 px-6 bg-transparent border border-[#555555] hover:bg-[#2f2f55] hover:border-[#777777] text-gray-300 font-semibold rounded-lg transition-all duration-300"
                             >
                                 Cancelar
                             </button>

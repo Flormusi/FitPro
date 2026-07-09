@@ -30,7 +30,7 @@ const ClientProfile = () => {
       case 'active':
         return '#10b981'; // Verde
       case 'inactive':
-        return '#ef4444'; // Rojo
+        return '#a855f7'; // Rojo
       case 'pending':
         return '#f59e0b'; // Amarillo
       default:

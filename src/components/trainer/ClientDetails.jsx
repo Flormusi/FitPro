@@ -182,8 +182,8 @@ const ClientDetails = () => {
         {
           label: 'Peso (kg)',
           data: progress.metrics.weight,
-          borderColor: '#ff3b30',
-          backgroundColor: 'rgba(255, 59, 48, 0.1)',
+          borderColor: '#a855f7',
+          backgroundColor: 'rgba(168, 85, 247, 0.1)',
           tension: 0.4,
         },
         {
@@ -379,7 +379,7 @@ const ClientDetails = () => {
             {/* SOLUCIÓN SIMPLE Y DIRECTA */}
             <button 
               style={{
-                backgroundColor: '#ff3b30',
+                backgroundColor: '#a855f7',
                 color: '#fff',
                 padding: '8px 16px',
                 borderRadius: '6px',

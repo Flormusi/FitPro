@@ -22,7 +22,7 @@
   align-items: center; /* Alinea verticalmente los ítems al centro */
   margin-bottom: 20px; /* Espacio debajo de este encabezado */
   padding-bottom: 10px; /* Un poco de espacio inferior dentro del header */
-  border-bottom: 1px solid #333; /* Línea divisoria como en la segunda imagen */
+  border-bottom: 1px solid #2f2f55; /* Línea divisoria como en la segunda imagen */
 }
 
 .dashboard-greeting {
@@ -38,7 +38,7 @@
 /* Estilo para el botón de Logout */
 .logout-button {
   background-color: #f0f0f0;
-  color: #333333;
+  color: #2f2f55;
   border: 1px solid #cccccc;
   padding: 8px 15px;
   border-radius: 6px;
@@ -54,7 +54,7 @@
 }
 
 .dashboard-card {
-  background-color: #1e1e1e; /* Fondo gris oscuro para las tarjetas */
+  background-color: #1c1c38; /* Fondo gris oscuro para las tarjetas */
   border-radius: 15px;
   padding: 20px; /* This is the default padding for all cards */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -62,7 +62,7 @@
 }
 
 .card-title-red {
-  color: #ff3b30 !important; /* Rojo FitPro */
+  color: #a855f7 !important; /* Rojo FitPro */
   font-size: 16px;
   margin-top: 0;
   margin-bottom: 15px;
@@ -110,7 +110,7 @@
   font-size: 24px;
 }
 .icon-check { color: #4CAF50; }
-.icon-missed { color: #ff3b30; }
+.icon-missed { color: #a855f7; }
 .icon-unknown { color: #FFC107; }
 .icon-pending { color: #505050; }
 
@@ -168,7 +168,7 @@
   color: #a0a0a0;
 }
 .view-routine-button {
-  background-color: #ff3b30;
+  background-color: #a855f7;
   color: #ffffff;
   border: none;
   border-radius: 10px;

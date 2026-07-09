@@ -119,11 +119,11 @@
 .form-group input.error,
 .form-group select.error,
 .form-group textarea.error {
-  border-color: #ef4444;
+  border-color: #a855f7;
 }
 
 .error-message {
-  color: #ef4444;
+  color: #a855f7;
   font-size: 0.85rem;
   margin-top: 4px;
 }
@@ -212,7 +212,7 @@
 }
 
 .remove-exercise-btn:hover {
-  background-color: #ef4444;
+  background-color: #a855f7;
   color: white;
 }
 

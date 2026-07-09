@@ -132,8 +132,8 @@
 
 .form-group input.error,
 .form-group select.error {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
 }
 
 .form-group input:disabled,
@@ -147,7 +147,7 @@
   display: block;
   margin-top: 6px;
   font-size: 0.8rem;
-  color: #ef4444;
+  color: #a855f7;
   font-weight: 500;
 }
 
@@ -188,12 +188,12 @@
 }
 
 .btn-save {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   color: white;
 }
 
 .btn-save:hover:not(:disabled) {
-  background-color: #D62828;
+  background-color: #8b5cf6;
   transform: none;
 }
 

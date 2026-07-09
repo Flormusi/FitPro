@@ -68,7 +68,7 @@ const ProgressChart: React.FC<ProgressChartProps> = ({ type, title, data }) => {
           color: '#aaaaaa',
         },
         grid: {
-          color: '#404040',
+          color: '#3b3b66',
         },
       },
       y: {
@@ -76,7 +76,7 @@ const ProgressChart: React.FC<ProgressChartProps> = ({ type, title, data }) => {
           color: '#aaaaaa',
         },
         grid: {
-          color: '#404040',
+          color: '#3b3b66',
         },
       },
     },

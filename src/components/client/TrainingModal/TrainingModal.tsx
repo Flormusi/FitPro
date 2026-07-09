@@ -108,7 +108,7 @@ const TrainingModal: React.FC<TrainingModalProps> = ({
             <div className="training-section">
               <h3>🗓️ Eventos asignados por tu entrenador</h3>
               {serverEvents.map(ev => {
-                const typeColor = ev.type === 'routine' ? '#ff4757' : ev.type === 'session' ? '#f59e0b' : '#8b5cf6';
+                const typeColor = ev.type === 'routine' ? '#c084fc' : ev.type === 'session' ? '#f59e0b' : '#8b5cf6';
                 return (
                 <div key={ev.id} className="server-event-card" style={{ borderLeft: `3px solid ${typeColor}` }}>
                   <div className="event-info">

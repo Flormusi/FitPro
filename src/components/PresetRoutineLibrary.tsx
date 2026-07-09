@@ -257,25 +257,25 @@ const PresetRoutineLibrary: React.FC<PresetRoutineLibraryProps> = ({
 
   const getObjectiveColor = (objective: string) => {
     const colors: { [key: string]: string } = {
-      'Fuerza': 'bg-[#dc2626]/20 text-[#ff3b30] border-[#dc2626]/30',
-      'Hipertrofia': 'bg-[#dc2626]/15 text-[#ff4444] border-[#dc2626]/25',
-      'Resistencia': 'bg-[#dc2626]/10 text-[#e6342a] border-[#dc2626]/20',
-      'Potencia': 'bg-[#dc2626]/25 text-[#ff3b30] border-[#dc2626]/35',
-      'Definición': 'bg-[#dc2626]/18 text-[#ff4444] border-[#dc2626]/28',
-      'Quema de Grasa': 'bg-[#dc2626]/22 text-[#ff3b30] border-[#dc2626]/32',
-      'Estética y Salud': 'bg-[#dc2626]/12 text-[#e6342a] border-[#dc2626]/22'
+      'Fuerza': 'bg-[#7c3aed]/20 text-[#a855f7] border-[#7c3aed]/30',
+      'Hipertrofia': 'bg-[#7c3aed]/15 text-[#a78bfa] border-[#7c3aed]/25',
+      'Resistencia': 'bg-[#7c3aed]/10 text-[#e6342a] border-[#7c3aed]/20',
+      'Potencia': 'bg-[#7c3aed]/25 text-[#a855f7] border-[#7c3aed]/35',
+      'Definición': 'bg-[#7c3aed]/18 text-[#a78bfa] border-[#7c3aed]/28',
+      'Quema de Grasa': 'bg-[#7c3aed]/22 text-[#a855f7] border-[#7c3aed]/32',
+      'Estética y Salud': 'bg-[#7c3aed]/12 text-[#e6342a] border-[#7c3aed]/22'
     };
-    return colors[objective] || 'bg-[#dc2626]/15 text-[#ff4444] border-[#dc2626]/25';
+    return colors[objective] || 'bg-[#7c3aed]/15 text-[#a78bfa] border-[#7c3aed]/25';
   };
 
   const getLevelColor = (level: string) => {
     const colors: { [key: string]: string } = {
-      'Principiante': 'bg-[#dc2626]/80',
-      'Intermedio': 'bg-[#dc2626]',
-      'Avanzado': 'bg-[#b91c1c]',
-      'General': 'bg-[#dc2626]/90'
+      'Principiante': 'bg-[#7c3aed]/80',
+      'Intermedio': 'bg-[#7c3aed]',
+      'Avanzado': 'bg-[#6d28d9]',
+      'General': 'bg-[#7c3aed]/90'
     };
-    return colors[level] || 'bg-[#dc2626]/70';
+    return colors[level] || 'bg-[#7c3aed]/70';
   };
 
   if (!isOpen) return null;

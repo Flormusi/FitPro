@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60">
   <!-- Dumbbell icon -->
   <!-- Left plate -->
-  <rect x="4" y="11" width="13" height="38" rx="4" fill="#e11d48"/>
+  <rect x="4" y="11" width="13" height="38" rx="4" fill="#8b5cf6"/>
   <!-- Left collar -->
-  <rect x="17" y="20" width="9" height="20" rx="2" fill="#c01040"/>
+  <rect x="17" y="20" width="9" height="20" rx="2" fill="#7c3aed"/>
   <!-- Bar -->
-  <rect x="26" y="26" width="28" height="8" rx="4" fill="#c01040"/>
+  <rect x="26" y="26" width="28" height="8" rx="4" fill="#7c3aed"/>
   <!-- Right collar -->
-  <rect x="54" y="20" width="9" height="20" rx="2" fill="#c01040"/>
+  <rect x="54" y="20" width="9" height="20" rx="2" fill="#7c3aed"/>
   <!-- Right plate -->
-  <rect x="63" y="11" width="13" height="38" rx="4" fill="#e11d48"/>
+  <rect x="63" y="11" width="13" height="38" rx="4" fill="#8b5cf6"/>
 
   <!-- FitPro text -->
   <text font-family="'Arial Black', 'Arial Bold', Arial, sans-serif" font-weight="900" font-size="30" y="40">
-    <tspan x="90" fill="#ffffff">Fit</tspan><tspan fill="#e11d48">Pro</tspan>
+    <tspan x="90" fill="#ffffff">Fit</tspan><tspan fill="#8b5cf6">Pro</tspan>
   </text>
 </svg>

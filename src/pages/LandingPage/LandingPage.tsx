@@ -183,7 +183,7 @@ const LandingPage: React.FC = () => {
       {/* HERO */}
       <section style={{ padding: '5rem 1.5rem 4rem', textAlign: 'center', maxWidth: 760, margin: '0 auto' }}>
         <div style={{
-          display: 'inline-block', backgroundColor: 'rgba(214,40,40,0.12)',
+          display: 'inline-block', backgroundColor: 'rgba(139,92,246,0.12)',
           color: 'var(--color-primary)', borderRadius: 20, padding: '4px 14px',
           fontSize: '0.8rem', fontWeight: 600, marginBottom: 20,
         }}>
@@ -282,7 +282,7 @@ const LandingPage: React.FC = () => {
                   </button>
                 </div>
                 {leadStatus === 'error' && (
-                  <p style={{ color: '#ef4444', fontSize: '0.8rem', margin: 0 }}>
+                  <p style={{ color: '#a855f7', fontSize: '0.8rem', margin: 0 }}>
                     Algo salió mal. Intentá de nuevo.
                   </p>
                 )}

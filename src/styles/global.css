@@ -5,7 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f7f6; /* A light base background */
-  color: #333; /* Default text color */
+  color: #2f2f55; /* Default text color */
 }
 
 * {
