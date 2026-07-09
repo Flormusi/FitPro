@@ -126,7 +126,7 @@ const WorkoutExerciseItem: React.FC<WorkoutExerciseItemProps> = ({
       {!isStudent && ( // El botón de eliminar solo es para el entrenador
         <button
           onClick={() => onRemoveExercise(exercise.id)}
-          className="mt-4 px-3 py-1.5 text-sm font-medium text-red-400 border border-red-500 rounded-md hover:bg-red-700 hover:text-white"
+          className="mt-4 px-3 py-1.5 text-sm font-medium text-violet-400 border border-violet-500 rounded-md hover:bg-violet-700 hover:text-white"
         >
           Eliminar Ejercicio
         </button>

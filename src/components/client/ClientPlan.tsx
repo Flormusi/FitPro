@@ -51,7 +51,7 @@ const ClientPlan = () => {
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
         </div>
       ) : error ? (
-        <div className="text-red-600 p-4 text-center">{error}</div>
+        <div className="text-violet-600 p-4 text-center">{error}</div>
       ) : assignedPlans.length === 0 ? (
         <div className="text-center text-gray-500 py-8">
           No workout plans assigned yet.

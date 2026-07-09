@@ -67,7 +67,7 @@ const EditWorkoutPlan: React.FC<EditWorkoutPlanProps> = ({ plan, onClose, onSave
       <div className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <h2 className="text-2xl font-bold mb-6">Edit Workout Plan</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
-          {error && <p className="text-red-600">{error}</p>}
+          {error && <p className="text-violet-600">{error}</p>}
           
           <div>
             <label className="block text-sm font-medium text-gray-700">Plan Name</label>

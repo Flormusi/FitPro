@@ -218,7 +218,7 @@ const EditClientPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
-                                    Nombre Completo <span className="text-red-400">*</span>
+                                    Nombre Completo <span className="text-violet-400">*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -234,7 +234,7 @@ const EditClientPage: React.FC = () => {
 
                             <div>
                                 <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
-                                    Correo Electrónico <span className="text-red-400">*</span>
+                                    Correo Electrónico <span className="text-violet-400">*</span>
                                 </label>
                                 <input
                                     type="email"

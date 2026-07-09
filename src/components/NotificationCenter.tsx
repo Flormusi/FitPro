@@ -229,7 +229,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={onClose}>
       <div className="bg-[#18182f] text-white border border-[#2f2f55] rounded-xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#2f2f55] bg-gradient-to-r from-red-600 to-red-500">
+        <div className="flex items-center justify-between p-6 border-b border-[#2f2f55] bg-gradient-to-r from-violet-600 to-violet-500">
           <h2 className="text-xl font-semibold text-white">Centro de Comunicación</h2>
           <button
             onClick={onClose}
@@ -245,7 +245,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
             onClick={() => setActiveTab('notifications')}
             className={`flex-1 px-6 py-3 text-sm font-medium transition-colors ${
               activeTab === 'notifications'
-                ? 'text-red-400 border-b-2 border-red-500 bg-[#1c1c38]'
+                ? 'text-violet-400 border-b-2 border-violet-500 bg-[#1c1c38]'
                 : 'text-gray-300 hover:text-white'
             }`}
           >
@@ -256,7 +256,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
             onClick={() => setActiveTab('reminders')}
             className={`flex-1 px-6 py-3 text-sm font-medium transition-colors ${
               activeTab === 'reminders'
-                ? 'text-red-400 border-b-2 border-red-500 bg-[#1c1c38]'
+                ? 'text-violet-400 border-b-2 border-violet-500 bg-[#1c1c38]'
                 : 'text-gray-300 hover:text-white'
             }`}
           >
@@ -277,7 +277,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                   </span>
                   <button
                     onClick={markAllAsRead}
-                    className="flex items-center space-x-1 text-sm text-red-400 hover:text-red-300 transition-colors"
+                    className="flex items-center space-x-1 text-sm text-violet-400 hover:text-red-300 transition-colors"
                   >
                     <CheckCheck size={16} />
                     <span>Marcar todas como leídas</span>
@@ -287,11 +287,11 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
               
               {loading ? (
                 <div className="text-center py-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600 mx-auto"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-violet-600 mx-auto"></div>
                   <p className="mt-2 text-gray-300">Cargando notificaciones...</p>
                 </div>
               ) : error ? (
-                <div className="text-center py-8 text-red-400">{error}</div>
+                <div className="text-center py-8 text-violet-400">{error}</div>
               ) : notifications.length === 0 ? (
                 <div className="text-center py-8">
                   <Bell className="w-12 h-12 text-gray-300 mx-auto mb-4" />
@@ -304,7 +304,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                       key={notification.id}
                       className={`p-4 rounded-lg border cursor-pointer transition-colors ${
                         !notification.isRead
-                          ? 'bg-red-900/20 border-red-500/40 hover:bg-red-900/30'
+                          ? 'bg-red-900/20 border-violet-500/40 hover:bg-red-900/30'
                           : 'bg-[#1c1c38] border-[#2f2f55] hover:bg-[#26264a]'
                       }`}
                       onClick={() => handleNotificationClick(notification)}
@@ -319,7 +319,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                           </span>
                         </div>
                         {!notification.isRead && (
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-violet-500 rounded-full"></div>
                         )}
                       </div>
                     </div>
@@ -333,7 +333,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                 <h3 className="text-lg font-medium text-white">Mis Recordatorios</h3>
                 <button
                   onClick={() => setShowReminderModal(true)}
-                  className="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                  className="flex items-center space-x-2 px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Nuevo</span>
@@ -346,7 +346,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                   <p className="text-gray-400">No tienes recordatorios</p>
                   <button
                     onClick={() => setShowReminderModal(true)}
-                    className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                    className="mt-4 px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors"
                   >
                     Crear primer recordatorio
                   </button>
@@ -359,7 +359,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                       className={`p-4 rounded-lg border ${
                         reminder.isSent
                           ? 'bg-[#1c1c38] border-[#2f2f55]'
-                          : 'bg-red-900/10 border-red-500/40'
+                          : 'bg-red-900/10 border-violet-500/40'
                       }`}
                     >
                       <div className="flex items-start justify-between">
@@ -381,7 +381,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                         </div>
                         <button
                           onClick={() => deleteReminder(reminder.id)}
-                          className="p-2 text-red-400 hover:bg-red-900/20 rounded-full transition-colors"
+                          className="p-2 text-violet-400 hover:bg-red-900/20 rounded-full transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -409,7 +409,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                     type="text"
                     value={newReminder.title}
                     onChange={(e) => setNewReminder(prev => ({ ...prev, title: e.target.value }))}
-                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Título del recordatorio"
                   />
                 </div>
@@ -421,7 +421,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                   <textarea
                     value={newReminder.message}
                     onChange={(e) => setNewReminder(prev => ({ ...prev, message: e.target.value }))}
-                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     rows={3}
                     placeholder="Descripción del recordatorio"
                   />
@@ -435,7 +435,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                     type="datetime-local"
                     value={newReminder.reminderTime}
                     onChange={(e) => setNewReminder(prev => ({ ...prev, reminderTime: e.target.value }))}
-                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                   />
                 </div>
 
@@ -446,7 +446,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                   <select
                     value={newReminder.reminderType}
                     onChange={(e) => setNewReminder(prev => ({ ...prev, reminderType: e.target.value as any }))}
-                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-[#2f2f55] rounded-lg bg-[#1c1c38] text-white focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                   >
                     <option value="GENERAL">General</option>
                     <option value="WORKOUT">Entrenamiento</option>
@@ -464,7 +464,7 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({ isVisible, onCl
                 </button>
                 <button
                   onClick={createReminder}
-                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                  className="px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors"
                 >
                   Crear Recordatorio
                 </button>

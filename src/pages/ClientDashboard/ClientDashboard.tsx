@@ -1026,7 +1026,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
               <span className="notification-badge">{unreadNotifications}</span>
             )}
           </button>
-          <button className="logout-btn bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg" onClick={logout}>
+          <button className="logout-btn bg-gradient-to-r from-violet-600 to-violet-500 text-white font-semibold px-5 py-2 rounded-lg" onClick={logout}>
             Cerrar sesión
           </button>
         </div>
@@ -1045,7 +1045,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
                   <div className="routine-objective text-gray-400">🎯 Objetivo: {assignedRoutines[0]?.description || 'Objetivo no especificado'}</div>
                   <div className="routine-week-progress text-gray-400">📅 Rutina activa</div>
                   <button 
-                    className="routine-details-btn bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg" 
+                    className="routine-details-btn bg-gradient-to-r from-violet-600 to-violet-500 text-white font-semibold px-5 py-2 rounded-lg" 
                     onClick={() => {
                       setSelectedRoutine(assignedRoutines[0]);
                       setShowRoutineModal(true);
@@ -1073,7 +1073,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
             <div className="card bg-[#1c1c38] rounded-xl p-6 shadow-md">
               <div className="calendar-header">
                 <h2>Calendario de entrenamientos</h2>
-                <button className="request-change-btn bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg" style={{ marginBottom: 8 }} onClick={handleRequestChange}>Solicitar cambio</button>
+                <button className="request-change-btn bg-gradient-to-r from-violet-600 to-violet-500 text-white font-semibold px-5 py-2 rounded-lg" style={{ marginBottom: 8 }} onClick={handleRequestChange}>Solicitar cambio</button>
               </div>
               <div className="calendar-grid">
                 {/* Desktop/Tablet Month View */}
@@ -1245,7 +1245,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
               <div className="card-header">
                 <h2>Métricas de progreso</h2>
                 <button 
-                  className="edit-profile-btn bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg"
+                  className="edit-profile-btn bg-gradient-to-r from-violet-600 to-violet-500 text-white font-semibold px-5 py-2 rounded-lg"
                   onClick={() => setShowEditProfileModal(true)}
                   title="Editar perfil"
                 >
@@ -1458,7 +1458,7 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
                   Ver historial
                 </button>
                 {!paymentStatus?.isUpToDate && (
-                  <button className="btn-payment primary bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold px-5 py-2 rounded-lg" onClick={handleMakePayment}>
+                  <button className="btn-payment primary bg-gradient-to-r from-violet-600 to-violet-500 text-white font-semibold px-5 py-2 rounded-lg" onClick={handleMakePayment}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>

@@ -76,7 +76,7 @@ const MercadoPagoPayment: React.FC<MercadoPagoPaymentProps> = ({
       </div>
 
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <div className="bg-red-100 border border-violet-400 text-violet-700 px-4 py-3 rounded mb-4">
           <p>{error}</p>
         </div>
       )}

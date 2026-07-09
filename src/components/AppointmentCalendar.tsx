@@ -269,7 +269,7 @@ const AppointmentCalendar: React.FC = () => {
                             </button>
                             <button
                               onClick={() => updateAppointmentStatus(appointment.id, 'CANCELLED')}
-                              className="p-2 text-red-600 hover:bg-red-50 rounded-full"
+                              className="p-2 text-violet-600 hover:bg-red-50 rounded-full"
                               title="Cancelar"
                             >
                               <X className="w-4 h-4" />
@@ -297,7 +297,7 @@ const AppointmentCalendar: React.FC = () => {
                         
                         <button
                           onClick={() => deleteAppointment(appointment.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-full"
+                          className="p-2 text-violet-600 hover:bg-red-50 rounded-full"
                           title="Eliminar"
                         >
                           <Trash2 className="w-4 h-4" />

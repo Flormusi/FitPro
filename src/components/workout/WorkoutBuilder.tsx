@@ -218,7 +218,7 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({
             {!isStudent && ( // Botón "AGREGAR EJERCICIO" solo para el entrenador
               <button
                 onClick={() => setShowExercisePicker(true)}
-                className="w-full mt-4 px-6 py-3 bg-red-600 text-white font-semibold rounded-md shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="w-full mt-4 px-6 py-3 bg-violet-600 text-white font-semibold rounded-md shadow-md hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 AGREGAR EJERCICIO
               </button>

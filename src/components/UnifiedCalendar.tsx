@@ -644,7 +644,7 @@ const UnifiedCalendar: React.FC = () => {
           
           <div className="flex flex-col items-center">
             <h1 className="calendar-title flex items-center">
-              <CalendarIcon className="w-8 h-8 mr-3 text-red-500" />
+              <CalendarIcon className="w-8 h-8 mr-3 text-violet-500" />
               Calendario Unificado
             </h1>
             <p className="text-gray-400">Gestiona rutinas, sesiones y consultas en un solo lugar</p>

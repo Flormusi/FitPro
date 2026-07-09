@@ -323,7 +323,7 @@ const EditRoutinePage: React.FC = () => {
           </div>
 
           {error && (
-            <div className="bg-red-500/20 border border-red-500 text-red-400 px-4 py-3 rounded-lg mb-6">
+            <div className="bg-violet-500/20 border border-violet-500 text-violet-400 px-4 py-3 rounded-lg mb-6">
               {error}
             </div>
           )}
@@ -341,7 +341,7 @@ const EditRoutinePage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-300 mb-2">
-                    Nombre de la Rutina <span className="text-red-400">*</span>
+                    Nombre de la Rutina <span className="text-violet-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -356,7 +356,7 @@ const EditRoutinePage: React.FC = () => {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-300 mb-2">
-                    Cliente <span className="text-red-400">*</span>
+                    Cliente <span className="text-violet-400">*</span>
                   </label>
                   <select
                     name="clientId"
@@ -376,7 +376,7 @@ const EditRoutinePage: React.FC = () => {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-300 mb-2">
-                    Duración <span className="text-red-400">*</span>
+                    Duración <span className="text-violet-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -454,7 +454,7 @@ const EditRoutinePage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
                       <div className="relative" ref={(el) => dropdownRefs.current[index] = el}>
                         <label className="block text-sm font-semibold text-gray-300 mb-2">
-                          Ejercicio <span className="text-red-400">*</span>
+                          Ejercicio <span className="text-violet-400">*</span>
                         </label>
                         <input
                           type="text"
@@ -487,7 +487,7 @@ const EditRoutinePage: React.FC = () => {
 
                       <div>
                         <label className="block text-sm font-semibold text-gray-300 mb-2">
-                          Series <span className="text-red-400">*</span>
+                          Series <span className="text-violet-400">*</span>
                         </label>
                         <input
                           type="text"
@@ -502,7 +502,7 @@ const EditRoutinePage: React.FC = () => {
 
                       <div>
                         <label className="block text-sm font-semibold text-gray-300 mb-2">
-                          Repeticiones <span className="text-red-400">*</span>
+                          Repeticiones <span className="text-violet-400">*</span>
                         </label>
                         <input
                           type="text"

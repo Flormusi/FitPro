@@ -146,7 +146,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
         >
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center">
-              <span className="text-red-600 font-bold text-xs sm:text-sm">TF</span>
+              <span className="text-violet-600 font-bold text-xs sm:text-sm">TF</span>
             </div>
             <h2 className="text-lg sm:text-2xl font-bold text-white">Biblioteca de Rutinas</h2>
           </div>
@@ -186,7 +186,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
             {/* Loading State */}
             {loading && (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-red-600"></div>
+                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-violet-600"></div>
               </div>
             )}
 
@@ -228,7 +228,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                                 </div>
                               )}
                               <div className="flex flex-col">
-                                <h3 className="font-bold text-white text-base sm:text-lg tf-title tf-text-solid leading-snug group-hover:text-red-400 transition-colors">{routine.name}</h3>
+                                <h3 className="font-bold text-white text-base sm:text-lg tf-title tf-text-solid leading-snug group-hover:text-violet-400 transition-colors">{routine.name}</h3>
                                 {routine.type === 'preset' ? (
                                   <span className="predesigned-chip mt-1">Prediseñada</span>
                                 ) : (
@@ -244,12 +244,12 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                           
                           <div className="text-sm text-gray-300 mb-4 bg-[#1c1c38] p-3 rounded-lg border border-[#2f2f55]">
                             <div className="flex items-center gap-2 mb-2">
-                              <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                              <span className="w-2 h-2 bg-violet-500 rounded-full"></span>
                               <span className="font-semibold text-white tf-text-solid">{routine.exercises?.length || 0} ejercicios</span>
                             </div>
                             {routine.type === 'preset' && routine.trainingObjective && (
                               <div className="flex items-center gap-2 mb-1">
-                                <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+                                <span className="w-2 h-2 bg-violet-400 rounded-full"></span>
                                 <span className="text-gray-300 tf-text-solid">
                                   Objetivo: <span className="text-white font-medium">{routine.trainingObjective}</span>
                                 </span>
@@ -257,7 +257,7 @@ const RoutineManagement: React.FC<RoutineManagementProps> = ({ isOpen, onClose }
                             )}
                             {routine.type === 'personal' && routine.createdAt && (
                               <div className="flex items-center gap-2">
-                                <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+                                <span className="w-2 h-2 bg-violet-400 rounded-full"></span>
                                 <span className="text-gray-300 tf-text-solid">
                                   Creada: <span className="text-white font-medium">{new Date(routine.createdAt).toLocaleDateString()}</span>
                                 </span>

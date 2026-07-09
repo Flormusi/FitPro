@@ -90,11 +90,11 @@ const AddClientPage: React.FC = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl">
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-gradient-to-br from-red-500 to-red-600 rounded-xl shadow-lg">
+                        <div className="p-3 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl shadow-lg">
                             <UserPlusIcon className="w-8 h-8 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                            <h1 className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
                                 Agregar Nuevo Cliente
                             </h1>
                             <p className="text-white/70 mt-1">Completa la información del cliente para agregarlo a tu lista</p>
@@ -112,7 +112,7 @@ const AddClientPage: React.FC = () => {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-2xl">
                 
                     {error && (
-                        <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-6 py-4 rounded-xl mb-6 backdrop-blur-sm" role="alert">
+                        <div className="bg-violet-500/10 border border-violet-500/30 text-violet-400 px-6 py-4 rounded-xl mb-6 backdrop-blur-sm" role="alert">
                             <div className="flex items-center">
                                 <ExclamationTriangleIcon className="w-5 h-5 mr-3 flex-shrink-0" />
                                 <div>
@@ -138,7 +138,7 @@ const AddClientPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-semibold text-white/80 mb-2">
-                                    Nombre Completo <span className="text-red-400">*</span>
+                                    Nombre Completo <span className="text-violet-400">*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -147,14 +147,14 @@ const AddClientPage: React.FC = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                     placeholder="Ingresa el nombre completo"
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="block text-sm font-semibold text-white/80 mb-2">
-                                    Correo Electrónico <span className="text-red-400">*</span>
+                                    Correo Electrónico <span className="text-violet-400">*</span>
                                 </label>
                                 <input
                                     type="email"
@@ -163,14 +163,14 @@ const AddClientPage: React.FC = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                     placeholder="ejemplo@correo.com"
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="password" className="block text-sm font-semibold text-white/80 mb-2">
-                                    Contraseña Inicial <span className="text-red-400">*</span>
+                                    Contraseña Inicial <span className="text-violet-400">*</span>
                                     <span className="text-xs text-white/50 ml-1">(mínimo 6 caracteres)</span>
                                 </label>
                                 <input
@@ -180,7 +180,7 @@ const AddClientPage: React.FC = () => {
                                     value={formData.password}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                     placeholder="Mínimo 6 caracteres"
                                 />
                             </div>
@@ -195,7 +195,7 @@ const AddClientPage: React.FC = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                     placeholder="Número de teléfono"
                                 />
                             </div>
@@ -212,7 +212,7 @@ const AddClientPage: React.FC = () => {
                                     onChange={handleChange}
                                     step="0.1"
                                     min="0"
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                     placeholder="Peso en kilogramos"
                                 />
                             </div>
@@ -226,7 +226,7 @@ const AddClientPage: React.FC = () => {
                                     name="trainingDaysPerWeek"
                                     value={formData.trainingDaysPerWeek}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
                                 >
                                     <option value="" className="bg-gray-800">Selecciona días por semana</option>
                                     <option value="1" className="bg-gray-800">1 día</option>
@@ -250,7 +250,7 @@ const AddClientPage: React.FC = () => {
                                 value={formData.initialObjective}
                                 onChange={handleChange}
                                 rows={3}
-                                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
+                                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
                                 placeholder="Describe el objetivo principal del cliente (ej: perder peso, ganar masa muscular, mejorar resistencia...)"
                             />
                         </div>
@@ -266,7 +266,7 @@ const AddClientPage: React.FC = () => {
                                     value={formData.medicalConditions}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
                                     placeholder="Condiciones médicas relevantes"
                                 />
                             </div>
@@ -281,7 +281,7 @@ const AddClientPage: React.FC = () => {
                                     value={formData.medications}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
                                     placeholder="Medicamentos actuales"
                                 />
                             </div>
@@ -296,7 +296,7 @@ const AddClientPage: React.FC = () => {
                                     value={formData.injuries}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 backdrop-blur-sm resize-none"
                                     placeholder="Lesiones previas o actuales"
                                 />
                             </div>
@@ -313,7 +313,7 @@ const AddClientPage: React.FC = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                className="px-8 py-3 bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                             >
                                 {isLoading ? (
                                     <>

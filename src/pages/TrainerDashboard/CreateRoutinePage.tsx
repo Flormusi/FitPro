@@ -670,7 +670,7 @@ const CreateRoutinePage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-300 mb-2" htmlFor="name">
-                  Nombre de la Rutina <span className="text-red-400">*</span>
+                  Nombre de la Rutina <span className="text-violet-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -686,7 +686,7 @@ const CreateRoutinePage: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-300 mb-2" htmlFor="clientId">
-                  Cliente <span className="text-red-400">*</span>
+                  Cliente <span className="text-violet-400">*</span>
                 </label>
                 <select
                   id="clientId"
@@ -703,7 +703,7 @@ const CreateRoutinePage: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-300 mb-2" htmlFor="trainingObjective">
-                  Objetivo de entrenamiento <span className="text-red-400">*</span>
+                  Objetivo de entrenamiento <span className="text-violet-400">*</span>
                 </label>
                 <select
                   id="trainingObjective"
@@ -727,7 +727,7 @@ const CreateRoutinePage: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-300 mb-2" htmlFor="duration">
-                  Duración <span className="text-red-400">*</span>
+                  Duración <span className="text-violet-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -811,7 +811,7 @@ const CreateRoutinePage: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
                     <div className="relative" ref={(el) => dropdownRefs.current[index] = el}>
                       <label className="block text-sm font-semibold text-gray-300 mb-2">
-                        Ejercicio <span className="text-red-400">*</span>
+                        Ejercicio <span className="text-violet-400">*</span>
                       </label>
                       <input
                         type="text"
@@ -863,7 +863,7 @@ const CreateRoutinePage: React.FC = () => {
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-300 mb-2">
-                        Series <span className="text-red-400">*</span>
+                        Series <span className="text-violet-400">*</span>
                       </label>
                       <input
                         type="text"
@@ -878,7 +878,7 @@ const CreateRoutinePage: React.FC = () => {
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-300 mb-2">
-                        Repeticiones <span className="text-red-400">*</span>
+                        Repeticiones <span className="text-violet-400">*</span>
                       </label>
                       <input
                         type="text"
