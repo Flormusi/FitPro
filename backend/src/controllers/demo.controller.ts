@@ -71,6 +71,7 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
 
     // Limpiar datos demo anteriores
     await prisma.routine.deleteMany({ where: { trainerId: demoUser.id } });
+    await prisma.appointment.deleteMany({ where: { trainerId: demoUser.id } });
 
     // Eliminar relaciones trainer-client anteriores y los clientes demo
     const prevRelations = await prisma.trainerClient.findMany({ where: { trainerId: demoUser.id } });
@@ -193,6 +194,40 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
       });
     }
 
+    // Crear citas demo distribuidas en la semana actual (para que el calendario se vea activo)
+    const at = (dayOffset: number, hour: number, durationMin: number) => {
+      const start = new Date();
+      start.setDate(start.getDate() + dayOffset);
+      start.setHours(hour, 0, 0, 0);
+      const end = new Date(start.getTime() + durationMin * 60000);
+      return { start, end };
+    };
+
+    const appointmentsData = [
+      { title: 'Sesión de fuerza',        clientIndex: 0, type: 'Rutina',   ...at(0, 9, 60) },
+      { title: 'Cardio + Core',           clientIndex: 1, type: 'Sesión',   ...at(0, 18, 45) },
+      { title: 'Evaluación mensual',      clientIndex: 2, type: 'Consulta', ...at(1, 10, 30) },
+      { title: 'Tren inferior',           clientIndex: 3, type: 'Rutina',   ...at(2, 17, 60) },
+      { title: 'Funcional avanzado',      clientIndex: 4, type: 'Sesión',   ...at(3, 8, 60) },
+      { title: 'Control de progreso',     clientIndex: 0, type: 'Consulta', ...at(4, 11, 30) },
+      { title: 'Sesión de movilidad',     clientIndex: 1, type: 'Sesión',   ...at(5, 10, 45) },
+    ];
+
+    for (const a of appointmentsData) {
+      await prisma.appointment.create({
+        data: {
+          title: a.title,
+          startTime: a.start,
+          endTime: a.end,
+          status: 'CONFIRMED',
+          type: a.type,
+          location: 'Gimnasio Central',
+          clientId: createdClients[a.clientIndex].id,
+          trainerId: demoUser.id,
+        },
+      });
+    }
+
     res.status(200).json({
       success: true,
       message: 'Demo seed completado',
@@ -200,6 +235,7 @@ export const seedDemo = async (req: Request, res: Response): Promise<void> => {
         trainer: demoUser.email,
         clients: createdClients.length,
         routines: routinesData.length,
+        appointments: appointmentsData.length,
       },
     });
   } catch (error: any) {

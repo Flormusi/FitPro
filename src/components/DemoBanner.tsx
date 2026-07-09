@@ -5,6 +5,14 @@ import { Eye } from 'lucide-react';
 const DemoBanner: React.FC = () => {
   const navigate = useNavigate();
 
+  // Modo video: ?video=1 en la URL oculta el banner durante toda la sesión (para grabar demos)
+  if (new URLSearchParams(window.location.search).get('video') === '1') {
+    sessionStorage.setItem('fitpro_video_mode', '1');
+  }
+  if (sessionStorage.getItem('fitpro_video_mode') === '1') {
+    return null;
+  }
+
   return (
     <div style={{
       backgroundColor: '#78350f',
