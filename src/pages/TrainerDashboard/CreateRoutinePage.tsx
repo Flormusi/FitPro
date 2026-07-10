@@ -250,7 +250,7 @@ const CreateRoutinePage: React.FC = () => {
       }));
 
       // Initialize search terms and dropdowns for preset exercises
-      setSearchTerms(presetExercises.map(() => ''));
+      setSearchTerms(presetExercises.map((ex: any) => ex.name || ''));
       setShowDropdowns(presetExercises.map(() => false));
       setPyramidalEnabled(presetExercises.map(() => false));
       setOriginalReps(presetExercises.map((ex: any) => ex.reps?.toString() || ''));
