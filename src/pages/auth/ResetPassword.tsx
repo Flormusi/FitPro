@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import axios from '../../services/axiosConfig';
 
-const ForgotPasswordPage: React.FC = () => {
+const ResetPasswordPage: React.FC = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle');
+  const { token } = useParams<{ token: string }>();
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
     setError('');
+
+    if (password.length < 6) {
+      setError('La contraseña debe tener al menos 6 caracteres.');
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError('Las contraseñas no coinciden.');
+      return;
+    }
+
+    setStatus('loading');
     try {
-      await axios.post('/auth/forgotpassword', { email });
-      setStatus('sent');
+      await axios.put(`/auth/resetpassword/${token}`, { password });
+      setStatus('done');
     } catch (err: any) {
-      setError(err.response?.data?.message || 'No se pudo enviar el email. Intentá de nuevo.');
+      setError(err.response?.data?.message || 'El link es inválido o expiró. Solicitá uno nuevo.');
       setStatus('error');
     }
   };
@@ -34,13 +46,13 @@ const ForgotPasswordPage: React.FC = () => {
           Fit<span style={{ color: '#8b5cf6' }}>Pro</span>
         </h1>
         <h2 style={{ color: '#fff', fontWeight: 700, fontSize: '1.1rem', marginTop: '1rem', marginBottom: 8 }}>
-          ¿Olvidaste tu contraseña?
+          Crear nueva contraseña
         </h2>
 
-        {status === 'sent' ? (
+        {status === 'done' ? (
           <>
             <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.5 }}>
-              Si <strong style={{ color: '#e5e7eb' }}>{email}</strong> tiene una cuenta en FitPro, te mandamos un link para restablecer tu contraseña. Revisá tu bandeja de entrada (y spam).
+              ✅ Tu contraseña se actualizó. Ya podés iniciar sesión con la nueva.
             </p>
             <button
               onClick={() => navigate('/login')}
@@ -50,20 +62,34 @@ const ForgotPasswordPage: React.FC = () => {
                 fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
               }}
             >
-              Volver a iniciar sesión
+              Iniciar sesión
             </button>
           </>
         ) : (
           <>
             <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.25rem', lineHeight: 1.5 }}>
-              Ingresá tu email y te mandamos un link para crear una nueva contraseña.
+              Elegí una nueva contraseña para tu cuenta.
             </p>
             <form onSubmit={handleSubmit}>
               <input
-                type="email"
-                placeholder="tu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="password"
+                placeholder="Nueva contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                disabled={status === 'loading'}
+                style={{
+                  width: '100%', padding: '0.75rem', borderRadius: 8,
+                  border: '1px solid #35355e', backgroundColor: '#111128',
+                  color: '#fff', fontSize: '0.95rem', marginBottom: 12,
+                  boxSizing: 'border-box',
+                }}
+              />
+              <input
+                type="password"
+                placeholder="Repetir contraseña"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 disabled={status === 'loading'}
                 style={{
@@ -86,17 +112,17 @@ const ForgotPasswordPage: React.FC = () => {
                   fontSize: '0.95rem', opacity: status === 'loading' ? 0.7 : 1,
                 }}
               >
-                {status === 'loading' ? 'Enviando…' : 'Enviar link de recuperación'}
+                {status === 'loading' ? 'Guardando…' : 'Guardar nueva contraseña'}
               </button>
             </form>
-            <a
-              href="https://wa.me/541156578922?text=Hola!%20No%20me%20lleg%C3%B3%20el%20email%20para%20recuperar%20mi%20contrase%C3%B1a%20de%20FitPro."
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'block', marginTop: 16, fontSize: '0.82rem', color: '#6b7280', textAlign: 'center', textDecoration: 'none' }}
-            >
-              ¿No te llega el email? Contactanos
-            </a>
+            {status === 'error' && (
+              <Link
+                to="/forgot-password"
+                style={{ display: 'block', marginTop: 16, fontSize: '0.82rem', color: '#8b5cf6', textAlign: 'center' }}
+              >
+                Pedir un link nuevo
+              </Link>
+            )}
           </>
         )}
       </div>
@@ -104,4 +130,4 @@ const ForgotPasswordPage: React.FC = () => {
   );
 };
 
-export default ForgotPasswordPage;
+export default ResetPasswordPage;

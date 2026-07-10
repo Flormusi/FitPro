@@ -6,6 +6,8 @@ import { Toaster, toast } from 'react-hot-toast';
 const LandingPage = React.lazy(() => import('./pages/LandingPage/LandingPage'));
 const Login = React.lazy(() => import('./components/auth/Login'));
 const Register = React.lazy(() => import('./components/auth/Register'));
+const ForgotPassword = React.lazy(() => import('./pages/auth/ForgotPassword'));
+const ResetPassword = React.lazy(() => import('./pages/auth/ResetPassword'));
 const TrainerSignup = React.lazy(() => import('./pages/TrainerSignup/TrainerSignup'));
 const ClientOnboarding = React.lazy(() => import('./components/onboarding/ClientOnboarding'));
 const ClientDashboard = React.lazy(() => import('./pages/ClientDashboard/ClientDashboard'));
@@ -113,6 +115,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/trainer-signup" element={<TrainerSignup />} />
         <Route path="/auth/google/callback" element={<GoogleAuthCallback />} />
         <Route path="/debug-clients" element={<ProtectedRoute role="trainer"><DebugClients /></ProtectedRoute>} />

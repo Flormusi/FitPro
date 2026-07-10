@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { PrismaClient, Role, User } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt, { SignOptions } from 'jsonwebtoken'; // Ensure SignOptions is imported
+import crypto from 'crypto';
+import { EmailService } from '../services/emailService';
 
 const prisma = new PrismaClient();
 
@@ -223,5 +225,91 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       message: 'Error en el servidor. Por favor, inténtalo de nuevo más tarde.',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
+  }
+};
+
+// FORGOT PASSWORD — genera un token, lo guarda hasheado y manda el link por email
+export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { email } = req.body as { email: string };
+
+    // Respuesta genérica siempre (no revelar si el email existe o no)
+    const genericResponse = {
+      success: true,
+      message: 'Si el email existe, te enviamos un link para restablecer tu contraseña.',
+    };
+
+    if (!email) {
+      res.status(400).json({ success: false, message: 'Email requerido' });
+      return;
+    }
+
+    const user = await prisma.user.findUnique({ where: { email: email.toLowerCase().trim() } });
+    if (!user) {
+      res.status(200).json(genericResponse);
+      return;
+    }
+
+    const rawToken = crypto.randomBytes(32).toString('hex');
+    const hashedToken = crypto.createHash('sha256').update(rawToken).digest('hex');
+    const expire = new Date(Date.now() + 60 * 60 * 1000); // 1 hora
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { resetPasswordToken: hashedToken, resetPasswordExpire: expire },
+    });
+
+    const frontendUrl = process.env.FRONTEND_URL || 'https://fitpro.ar';
+    const resetUrl = `${frontendUrl}/reset-password/${rawToken}`;
+
+    await EmailService.sendPasswordResetEmail(user.email, user.name || 'Usuario', resetUrl);
+
+    res.status(200).json(genericResponse);
+  } catch (error: any) {
+    console.error('forgotPassword error:', error);
+    res.status(500).json({ success: false, message: 'Error en el servidor. Intentá de nuevo más tarde.' });
+  }
+};
+
+// RESET PASSWORD — valida el token y actualiza la contraseña
+export const resetPassword = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body as { password: string };
+
+    if (!password || password.length < 6) {
+      res.status(400).json({ success: false, message: 'La contraseña debe tener al menos 6 caracteres.' });
+      return;
+    }
+
+    const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
+
+    const user = await prisma.user.findFirst({
+      where: {
+        resetPasswordToken: hashedToken,
+        resetPasswordExpire: { gt: new Date() },
+      },
+    });
+
+    if (!user) {
+      res.status(400).json({ success: false, message: 'El link es inválido o expiró. Solicitá uno nuevo.' });
+      return;
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        password: hashedPassword,
+        resetPasswordToken: null,
+        resetPasswordExpire: null,
+      },
+    });
+
+    res.status(200).json({ success: true, message: 'Contraseña actualizada. Ya podés iniciar sesión.' });
+  } catch (error: any) {
+    console.error('resetPassword error:', error);
+    res.status(500).json({ success: false, message: 'Error en el servidor. Intentá de nuevo más tarde.' });
   }
 };

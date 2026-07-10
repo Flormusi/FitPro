@@ -100,14 +100,14 @@ const Login: React.FC = () => {
         REGISTRARSE
       </button>
 
-      <a
-        href="https://wa.me/541156578922?text=Hola!%20Olvidé%20mi%20contraseña%20de%20FitPro%20y%20necesito%20ayuda."
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ display: 'block', marginTop: 16, fontSize: '0.82rem', color: '#6b7280', textAlign: 'center', textDecoration: 'none' }}
+      <button
+        className="btn-register-link"
+        onClick={() => navigate('/forgot-password')}
+        disabled={loading}
+        style={{ marginTop: 8 }}
       >
-        ¿Olvidaste tu contraseña? Contactanos
-      </a>
+        ¿Olvidaste tu contraseña?
+      </button>
     </div>
   );
 };

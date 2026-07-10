@@ -297,6 +297,64 @@ export class EmailService {
   }
 
   /**
+   * Envía el link de reseteo de contraseña
+   */
+  static async sendPasswordResetEmail(toEmail: string, userName: string, resetUrl: string): Promise<boolean> {
+    const emailContent = `
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restablecer contraseña - FitPro</title>
+      </head>
+      <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5;">
+        <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+
+          <div style="background-color: #0a0a1c; padding: 30px; text-align: center;">
+            <h1 style="margin: 0; font-size: 26px; font-weight: 900; color: #ffffff; letter-spacing: -1px;">
+              Fit<span style="color: #8b5cf6;">Pro</span>
+            </h1>
+          </div>
+
+          <div style="padding: 40px 30px;">
+            <p style="font-size: 18px; margin-bottom: 20px; color: #374151;">
+              Hola <strong>${userName}</strong>,
+            </p>
+            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 30px; color: #6b7280;">
+              Recibimos una solicitud para restablecer tu contraseña de FitPro. Si fuiste vos, hacé clic en el botón de abajo. El link expira en 1 hora.
+            </p>
+
+            <div style="text-align: center; margin: 35px 0;">
+              <a href="${resetUrl}" style="background-color: #8b5cf6; color: white; padding: 15px 32px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);">
+                Restablecer mi contraseña
+              </a>
+            </div>
+
+            <p style="font-size: 13px; color: #9ca3af; margin-top: 30px;">
+              Si no pediste esto, podés ignorar este email — tu contraseña actual sigue funcionando normalmente.
+            </p>
+            <p style="font-size: 13px; color: #9ca3af; word-break: break-all;">
+              O copiá y pegá este link: ${resetUrl}
+            </p>
+          </div>
+
+          <div style="background: #0a0a1c; color: #9ca3af; padding: 24px 30px; text-align: center; font-size: 12px;">
+            FitPro — La plataforma para entrenadores personales
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    return this.sendEmail({
+      to: toEmail,
+      subject: 'Restablecer tu contraseña - FitPro',
+      html: emailContent,
+    });
+  }
+
+  /**
    * Envía un recordatorio de pago al cliente
    */
   static async sendPaymentReminderEmail(clientEmail: string, clientName: string, trainerName: string): Promise<boolean> {
