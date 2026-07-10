@@ -917,12 +917,18 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           <div className="sidebar-header">
-            <motion.h2 
+            <motion.div
               animate={{ opacity: isSidebarOpen ? 1 : 0, x: isSidebarOpen ? 0 : -10 }}
               transition={{ delay: isSidebarOpen ? 0.1 : 0 }}
             >
-              {isSidebarOpen ? "FITPRO" : ""} 
-            </motion.h2>
+              {isSidebarOpen && (
+                <img
+                  src="/images/logo-fitpro.png"
+                  alt="FitPro"
+                  style={{ height: 28, width: 'auto' }}
+                />
+              )}
+            </motion.div>
             <button onClick={toggleSidebar} className="sidebar-toggle">
               {isSidebarOpen ? '←' : '→'}
             </button>

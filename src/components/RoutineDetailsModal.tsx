@@ -541,7 +541,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
           <div className="routine-modal-header tf-header-gradient">
             <div className="header-content">
               <div className="header-info">
-                <div className="fitpro-logo">FITPRO</div>
+                <img src="/images/logo-fitpro.png" alt="FitPro" className="fitpro-logo" />
                 <h2>{routine?.name || 'Cargando...'}</h2>
                 {routine?.description && (
                   <p className="routine-subtitle">{routine.description}</p>

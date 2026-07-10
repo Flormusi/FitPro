@@ -62,15 +62,11 @@
 }
 
 .fitpro-logo {
-  color: var(--fitpro-text-primary);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  height: 18px;
+  width: auto;
   margin-bottom: 0.5rem;
   opacity: 0.9;
-  text-shadow:
-    0 0 15px rgba(139, 92, 246, 0.35), /* blur principal */
-    0 0 1px rgba(139, 92, 246, 0.35);  /* spread simulado máximo 1px */
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
 }
 
 .header-info h2 {
