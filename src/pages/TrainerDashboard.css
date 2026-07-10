@@ -19,22 +19,10 @@
   border-top: 3px solid #8b5cf6; /* acento rojo superior */
 }
 
-.fitpro-logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #8b5cf6 !important; /* rojo característico con prioridad */
-  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 24px rgba(139, 92, 246, 0.35); /* glow sutil */
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.fitpro-logo .logo-icon {
-  font-size: 2rem;
-  color: #8b5cf6; /* acento rojo como antes */
-  font-weight: bold;
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 16px rgba(139, 92, 246, 0.25));
+.fitpro-logo-img {
+  height: 38px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
 }
 
 .greeting h2 {

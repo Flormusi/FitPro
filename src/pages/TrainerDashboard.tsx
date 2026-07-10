@@ -16,7 +16,6 @@ import {
   BellIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
-import { Dumbbell } from "lucide-react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useNavigate } from "react-router-dom";
@@ -131,9 +130,7 @@ const TrainerDashboard: React.FC = () => {
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-left">
-          <h1 className="fitpro-logo">
-            FITPRO <Dumbbell className="logo-icon" />
-          </h1>
+          <img src="/images/logo-fitpro.png" alt="FitPro" className="fitpro-logo-img" />
           <div className="greeting">
             <h2>¡Hola, {user?.name || 'Trainer'}!</h2>
             <p>Aquí tienes un resumen de tu actividad</p>
