@@ -15,6 +15,7 @@ interface RoutineItem {
   gender?: string;
   daysPerWeek?: number;
   type: RoutineType;
+  exercises?: any[]; // lista plana de ejercicios (para precargar el creador)
 }
 
 interface ObjectiveFolder {
@@ -27,9 +28,14 @@ interface ObjectiveFolder {
 const normalizeObjective = (raw?: string) => {
   const s = (raw || '').toLowerCase().trim();
   if (!s) return '';
+  if (s.includes('full')) return 'full_body';
+  if (s.includes('adulto') || s.includes('mayores')) return 'adultos_mayores';
+  if (s.includes('casa')) return 'en_casa';
+  if (s.includes('funcional')) return 'funcional';
+  if (s.includes('torso')) return 'torso_pierna';
+  if (s.includes('descenso') || (s.includes('quema') && s.includes('grasa'))) return 'quema_grasa';
   if (s.includes('fuerza') && s.includes('resistencia')) return 'fuerza_resistencia';
   if (s.includes('resistencia') && s.includes('cardio')) return 'resistencia_cardio';
-  if (s.includes('quema') && s.includes('grasa')) return 'quema_grasa';
   if (s.includes('estética') || s.includes('estetica')) return 'estetica_salud';
   if (s.includes('hipertrofia')) return 'hipertrofia';
   if (s.includes('potencia')) return 'potencia';
@@ -40,16 +46,26 @@ const normalizeObjective = (raw?: string) => {
 };
 
 const OBJECTIVE_FOLDERS: ObjectiveFolder[] = [
+  { value: 'full_body', label: 'Full Body / Principiantes', icon: '🙌' },
   { value: 'fuerza', label: 'Fuerza', icon: '💪' },
   { value: 'hipertrofia', label: 'Hipertrofia', icon: '🏋️' },
+  { value: 'torso_pierna', label: 'Torso / Pierna', icon: '🦵' },
+  { value: 'funcional', label: 'Funcional', icon: '🤸' },
+  { value: 'en_casa', label: 'Entrenamiento en Casa', icon: '🏠' },
+  { value: 'adultos_mayores', label: 'Adultos Mayores', icon: '🧓' },
+  { value: 'quema_grasa', label: 'Descenso de Peso', icon: '🔥' },
   { value: 'resistencia', label: 'Resistencia', icon: '🏃' },
   { value: 'potencia', label: 'Potencia', icon: '⚡' },
   { value: 'movilidad', label: 'Movilidad', icon: '🧘' },
-  { value: 'quema_grasa', label: 'Quema de Grasa', icon: '🔥' },
   { value: 'estetica_salud', label: 'Estética y Salud', icon: '✨' },
   { value: 'fuerza_resistencia', label: 'Fuerza y Resistencia', icon: '💪🏃' },
   { value: 'resistencia_cardio', label: 'Resistencia y Cardio', icon: '🏃❤️' },
 ];
+
+interface ClientOption {
+  id: string;
+  name: string;
+}
 
 const RoutineLibraryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -58,6 +74,13 @@ const RoutineLibraryPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [allRoutines, setAllRoutines] = useState<RoutineItem[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Asignación rápida (multi-cliente) desde la biblioteca
+  const [assignTarget, setAssignTarget] = useState<RoutineItem | null>(null);
+  const [clients, setClients] = useState<ClientOption[]>([]);
+  const [selectedClientIds, setSelectedClientIds] = useState<string[]>([]);
+  const [assigning, setAssigning] = useState(false);
+  const [assignResult, setAssignResult] = useState<{ ok: number; fail: number } | null>(null);
 
   // UI state
   const [activeFolder, setActiveFolder] = useState<ObjectiveFolder | null>(null);
@@ -105,6 +128,7 @@ const RoutineLibraryPage: React.FC = () => {
             gender: r.gender,
             daysPerWeek: r.daysPerWeek,
             type: 'preset',
+            exercises: r.flatExercises || [],
           }));
         } catch (e: any) {
           console.error('Error cargando rutinas prediseñadas:', e?.response?.data || e);
@@ -120,7 +144,51 @@ const RoutineLibraryPage: React.FC = () => {
     };
 
     fetchData();
+
+    trainerApi.getClients()
+      .then((res: any) => {
+        const list = (res?.data || res || []) as any[];
+        setClients(list.map(c => ({ id: c.id, name: c.name || c.clientProfile?.name || c.email })));
+      })
+      .catch(() => setClients([]));
   }, []);
+
+  const openAssignModal = (routine: RoutineItem) => {
+    setAssignTarget(routine);
+    setSelectedClientIds([]);
+    setAssignResult(null);
+  };
+
+  const closeAssignModal = () => {
+    setAssignTarget(null);
+    setSelectedClientIds([]);
+    setAssignResult(null);
+  };
+
+  const toggleClientSelected = (id: string) => {
+    setSelectedClientIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+  };
+
+  const confirmAssign = async () => {
+    if (!assignTarget || selectedClientIds.length === 0) return;
+    setAssigning(true);
+    let ok = 0, fail = 0;
+    for (const clientId of selectedClientIds) {
+      try {
+        await trainerApi.createRoutine({
+          clientId,
+          name: assignTarget.name,
+          exercises: assignTarget.exercises as any,
+          ...(assignTarget.description ? { description: assignTarget.description } : {}),
+        } as any);
+        ok++;
+      } catch {
+        fail++;
+      }
+    }
+    setAssigning(false);
+    setAssignResult({ ok, fail });
+  };
 
   // Si regresamos desde detalles de rutina con una carpeta indicada, activarla
   useEffect(() => {
@@ -192,6 +260,53 @@ const RoutineLibraryPage: React.FC = () => {
     setFilterGender('');
     setFilterType('');
   };
+
+  const renderRoutineCard = (r: RoutineItem) => (
+    <div className="routine-card tf-card" key={`${r.type}-${r.id}`}>
+      <div className="routine-title gradient-text">{r.name}</div>
+      <div className="routine-meta">
+        {r.level && (<span className="meta-chip">Nivel: {r.level}</span>)}
+        {r.gender && r.gender !== 'unisex' && (<span className="meta-chip">Género: {r.gender}</span>)}
+        {typeof r.daysPerWeek === 'number' && (<span className="meta-chip">{r.daysPerWeek} días/sem</span>)}
+        <span className="meta-chip type-chip">{r.type === 'preset' ? 'Plantilla FitPro' : 'Personal'}</span>
+      </div>
+      {r.description && (<p className="routine-desc">{r.description}</p>)}
+      <div className="routine-actions">
+        {r.type === 'preset' ? (
+          <button
+            className="tf-btn tf-btn-primary"
+            onClick={() =>
+              navigate('/trainer/create-routine', {
+                state: { presetRoutine: r, fromLibrary: true, folder: activeFolder?.value }
+              })
+            }
+          >
+            Usar Plantilla
+          </button>
+        ) : null}
+        {r.type === 'preset' && (
+          <button
+            className="tf-btn tf-btn-secondary"
+            onClick={() => openAssignModal(r)}
+          >
+            Asignar a clientes
+          </button>
+        )}
+        {r.type === 'personal' && (
+          <button
+            className="tf-btn tf-btn-secondary"
+            onClick={() =>
+              navigate(`/trainer/routines/${r.id}`, {
+                state: { fromLibrary: true, folder: activeFolder?.value }
+              })
+            }
+          >
+            Ver
+          </button>
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <div className="routine-library-page">
@@ -311,43 +426,7 @@ const RoutineLibraryPage: React.FC = () => {
               <div className="empty-state">No se encontraron rutinas para estos filtros.</div>
             ) : (
               <div className="routines-grid">
-                {filteredRoutines.map(r => (
-                  <div className="routine-card tf-card" key={`${r.type}-${r.id}`}>
-                    <div className="routine-title gradient-text">{r.name}</div>
-                    <div className="routine-meta">
-                      {r.level && (<span className="meta-chip">Nivel: {r.level}</span>)}
-                      {r.gender && (<span className="meta-chip">Género: {r.gender}</span>)}
-                      {typeof r.daysPerWeek === 'number' && (<span className="meta-chip">{r.daysPerWeek} días/sem</span>)}
-                      <span className="meta-chip type-chip">{r.type === 'preset' ? 'Prediseñada' : 'Personal'}</span>
-                    </div>
-                    {r.description && (<p className="routine-desc">{r.description}</p>)}
-                    <div className="routine-actions">
-                      {r.type === 'preset' ? (
-                        <button
-                          className="tf-btn tf-btn-primary"
-                          onClick={() =>
-                            navigate('/trainer/create-routine', {
-                              state: { presetRoutine: r, fromLibrary: true, folder: activeFolder?.value }
-                            })
-                          }
-                        >
-                          Usar Rutina
-                        </button>
-                      ) : (
-                        <button
-                          className="tf-btn tf-btn-secondary"
-                          onClick={() =>
-                            navigate(`/trainer/routines/${r.id}`, {
-                              state: { fromLibrary: true, folder: activeFolder?.value }
-                            })
-                          }
-                        >
-                          Ver
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                {filteredRoutines.map(renderRoutineCard)}
               </div>
             )}
           </>
@@ -356,6 +435,55 @@ const RoutineLibraryPage: React.FC = () => {
       <footer className="library-footer">
         <p className="footer-note">Agrupá tus rutinas por objetivo para mantener tu biblioteca ordenada</p>
       </footer>
+
+      {assignTarget && (
+        <div className="assign-modal-overlay" onClick={closeAssignModal}>
+          <div className="assign-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="assign-modal-title">Asignar "{assignTarget.name}"</h3>
+            {assignResult ? (
+              <>
+                <p className="assign-modal-result">
+                  ✅ Asignada a {assignResult.ok} cliente{assignResult.ok === 1 ? '' : 's'}
+                  {assignResult.fail > 0 ? ` · ⚠️ ${assignResult.fail} falló${assignResult.fail === 1 ? '' : 'ron'}` : ''}
+                </p>
+                <button className="tf-btn tf-btn-primary" onClick={closeAssignModal}>Cerrar</button>
+              </>
+            ) : (
+              <>
+                <p className="assign-modal-subtitle">
+                  Se crea una copia editable de la plantilla para cada cliente que elijas. Después podés personalizar cada una desde su perfil.
+                </p>
+                {clients.length === 0 ? (
+                  <p className="assign-modal-empty">Todavía no tenés alumnos cargados.</p>
+                ) : (
+                  <div className="assign-client-list">
+                    {clients.map(c => (
+                      <label key={c.id} className="assign-client-item">
+                        <input
+                          type="checkbox"
+                          checked={selectedClientIds.includes(c.id)}
+                          onChange={() => toggleClientSelected(c.id)}
+                        />
+                        {c.name}
+                      </label>
+                    ))}
+                  </div>
+                )}
+                <div className="assign-modal-actions">
+                  <button className="tf-btn tf-btn-secondary" onClick={closeAssignModal}>Cancelar</button>
+                  <button
+                    className="tf-btn tf-btn-primary"
+                    disabled={selectedClientIds.length === 0 || assigning}
+                    onClick={confirmAssign}
+                  >
+                    {assigning ? 'Asignando…' : `Asignar a ${selectedClientIds.length || ''} cliente${selectedClientIds.length === 1 ? '' : 's'}`.trim()}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

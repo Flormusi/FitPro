@@ -5,11 +5,27 @@ import { selectExercisesForDay, ExerciseSelectionParams } from '../services/exer
 import { logger } from '../utils/logger';
 import { routineTemplates } from '../data/routineTemplates';
 import { extendedRoutineTemplates } from '../data/routineTemplatesExtended';
+import { starterTemplates } from '../data/starterTemplates';
 
 const prisma = new PrismaClient();
 
 // Combinar todas las rutinas prediseñadas
-const allPresetTemplates = [...routineTemplates, ...extendedRoutineTemplates];
+const allPresetTemplates = [...starterTemplates, ...routineTemplates, ...extendedRoutineTemplates];
+
+// Aplana los días de una plantilla a una lista de ejercicios que el
+// creador de rutinas del frontend puede precargar directamente.
+const flattenTemplateDays = (days: any[]) =>
+  (days || []).flatMap((day: any) => {
+    const sections = day.sections || {};
+    const main = [...(sections.principal || []), ...(sections.core_cardio || [])];
+    return main.map((ex: any) => ({
+      name: ex.name,
+      sets: ex.sets,
+      reps: ex.reps,
+      weight: ex.weight || '',
+      notes: [day.name, ex.notes].filter(Boolean).join(' · '),
+    }));
+  });
 
 // Obtener todas las plantillas con filtros opcionales
 export const getRoutineTemplates = async (req: Request, res: Response) => {
@@ -57,6 +73,7 @@ export const getRoutineTemplates = async (req: Request, res: Response) => {
       const presetTemplates = filteredPresets.map(template => ({
         ...template,
         exercises: template.days, // Mapear days a exercises para compatibilidad
+        flatExercises: flattenTemplateDays(template.days),
         creator: {
           id: 'system',
           name: 'Sistema FitPro',
