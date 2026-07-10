@@ -459,7 +459,7 @@ const TrainerClientProgressPage: React.FC = () => {
       
       // Branding en el header: logo + títulos
       try {
-        const logoResp = await fetch('/images/logo-fitpro.svg');
+        const logoResp = await fetch('/images/logo-fitpro.png');
         const logoBlob = await logoResp.blob();
         const logoBase64 = await new Promise<string>((resolve) => {
           const reader = new FileReader();

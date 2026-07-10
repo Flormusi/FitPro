@@ -8,7 +8,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-container-dark">
       <img 
-        src="/images/logo-fitpro.svg" 
+        src="/images/logo-fitpro.png" 
         alt="FitPro Logo" 
         className="landing-logo-dark" 
       />
