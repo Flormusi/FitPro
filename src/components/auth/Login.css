@@ -16,7 +16,8 @@ body {
 }
 
 .login-logo {
-  width: 220px;
+  height: 66px;
+  width: auto;
   margin-bottom: 30px;
 }
 
