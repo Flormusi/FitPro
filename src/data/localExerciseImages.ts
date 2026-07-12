@@ -141,4 +141,16 @@ export const localExerciseImages: Record<string, string> = {
   'Talones a la cola': `${BASE}/talones-a-la-cola.jpg`,
   'Thruster': `${BASE}/thruster.jpg`,
   'V ups': `${BASE}/v-ups.jpg`,
+
+  // Batch 4
+  'Abdominales en banco': `${BASE}/abdominales-en-banco.jpg`,
+  'Aperturas en peck deck': `${BASE}/aperturas-en-peck-deck.jpg`,
+  'Espinal Superman': `${BASE}/espinal-superman.jpg`,
+  'Gemelos (soleo)en Maquina sentado': `${BASE}/gemelos-soleo-en-maquina-sentado.jpg`,
+  'Polea al pecho agarre estrecho': `${BASE}/polea-al-pecho-agarre-estrecho.jpg`,
+  'Press de Pecho en maquina': `${BASE}/press-de-pecho-en-maquina.jpg`,
+  'Pull over con mancuerna': `${BASE}/pull-over-con-mancuerna.jpg`,
+  'Remo con barra invertido': `${BASE}/remo-con-barra-invertido.jpg`,
+  'Remo con mancuernas s/ banco inclinado': `${BASE}/remo-con-mancuernas-s-banco-inclinado.jpg`,
+  'Vuelos Frontales': `${BASE}/vuelos-frontales.jpg`,
 };
