@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import CompleteProfileModal from '../../components/modals/CompleteProfileModal';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { getExerciseImageUrl } from '../../services/cloudinaryService';
 import './TrainerClientProgressPage.css';
 
 // Nuevo diseño implementado - versión actualizada
@@ -1920,20 +1921,16 @@ const TrainerClientProgressPage: React.FC = () => {
                                  }
                                }
                                
-                               // Buscar imagen en diferentes propiedades posibles, priorizando imageUrl del backend
-                               const imageUrl = parsedExercise.imageUrl || 
-                                              parsedExercise.image_url || 
-                                              parsedExercise.image || 
-                                              parsedExercise.img || 
+                               // Resolver por nombre primero (recoge ilustraciones nuevas automáticamente);
+                               // si no hay nombre, caer a lo que haya guardado en la rutina.
+                               const imageUrl = (parsedExercise.name && getExerciseImageUrl(parsedExercise.name)) ||
+                                              parsedExercise.imageUrl ||
+                                              parsedExercise.image_url ||
+                                              parsedExercise.image ||
+                                              parsedExercise.img ||
                                               parsedExercise.photo ||
                                               parsedExercise.picture;
-                               
-                               console.log('Exercise image data:', {
-                                 exerciseName: parsedExercise.name,
-                                 imageUrl: imageUrl,
-                                 allProps: Object.keys(parsedExercise)
-                               });
-                               
+
                                return imageUrl ? (
                                  <img 
                                    src={imageUrl} 
@@ -1975,10 +1972,11 @@ const TrainerClientProgressPage: React.FC = () => {
                                      parsedExercise = exercise;
                                    }
                                  }
-                                 const hasImage = parsedExercise.imageUrl || 
-                                                parsedExercise.image_url || 
-                                                parsedExercise.image || 
-                                                parsedExercise.img || 
+                                 const hasImage = (parsedExercise.name && getExerciseImageUrl(parsedExercise.name)) ||
+                                                parsedExercise.imageUrl ||
+                                                parsedExercise.image_url ||
+                                                parsedExercise.image ||
+                                                parsedExercise.img ||
                                                 parsedExercise.photo ||
                                                 parsedExercise.picture;
                                  return hasImage ? 'none' : 'flex';
