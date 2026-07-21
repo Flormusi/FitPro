@@ -4,6 +4,7 @@ import { clientApi } from '../services/api';
 import { toast } from 'react-toastify';
 import jsPDF from 'jspdf';
 import { getExerciseImageUrl } from '../services/cloudinaryService';
+import { useAuth } from '../contexts/AuthContext';
 import './RoutineDetailsModal.css';
 
 interface Exercise {
@@ -40,6 +41,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
   onClose,
   routineId
 }) => {
+  const { isDemoMode } = useAuth();
   const [routine, setRoutine] = useState<Routine | null>(null);
   const [loading, setLoading] = useState(false);
   const [editedExercises, setEditedExercises] = useState<{ [key: string]: { weight?: number; sets?: number; reps?: number } }>({});
@@ -136,7 +138,11 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
   const downloadPDF = async () => {
     try {
       if (!routine) return;
-      
+      if (isDemoMode) {
+        toast.error('La cuenta demo es de solo lectura. Creá tu cuenta para descargar PDFs.');
+        return;
+      }
+
       const pdf = new jsPDF('l', 'mm', 'a4'); // Landscape para formato profesional
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
@@ -553,7 +559,8 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
                 <button
                   className="btn-download modern-button"
                   onClick={downloadPDF}
-                  disabled={!routine}
+                  disabled={!routine || isDemoMode}
+                  title={isDemoMode ? 'No disponible en modo demo' : undefined}
                 >
                   📄 Descargar PDF
                 </button>

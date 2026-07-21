@@ -6,6 +6,7 @@ import CompleteProfileModal from '../../components/modals/CompleteProfileModal';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { getExerciseImageUrl } from '../../services/cloudinaryService';
+import { useAuth } from '../../contexts/AuthContext';
 import './TrainerClientProgressPage.css';
 
 // Nuevo diseño implementado - versión actualizada
@@ -85,7 +86,8 @@ const TrainerClientProgressPage: React.FC = () => {
   const { clientId } = useParams<{ clientId: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  
+  const { isDemoMode } = useAuth();
+
   const [client, setClient] = useState<ClientInfo | null>(null);
   const [routines, setRoutines] = useState<Routine[]>([]);
   const [paymentStatus, setPaymentStatus] = useState<PaymentStatus | null>(null);
@@ -433,6 +435,11 @@ const TrainerClientProgressPage: React.FC = () => {
       // Validaciones iniciales
       if (!routine) {
         toast.error('No se encontró la rutina seleccionada');
+        return;
+      }
+
+      if (isDemoMode) {
+        toast.error('La cuenta demo es de solo lectura. Creá tu cuenta para descargar PDFs.');
         return;
       }
 
