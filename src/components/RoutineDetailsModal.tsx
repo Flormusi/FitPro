@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clientApi } from '../services/api';
 import { toast } from 'react-toastify';
 import jsPDF from 'jspdf';
+import { getExerciseImageUrl } from '../services/cloudinaryService';
 import './RoutineDetailsModal.css';
 
 interface Exercise {
@@ -245,9 +246,10 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
        const exercisesWithImages = await Promise.allSettled(
          routine.exercises.map(async (exercise) => {
            let imageBase64 = null;
-           if (exercise.image_url) {
+           const resolvedImageUrl = (exercise.name && getExerciseImageUrl(exercise.name)) || exercise.image_url;
+           if (resolvedImageUrl) {
              try {
-               imageBase64 = await getImageAsBase64(exercise.image_url);
+               imageBase64 = await getImageAsBase64(resolvedImageUrl);
              } catch (error: unknown) {
                const msg = error instanceof Error ? error.message : String(error);
                console.warn(`Error cargando imagen para ${exercise.name}:`, msg);

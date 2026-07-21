@@ -549,7 +549,8 @@ const TrainerClientProgressPage: React.FC = () => {
       // Precargar todas las imágenes con manejo de errores mejorado
       const exercisesWithImages = await Promise.allSettled(
         exercises?.map(async (exercise: any) => {
-          const imageUrl = exercise.imageUrl || exercise.image_url || exercise.image;
+          const imageUrl = (exercise.name && getExerciseImageUrl(exercise.name)) ||
+                            exercise.imageUrl || exercise.image_url || exercise.image;
           let imageBase64 = null;
           
           if (imageUrl) {
