@@ -461,11 +461,11 @@ const TrainerClientProgressPage: React.FC = () => {
       const fitproLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
       const fitproWhite = [255, 255, 255] as [number, number, number]; // #ffffff - Blanco
 
-      // Header con diseño FitPro mejorado (más alto) - ahora negro
+      // Header con diseño FitPro
       pdf.setFillColor(...fitproBlack);
-      pdf.rect(0, 0, pageWidth, 35, 'F');
-      
-      // Branding en el header: logo + títulos
+      pdf.rect(0, 0, pageWidth, 32, 'F');
+
+      // Logo pequeño arriba a la izquierda, con aire propio
       try {
         const logoResp = await fetch('/images/logo-fitpro.png');
         const logoBlob = await logoResp.blob();
@@ -474,70 +474,39 @@ const TrainerClientProgressPage: React.FC = () => {
           reader.onload = () => resolve(reader.result as string);
           reader.readAsDataURL(logoBlob);
         });
-        // Mantener proporción del logo para evitar compresión
         const imgEl = new Image();
         imgEl.src = logoBase64;
         await new Promise((resolve) => { imgEl.onload = resolve; });
         const naturalW = (imgEl.naturalWidth || 0);
         const naturalH = (imgEl.naturalHeight || 0);
-        const targetH = 16; // altura fija coherente con el header
-        const targetW = naturalW && naturalH ? (targetH * (naturalW / naturalH)) : 24;
-        pdf.addImage(imgEl, 'PNG', 12, 9, targetW, targetH);
+        const targetH = 8; // logo chico, discreto
+        const targetW = naturalW && naturalH ? (targetH * (naturalW / naturalH)) : 16;
+        pdf.addImage(imgEl, 'PNG', 15, 6, targetW, targetH);
       } catch (error) {
-        // Fallback al texto si el logo no carga
         pdf.setTextColor(...fitproWhite);
-        pdf.setFontSize(18);
+        pdf.setFontSize(13);
         pdf.setFont('helvetica', 'bold');
-        pdf.text('FITPRO', 15, 15);
+        pdf.text('FitPro', 15, 12);
       }
-      
-      // Subtítulo junto al logo
-      pdf.setFontSize(10);
-      pdf.setFont('helvetica', 'normal');
-      pdf.setTextColor(...fitproWhite);
-      pdf.text('FITNESS & TRAINING', 15, 25);
-      
+
       // Título grande: Plan de Entrenamiento - Día X
       const dayTitle = routine.name || 'Rutina';
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(26);
-      pdf.text(`Plan de Entrenamiento - ${dayTitle}`, pageWidth / 2, 22, { align: 'center' });
-      
-      // Subtítulo con cliente, fecha y progreso
-      pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(10);
-      pdf.text(`Cliente: ${client?.name || 'N/A'} • Fecha: ${new Date().toLocaleDateString('es-ES')} • Progreso: ${routine.progress || 0}%`, pageWidth / 2, 30, { align: 'center' });
-      
-      // Separador decorativo
-      pdf.setDrawColor(230, 230, 230);
-      pdf.setLineWidth(0.5);
-      pdf.line(15, 35, pageWidth - 15, 35);
-      
-      yPosition = 45;
-      pdf.setTextColor(...fitproBlack);
-
-      // Información del cliente con diseño FitPro mejorado
-      pdf.setFillColor(...fitproDarkGray);
-      pdf.rect(15, yPosition, pageWidth - 30, 25, 'F');
-      pdf.setDrawColor(...fitproLightGray);
-      pdf.setLineWidth(0.25);
-      pdf.rect(15, yPosition, pageWidth - 30, 25);
-      
-      pdf.setFontSize(12);
-      pdf.setFont('helvetica', 'bold');
       pdf.setTextColor(...fitproWhite);
-      pdf.text('INFORMACIÓN GENERAL', 20, yPosition + 10);
-      
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(22);
+      pdf.text(`Plan de Entrenamiento - ${dayTitle}`, pageWidth / 2, 20, { align: 'center' });
+
+      // Subtítulo con cliente, fecha, estado y progreso (única fuente de esta info, sin repetir)
       pdf.setFont('helvetica', 'normal');
       pdf.setFontSize(10);
-      pdf.setTextColor(...fitproLightGray);
-      const infoY = yPosition + 16;
-      pdf.text(`Cliente: ${client?.name || 'N/A'}`, 20, infoY);
-      pdf.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, pageWidth / 2 - 30, infoY);
-      pdf.text(`Estado: ${routine.status === 'active' ? 'Activa' : routine.status === 'completed' ? 'Completada' : 'Pausada'}`, pageWidth - 80, infoY);
-      pdf.text(`Progreso: ${routine.progress || 0}%`, 20, infoY + 6);
+      const estadoLabel = routine.status === 'active' ? 'Activa' : routine.status === 'completed' ? 'Completada' : 'Pausada';
+      pdf.text(
+        `Cliente: ${client?.name || 'N/A'}  •  Fecha: ${new Date().toLocaleDateString('es-ES')}  •  Estado: ${estadoLabel}  •  Progreso: ${routine.progress || 0}%`,
+        pageWidth / 2, 27, { align: 'center' }
+      );
 
-      yPosition += 35;
+      yPosition = 42;
+      pdf.setTextColor(...fitproBlack);
 
       // Parsear ejercicios si están en formato JSON string
       let exercises = routine.exercises;
@@ -618,7 +587,7 @@ const TrainerClientProgressPage: React.FC = () => {
       for (let index = 0; index < exercisesWithImages.length; index++) {
         const exercise = exercisesWithImages[index];
         const hasNotes = !!(exercise as any).notes && String((exercise as any).notes).trim() !== '';
-        const rowHeight = hasNotes ? 54 : 50; // un poco más alto si hay notas
+        const rowHeight = hasNotes ? 34 : 28; // ajustado al contenido real, antes desperdiciaba media página
 
         if (yPosition + rowHeight > pageHeight - 25) {
           pdf.addPage();
