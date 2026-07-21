@@ -447,10 +447,10 @@ const TrainerClientProgressPage: React.FC = () => {
       let yPosition = 15;
 
       // Paleta de colores FitPro - Negro, Rojo y Gris
-      const fitproRed = [220, 38, 38] as [number, number, number]; // #7c3aed - Rojo principal
-      const fitproOrange = [255, 107, 53] as [number, number, number]; // #a855f7 - Naranja secundario
-      const fitproBlack = [10, 10, 10] as [number, number, number]; // #0a0a1c - Negro principal
-      const fitproDarkGray = [26, 26, 26] as [number, number, number]; // #18182f - Gris oscuro
+      const fitproRed = [124, 58, 237] as [number, number, number]; // #7c3aed - Violeta principal
+      const fitproOrange = [168, 85, 247] as [number, number, number]; // #a855f7 - Violeta secundario
+      const fitproBlack = [10, 10, 28] as [number, number, number]; // #0a0a1c - Negro principal
+      const fitproDarkGray = [24, 24, 47] as [number, number, number]; // #18182f - Gris oscuro
       const fitproLightGray = [156, 163, 175] as [number, number, number]; // #9ca3af - Gris claro
       const fitproWhite = [255, 255, 255] as [number, number, number]; // #ffffff - Blanco
 

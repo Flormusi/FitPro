@@ -142,9 +142,9 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       let yPosition = 15;
 
       // Paleta de colores FitPro
-      const fitproRed = [220, 38, 38] as [number, number, number];
-      const fitproBlack = [10, 10, 10] as [number, number, number];
-      const fitproDarkGray = [26, 26, 26] as [number, number, number];
+      const fitproRed = [139, 92, 246] as [number, number, number]; // violeta de marca (nombre histórico, no tocar por las ~16 referencias)
+      const fitproBlack = [10, 10, 28] as [number, number, number];
+      const fitproDarkGray = [24, 24, 47] as [number, number, number];
       const fitproLightGray = [156, 163, 175] as [number, number, number];
       const fitproWhite = [255, 255, 255] as [number, number, number];
 
