@@ -84,6 +84,11 @@ export const addClientByTrainer = async (req: Request, res: Response): Promise<v
     const existingClient = await prisma.user.findUnique({ where: { email } });
 
     if (existingClient) {
+      if (existingClient.role !== Role.CLIENT) {
+        res.status(400).json({ message: 'Ese email ya está registrado con otro tipo de cuenta. Usá un email distinto para este cliente.' });
+        return;
+      }
+
       // Verificar si ya existe la relación trainer-client
       const existingRelation = await prisma.trainerClient.findFirst({
         where: {
