@@ -563,7 +563,7 @@ const TrainerClientProgressPage: React.FC = () => {
       const tableHeaders = ['#', 'Imagen', 'Ejercicio', 'Series', 'Reps', 'Peso', 'Descanso'];
       const tableStartX = 15;
       const tableWidth = pageWidth - 30; // respetar márgenes para evitar recortes
-      const colWidths = [12, 46, 80, 22, 34, 34, 39]; // suma = 267mm = tableWidth
+      const colWidths = [12, 54, 72, 22, 34, 34, 39]; // suma = 267mm = tableWidth (imagen más grande)
       let xPosition = tableStartX;
 
       // Encabezados de tabla con diseño FitPro
@@ -587,7 +587,7 @@ const TrainerClientProgressPage: React.FC = () => {
       for (let index = 0; index < exercisesWithImages.length; index++) {
         const exercise = exercisesWithImages[index];
         const hasNotes = !!(exercise as any).notes && String((exercise as any).notes).trim() !== '';
-        const rowHeight = hasNotes ? 34 : 28; // ajustado al contenido real, antes desperdiciaba media página
+        const rowHeight = hasNotes ? 40 : 34; // suficiente para que la imagen se distinga bien, sin volver a desperdiciar página
 
         if (yPosition + rowHeight > pageHeight - 25) {
           pdf.addPage();
@@ -648,9 +648,16 @@ const TrainerClientProgressPage: React.FC = () => {
         pdf.setFont('helvetica', 'normal');
         if (exercise.imageBase64) {
           try {
-            const boxPadding = 4;
+            const boxPadding = 3;
             const boxW = colWidths[1] - boxPadding * 2;
-            const boxH = rowHeight - 12; // aire vertical
+            const boxH = rowHeight - 8; // más aire para la foto, menos margen desperdiciado
+            const boxX = xPosition + boxPadding;
+            const boxY = yPosition + (rowHeight - boxH) / 2;
+
+            // Tarjeta oscura de fondo: las fotos de ejercicios tienen fondo negro/oscuro,
+            // así se ven como una tarjeta a propósito en vez de un cuadro flotando sobre blanco
+            pdf.setFillColor(...fitproDarkGray);
+            pdf.roundedRect(boxX, boxY, boxW, boxH, 2, 2, 'F');
 
             const imgEl = new Image();
             imgEl.src = exercise.imageBase64 as string;
@@ -658,11 +665,14 @@ const TrainerClientProgressPage: React.FC = () => {
 
             const iW = imgEl.naturalWidth || 1;
             const iH = imgEl.naturalHeight || 1;
-            const scale = Math.min(boxW / iW, boxH / iH);
-            const targetW = Math.max(1, Math.min(iW * scale, boxW));
-            const targetH = Math.max(1, Math.min(iH * scale, boxH));
-            const imgX = xPosition + boxPadding + (boxW - targetW) / 2;
-            const imgY = yPosition + (rowHeight - targetH) / 2;
+            const innerPadding = 1.5;
+            const innerW = boxW - innerPadding * 2;
+            const innerH = boxH - innerPadding * 2;
+            const scale = Math.min(innerW / iW, innerH / iH);
+            const targetW = Math.max(1, Math.min(iW * scale, innerW));
+            const targetH = Math.max(1, Math.min(iH * scale, innerH));
+            const imgX = boxX + (boxW - targetW) / 2;
+            const imgY = boxY + (boxH - targetH) / 2;
 
             pdf.addImage(imgEl, 'JPEG', imgX, imgY, targetW, targetH, undefined, 'MEDIUM');
           } catch (error) {

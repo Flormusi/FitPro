@@ -279,7 +279,7 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
       const tableHeaders = ['#', 'Imagen', 'Ejercicio', 'Series', 'Reps', 'Peso', 'Descanso'];
       const tableStartX = 15;
       const tableWidth = pageWidth - 30; // respetar márgenes
-      const colWidths = [12, 46, 80, 22, 34, 34, 39]; // suma = 267mm = tableWidth
+      const colWidths = [12, 54, 72, 22, 34, 34, 39]; // suma = 267mm = tableWidth (imagen más grande)
       let xPosition = tableStartX;
 
       // Encabezados de tabla
@@ -363,19 +363,30 @@ const RoutineDetailsModal: React.FC<RoutineDetailsModalProps> = ({
         pdf.setFont('helvetica', 'normal');
         if (exercise.imageBase64) {
           try {
-            const boxPadding = 4;
+            const boxPadding = 3;
             const boxW = colWidths[1] - boxPadding * 2;
-            const boxH = rowHeight - 12; // aire vertical
+            const boxH = rowHeight - 8; // aire vertical
+            const boxX = xPosition + boxPadding;
+            const boxY = yPosition + (rowHeight - boxH) / 2;
+
+            // Tarjeta oscura de fondo para que las fotos con fondo negro se vean
+            // como una tarjeta a propósito, no como un cuadro flotando sobre blanco
+            pdf.setFillColor(...fitproDarkGray);
+            pdf.roundedRect(boxX, boxY, boxW, boxH, 2, 2, 'F');
+
             const imgEl = new Image();
             imgEl.src = exercise.imageBase64 as string;
             await new Promise((resolve) => { imgEl.onload = resolve; });
             const iW = imgEl.naturalWidth || 1;
             const iH = imgEl.naturalHeight || 1;
-            const scale = Math.min(boxW / iW, boxH / iH);
-            const targetW = Math.max(1, Math.min(iW * scale, boxW));
-            const targetH = Math.max(1, Math.min(iH * scale, boxH));
-            const imgX = xPosition + boxPadding + (boxW - targetW) / 2;
-            const imgY = yPosition + (rowHeight - targetH) / 2;
+            const innerPadding = 1.5;
+            const innerW = boxW - innerPadding * 2;
+            const innerH = boxH - innerPadding * 2;
+            const scale = Math.min(innerW / iW, innerH / iH);
+            const targetW = Math.max(1, Math.min(iW * scale, innerW));
+            const targetH = Math.max(1, Math.min(iH * scale, innerH));
+            const imgX = boxX + (boxW - targetW) / 2;
+            const imgY = boxY + (boxH - targetH) / 2;
             pdf.addImage(imgEl, 'JPEG', imgX, imgY, targetW, targetH);
           } catch (error) {
             console.warn('Error adding image to PDF:', error);
