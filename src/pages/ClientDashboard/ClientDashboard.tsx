@@ -335,28 +335,33 @@ const [lastMessagePreview, setLastMessagePreview] = useState<{ trainerName: stri
           if (!ev) return false;
           const statusUpper = String(ev.status || '').toUpperCase();
           // Mostrar sólo activos; excluir cancelados
-          const isActive = statusUpper === 'ACTIVE' || statusUpper === 'SCHEDULED' || statusUpper === '';
+          const isActive = statusUpper === 'ACTIVE' || statusUpper === 'SCHEDULED' || statusUpper === 'CONFIRMED' || statusUpper === '';
           const sameClient = !ev.clientId || ev.clientId === id;
           return isActive && sameClient;
         };
 
-        // Filtrar por tipo real antes de mapear para evitar clasificaciones incorrectas
-        const getTypeUpper = (ap: any) => String(ap?.type || ap?.category || ap?.eventType || '').toUpperCase();
+        // Filtrar por tipo real antes de mapear para evitar clasificaciones incorrectas.
+        // Normaliza acentos y mayúsculas para aceptar tanto los valores en español
+        // ('Rutina', 'sesion', 'Consulta') como en inglés (ROUTINE, SESSION, CONSULTATION).
+        const getTypeUpper = (ap: any) => String(ap?.type || ap?.category || ap?.eventType || '')
+          .normalize('NFD')
+          .replace(/[́̈]/g, '')
+          .toUpperCase();
 
         const routines = normalizeArray(routinesJson)
-          .filter((ap: any) => getTypeUpper(ap) === 'ROUTINE')
+          .filter((ap: any) => getTypeUpper(ap) === 'ROUTINE' || getTypeUpper(ap) === 'RUTINA')
           .map((ap: any) => mapEvent(ap, 'routine'))
           .filter(onlyActiveForClient) as CalendarEvent[];
 
         const sessions = normalizeArray(sessionsJson)
-          .filter((ap: any) => getTypeUpper(ap) === 'SESSION')
+          .filter((ap: any) => getTypeUpper(ap) === 'SESSION' || getTypeUpper(ap) === 'SESION')
           .map((ap: any) => mapEvent(ap, 'session'))
           .filter(onlyActiveForClient) as CalendarEvent[];
 
         const consultations = normalizeArray(consultationsJson)
           .filter((ap: any) => {
             const t = getTypeUpper(ap);
-            return t === 'CONSULTATION' || t === 'CONSULTA' || String(ap?.type).toLowerCase() === 'consultation';
+            return t === 'CONSULTATION' || t === 'CONSULTA';
           })
           .map((ap: any) => mapEvent(ap, 'consultation'))
           .filter(onlyActiveForClient) as CalendarEvent[];
