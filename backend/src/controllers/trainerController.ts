@@ -521,9 +521,27 @@ export const updateRoutine = async (req: Request, res: Response): Promise<void> 
     }
 
     const { id } = req.params;
+    // Solo se aceptan campos que existen en el modelo Routine: pasar req.body
+    // entero rompía la query con un 500 apenas el formulario mandaba un campo
+    // extra (p.ej. totalWeeks, que no existe en la tabla).
+    const { name, description, clientId, exercises, duration, notes } = req.body as {
+      name?: string;
+      description?: string;
+      clientId?: string;
+      exercises?: Prisma.JsonValue;
+      duration?: string;
+      notes?: string;
+    };
     const routine = await prisma.routine.update({
       where: { id, trainerId: user.id },
-      data: req.body,
+      data: {
+        ...(name !== undefined && { name }),
+        ...(description !== undefined && { description }),
+        ...(clientId !== undefined && { clientId }),
+        ...(exercises !== undefined && { exercises: exercises as Prisma.InputJsonValue }),
+        ...(duration !== undefined && { duration }),
+        ...(notes !== undefined && { notes }),
+      },
       include: { client: { select: { id: true, name: true, email: true, role: true, status: true, hasCompletedOnboarding: true, createdAt: true } } }
     });
 
@@ -753,9 +771,29 @@ export const updateProfile = async (req: Request, res: Response): Promise<void> 
       return;
     }
 
+    // Solo estos campos son válidos: `name` vive en User, el resto en TrainerProfile.
+    // Antes se pasaba req.body entero a prisma.user.update() y cualquier campo de
+    // TrainerProfile (p.ej. defaultPercentIncrement) rompía la query con un 500.
+    const { name, specialty, defaultPercentIncrement } = req.body;
+
     const profile = await prisma.user.update({
       where: { id: user.id },
-      data: req.body,
+      data: {
+        ...(name !== undefined && { name }),
+        trainerProfile: {
+          upsert: {
+            create: {
+              name: name || user.name || '',
+              ...(specialty !== undefined && { specialty }),
+              ...(defaultPercentIncrement !== undefined && { defaultPercentIncrement }),
+            },
+            update: {
+              ...(specialty !== undefined && { specialty }),
+              ...(defaultPercentIncrement !== undefined && { defaultPercentIncrement }),
+            },
+          },
+        },
+      },
       include: { trainerProfile: true }
     });
 
@@ -884,11 +922,14 @@ export const createClientRoutine = async (req: Request, res: Response): Promise<
       return;
     }
 
-    const { clientId, name, description, exercises } = req.body as {
+    const { clientId, name, description, exercises, duration, notes, trainingObjective } = req.body as {
       clientId: string;
       name: string;
       description?: string;
       exercises?: Prisma.JsonValue;
+      duration?: string;
+      notes?: string;
+      trainingObjective?: string;
     };
 
     if (!clientId || !name) {
@@ -921,7 +962,12 @@ export const createClientRoutine = async (req: Request, res: Response): Promise<
     const routine = await prisma.routine.create({
       data: {
         name,
-        description,
+        // El formulario no tiene un campo "description" propio: el "Objetivo de
+        // entrenamiento" elegido es lo más cercano, así que se guarda ahí para
+        // que se muestre en el dashboard del cliente.
+        description: description || trainingObjective,
+        duration,
+        notes,
         client: { connect: { id: clientId } },
         trainer: { connect: { id: user.id } },
         exercises: exercises as Prisma.InputJsonValue

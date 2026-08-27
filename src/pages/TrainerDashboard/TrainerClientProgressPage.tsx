@@ -19,6 +19,7 @@ interface Routine {
   assignedDate: string;
   status: 'active' | 'completed' | 'paused' | 'vencida';
   progress: number;
+  duration?: string;
   estimatedDuration?: string;
   difficulty?: string;
   totalWeeks?: number;
@@ -1869,7 +1870,7 @@ const TrainerClientProgressPage: React.FC = () => {
                   <div style={{ backgroundColor: '#26264a', padding: '15px', borderRadius: '8px' }}>
                     <h5 style={{ color: '#7c3aed', margin: '0 0 5px 0', fontSize: '12px' }}>DURACIÓN ESTIMADA</h5>
                     <p style={{ color: '#fff', margin: 0, fontSize: '18px', fontWeight: 'bold' }}>
-                      {selectedRoutine.estimatedDuration || 'N/A'}
+                      {selectedRoutine.duration || selectedRoutine.estimatedDuration || 'N/A'}
                     </p>
                   </div>
                   <div style={{ backgroundColor: '#26264a', padding: '15px', borderRadius: '8px' }}>
