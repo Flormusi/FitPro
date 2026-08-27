@@ -8,19 +8,29 @@ const prisma = new PrismaClient();
 export const getRoutineSchedules = async (req: RequestWithUser, res: Response) => {
   try {
     const userId = req.user?.id;
-    
+    const { startDate, endDate } = req.query;
+
     if (!userId) {
       return res.status(401).json({ message: 'Usuario no autenticado' });
     }
 
+    const whereClause: any = {
+      OR: [
+        { trainerId: userId },
+        { clientId: userId }
+      ]
+    };
+
+    if (startDate && endDate) {
+      whereClause.startTime = {
+        gte: new Date(startDate as string),
+        lte: new Date(endDate as string)
+      };
+    }
+
     // Obtener citas/rutinas programadas del usuario
     const routineSchedules = await prisma.appointment.findMany({
-      where: {
-        OR: [
-          { trainerId: userId },
-          { clientId: userId }
-        ]
-      },
+      where: whereClause,
       include: {
         trainer: {
           select: {

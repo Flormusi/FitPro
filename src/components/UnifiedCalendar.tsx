@@ -194,11 +194,15 @@ const UnifiedCalendar: React.FC = () => {
         const end = new Date(ap.endTime);
         const clientObj = ap.client || {};
         const clientName = clientObj.name || clientObj.clientProfile?.name || clientObj.email || 'Cliente';
-        const rawType = String(ap.type || '').toUpperCase();
+        // Normaliza acentos y mayúsculas para aceptar tanto los valores en
+        // español ('Rutina', 'sesion', 'Consulta') como en inglés (ROUTINE, SESSION, CONSULTATION).
+        const rawType = String(ap.type || '')
+          .normalize('NFD')
+          .replace(/[́̈]/g, '')
+          .toUpperCase();
         let mappedType: 'routine' | 'session' | 'consultation';
-        if (rawType === 'ROUTINE') mappedType = 'routine';
-        else if (rawType === 'SESSION') mappedType = 'session';
-        else if (rawType === 'CONSULTATION') mappedType = 'consultation';
+        if (rawType === 'ROUTINE' || rawType === 'RUTINA') mappedType = 'routine';
+        else if (rawType === 'CONSULTATION' || rawType === 'CONSULTA') mappedType = 'consultation';
         else mappedType = 'session';
         return {
           id: String(ap.id),

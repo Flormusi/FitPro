@@ -71,6 +71,67 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
+// Obtener solo las consultas del usuario (usado por el calendario unificado)
+router.get('/consultations', authenticateToken, async (req, res) => {
+  try {
+    const userId = req.user?.id;
+    const { startDate, endDate } = req.query;
+
+    if (!userId) {
+      return res.status(401).json({ message: 'Usuario no autenticado' });
+    }
+
+    const whereClause: any = {
+      OR: [
+        { clientId: userId },
+        { trainerId: userId }
+      ]
+    };
+
+    if (startDate && endDate) {
+      whereClause.startTime = {
+        gte: new Date(startDate as string),
+        lte: new Date(endDate as string)
+      };
+    }
+
+    const appointments = await prisma.appointment.findMany({
+      where: whereClause,
+      include: {
+        client: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            clientProfile: {
+              select: { name: true, phone: true }
+            }
+          }
+        },
+        trainer: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            trainerProfile: {
+              select: { name: true, specialty: true }
+            }
+          }
+        },
+        reminders: true
+      },
+      orderBy: {
+        startTime: 'asc'
+      }
+    });
+
+    res.json(appointments);
+  } catch (error) {
+    console.error('Error fetching consultations:', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
+
 // Crear nueva cita
 router.post('/', authenticateToken, async (req, res) => {
   try {
